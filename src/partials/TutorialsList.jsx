@@ -25,26 +25,26 @@ function TutorialsList() {
 
           {/* Page header */}
           <div className="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-            <h1 className="h1">Tutorials & guides for using Simple with any project</h1>
+            <h1 className="h1">Information Previliges Organisations!</h1>
           </div>
 
           {/* Section tags */}
           <div className="border-b border-gray-300 pb-4 mb-12">
             <ul className="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
               <li className="mx-5 my-1">
-                <a className="text-blue-600" href="#0">All</a>
+                <a className="text-blue-600" href="#0">Coding</a>
               </li>
               <li className="mx-5 my-1">
-                <a className="text-gray-800 hover:underline" href="#0">Tutorials</a>
+                <a className="text-gray-800 hover:underline" href="#0">Gaming</a>
               </li>
               <li className="mx-5 my-1">
-                <a className="text-gray-800 hover:underline" href="#0">Tips & Tricks</a>
+                <a className="text-gray-800 hover:underline" href="#0">Exchanges</a>
               </li>
               <li className="mx-5 my-1">
-                <a className="text-gray-800 hover:underline" href="#0">Free ebooks</a>
+                <a className="text-gray-800 hover:underline" href="#0">Daily Brands</a>
               </li>
               <li className="mx-5 my-1">
-                <a className="text-gray-800 hover:underline" href="#0">Guides</a>
+                <a className="text-gray-800 hover:underline" href="#0">Survival</a>
               </li>
             </ul>
           </div>
@@ -66,21 +66,24 @@ function TutorialsList() {
                   <div className="mb-3">
                     <ul className="flex flex-wrap text-xs font-medium -m-1">
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
+                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Jobs</a>
                       </li>
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
+                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Coding</a>
                       </li>
                       <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">4 min read</span>
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">3 Keyword Matches</span>
                       </li>
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
-                    <Link to="/blog-post" className="hover:underline">Making component design decisions in React</Link>
+                    <Link to="/blog-post" className="hover:underline">Are you a React Expert?</Link>
                   </h3>
                 </header>
-                <p className="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <p className="text-gray-600 grow">
+                  - React JS <br/> 
+                  - Frontend Development <br/>
+                  - stackoverflow.com REACT.JS</p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
@@ -94,7 +97,7 @@ function TutorialsList() {
                   </div>
                   <div>
                     <span className="text-gray-600">By </span>
-                    <a className="font-medium hover:underline" href="#0">Lisa Allison</a> & <a className="font-medium hover:underline" href="#0">Justin Park</a>
+                    <a className="font-medium hover:underline" href="#0">Frontend Agency Recruiters</a>
                   </div>
                 </footer>
               </article>
@@ -110,15 +113,21 @@ function TutorialsList() {
                   <div className="mb-3">
                     <ul className="flex flex-wrap text-xs font-medium -m-1">
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Tutorials</a>
+                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Gaming</a>
+                      </li>
+                      <li className="m-1">
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">2 Keyword Matches</span>
                       </li>
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
-                    <Link to="/blog-post" className="hover:underline">How to use structured content for page building</Link>
+                    <Link to="/blog-post" className="hover:underline">Are you interested in Chess?</Link>
                   </h3>
                 </header>
-                <p className="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <p className="text-gray-600 grow">
+                  - chess <br/>
+                  - play chess
+                  </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
@@ -128,7 +137,7 @@ function TutorialsList() {
                   </div>
                   <div>
                     <span className="text-gray-600">By </span>
-                    <a className="font-medium hover:underline" href="#0">Knut Mayer</a>
+                    <a className="font-medium hover:underline" href="#0">Chess DAO</a>
                   </div>
                 </footer>
               </article>
@@ -144,21 +153,27 @@ function TutorialsList() {
                   <div className="mb-3">
                     <ul className="flex flex-wrap text-xs font-medium -m-1">
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
+                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Gaming</a>
                       </li>
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
+                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Play to Earn Games</a>
                       </li>
                       <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">7 min read</span>
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">6 Keyword Matches</span>
                       </li>
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
-                    <Link to="/blog-post" className="hover:underline">Deploy on Netlify, Heroku or your favorite platform</Link>
+                    <Link to="/blog-post" className="hover:underline">Would you be interested in buying Benji Bananas NFT?</Link>
                   </h3>
                 </header>
-                <p className="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                <p className="text-gray-600 grow">
+                  - Opensea.io <br/>
+                  - Alien Worlds <br/> 
+                  - Play to Earn NFT Games <br/> 
+                  - Benji Bananas <br/> 
+                  - $PRIMATE token <br/>
+                  - $APE token </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
@@ -168,7 +183,7 @@ function TutorialsList() {
                   </div>
                   <div>
                     <span className="text-gray-600">By </span>
-                    <a className="font-medium hover:underline" href="#0">Lisa Allison</a>
+                    <a className="font-medium hover:underline" href="#0">Benji Bananas</a>
                   </div>
                 </footer>
               </article>
