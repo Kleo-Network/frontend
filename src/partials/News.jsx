@@ -15,29 +15,11 @@ function News() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2">The most innovative businesses choose Simple</h2>
+            <h2 className="h2">Transparency and Privacy are extremely important to us!</h2>
           </div>
 
           {/* Categories */}
-          <div className="mb-12 md:mb-16">
-            <ul className="flex flex-wrap justify-center text-sm font-medium -m-2">
-              <li className="m-2">
-                <a className="inline-flex text-center text-gray-100 py-2 px-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in-out" href="#0">Developers</a>
-              </li>
-              <li className="m-2">
-                <a className="inline-flex text-center text-gray-800 py-2 px-4 rounded-full bg-white hover:bg-gray-100 shadow-sm transition duration-150 ease-in-out" href="#0">SaaS</a>
-              </li>
-              <li className="m-2">
-                <a className="inline-flex text-center text-gray-800 py-2 px-4 rounded-full bg-white hover:bg-gray-100 shadow-sm transition duration-150 ease-in-out" href="#0">Web Agencies</a>
-              </li>
-              <li className="m-2">
-                <a className="inline-flex text-center text-gray-800 py-2 px-4 rounded-full bg-white hover:bg-gray-100 shadow-sm transition duration-150 ease-in-out" href="#0">E-Commerce</a>
-              </li>
-              <li className="m-2">
-                <a className="inline-flex text-center text-gray-800 py-2 px-4 rounded-full bg-white hover:bg-gray-100 shadow-sm transition duration-150 ease-in-out" href="#0">Startups</a>
-              </li>
-            </ul>
-          </div>
+          
 
           {/* Articles list */}
           <div className="max-w-sm mx-auto md:max-w-none">

@@ -18,6 +18,9 @@ function FeaturesHome() {
       tabs.current.style.height = tabs.current.children[tab-1].offsetHeight + 'px'
     }
   }
+  const handleClickNav = (id) => {
+    document.getElementById(id).scrollIntoView({behavior: "smooth"});
+  };
 
   useEffect(() => {
     heightFix()
@@ -33,8 +36,7 @@ function FeaturesHome() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
                 <h3 className="h3 mb-3">What we do?</h3>
-                <p className="text-xl text-gray-600">
-                  Get those $KLEO tokens!</p>
+                
               </div>
               {/* Tabs buttons */}
               <div className="mb-8 md:mb-0">
@@ -162,6 +164,7 @@ function FeaturesHome() {
 
         </div>
       </div>
+     
     </section>
   );
 }

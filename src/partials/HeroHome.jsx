@@ -38,12 +38,13 @@ function HeroHome() {
           <div className="text-center pb-12 md:pt-30 md:pb-16">
             <div className='pt-20'>
             <h3 className="text-5xl md:text-5xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
-              Earn Deals & Rewards for your browsing history data, on your terms! 
+              Get
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"> $KLEO</span>  tokens for your browsing history data, on your terms!
             </h3>
             </div>
             <div className='pt-10'>
             <p className="text-xl text-gray-600 text-center">
-             You can exchange your browsing data for deals, rewards and $KLEO tokens. <br/>
+             You can exchange your browsing data for gigs, deals, rewards and $KLEO tokens. <br/>
              All you have to do is install an extension.  
             </p>
             </div>
