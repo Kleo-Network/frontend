@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../partials/Header';
+//import Header from '../partials/Header';
 import HeroHome from '../partials/HeroHome';
 import FeaturesHome from '../partials/FeaturesHome';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
@@ -14,7 +14,7 @@ function Home() {
     <div className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
-      <Header />
+      
 
       {/*  Page content */}
       <main className="grow">
@@ -22,15 +22,15 @@ function Home() {
         {/*  Page sections */}
         <HeroHome />
         <FeaturesHome />
-        <FeaturesBlocks />
+        {/* <FeaturesBlocks />
         <FeaturesWorld />
         <News />
-        <Cta />
+        <Cta /> */}
 
       </main>
 
       {/*  Site footer */}
-      <Footer />
+      {/* <Footer /> */}
 
     </div>
   );
