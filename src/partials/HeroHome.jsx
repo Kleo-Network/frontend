@@ -45,7 +45,7 @@ function HeroHome() {
             <div className='pt-10'>
             <p className="text-xl text-gray-600 text-center">
              You can exchange your browsing data for gigs, deals, rewards and $KLEO tokens. <br/>
-             All you have to do is install an extension.  
+             <b>All you have to do is install an extension. </b> 
             </p>
             </div>
             <div className='pt-20'>
