@@ -3,9 +3,9 @@ import Transition from '../utils/Transition';
 
 import TopImage from '../images/features-top-image.png';
 import FeaturesBg01 from '../images/features-home-bg-01.png';
-import FeaturesElement01 from '../images/features-home-element-01.png';
-import FeaturesElement02 from '../images/features-home-element-02.png';
-import FeaturesElement03 from '../images/features-home-element-03.png';
+import FeaturesElement01 from '../images/kleo-1.png';
+import FeaturesElement02 from '../images/kleo-2.png';
+import FeaturesElement03 from '../images/kleo-3.png';
 
 function FeaturesHome() {
 
@@ -34,6 +34,7 @@ function FeaturesHome() {
           <div className="md:grid md:grid-cols-12 md:gap-4">
 
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 md:mt-6" data-aos="fade-right">
+              
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
                 <h3 className="h3 mb-3">What we do?</h3>
                 
@@ -113,10 +114,10 @@ function FeaturesHome() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg01} width="500" height="375" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '22%' }} />
+                    <img className="md:max-w-none mx-auto rounded" src={FeaturesElement01} width="350" height="375" alt="Features bg" />
+                    {/* <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '22%' }} />
                     <img className="md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500" src={FeaturesElement02} width="500" height="158" alt="Element 02" style={{ top: '39%' }} />
-                    <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '77%' }} />
+                    <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '77%' }} /> */}
                   </div>
                 </Transition>
                 {/* Item 2 */}
@@ -132,10 +133,10 @@ function FeaturesHome() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg01} width="500" height="375" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '18%' }} />
+                  <img className="md:max-w-none mx-auto rounded" src={FeaturesElement02} width="350" height="375" alt="Features bg" />
+                    {/* <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '18%' }} />
                     <img className="md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500" src={FeaturesElement02} width="500" height="158" alt="Element 02" style={{ top: '40%' }} />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '79%' }} />
+                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '79%' }} /> */}
                   </div>
                 </Transition>
                 {/* Item 3 */}
@@ -151,10 +152,10 @@ function FeaturesHome() {
                   leaveEnd="opacity-0 -translate-y-16"
                 >
                   <div className="relative inline-flex flex-col">
-                    <img className="md:max-w-none mx-auto rounded" src={FeaturesBg01} width="500" height="375" alt="Features bg" />
-                    <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '22%' }} />
+                  <img className="md:max-w-none mx-auto rounded" src={FeaturesElement03} width="350" height="375" alt="Features bg" />
+                    {/* <img className="md:max-w-none absolute w-full left-0 transform animate-float" src={FeaturesElement01} width="500" height="147" alt="Element 01" style={{ top: '22%' }} />
                     <img className="md:max-w-none absolute w-full left-0 transform animate-float animation-delay-500" src={FeaturesElement02} width="500" height="158" alt="Element 02" style={{ top: '39%' }} />
-                    <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '77%' }} />
+                    <img className="md:max-w-none absolute w-full left-0 bottom-0 transform animate-float animation-delay-1000" src={FeaturesElement03} width="500" height="167" alt="Element 03" style={{ top: '77%' }} /> */}
                   </div>
                 </Transition>
               </div>
@@ -162,9 +163,11 @@ function FeaturesHome() {
 
           </div>
 
+                    
         </div>
+        
       </div>
-     
+      
     </section>
   );
 }
