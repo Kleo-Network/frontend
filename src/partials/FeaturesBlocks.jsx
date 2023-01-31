@@ -13,10 +13,10 @@ function FeaturesBlocks() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-            <h2 className="h2 mb-4">It's a marketplace!</h2>
+            <h2 className="h2 mb-4">What in world is data pocket??</h2>
             <p className="text-xl text-gray-600">
-              You can always see which organisation is indexing for what data, and choose to or <b>not to</b> share that information. 
-              You can take part in surveys of your choice, participate in our governance to decide which surveys should be allowed access to your data!
+              Data pocket is your personal data curated from different platforms - 
+              your browsing history, your 
             </p>
           </div>
 
