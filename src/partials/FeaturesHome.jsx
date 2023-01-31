@@ -92,7 +92,9 @@ function FeaturesHome() {
                     </div>
                     <div className="text-gray-600">
                       Send your data pocket to work, 
-                      we have created a marketplace for you to browse the internet from other person's perspective. </div>
+                      we have created a marketplace for you to browse the internet from other person's perspective. 
+                      You can now earn rent from your data pocket, without sacrificing absolute privacy. 
+                       </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
