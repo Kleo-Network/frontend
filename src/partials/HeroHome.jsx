@@ -38,14 +38,14 @@ function HeroHome() {
           <div className="text-center pb-12 md:pt-30 md:pb-16">
             <div className='pt-20'>
             <h3 className="text-5xl md:text-5xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
-              Get
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"> $KLEO</span>  tokens for your browsing history data, on your terms!
+              
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"> $KLEO: </span>Data Economy of the future!
             </h3>
             </div>
             <div className='pt-10'>
             <p className="text-xl text-gray-600 text-center">
-             You can exchange your browsing data for gigs, deals, rewards and $KLEO tokens. <br/>
-             <b>All you have to do is install an extension. </b> 
+             We allow you to localise all your data and share proof with third party applications. <br/>
+             <b>Don't trade your privacy. It is your <s>digital</s> identity.</b> 
             </p>
             </div>
             
@@ -55,7 +55,7 @@ function HeroHome() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
             </svg>
-              <span>Tell me How</span>
+              <span>Why should I care?</span>
             </button>
 
               </div>

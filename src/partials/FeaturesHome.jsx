@@ -46,10 +46,13 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Get paid for tasks!</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">
+                      Share what they need and block everything else! 
+                      </div>
                     <div className="text-gray-600">
-                      Based on your browsing history, we recommend you some gigs specific to you work expertise. 
-                      <br/><b>Completing those gigs then gives you $KLEO tokens.</b>
+                      Based on what the website needs from your data pocket,  
+                      you can decide to give permissions of your data when the extension requests so.  
+                      <br/>
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
@@ -64,10 +67,12 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Personalised Deals & Vouchers</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">
+                      Connect pseudo anonymously with folks having similar data pockets!
+                      </div>
                     <div className="text-gray-600">
-                    Based on your browsing history,we provide you with personalised deals and vouchers. <br/>
-                      <b>Redeeming these vouchers then gives you $KLEO tokens.</b>
+                    We connect you psuedo anonymously with other folks who have similar overall data pocket or 
+                    have similar sections of data pockets as you. 
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
@@ -82,10 +87,12 @@ function FeaturesHome() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Matching you with right communities</div>
+                    <div className="font-bold leading-snug tracking-tight mb-1">
+                      Earn tokens based on your digital twin. 
+                    </div>
                     <div className="text-gray-600">
-                      Based on your browsing history, we recommend you communities to join. 
-                      <br/> <b>Joining these communities then gives you $KLEO tokens.</b> </div>
+                      Send your data pocket to work, 
+                      we have created a marketplace for you to browse the internet from other person's perspective. </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
