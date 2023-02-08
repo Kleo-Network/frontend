@@ -35,33 +35,32 @@ function HeroHome() {
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
           {/* Section header */}
-          <div className="text-center pb-12 md:pt-30 md:pb-16">
-            <div className='pt-20'>
-            <h3 className="text-5xl md:text-5xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
-              
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"> $KLEO: </span>Data Economy of the future!
-            </h3>
-            </div>
-            <div className='pt-10'>
-            <p className="text-xl text-gray-600 text-center">
-             We allow you to localise all your data and share proof with third party applications. <br/>
-             <b>Don't trade your privacy. It is your <s>digital</s> identity.</b> 
-            </p>
-            </div>
-            
-            <div className='pt-20'>
-            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
-            <button onClick={() => handleClickNav("third")} class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 px-7 rounded-full inline-flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <div className="text-center pb-12 md:pb-16">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out"> Performance
+and  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"> privacy. </span>
+ <br/>No tradeoffs
+</h1>
+            <div className="max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
+                We allow you to localise all your data and share just a limited proof with third party applications.
+No more middlemen for your data. <b>Be in control</b></p>
+              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
+                <div>
+                  <a className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0" href="#0">Install Extension</a>
+                </div>
+                <div>
+                  <a onClick={() => handleClickNav("third")} className="btn text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4" href="#0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3" />
             </svg>
-              <span>Why should I care?</span>
-            </button>
-
+                    Learn more</a>
+                </div>
               </div>
-
             </div>
           </div>
+
+
+         
 
         </div>
 

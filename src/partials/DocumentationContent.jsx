@@ -1,90 +1,123 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import DocsImage01 from '../images/docs-image-01.png';
 import DocsImage02 from '../images/docs-image-02.png';
+import { Link } from 'react-router-dom';
 
-function DocumentationContent() {
+const DocumentationContent = ({step, setStep})  => {
   return (
     <div className="md:grow">
 
       <div className="text-lg text-gray-600">
-        <h2 className="h2 text-gray-900 mb-4">Introduction to Simple</h2>
+        <h2 className="h2 text-gray-900 mb-4">Requirements</h2>
         <p className="mb-8">
-          Aenean sed adipiscing diam donec <strong className="font-medium text-gray-900">adipiscing tristique risus</strong> nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. <strong className="font-medium text-gray-900">Morbi tristique senectus</strong> et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+          You can list down exactly what you need from your users 
+          in order to make their experience better on your website. 
+          <strong className="font-medium text-gray-900"> Don't be greedy, ask for what you really need. </strong>
         </p>
-        <h3 id="installation" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>Installation</h3>
-        <p className="mb-8">
-          Sit amet cursus sit amet dictum sit amet. Mattis pellentesque id nibh tortor id nulla aliquet porttitor lacus luctus accumsan, tortor posuere pellentesque habitant morbi tristique senectus et netus. Lacinia quis vel eros donec ac odio tempor duis ut diam quam nulla. Tellus orci ac auctor augue mauris augue.
-        </p>
-        <figure className="mb-8">
-          <img className="w-full rounded" src={DocsImage01} width="768" height="390" alt="Docs 01" />
-        </figure>
-        <p className="mb-8">
-          Sit amet cursus sit amet dictum sit amet mattis pellentesque id nibh tortor id, nulla aliquet porttitor lacus luctus accumsan tortor posuere. <strong className="font-medium text-gray-900">Pellentesque habitant morbi</strong> tristique senectus et netus, lacinia quis vel eros donec ac odio tempor. Duis ut diam quam nulla tellus orci ac auctor augue mauris augue.
-        </p>
+
+    {step == "personal" && (
+      <>
+      
+      <h3 id="installation" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>Personal Information</h3>
+        
+        <div className="max-w-lg mx-auto mb-5">
+                <form>
+
+
+                <h3 class="mb-4 font-semibold text-gray-900 dark:text-gray-900">Check What you need</h3>
+<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="vue-checkbox-list" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="vue-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">First Name</label>
+        </div>
+    </li>
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="react-checkbox-list" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="react-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Last Name</label>
+        </div>
+    </li>
+   
+</ul>
+<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="email" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="email" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+        </div>
+    </li>
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="country" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="country" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Country</label>
+        </div>
+    </li>
+   
+</ul>
+<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="age" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="age" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Age</label>
+        </div>
+    </li>
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="kyced" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="kyced" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">KYC completed</label>
+        </div>
+    </li>
+   
+</ul>
+<ul class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="plus" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="plus" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Adult (18+)?</label>
+        </div>
+    </li>
+    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+        <div class="flex items-center pl-3">
+            <input id="Gender" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+            <label for="Gender" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gender</label>
+        </div>
+    </li>
+   
+</ul>               
+                </form>
+               
+                
+              </div>
+
+        
         <p className="flex items-center text-base px-3 py-4 text-gray-800 bg-blue-100 border border-blue-200 rounded mb-8">
           <svg className="w-4 h-4 fill-current text-blue-500 shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm2.629 11.618L8 10.236l-2.629 1.382.5-2.927-2.124-2.073 2.939-.427L8 3.528l1.314 2.663 2.939.427-2.126 2.073.502 2.927z" fill="#338CF5" fillRule="nonzero" />
           </svg>
-          <span>Check out the <a className="text-blue-600 hover:underline" href="#0">Terms and license page</a> to know more about our license.</span>
+          <span>We <a className="text-blue-600 hover:underline" href="#0">review (criteria)</a> requested information and make user aware of your trustworthy rapport.</span>
         </p>
-        <h3 id="quick" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Quick start</h3>
+        <div className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3">
+                      <button onClick={() => setStep("browsing")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Browsing Data</button>
+                    </div>
+        </div>
+      </>
+    )}
+
+    {step == "browsing" && (
+
+      <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Browsing History</h3>
+    )}
+
+
+    {step == "embed" && (
+      <>
         <h4 className="h4 text-gray-900 mb-4">Customising settings</h4>
-        <p className="mb-8">
-          Orci ac auctor augue mauris augue neque gravida in sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis senectus et <a className="text-gray-900 underline" href="#0">netus et malesuada fames</a> ut faucibus pulvinar elementum integer pellentesque habitant morbi.
-        </p>
-        <figure className="mb-8">
-          <img className="w-full rounded" src={DocsImage02} width="768" height="390" alt="Docs 02" />
-        </figure>
-        <p className="mb-8">
-          Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
-        </p>
-        <p className="flex items-center text-base px-3 py-4 text-gray-800 bg-blue-100 border border-blue-200 rounded mb-8">
-          <svg className="w-4 h-4 fill-current text-blue-500 shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm2.629 11.618L8 10.236l-2.629 1.382.5-2.927-2.124-2.073 2.939-.427L8 3.528l1.314 2.663 2.939.427-2.126 2.073.502 2.927z" fill="#338CF5" fillRule="nonzero" />
-          </svg>
-          <span>Learn more about <a className="text-blue-600 hover:underline" href="#0">Customising settings</a>.</span>
-        </p>
-        <h3 id="folder" className="h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Folder content</h3>
-        <p className="mb-8">
-          Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
-        </p>
-        <p className="mb-8">
-          Orci ac auctor augue mauris augue neque gravida in sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis senectus et <a className="text-gray-900 underline" href="#0">netus et malesuada fames</a> ut faucibus pulvinar elementum integer pellentesque habitant morbi.
-        </p>
-        <p>
-          For more information on what to do next, we recommend the following articles:
-        </p>
-      </div>
-
-      {/* Related content */}
-      <div className="mt-8">
-        <h3 className="h3 mb-8">Related</h3>
-        <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
-          <div>
-            <div className="text-normal font-medium mb-1">Folder components</div>
-            <div className="text-sm text-gray-600">Learn more about orci ac auctor augue mauris augue neque gravida.</div>
-          </div>
-          <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-          </svg>
-        </a>
-        <a className="flex justify-between items-center p-4 rounded border border-gray-200 transition duration-300 ease-in-out bg-white shadow-md hover:shadow-lg mb-4" href="#0">
-          <div>
-            <div className="text-normal font-medium mb-1">Deploy hooks</div>
-            <div className="text-sm text-gray-600">Learn more about risus nullam eget felis eget nunc.</div>
-          </div>
-          <svg className="w-4 h-4 fill-current text-blue-600 shrink-0 ml-6" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-          </svg>
-        </a>
-        <hr className="w-full h-px pt-px bg-gray-200 border-0 mt-8" />
-      </div>
-
-      {/* Feedback */}
-      <div className="pt-6">
+        <div className="pt-6">
         <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
-          <div className="font-medium mb-4 md:mb-0">Was this page helpful?</div>
+          <div className="font-medium mb-4 md:mb-0">Did you find this form easy to fill?</div>
           <ul className="inline-flex justify-center -m-2">
             <li className="p-2">
               <a href="#0" title="No, at all">
@@ -127,8 +160,19 @@ function DocumentationContent() {
             </li>
           </ul>
         </div>
-        <hr className="w-full h-px pt-px bg-gray-200 border-0 mt-6" />
+      
       </div>
+</>
+    )}
+        
+       
+        
+      </div>
+
+      {/* Related content */}
+     
+      {/* Feedback */}
+
 
     </div>
   );

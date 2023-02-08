@@ -16,7 +16,8 @@ function FeaturesBlocks() {
             <h2 className="h2 mb-4">What in world is data pocket??</h2>
             <p className="text-xl text-gray-600">
               Data pocket is your personal data curated from different platforms - 
-              your browsing history, your 
+              your browsing history, your personal information, your transaction history. 
+              Everything that you can think of!   
             </p>
           </div>
 

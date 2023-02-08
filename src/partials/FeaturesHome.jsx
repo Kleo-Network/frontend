@@ -47,11 +47,12 @@ function FeaturesHome() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Share what they need and block everything else! 
+                    Control your data destiny
                       </div>
                     <div className="text-gray-600">
-                      Based on what the website needs from your data pocket,  
-                      you can decide to give permissions of your data when the extension requests so.  
+                    Control how much and what data you share with websites. 
+                    Enable them to enhance your experience but not at the cost of privacy.  
+ 
                       <br/>
                     </div>
                   </div>
@@ -68,11 +69,11 @@ function FeaturesHome() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Connect pseudo anonymously with folks having similar data pockets!
+                      Monetize your data!
                       </div>
                     <div className="text-gray-600">
-                    We connect you psuedo anonymously with other folks who have similar overall data pocket or 
-                    have similar sections of data pockets as you. 
+                    Facebook & Google together made approximately $137 per user last year by making you a product. 
+                    It's time to take back control. 
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow shrink-0 ml-3">
@@ -88,7 +89,7 @@ function FeaturesHome() {
                 >
                   <div>
                     <div className="font-bold leading-snug tracking-tight mb-1">
-                      Earn tokens based on your digital twin. 
+                      First party data!
                     </div>
                     <div className="text-gray-600">
                       Send your data pocket to work, 
