@@ -4,126 +4,9 @@ import Header from '../partials/Header';
 import DocumentationContent from '../partials/DocumentationContent';
 import Footer from '../partials/Footer';
 
-const Tier = ({ index, form, setTiers, tiers }) => {
-  return (
-    <div>
-      <div style={{ textAlign: "left", margin: "0px 0px 32px 0px" }}>
-        {tiers.length > 1 && (
-          <div style={{ textAlign: "right" }}>
-            <Button
-              tag="a"
-              color="primary"
-              onClick={() => {
-                setTiers(tiers.filter((el, i) => i !== index));
-              }}
-            >
-              -
-            </Button>
-          </div>
-        )}
-        Tier Name
-        <Input
-          id={`name_${index}`}
-          defaultValue={form.name}
-          type="name"
-          label="Subscribe"
-          onChange={(e) => {
-            const tempState = [...tiers];
-            tempState[index]["name"] = e.target.value;
-            setTiers(tempState);
-          }}
-          labelHidden
-          hasIcon="right"
-          placeholder="Tier Name"
-        ></Input>
-        <div style={{ display: "grid", gridTemplateColumns: "6fr 6fr" }}>
-          <div>
-            Subsriber Count From
-            <Input
-              id={`fromSub_${index}`}
-              defaultValue={form.fromSub}
-              type="number"
-              size="50"
-              label="Subscribe"
-              labelHidden
-              hasIcon="right"
-              placeholder="Your best email"
-              onChange={(e) => {
-                const tempState = [...tiers];
-                tempState[index]["fromSub"] = e.target.value;
-                setTiers(tempState);
-              }}
-            ></Input>
-          </div>
-          <div>
-            Subsriber Count To
-            <Input
-              id={`toSub_${index}`}
-              type="number"
-              size="50"
-              label="Subscribe"
-              labelHidden
-              hasIcon="right"
-              placeholder="Your best email"
-              onChange={(e) => {
-                const tempState = [...tiers];
-                tempState[index]["toSub"] = e.target.value;
-                setTiers(tempState);
-              }}
-            ></Input>
-          </div>
-        </div>
-        Benefits Tier Markdown
-        <Input
-          id={`aboutM_${index}`}
-          type="textarea"
-          rows="10"
-          label="Benefits"
-          labelHidden
-          hasIcon="right"
-          placeholder="Benefits of joining this tier"
-          onChange={(e) => {
-            const tempState = [...tiers];
-            tempState[index]["aboutM"] = e.target.value;
-            setTiers(tempState);
-          }}
-        ></Input>
-        Exclusive Tier Markdown
-        <Input
-          id={`exclusiveM_${index}`}
-          type="textarea"
-          rows="10"
-          label="exclusive"
-          labelHidden
-          hasIcon="right"
-          placeholder="Exclusive Content shown to this tier"
-          onChange={(e) => {
-            const tempState = [...tiers];
-            tempState[index]["exclusiveM"] = e.target.value;
-            setTiers(tempState);
-          }}
-        ></Input>
-        NFT Link
-        <Input
-          id={`NFT_${index}`}
-          type="email"
-          label="Subscribe"
-          labelHidden
-          hasIcon="right"
-          placeholder="Link for NFT Token"
-          onChange={(e) => {
-            const tempState = [...tiers];
-            tempState[index]["NFT"] = e.target.value;
-            setTiers(tempState);
-          }}
-        ></Input>
-      </div>
-    </div>
-  );
-};
+
 
 const Documentation = () => {
-
 
   const personalInformation = {
     firstName: "",
@@ -133,14 +16,15 @@ const Documentation = () => {
     interests: ""
   };
   const browsingHistory = {
-    keyword: "",
-    x: "", // x times
-    y: "" // y days
+    keyword: "new",
+    x: 1, // x times
+    y: 1 // y days
   };
 
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
   const [active, setActive] = useState("personal");
+  const [browsingTiers, setBrowsingTiers] = useState([browsingHistory]);
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -227,15 +111,13 @@ const Documentation = () => {
                           {active == "browsing" && (<ul
                             className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                           >
-                            <li className="py-1">
-                              <a className="text-gray-600 hover:underline" href="#installation">Index ReactJS</a>
+                            {browsingTiers.map((form, index) => (
+                              <li key={index} className="py-1">
+                             
+                              <a className="text-gray-600 hover:underline">Index {form.keyword}</a>
                             </li>
-                            <li className="py-1">
-                              <a className="text-gray-600 hover:underline" href="#quick">Age</a>
-                            </li>
-                            <li className="py-1">
-                              <a className="text-gray-600 hover:underline" href="#folder">Folder content</a>
-                            </li>
+                            ))}
+                            
                           </ul>)
                           }
                           
@@ -260,7 +142,7 @@ const Documentation = () => {
                 </aside>
 
                 {/* Page container */}
-                <DocumentationContent step={active} setStep={setActive} />
+                <DocumentationContent emptyState={browsingHistory} key={1} step={active} setStep={setActive} browsingTiers={browsingTiers} setBrowsingTiers={setBrowsingTiers}  />
 
               </div>
 

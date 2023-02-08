@@ -4,7 +4,7 @@ import DocsImage01 from '../images/docs-image-01.png';
 import DocsImage02 from '../images/docs-image-02.png';
 import { Link } from 'react-router-dom';
 
-const DocumentationContent = ({step, setStep})  => {
+const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, emptyState})  => {
   return (
     <div className="md:grow">
 
@@ -107,14 +107,120 @@ const DocumentationContent = ({step, setStep})  => {
     )}
 
     {step == "browsing" && (
-
+      <>
       <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Browsing History</h3>
+      {browsingTiers.map((form, index) => (
+        
+        <div key={index}>
+        
+        
+        <p className="text-lg text-gray-900">
+          lookup <code className="text-red-900">{form.keyword}</code> in browsing history, indexed more than <code className="text-red-900">{form.x} times</code>, last <code className="text-red-900">{form.y} days</code> 
+        </p>
+        
+          {browsingTiers.length > 1 && (
+            <div style={{ textAlign: "right" }}>
+              <button
+                tag="a"
+                className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                onClick={() => {
+                  setBrowsingTiers(browsingTiers.filter((el, i) => i !== index));
+                }}
+              >
+                -
+              </button>
+            </div>
+          )}
+           
+        
+          Keyword
+          <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id={`keyword_${index}`}
+          defaultValue={form.keyword}
+          type="text"
+          label="Keyword"
+          onChange={(e) => {
+            const tempState = [...browsingTiers];
+            tempState[index]["keyword"] = e.target.value;
+            setBrowsingTiers(tempState);
+          }}
+          labelHidden
+          hasIcon="right"
+          placeholder="keyword"
+        ></input>
+
+          Number of times 
+          <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id={`keyword_${index}`}
+          defaultValue={form.x}
+          type="text"
+          label="Keyword"
+          onChange={(e) => {
+            const tempState = [...browsingTiers];
+            tempState[index]["x"] = e.target.value;
+            setBrowsingTiers(tempState);
+          }}
+          labelHidden
+          hasIcon="right"
+          placeholder="keyword"
+        ></input>
+
+          Last number of days
+          <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id={`keyword_${index}`}
+          defaultValue={form.y}
+          type="text"
+          label="Keyword"
+          onChange={(e) => {
+            const tempState = [...browsingTiers];
+            tempState[index]["y"] = e.target.value;
+            setBrowsingTiers(tempState);
+          }}
+          labelHidden
+          hasIcon="right"
+          placeholder="keyword"
+        ></input>
+      </div>
+      ))}
+
+<div style={{ textAlign: "right" }} className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3">
+                      <button onClick={() => {
+                    const nextState = [...browsingTiers];
+                    nextState.push(emptyState);
+                    setBrowsingTiers(nextState);
+                  }}                 className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                  > Add Indexer</button>
+                   
+                   
+                    </div>
+        </div>
+
+        <div className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3">
+                      <button onClick={() => setStep("embed")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Embed Code</button>
+                    </div>
+        </div>
+
+      </>
     )}
 
 
     {step == "embed" && (
       <>
-        <h4 className="h4 text-gray-900 mb-4">Customising settings</h4>
+        <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Embed Code</h3>
+        <code id="code">          
+          &lt;div id="data"&gt;
+           &lt;button "" your custom class "" /&gt; 
+           &lt;/div&gt;
+         </code>
+        <h4 className="h4 text-gray-900 mb-4">How to catch data?</h4>
+        <p>
+          You can easily catch the data by the user, using $(div) options or by using postback message channels from the chrome extension. 
+        </p>
         <div className="pt-6">
         <div className="flex flex-col text-center sm:text-left sm:flex-row sm:justify-between sm:items-center">
           <div className="font-medium mb-4 md:mb-0">Did you find this form easy to fill?</div>
