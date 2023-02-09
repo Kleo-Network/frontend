@@ -201,11 +201,22 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
 
         <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button onClick={() => setStep("embed")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Embed Code</button>
+                      <button onClick={() => setStep("payment")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Payment</button>
                     </div>
         </div>
 
       </>
+    )}
+
+    {step == "payment" && (
+      <div>
+        
+      <div className="flex flex-wrap -mx-3 mt-6">
+      <div className="w-full px-3">
+        <button onClick={() => setStep("embed")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Embed Code</button>
+      </div>
+      </div>
+</div>
     )}
 
 
