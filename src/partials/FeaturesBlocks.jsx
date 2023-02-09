@@ -46,9 +46,9 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"> Surveys </h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1"> Browsing History </h4>
               <p className="text-gray-600 text-center">
-               Take part in surveys of your choice, in exchange for your data. 
+               Our extension saves locally what you are looking for.  
               
               </p>
             </div>
@@ -65,9 +65,9 @@ function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Research</h4>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Personal Information</h4>
               <p className="text-gray-600 text-center">
-                Take part in helping advance research projects of your choice.</p>
+                Basic information such as name, email, location, age, country, KYC </p>
             </div>
 
             {/* 6th item */}
@@ -82,7 +82,7 @@ function FeaturesBlocks() {
                 </g>
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">Communities</h4>
-              <p className="text-gray-600 text-center">Share selective data with communities, so they can server you better.</p>
+              <p className="text-gray-600 text-center">We help you know of communities based on your browsing history!</p>
             </div>
 
           </div>
