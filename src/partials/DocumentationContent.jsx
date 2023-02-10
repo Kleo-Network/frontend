@@ -203,6 +203,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
                     <div className="w-full px-3">
                       <button onClick={() => setStep("payment")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Payment</button>
                     </div>
+
         </div>
 
       </>
@@ -213,6 +214,21 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
         
       <div className="flex flex-wrap -mx-3 mt-6">
       <div className="w-full px-3">
+      $USD per user (Min Cap: 0.02$)
+      <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          labelHidden
+          hasIcon="right"
+          placeholder="Price in USD"
+        ></input>
+        <div style={{ textAlign: "right" }} className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3 mb-5">
+                      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                  > Pay </button>
+                   
+                   
+                    </div>
+                    </div>
         <button onClick={() => setStep("embed")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Embed Code</button>
       </div>
       </div>
@@ -224,8 +240,9 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
       <>
         <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Embed Code</h3>
         <code id="code">          
-          &lt;div id="data"&gt;
+          &lt;div id="{crypto.randomUUID()}"&gt; <br/>
            &lt;button "" your custom class "" /&gt; 
+           <br/>
            &lt;/div&gt;
          </code>
         <h4 className="h4 text-gray-900 mb-4">How to catch data?</h4>

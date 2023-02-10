@@ -21,11 +21,11 @@ function TutorialsList() {
   return (
     <section className="relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+        <div>
 
           {/* Page header */}
-          <div className="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-            <h1 className="h1">Information Previliges Organisations!</h1>
+          <div className="max-w-3xl pb-6 md:pb-6 text-center md:text-left">
+            <h1 className="h1">Summary</h1>
           </div>
 
           {/* Section tags */}
@@ -44,7 +44,7 @@ function TutorialsList() {
                 <a className="text-gray-800 hover:underline" href="#0">Daily Brands</a>
               </li>
               <li className="mx-5 my-1">
-                <a className="text-gray-800 hover:underline" href="#0">Survival</a>
+                <a className="text-gray-800 hover:underline" href="#0">NFTs</a>
               </li>
             </ul>
           </div>
@@ -69,21 +69,22 @@ function TutorialsList() {
                         <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Jobs</a>
                       </li>
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Coding</a>
+                        <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">3.5 star rated</a>
                       </li>
                       <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">3 Keyword Matches</span>
+                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">320 reviews</span>
                       </li>
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
-                    <Link to="/blog-post" className="hover:underline">Are you a React Expert?</Link>
+                    <Link to="/blog-post" className="hover:underline">Talk to React Expert</Link>
                   </h3>
                 </header>
                 <p className="text-gray-600 grow">
-                  - React JS <br/> 
-                  - Frontend Development <br/>
-                  - stackoverflow.com REACT.JS</p>
+                  Hey, kleo network ecosystem website 'Upscool' allows you to talk to a react expert for just $40 KLEO / hour. 
+                  <br/><br/>
+                  Upscool is professional mentor tool that allows you to upskill yourself while earning a stipend. It gives the necessary tools / resources along with connecting you to a professional which can monitor and help you with tasks. 
+                </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
@@ -113,11 +114,9 @@ function TutorialsList() {
                   <div className="mb-3">
                     <ul className="flex flex-wrap text-xs font-medium -m-1">
                       <li className="m-1">
-                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Gaming</a>
+                        <a className="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">3403 members</a>
                       </li>
-                      <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">2 Keyword Matches</span>
-                      </li>
+                      
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
@@ -125,8 +124,8 @@ function TutorialsList() {
                   </h3>
                 </header>
                 <p className="text-gray-600 grow">
-                  - chess <br/>
-                  - play chess
+                Join the CHESS DAO with just +35 KLEO tokens! <br/><br/>
+                CHESS DAO is for beginner players which allows you to learn openings, and match you with other beginners to help you learn better.  
                   </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
@@ -164,16 +163,11 @@ function TutorialsList() {
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
-                    <Link to="/blog-post" className="hover:underline">Would you be interested in buying Benji Bananas NFT?</Link>
+                    <Link to="/blog-post" className="hover:underline"> Buy Discounted play-to-earn NFT from Benji Bananas!</Link>
                   </h3>
                 </header>
                 <p className="text-gray-600 grow">
-                  - Opensea.io <br/>
-                  - Alien Worlds <br/> 
-                  - Play to Earn NFT Games <br/> 
-                  - Benji Bananas <br/> 
-                  - $PRIMATE token <br/>
-                  - $APE token </p>
+                  Buy entry level NFT from Benji Bananas at 1000 $KLEO tokens. <br/><br/>  </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
