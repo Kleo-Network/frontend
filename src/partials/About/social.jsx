@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TutorialsList from '../TutorialsList';
+import { FacebookLoginButton, GoogleLoginButton, GithubLoginButton, TwitterLoginButton, AmazonLoginButton, InstagramLoginButton } from "react-social-login-buttons";
 
 function Tutorials() {
   return (
@@ -12,8 +12,20 @@ function Tutorials() {
       {/*  Page content */}
       <main className="grow">
 
+      <FacebookLoginButton onClick={() => alert("Hello")} />
+
+      <GoogleLoginButton onClick={() => alert("Hello")} />
+
+      <GithubLoginButton onClick={() => alert("Hello")} />
+
+      <TwitterLoginButton onClick={() => alert("Hello")} />
+
+      <AmazonLoginButton onClick={() => alert("Hello")} />
+
+      <InstagramLoginButton onClick={() => alert("Hello")} />
+
         {/*  Page sections */}
-        <TutorialsList />
+       
         
 
       </main>

@@ -13,7 +13,7 @@ function Tutorials() {
       <main className="grow">
 
         {/*  Page sections */}
-        <TutorialsList />
+       <h1>Earnings</h1>
         
 
       </main>

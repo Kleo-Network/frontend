@@ -157,9 +157,6 @@ function TutorialsList() {
                       <li className="m-1">
                         <a className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Play to Earn Games</a>
                       </li>
-                      <li className="m-1">
-                        <span className="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">6 Keyword Matches</span>
-                      </li>
                     </ul>
                   </div>
                   <h3 className="text-xl font-bold leading-snug tracking-tight mb-2">
@@ -167,7 +164,9 @@ function TutorialsList() {
                   </h3>
                 </header>
                 <p className="text-gray-600 grow">
-                  Buy entry level NFT from Benji Bananas at 1000 $KLEO tokens. <br/><br/>  </p>
+                  Buy entry level NFT from Benji Bananas at 1000 $KLEO tokens. <br/><br/>
+                  
+                  Benji Bananas is a fun NFT play to earn skill based game which allows you to play Benji! </p>
                 <footer className="text-sm flex items-center mt-4">
                   <div className="flex shrink-0 mr-3">
                     <a className="relative" href="#0">
