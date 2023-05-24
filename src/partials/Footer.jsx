@@ -27,6 +27,9 @@ function Footer() {
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h6 className="text-gray-800 font-medium mb-2">Articles</h6>
             <ul className="text-sm">
+               <li className="mb-2">
+                <a target="_blank" href="https://kleo-network.notion.site/An-Interview-With-The-Founders-What-is-Kleo-cfea1a9d68d74171af9e391ef2922b3a" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">What is Kleo.network</a>
+              </li>
               <li className="mb-2">
                 <a target="_blank" href="https://medium.com/@vaibhavgeek/web3-also-known-as-web-3-0-104ee3cc12c9" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Data Economy</a>
               </li>
