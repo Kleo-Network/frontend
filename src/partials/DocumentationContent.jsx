@@ -223,8 +223,27 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
         ></input>
         <div style={{ textAlign: "right" }} className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3 mb-5">
+                     
                       <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
                   > Pay </button>
+                   
+                   
+                    </div>
+                    </div>
+      </div>
+      <div className="w-full px-3">
+     Intent
+      <textarea
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          labelHidden
+          hasIcon="right"
+          placeholder="Intent"
+        ></textarea>
+        <div style={{ textAlign: "right" }} className="flex flex-wrap -mx-3 mt-6">
+                    <div className="w-full px-3 mb-5">
+                    
+                      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                  > Submit </button>
                    
                    
                     </div>
