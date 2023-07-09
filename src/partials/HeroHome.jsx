@@ -78,27 +78,20 @@ function HeroHome() {
           {/* Section header */}
           <div className="text-center pb-12 md:pb-16">
             <h1
-              className="text-4xl md:text-[4.5rem] font-extrabold leading-tighter tracking-tighter mb-4"
+              className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
               data-aos="zoom-y-out"
             >
-              <Balancer>
-                We are trustless way to create and{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-                  personalized experiences.{" "}
-                </span>
-              </Balancer>
+              {" "}
+              Performance and{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+                {" "}
+                privacy.{" "}
+              </span>
             </h1>
-
-            <div className="max-w-3xl mx-auto">
-              <p
-                className="text-xl lg:text-2xl text-gray-600 mb-8"
-                data-aos="zoom-y-out"
-                data-aos-delay="150"
-              >
-                We allow you to localise all your data and share just a limited
-                proof with third party applications.
-                <br /> No more middlemen for your data. <b>Be in control!</b>
-              </p>
+            <h3 className="text-2xl lg:text-[2.5rem] font-medium text-gray-600">
+              We are trustless way to create personalized experiences.{" "}
+            </h3>
+            <div className="max-w-3xl mx-auto mt-12">
               <div
                 className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
                 data-aos="zoom-y-out"
@@ -140,8 +133,9 @@ function HeroHome() {
           </div>
           <div className="z-10 my-10 flex w-full">
             <img
-              src="/kleo-cookie.gif"
+              src="/nft-kleo-final.gif"
               className="rounded-3xl shadow-xl w-full h-full"
+              alt=""
             />
           </div>
         </div>
