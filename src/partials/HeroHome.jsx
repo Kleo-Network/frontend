@@ -89,7 +89,7 @@ function HeroHome() {
               </span>
             </h1>
             <h3 className="text-2xl lg:text-[2.5rem] font-medium text-gray-600">
-              We are trustless way to create personalized experiences.{" "}
+              We are a trustless way to create personalized experiences.{" "}
             </h3>
             <div className="max-w-3xl mx-auto mt-12">
               <div
