@@ -1,112 +1,53 @@
-import React, { useState } from 'react';
-
-import DocsImage01 from '../images/docs-image-01.png';
-import DocsImage02 from '../images/docs-image-02.png';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { DocumentationOptions, DocumentationOptionsText } from '../utils/constants';
+import CookieManager from './CookieManager/CookieManager';
 
 const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, emptyState})  => {
   return (
     <div className="md:grow">
 
       <div className="text-lg text-gray-600">
-        <h2 className="h2 text-gray-900 mb-4">Requirements</h2>
-        <p className="mb-8">
-          You can list down exactly what you need from your users 
-          in order to make their experience better on your website. 
-          <strong className="font-medium text-gray-900"> Don't be greedy, ask for what you really need. </strong>
-        </p>
+            
+      <ol className="flex items-center w-full space-x-2 text-medium font-medium text-center text-gray-500 bg-white rounded-lg">
+          <li className={`flex items-center ${step === DocumentationOptions.BROWSING ? 'text-blue-600': 'text-gray-600'}`} onClick={()=>setStep(DocumentationOptions.BROWSING)}>
+              <span className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.BROWSING ? 'border-blue-600': 'border-gray-600'} rounded-full shrink-0`}>
+                  1
+              </span>
+              {DocumentationOptionsText.BROWSING}
+              <svg className="w-3 h-3 ml-2 sm:ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 9 4-4-4-4M1 9l4-4-4-4"/>
+              </svg>
+          </li>
+          <li className={`flex items-center ${step === DocumentationOptions.COOKIE_MANAGER ? 'text-blue-600': 'text-gray-600'}`} onClick={()=>setStep(DocumentationOptions.COOKIE_MANAGER)}>
+              <span className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.COOKIE_MANAGER ? 'border-blue-500': 'border-gray-500'} rounded-full shrink-0`}>
+                  2
+              </span>
+              {DocumentationOptionsText.COOKIE_MANAGER}
+              <svg className="w-3 h-3 ml-2 sm:ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 9 4-4-4-4M1 9l4-4-4-4"/>
+              </svg>
+          </li>
+          <li className={`flex items-center ${step === DocumentationOptions.PAYMENT ? 'text-blue-600': 'text-gray-600'}`} onClick={()=>setStep(DocumentationOptions.PAYMENT)}>
+              <span className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.PAYMENT ? 'border-blue-500': 'border-gray-500'} rounded-full shrink-0`}>
+                  3
+              </span>
+              {DocumentationOptionsText.PAYMENT}
+              <svg className="w-3 h-3 ml-2 sm:ml-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 9 4-4-4-4M1 9l4-4-4-4"/>
+              </svg>
+          </li>
+          <li className={`flex items-center ${step === DocumentationOptions.EMBED ? 'text-blue-600': 'text-gray-600'}`}>
+              <span className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.EMBED ? 'border-blue-500': 'border-gray-500'} rounded-full shrink-0`}>
+                  4
+              </span>
+              {DocumentationOptionsText.EMBED}
+          </li>
+      </ol>
 
-    {step == "personal" && (
-      <>
-      
-      <h3 id="installation" className="h3 text-gray-900 mb-4" style={{ scrollMarginTop: '100px' }}>Personal Information</h3>
-        
-        <div className="max-w-lg mx-auto mb-5">
-                <form>
+      <hr className='my-3'/>
 
 
-                <h3 class="mb-4 font-semibold text-gray-900 dark:text-gray-900">Check What you need</h3>
-<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="vue-checkbox-list" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="vue-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">First Name</label>
-        </div>
-    </li>
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="react-checkbox-list" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="react-checkbox-list" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Last Name</label>
-        </div>
-    </li>
-   
-</ul>
-<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="email" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="email" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
-        </div>
-    </li>
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="country" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="country" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Country</label>
-        </div>
-    </li>
-   
-</ul>
-<ul class="mb-5 items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="age" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="age" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Age</label>
-        </div>
-    </li>
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="kyced" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="kyced" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">KYC completed</label>
-        </div>
-    </li>
-   
-</ul>
-<ul class="items-center w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:flex dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="plus" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="plus" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Adult (18+)?</label>
-        </div>
-    </li>
-    <li class="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
-        <div class="flex items-center pl-3">
-            <input id="Gender" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
-            <label for="Gender" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gender</label>
-        </div>
-    </li>
-   
-</ul>               
-                </form>
-               
-                
-              </div>
-
-        
-        <p className="flex items-center text-base px-3 py-4 text-gray-800 bg-blue-100 border border-blue-200 rounded mb-8">
-          <svg className="w-4 h-4 fill-current text-blue-500 shrink-0 mr-2" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 0a8 8 0 100 16A8 8 0 008 0zm2.629 11.618L8 10.236l-2.629 1.382.5-2.927-2.124-2.073 2.939-.427L8 3.528l1.314 2.663 2.939.427-2.126 2.073.502 2.927z" fill="#338CF5" fillRule="nonzero" />
-          </svg>
-          <span>We <a className="text-blue-600 hover:underline" href="#0">review (criteria)</a> requested information and make user aware of your trustworthy rapport.</span>
-        </p>
-        <div className="flex flex-wrap -mx-3 mt-6">
-                    <div className="w-full px-3">
-                      <button onClick={() => setStep("browsing")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Browsing Data</button>
-                    </div>
-        </div>
-      </>
-    )}
-
-    {step == "browsing" && (
+    {step == DocumentationOptions.BROWSING && (
       <>
       <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Browsing History</h3>
       {browsingTiers.map((form, index) => (
@@ -135,7 +76,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
         
           Keyword
           <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           id={`keyword_${index}`}
           defaultValue={form.keyword}
           type="text"
@@ -152,7 +93,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
 
           Number of times 
           <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           id={`keyword_${index}`}
           defaultValue={form.x}
           type="text"
@@ -169,7 +110,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
 
           Last number of days
           <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           id={`keyword_${index}`}
           defaultValue={form.y}
           type="text"
@@ -201,7 +142,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
 
         <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button onClick={() => setStep("payment")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Payment</button>
+                      <button onClick={() => setStep(DocumentationOptions.COOKIE_MANAGER)} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; {DocumentationOptionsText.COOKIE_MANAGER}</button>
                     </div>
 
         </div>
@@ -209,14 +150,25 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
       </>
     )}
 
-    {step == "payment" && (
+{step == DocumentationOptions.COOKIE_MANAGER && (
+      <>
+        <CookieManager/>
+        <div className="flex flex-wrap -mx-3 mt-6">
+              <div className="w-full px-3">
+                <button onClick={() => setStep(DocumentationOptions.PAYMENT)} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; {DocumentationOptionsText.PAYMENT}</button>
+              </div>
+        </div> 
+      </>
+    )}
+
+    {step == DocumentationOptions.PAYMENT && (
       <div>
         
       <div className="flex flex-wrap -mx-3 mt-6">
       <div className="w-full px-3">
       $USD per user (Min Cap: 0.02$)
       <input
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           labelHidden
           hasIcon="right"
           placeholder="Price in USD"
@@ -234,7 +186,7 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
       <div className="w-full px-3">
      Intent
       <textarea
-          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
           labelHidden
           hasIcon="right"
           placeholder="Intent"
@@ -248,19 +200,19 @@ const DocumentationContent = ({step, setStep, browsingTiers, setBrowsingTiers, e
                    
                     </div>
                     </div>
-        <button onClick={() => setStep("embed")} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; Embed Code</button>
+        <button onClick={() => setStep(DocumentationOptions.EMBED)} className="btn text-white bg-blue-600 hover:bg-blue-700 w-full">Next &#62;&#62; {DocumentationOptionsText.EMBED}</button>
       </div>
       </div>
 </div>
     )}
 
 
-    {step == "embed" && (
+    {step == DocumentationOptions.EMBED && (
       <>
         <h3 id="quick" className="mt-5 h3 text-gray-900 mb-8" style={{ scrollMarginTop: '100px' }}>Embed Code</h3>
         <code id="code">          
           &lt;div id="{crypto.randomUUID()}"&gt; <br/>
-           &lt;button "" your custom class "" /&gt; 
+           &lt;button "" your custom className "" /&gt; 
            <br/>
            &lt;/div&gt;
          </code>

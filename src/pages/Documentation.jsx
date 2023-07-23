@@ -3,18 +3,9 @@ import React, { useState } from 'react';
 import Header from '../partials/Header';
 import DocumentationContent from '../partials/DocumentationContent';
 import Footer from '../partials/Footer';
-
-
+import { DocumentationOptions, DocumentationOptionsText } from '../utils/constants';
 
 const Documentation = () => {
-
-  const personalInformation = {
-    firstName: "",
-    lastName: "",
-    age: 0,
-    location: "",
-    interests: ""
-  };
   const browsingHistory = {
     keyword: "new",
     x: 1, // x times
@@ -23,7 +14,7 @@ const Documentation = () => {
 
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
-  const [active, setActive] = useState("personal");
+  const [active, setActive] = useState(DocumentationOptions.BROWSING);
   const [browsingTiers, setBrowsingTiers] = useState([browsingHistory]);
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -78,37 +69,25 @@ const Documentation = () => {
                     {/* Docs nav */}
                     <nav className={`md:block ${!sidebarNavOpen && 'hidden'}`}>
                       <ul className="font-medium -my-2">
-                        {/* 1st level */}
-                        <li className="py-2">
-                          <a className="flex items-center hover:underline" href="#introduction">
-                            <div className="flex items-center grow">
-                              <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 4H4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM12 10H1c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1zM15 16H4c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v2c0 .6-.4 1-1 1z" />
-                              </svg>
-                              <span class={active == "personal" ? "font-medium text-gray-900" : "font-medium text-gray-500"}>Personal Information</span>
-                            </div>
-                          </a>
-                        </li>
-
-                        <li className="py-2">
+                        <li className="py-2" onClick={()=>setActive(DocumentationOptions.BROWSING)}>
                           <a
                             className="flex items-center hover:underline"
                             href="#0"
                             
                             aria-expanded={sidebarLinkOpen}
                           >
-                            <div className="flex items-center grow">
+                            <div className="flex items-center">
                               <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 3.294L1.4 1.035C1.1.847.7.941.4 1.13c-.2.189-.4.471-.4.753v10.353c0 .377.2.753.6.847L7 15.718V3.294zM15.6 1.13c-.3-.189-.6-.189-.9-.095L9 3.295v12.423l6.4-2.542c.4-.188.6-.47.6-.847V1.882c0-.282-.2-.564-.4-.753z" />
                               </svg>
-                              <span class={active == "browsing" ? "font-medium text-gray-900" : "font-medium text-gray-500"}>Browsing History</span>
+                              <span class={active == DocumentationOptions.BROWSING ? "font-medium text-gray-900" : "font-medium text-gray-500"}>{DocumentationOptionsText.BROWSING}</span>
                             </div>
                             <svg className="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                               <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
                             </svg>
                           </a>
                           {/* 2nd level */}
-                          {active == "browsing" && (<ul
+                          {active == DocumentationOptions.BROWSING  && (<ul
                             className={`font-normal -mb-1 mt-1 ml-2 pl-5 border-l border-gray-300 ${!sidebarLinkOpen && 'hidden'}`}
                           >
                             {browsingTiers.map((form, index) => (
@@ -122,7 +101,22 @@ const Documentation = () => {
                           }
                           
                         </li>
-                        <li className="py-2">
+
+                          {/* Nav for COOKIE_MANAGER */}
+                        <li className="py-2"  onClick={()=>setActive(DocumentationOptions.COOKIE_MANAGER)}>
+                          <a className="flex items-center hover:underline" href="#cookieManager">
+                            <div className="flex items-center grow">
+                            <svg className="w-5 h-5 fill-current text-blue-600 mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                              <path d="M.3 89.5C.1 91.6 0 93.8 0 96V224 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64V224 96c0-35.3-28.7-64-64-64H64c-2.2 0-4.4 .1-6.5 .3c-9.2 .9-17.8 3.8-25.5 8.2C21.8 46.5 13.4 55.1 7.7 65.5c-3.9 7.3-6.5 15.4-7.4 24zM48 224H464l0 192c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16l0-192z"/>
+                            </svg>
+
+                              <span class={active == DocumentationOptions.COOKIE_MANAGER ? "font-medium text-gray-900" : "font-medium text-gray-500"}>{DocumentationOptionsText.COOKIE_MANAGER}</span>
+                            </div>
+                          </a>
+                        </li>
+
+                          {/* Nav for Payment */}
+                        <li className="py-2" onClick={()=>setActive(DocumentationOptions.PAYMENT)}>
                           <a className="flex items-center hover:underline" href="#introduction">
                             <div className="flex items-center grow">
                             <svg className="w-5 h-5 fill-current text-blue-600 mr-3 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -130,20 +124,19 @@ const Documentation = () => {
   <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clip-rule="evenodd" />
 </svg>
 
-                              <span class={active == "payment" ? "font-medium text-gray-900" : "font-medium text-gray-500"}>Payment</span>
+                              <span class={active == DocumentationOptions.PAYMENT ? "font-medium text-gray-900" : "font-medium text-gray-500"}>{DocumentationOptionsText.PAYMENT}</span>
                             </div>
                           </a>
                         </li>
                        
+                         {/* Nav for Embed */}
                         <li className="py-2">
-                          <a className="flex items-center hover:underline" href="#introduction">
                             <div className="flex items-center grow">
                               <svg className="w-4 h-4 fill-current text-blue-600 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6 9H1a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v7a1 1 0 01-1 1zM6 16H1a1 1 0 01-1-1v-3a1 1 0 011-1h5a1 1 0 011 1v3a1 1 0 01-1 1zM15 6h-5a1 1 0 01-1-1V1a1 1 0 011-1h5a1 1 0 011 1v4a1 1 0 01-1 1zM15 16h-5a1 1 0 01-1-1V9a1 1 0 011-1h5a1 1 0 011 1v6a1 1 0 01-1 1z" />
                               </svg>
-                              <span class={active == "embed" ? "font-medium text-gray-900" : "font-medium text-gray-500"}>Embed Code</span>
+                              <span class={active == DocumentationOptions.EMBED ? "font-medium text-gray-900" : "font-medium text-gray-500"}>{DocumentationOptionsText.EMBED}</span>
                             </div>
-                          </a>
                         </li>
                         
                         

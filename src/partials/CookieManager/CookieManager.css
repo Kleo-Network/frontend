@@ -1,0 +1,39 @@
+.cookie-form {
+    display: grid;
+    grid-template-areas: "header header"
+    "width height"
+    "cookietext cookietext"
+    "color fontsize"
+    "select select";
+
+}
+
+.header {
+    grid-area: header;
+}
+
+.form-width {
+    grid-area: width;
+    /* grid-column: span 1 / span 1; */
+}
+
+.form-height {
+    grid-area: height;
+    /* grid-column: span 1 / span 1;/ */
+}
+
+.cookie-text {
+    grid-area: cookietext;
+}
+
+.form-color {
+    grid-area: color;
+}
+
+.font-size {
+    grid-area: fontsize;
+}
+
+.form-select {
+    grid-area: select;
+}
