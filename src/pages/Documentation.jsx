@@ -3,18 +3,16 @@ import React, { useState } from 'react';
 import Header from '../partials/Header';
 import DocumentationContent from '../partials/DocumentationContent';
 import Footer from '../partials/Footer';
-import { DocumentationOptions, DocumentationOptionsText } from '../utils/constants';
+import { DocumentationOptions, DocumentationOptionsText, BrowserHistoryDefault } from '../utils/constants';
 
 const Documentation = () => {
-  const browsingHistory = {
-    keyword: "new",
-    x: 1, // x times
-    y: 1 // y days
-  };
-
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
   const [active, setActive] = useState(DocumentationOptions.BROWSING);
+  const browsingHistory = {
+    tierName: 'Developer related cookies',
+    lookups: BrowserHistoryDefault
+  };
   const [browsingTiers, setBrowsingTiers] = useState([browsingHistory]);
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -24,6 +22,8 @@ const Documentation = () => {
    
       {/*  Page content */}
       <main className="grow">
+
+        {JSON.stringify(browsingTiers)}
 
         <section>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -40,22 +40,6 @@ const Documentation = () => {
                           <span className="block text-lg"><b>Request Information</b></span>
                       </div>
                     </div>
-                    {/* Search form */}
-                    {/* <form className="mb-4 pb-4 border-b border-gray-200">
-                      <div className="flex flex-wrap">
-                        <div className="w-full">
-                          <label className="block text-sm sr-only" htmlFor="search">Search</label>
-                          <div className="relative flex items-center">
-                            <input id="search" type="search" className="form-input w-full text-gray-800 px-3 py-2 pl-10" placeholder="Search the docs" />
-                            <button type="submit" className="absolute inset-0 right-auto" aria-label="Search">
-                              <svg className="w-4 h-4 fill-current text-gray-400 mx-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z" />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </form> */}
 
                     <button className="flex items-center justify-between text-lg font-medium text-gray-900 w-full my-4 md:hidden" onClick={(e) => { e.preventDefault(); setSidebarNavOpen(!sidebarNavOpen); }}>
                       <span>Docs navigation</span>
@@ -93,7 +77,7 @@ const Documentation = () => {
                             {browsingTiers.map((form, index) => (
                               <li key={index} className="py-1">
                              
-                              <a className="text-gray-600 hover:underline">Index {form.keyword}</a>
+                              <a className="text-gray-600 hover:underline">Index {form.tierName}</a>
                             </li>
                             ))}
                             
