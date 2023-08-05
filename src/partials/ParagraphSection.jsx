@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserHistoryDefault } from "../utils/constants";
 
-const ParagraphSection = (props) => {
-  const [sections, setSections] = useState([{ ...BrowserHistoryDefault }]);
-  const [sectionHeader, setSectionsHeader] = useState(
-    "Developer related cookies"
-  );
+const ParagraphSection = ({ browsingTiers, setBrowsingTiers, tierIndex }) => {
 
   const handleInputChange = (index, field, value) => {
-    const newSections = [...sections];
-    newSections[index][field] = value;
-    setSections(newSections);
+    const newTiers = [...browsingTiers];
+    newTiers[tierIndex].lookups[index][field] = value;
+    setBrowsingTiers(newTiers);
   };
 
   const handleAddSection = () => {
-    setSections([...sections, { ...BrowserHistoryDefault }]);
-//     const tempState = [...props.browsingTiers];
-//     tempState[props.tierIndex]["lookups"] = sections;
-//     props.setBrowsingTiers(tempState);
+    const tempState = [...browsingTiers];
+    tempState[tierIndex].lookups = [
+      ...tempState[tierIndex].lookups,
+      { ...BrowserHistoryDefault },
+    ];
+    setBrowsingTiers(tempState);
   };
 
   const handleCrossClick = (index) => {
-    const newSections = [...sections.filter((val, idx) => idx !== index)];
-    setSections(newSections);
-    // const tempState = [...props.browsingTiers];
-    // tempState[props.tierIndex]["lookups"] = newSections;
-    // props.setBrowsingTiers(tempState);
+    const tempState = [...browsingTiers];
+    tempState[tierIndex].lookups = tempState[tierIndex].lookups.filter(
+      (val, idx) => idx !== index
+    );
+    setBrowsingTiers(tempState);
+  };
+
+  const setTierName = (value) => {
+    const tempState = [...browsingTiers];
+    tempState[tierIndex].tierName = value;
+    setBrowsingTiers(tempState);
   };
 
   return (
@@ -34,18 +38,13 @@ const ParagraphSection = (props) => {
         <input
           type="text"
           className="w-full border-none"
-          value={sectionHeader}
+          value={browsingTiers[tierIndex].tierName}
           placeholder="Indexed category name"
-          onChange={(e) => {
-            setSectionsHeader(e.target.value);
-            const tempState = [...props.browsingTiers];
-            tempState[props.tierIndex]["tierName"] = e.target.value;
-            props.setBrowsingTiers(tempState);
-          }}
+          onChange={(e) => setTierName(e.target.value)}
           required
         />
       </div>
-      {sections.map((section, index) => (
+      {browsingTiers[tierIndex].lookups.map((section, index) => (
         <div key={index} className="flex items-start justify-center">
           <p className=" text-gray-900 mb-3 p-2 bg-gray-200 rounded-md text-sm">
             lookup{" "}
@@ -80,7 +79,10 @@ const ParagraphSection = (props) => {
             />{" "}
             days
           </p>
-          <button onClick={() => handleCrossClick(index)} className="pl-1 mt-1 text-sm">
+          <button
+            onClick={() => handleCrossClick(index)}
+            className="pl-1 mt-1 text-sm"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="fill-current text-gray-500 hover:text-blue-600"

@@ -159,7 +159,7 @@ const DocumentationContent = ({
               <div key={index} className="flex justify-center items-start pb-3">
                 <ParagraphSection
                   tierIndex={index}
-                  browsingTiers={browsingTiers[index]}
+                  browsingTiers={browsingTiers}
                   setBrowsingTiers={setBrowsingTiers}
                 />
                 <button

@@ -11,7 +11,7 @@ const Documentation = () => {
   const [active, setActive] = useState(DocumentationOptions.BROWSING);
   const browsingHistory = {
     tierName: 'Developer related cookies',
-    lookups: BrowserHistoryDefault
+    lookups: [{...BrowserHistoryDefault}]
   };
   const [browsingTiers, setBrowsingTiers] = useState([browsingHistory]);
   return (
@@ -22,9 +22,6 @@ const Documentation = () => {
    
       {/*  Page content */}
       <main className="grow">
-
-        {JSON.stringify(browsingTiers)}
-
         <section>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <div className="pt-10 pb-10 md:pt-10 md:pb-10">
