@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layout Component</title>
+        <style>
+            body {
+                font-family: inherit;
+                font-feature-settings: inherit;
+                font-variation-settings: inherit;
+                font-size: 100%;
+                font-weight: inherit;
+                line-height: inherit;
+                color: inherit;
+            }
+            #kleo-layout {
+                display: flex;
+            }
+            #kleo-layout .rounded-md {
+                border-radius: 0.25rem;
+            }
+            #kleo-layout .flex {
+                display: flex;
+            }
+            #kleo-layout .flex-row {
+                flex-direction: row;
+            }
+            #kleo-layout .flex-col {
+                flex-direction: column;
+            }
+            #kleo-layout .grow {
+                flex-grow: 1;
+            }
+            #kleo-layout .border-2 {
+                border-width: 2px;
+            }
+            #kleo-layout .items-center {
+                align-items: center;
+            }
+            #kleo-layout .p-4 {
+                padding: 1rem;
+            }
+            #kleo-layout .shadow-md {
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            #kleo-layout .text-center {
+                text-align: center;
+            }
+            #kleo-layout .py-1 {
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+            }
+
+            #kleo-layout .px-2 {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            #kleo-layout .m-1 {
+                margin: 0.25rem;
+            }
+            #kleo-layout .acceptBtnKleo,
+            #kleo-layout .manageBtnKleo {
+                cursor: pointer;
+                -webkit-appearance: button;
+                background-color: transparent;
+                text-transform: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="kleo-layout"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const ALIGN = {
+                    vertical: 'col',
+                    horizontal: 'row'
+                };
+
+                // Function to create the Layout component
+                function Layout({ settings }) {
+                    let flexTypeOfDiv = settings.alignButtonsWithText;
+                    let flexTypeOfBtns = settings.buttonProps.alignButtons;
+
+                    // Create the main div element
+                    const layoutDiv = document.createElement('div');
+                    layoutDiv.classList.add(
+                        'rounded-md',
+                        'flex',
+                        `flex-${flexTypeOfDiv}`,
+                        'border-2',
+                        'items-center',
+                        'p-4',
+                        'shadow-md'
+                    );
+                    layoutDiv.style.background = settings.bgColor;
+                    layoutDiv.style.width = settings.size.width;
+                    layoutDiv.style.height = settings.size.height;
+
+                    // Create the first inner div for the text
+                    const textDiv = document.createElement('div');
+                    textDiv.style.fontSize = settings.fontSize;
+                    textDiv.style.color = settings.color;
+                    textDiv.innerHTML = `<span>${settings.text}</span>`;
+
+                    // Create the second inner div for buttons
+                    const buttonsDiv = document.createElement('div');
+                    buttonsDiv.classList.add('flex', `flex-${flexTypeOfBtns}`, 'items-center', 'grow');
+
+                    // Create the accept button
+                    const acceptButton = document.createElement('button');
+                    acceptButton.classList.add('text-center', 'rounded-md', 'm-1', 'px-2', 'py-1', 'acceptBtnKleo');
+                    acceptButton.style.width = settings.buttonProps.size.width;
+                    acceptButton.style.height = settings.buttonProps.size.height;
+                    acceptButton.style.background = settings.buttonProps.accept.bgColor;
+                    acceptButton.style.color = settings.buttonProps.accept.color;
+                    acceptButton.style.border = `1px solid ${settings.buttonProps.accept.borderColor}`;
+                    acceptButton.style.fontSize = settings.buttonProps.accept.fontSize;
+                    acceptButton.innerHTML = `<span>${settings.buttonProps.accept.text}</span>`;
+
+                    // Create the manage button
+                    const manageButton = document.createElement('button');
+                    manageButton.classList.add('text-center', 'rounded-md', 'm-1', 'px-2', 'py-1', 'manageBtnKleo');
+                    manageButton.style.width = settings.buttonProps.size.width;
+                    manageButton.style.height = settings.buttonProps.size.height;
+                    manageButton.style.background = settings.buttonProps.manage.bgColor;
+                    manageButton.style.color = settings.buttonProps.manage.color;
+                    manageButton.style.border = `1px solid ${settings.buttonProps.manage.borderColor}`;
+                    manageButton.style.fontSize = settings.buttonProps.manage.fontSize;
+                    manageButton.innerHTML = `<span>${settings.buttonProps.manage.text}</span>`;
+
+                    // Append the elements to create the component structure
+                    buttonsDiv.appendChild(acceptButton);
+                    buttonsDiv.appendChild(manageButton);
+                    layoutDiv.appendChild(textDiv);
+                    layoutDiv.appendChild(buttonsDiv);
+
+                    return layoutDiv;
+                }
+
+                // Function to render the Layout component with the provided settings
+                function renderLayout() {
+                    const settings = {
+                        color: '#000000',
+                        fontSize: '16px',
+                        bgColor: '#ffffff',
+                        text: 'ABC.com seeks your social graph to give you promotional offers. Install Kleo extension.',
+                        size: {
+                            width: '700px',
+                            height: '100px'
+                        },
+                        alignButtonsWithText: ALIGN.horizontal,
+                        buttonProps: {
+                            alignButtons: ALIGN.horizontal,
+                            accept: {
+                                bgColor: '#222222',
+                                color: '#ffffff',
+                                fontSize: '16px',
+                                text: 'Accept',
+                                borderColor: '#ffffff'
+                            },
+                            manage: {
+                                bgColor: '#ffffff',
+                                color: '#222222',
+                                fontSize: '16px',
+                                text: 'Manage',
+                                borderColor: '#222222'
+                            },
+                            size: {
+                                width: '100px',
+                                height: '40px'
+                            }
+                        }
+                    };
+
+                    const layoutComponent = Layout({ settings });
+                    const layoutContainer = document.getElementById('kleo-layout');
+                    layoutContainer.appendChild(layoutComponent);
+                }
+
+                renderLayout();
+            });
+        </script>
+    </body>
+</html>

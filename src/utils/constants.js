@@ -49,3 +49,9 @@ export const DefaultCookieSettings = {
     }
   }
 }
+
+export const BrowserHistoryDefault = {
+  lookup: "google.com",
+  indexedTimes: 1,
+  lastDays: 1,
+}
