@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import Modal from "../utils/Modal";
-import Balancer from "react-wrap-balancer";
-
-import HeroImage from "../images/hero-image-01.png";
-
+import Section06 from "./SectionExplain";
 function HeroHome() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
@@ -13,33 +9,8 @@ function HeroHome() {
     document.getElementById(id).scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <section className="relative w-full min-h-screen" id="hero">
-      {/* {isCookiePopupOpen && (
-        <div className="z-10 fixed bottom-4 right-0 left-0 flex justify-center items-center">
-          <div className="bg-slate-100 rounded-xl flex justify-between p-10 shadow-xl w-full max-w-screen-lg items-center">
-            <div>
-              <p className="text-2xl">
-                This website seeks your information for giving promotional
-                offers and discounts.
-              </p>
-              <a href="#" className="underline decoration-slate-600">
-                Know More
-              </a>
-            </div>
-            <div className="flex flex-col space-y-4">
-              <button
-                className="bg-black rounded-xl px-6 py-3 active:scale-95 transform text-white border border-black transition-all hover:bg-white hover:text-black active:bg-white active:text-black"
-                onClick={() => setIsCookiePopupOpen(false)}
-              >
-                Accept
-              </button>
-              <button className="bg-black rounded-xl px-6 py-3 active:scale-95 transform text-white border border-black transition-all hover:bg-white hover:text-black active:bg-white active:text-black">
-                Manage
-              </button>
-            </div>
-          </div>
-        </div>
-      )} */}
+    <section className="relative w-full" id="hero">
+   
 
       {/* Illustration behind hero content */}
       <div
@@ -102,7 +73,7 @@ function HeroHome() {
                     className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
                     href="https://discord.gg/Qn6ZmecTEw"
                   >
-                    Join Waitlist
+                    Install Extension - It's free! 
                   </a>
                 </div>
                 <div>
@@ -125,19 +96,14 @@ function HeroHome() {
                         d="M15.75 17.25L12 21m0 0l-3.75-3.75M12 21V3"
                       />
                     </svg>
-                    Learn more
+                    How much is my data?
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="z-10 my-10 flex w-full">
-            <img
-              src="/nft-kleo-final.gif"
-              className="rounded-3xl shadow-xl w-full h-full"
-              alt=""
-            />
-          </div>
+
+         
         </div>
       </div>
     </section>

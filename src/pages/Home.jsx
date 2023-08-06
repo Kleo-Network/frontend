@@ -2,8 +2,12 @@ import React from "react";
 
 import Header from "../partials/Header";
 import HeroHome from "../partials/HeroHome";
+import SectionBlue from "../partials/SectionBlue";
+import Section06 from "../partials/SectionExplain";
+import Section05 from "../partials/SectionBlueAgain";
 import FeaturesHome from "../partials/FeaturesHome";
 import FeaturesBlocks from "../partials/FeaturesBlocks";
+import TestimonialsCarousel from "../partials/TestimonialsCarousel";
 import News from "../partials/News";
 import Cta from "../partials/Cta";
 import Footer from "../partials/Footer";
@@ -18,7 +22,10 @@ function Home() {
       <main className="grow flex flex-col space-y-4">
         {/*  Page sections */}
         <HeroHome />
-        <FeaturesHome />
+        <SectionBlue/>
+        <Section06/>
+        <Section05/>
+        <TestimonialsCarousel/>
         {/* <FeaturesBlocks />{" "} */}
         {/*
         <FeaturesWorld />*/}
