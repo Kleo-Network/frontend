@@ -73,7 +73,7 @@ function HeroHome() {
                     className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
                     href="https://discord.gg/Qn6ZmecTEw"
                   >
-                    Install Extension - It's free! 
+                   Join Waitlist 
                   </a>
                 </div>
                 <div>

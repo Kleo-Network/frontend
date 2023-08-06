@@ -11,7 +11,9 @@ import TestimonialsCarousel from "../partials/TestimonialsCarousel";
 import News from "../partials/News";
 import Cta from "../partials/Cta";
 import Footer from "../partials/Footer";
-
+import AboutStory from "../partials/AboutStory";
+import AboutIntro from "../partials/AboutIntro";
+import Faqs from "../partials/Faqs";
 function Home() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -25,7 +27,10 @@ function Home() {
         <SectionBlue/>
         <Section06/>
         <Section05/>
-        <TestimonialsCarousel/>
+        <AboutIntro/>
+        <AboutStory />
+        <Faqs/>
+        {/* <TestimonialsCarousel/> */}
         {/* <FeaturesBlocks />{" "} */}
         {/*
         <FeaturesWorld />*/}
