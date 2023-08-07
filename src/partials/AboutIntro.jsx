@@ -10,7 +10,7 @@ function AboutIntro() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="h1 mb-4">What is this <i>data?</i></h1>
+            <h1 className="h1 mb-4">How it works?</h1>
            
           </div>
 

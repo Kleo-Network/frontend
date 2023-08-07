@@ -17,7 +17,7 @@ export default function Section05() {
                 <div className="md:max-w-3xl mb-12 md:mb-20" data-aos="fade-up">
                   <h2 className="h2 text-white mb-4">3. Earn $KLEO tokens!</h2>
                   <p className="text-lg text-blue-200 mb-8">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    $KLEO tokens are currently live on testnet with limited utility, when moving to mainnet there will be a way to compensate our early users on testnet.
                   </p>
                 </div>
   
@@ -39,9 +39,9 @@ export default function Section05() {
                     <div className="mb-3">
                       <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">1</div>
                     </div>
-                    <h4 className="text-white text-xl font-bold mb-1">Download the app</h4>
+                    <h4 className="text-white text-xl font-bold mb-1">Access Exclusive Communities</h4>
                     <p className="text-blue-200">
-                      Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                      We will regularly airdrop NFTs, which will allow access to exclusive communities. These NFTs will be deterministic of internet age.
                     </p>
                   </div>
   
@@ -50,9 +50,9 @@ export default function Section05() {
                     <div className="mb-3">
                       <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">2</div>
                     </div>
-                    <h4 className="text-white text-xl font-bold mb-1">Request your card</h4>
+                    <h4 className="text-white text-xl font-bold mb-1">Governance</h4>
                     <p className="text-blue-200">
-                      Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                     $KLEO tokens will allow you to vote on organisation intent and misuse of user data issues. If found guilty, the claimant would be rewarded handsomely
                     </p>
                   </div>
   
@@ -61,9 +61,11 @@ export default function Section05() {
                     <div className="mb-3">
                       <div className="flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">3</div>
                     </div>
-                    <h4 className="text-white text-xl font-bold mb-1">Connect all your account</h4>
+                    <h4 className="text-white text-xl font-bold mb-1">Earn</h4>
                     <p className="text-blue-200">
-                      Create cards that work exactly as you configured them. Make real-time decisions on charges and spendings.
+                      You can trade $KLEO tokens on an exchange, based on your geographical area and proof of humanity. 
+                      <i><b>Not applicable in testnet.</b></i> 
+                       
                     </p>
                   </div>
                 </div>
