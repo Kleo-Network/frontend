@@ -47,7 +47,7 @@ export default function Section06() {
                       <div className="p-7 flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">2.</div>
                     </div>
 
-                How is your <i>data</i> being used?
+                Know how your <i>data</i> is being used?
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="200">
                   Learn the intent of use of the data that you <b>own.</b>

@@ -14,21 +14,21 @@ function Faqs() {
 
           {/* Faqs */}
           <ul className="max-w-3xl mx-auto pl-12">
-            <Accordion title="Do I need coding knowledge to use this product?">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          <Accordion title="Is $KLEO free to use?">
+              Yes. Always will be. 
             </Accordion>
-            <Accordion title="Do you have student or non-profit discounts?">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Accordion title="How does this protect me?">
+              Organisations today use third party cookies to seek information about you, without your consent and you have no idea how this information will be used. <br/> <br/>
+              Kleo not only pushes organisations to ask for consent, share intent of use of that data but also rewards it's users with $KLEO tokens.
             </Accordion>
-            <Accordion title="Is there a way to become an Affiliate reseller of this product?">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Accordion title="Can I control the intent of use of my data?">
+              You can take part in KLEO governance where we validate the intent of use of data by organisations. If found inappropiate by the community, the organisation ends up paying hefty price. 
             </Accordion>
-            <Accordion title="What is the difference between the Free and Paid versions?" active>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <Accordion title="Where is my data stored?">
+             Your data is stored in your local computer. The previously shared data is stored on (decentralised storage) arweave with AES encryption. 
             </Accordion>
-            <Accordion title="How can I change the owner of a workspace?">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </Accordion>                                                
+           
+                                             
             <span className="block border-t border-gray-200" aria-hidden="true"></span>
           </ul >
 

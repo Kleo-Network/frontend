@@ -12,10 +12,11 @@ function AboutStory() {
           <div className="max-w-3xl mx-auto">
             <h3 className="h3 mb-3">What is this <i>data</i>?</h3>
             <p className="text-lg text-gray-600 mb-8">
-              Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+              We use browsing history to learn social behaviour of an individual. 
+              For example, if you are a software developer then you are most likely to visit websites such as github.com, stackoverflow.com, aws.amazon.com etc.  
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Quam pellentesque nec nam aliquam sem et tortor consequat, pellentesque adipiscing commodo elit at imperdiet. Semper auctor neque vitae tempus quam pellentesque nec. Amet dictum sit amet justo donec enim diam varius sit amet mattis vulputate enim nulla aliquet porttitor.
+            <b>WE DO NOT SHARE ENTIRE BROWSING HISTORY</b> but a boolean yes or no, based on zero knowledge computation that takes place on your device. The intent of use of such a data is recorded on a optimistic oracle against staked $KLEO tokens
             </p>
           </div>
 
@@ -26,16 +27,17 @@ function AboutStory() {
             <div className="sm:ml-8 lg:ml-16">
               <h3 className="h3 mb-2">Cost of this data?</h3>
               <p className="text-lg text-gray-600 mb-8">
-                Quam pellentesque nec nam aliquam sem et tortor consequat, 
+               Addiction, Manipulation and monopolising behaviour from big tech firms is seen with 
+               data created by users', while filling the pockets of few. <b> We give the control of your data back to you.</b>
               </p>
               <div className="flex  mb-8">
                 <img className="rounded-full self-start shrink-0 shadow-lg mr-4" src={AboutLogo} width="40" height="40" alt="Logo" />
                 <div>
                   <blockquote className="text-gray-600 italic">
-                    “ I love this product and would recommend it to anyone. Could be not easier to use, and our multiple websites are wonderful. We get nice comments all the time. “
+                    “There are only two industries that call their customers “users”: illegal drugs and software.“
                   </blockquote>
                   <div className="text-sm font-medium text-gray-600 mt-2">
-                    <cite className="text-gray-900 not-italic">Micheal Osman</cite> · <a className="text-blue-600" href="#0">New York Times</a>
+                    <cite className="text-gray-900 not-italic">Edward Tufte</cite> · <a className="text-blue-600" href="#0">New York Times</a>
                   </div>
                 </div>
               </div>
