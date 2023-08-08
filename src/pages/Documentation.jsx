@@ -74,7 +74,7 @@ const Documentation = () => {
                             {browsingTiers.map((form, index) => (
                               <li key={index} className="py-1">
                              
-                              <a className="text-gray-600 hover:underline">Index {form.tierName}</a>
+                              <a className="text-gray-600 hover:underline">{form.tierName}</a>
                             </li>
                             ))}
                             
@@ -128,7 +128,7 @@ const Documentation = () => {
                 </aside>
 
                 {/* Page container */}
-                <DocumentationContent emptyState={browsingHistory} key={1} step={active} setStep={setActive} browsingTiers={browsingTiers} setBrowsingTiers={setBrowsingTiers}  />
+                <DocumentationContent key={1} step={active} setStep={setActive} browsingTiers={browsingTiers} setBrowsingTiers={setBrowsingTiers}  />
 
               </div>
 
