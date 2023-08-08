@@ -62,11 +62,11 @@ function Header() {
             {/* Desktop menu links */}
             <ul className="flex grow justify-start flex-wrap">
             <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Home</Link>
+                <Link to="/" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Home</Link>
               </li>
 
               <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">For Organisations</Link>
+                <Link to="/organisations" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">For Organisations</Link>
               </li>
 
 
@@ -75,7 +75,7 @@ function Header() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
             <li>
-                <Link to="/pricing" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</Link>
+                <a href="https://www.blog.kleo.network" target='blank' className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</a>
               </li>
 
               <li>

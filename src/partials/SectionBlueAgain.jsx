@@ -15,7 +15,12 @@ export default function Section05() {
               <div className="relative max-w-xl mx-auto md:max-w-none text-center md:text-left">
                 {/* Section header */}
                 <div className="md:max-w-3xl mb-12 md:mb-20" data-aos="fade-up">
-                  <h2 className="h2 text-white mb-4">3. Earn $KLEO tokens!</h2>
+                  <h2 className="h2 text-white mb-4">
+                    
+                  <div className="mb-3">
+                      <div className="p-7 flex items-center justify-center font-bold text-teal-600 bg-teal-200 h-11 w-11 rounded-full">3.</div>
+                    </div>
+                     Earn $KLEO tokens!</h2>
                   <p className="text-lg text-blue-200 mb-8">
                     $KLEO tokens are currently live on testnet with limited utility, when moving to mainnet there will be a way to compensate our early users on testnet.
                   </p>
