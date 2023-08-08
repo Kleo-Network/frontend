@@ -2,6 +2,7 @@ import React from "react";
 import {
   DocumentationOptions,
   DocumentationOptionsText,
+  BrowserHistoryDefault
 } from "../utils/constants";
 import CookieManager from "./CookieManager/CookieManager";
 import ParagraphSection from "./ParagraphSection";
@@ -11,7 +12,6 @@ const DocumentationContent = ({
   setStep,
   browsingTiers,
   setBrowsingTiers,
-  emptyState,
 }) => {
   const removeTier = (index) => {
     const tempState = [...browsingTiers.filter((val, idx) => idx !== index)];
@@ -186,7 +186,10 @@ const DocumentationContent = ({
                 <button
                   onClick={() => {
                     const nextState = [...browsingTiers];
-                    nextState.push(emptyState);
+                    nextState.push({
+                      tierName: 'Developer related cookies',
+                      lookups: [{...BrowserHistoryDefault}]
+                    });
                     setBrowsingTiers(nextState);
                   }}
                   className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
