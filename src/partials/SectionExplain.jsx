@@ -5,7 +5,8 @@ import { useEffect } from 'react'
 // Import Swiper
 import Swiper from 'swiper'
 import { EffectFade, Pagination } from 'swiper/modules';
-
+import One from '../images/one.png';
+import Two from '../images/two.png';
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
@@ -18,6 +19,7 @@ export default function Section06() {
       slidesPerView: 1,
       watchSlidesProgress: true,
       effect: 'fade',
+      autoplay: true, 
       pagination: {
         el: '.testimonial-carousel-pagination',
         clickable: true,
@@ -50,7 +52,12 @@ export default function Section06() {
                 Know how your <i>data</i> is being used?
                 </h2>
                 <p className="text-lg text-slate-500 mb-6" data-aos="fade-up" data-aos-anchor="[data-aos-id-6]" data-aos-delay="200">
-                  Learn the intent of use of the data that you <b>own.</b>
+                  Learn the intent of use of the data that you <b>own.</b> <br/> <br/>
+                  When we say index <code>github.com</code> more than <code>10 times</code> in last <code>30 days</code>, it means 
+                  if <code>github.com</code> was present in your browsing history more than 10 times in last 30 days. It can be used similarly
+                  for other websites / titles as well. This will help organisation to personalise the behaviour. 
+
+                  <br/> <br/> In order to avoid unintended use (ex. targeted manipulation) of such information, the organisation will have to reveal the intent of use of such data and also reward you with $KLEO tokens.  
                 </p>
                 
               </div>
@@ -66,16 +73,16 @@ export default function Section06() {
                     <div className="swiper-wrapper">
                       {/* Card #1 */}
                       <div className="swiper-slide flex flex-col h-auto shadow-2xl text-left">
-                        <div className="relative after:absolute after:inset-0 after:bg-gradient-to-t after:from-slate-700">
-                          <img  className="md:max-w-none" width={384} height={180} alt="Testiomonial 01" />
+                        <div className="relative after:absolute after:inset-0">
+                          <img src={One}  className="md:max-w-none" width={384} height={180} alt="Testiomonial 01" />
                         </div>
                      
                       </div>
 
                       {/* Card #2 */}
                       <div className="swiper-slide flex flex-col h-auto shadow-2xl text-left">
-                        <div className="relative after:absolute after:inset-0 after:bg-gradient-to-t after:from-slate-700">
-                          <img src="nft-kleo-final.gif" className="md:max-w-none" width={384} height={180} alt="Testiomonial 02" />
+                        <div className="relative after:absolute after:inset-0">
+                          <img src={Two} className="md:max-w-none" width={384} height={180} alt="Testiomonial 02" />
                         </div>
                       
                       </div>

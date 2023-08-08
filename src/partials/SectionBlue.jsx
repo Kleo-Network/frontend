@@ -1,3 +1,4 @@
+import AboutImage from './../images/nft-kleo-final.gif';
 
 export default function Section05() {
     return (
@@ -47,7 +48,7 @@ export default function Section05() {
   
                   {/* 3rd item */}
                   <div className="relative md:px-9 after:hidden md:after:block after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-px after:h-16 after:bg-blue-400 last:after:hidden">
-                   <img src="http://localhost:5173/nft-kleo-final.gif" />
+                   <img src={AboutImage} />
                   </div>
                 </div>
               </div>
