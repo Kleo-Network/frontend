@@ -62,11 +62,11 @@ function Header() {
             {/* Desktop menu links */}
             <ul className="flex grow justify-start flex-wrap">
             <li>
-                <Link to="/" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Home</Link>
+                <Link to="/" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Kleo Home</Link>
               </li>
 
               <li>
-                <Link to="/organisations" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">For Organisations</Link>
+                <Link to="/organisation" className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">For Organisations</Link>
               </li>
 
 

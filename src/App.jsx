@@ -15,7 +15,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Documentation from './pages/Documentation';
 import PageNotFound from './pages/PageNotFound';
-
+import Organisation from './pages/Organisation';
 function App() {
 
   const location = useLocation();
@@ -43,6 +43,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route path="/organisation_form" element={<Documentation />} />
+        <Route path="/organisation" element={<Organisation />} />
         <Route exact path="*" element={<PageNotFound />} />
 
       </Routes>
