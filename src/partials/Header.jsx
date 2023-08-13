@@ -74,6 +74,11 @@ function Header() {
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
+
+            <li>
+                <a href="https://www.kleo.wiki" target='blank' className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Docs</a>
+              </li>
+
             <li>
                 <a href="https://www.blog.kleo.network" target='blank' className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Blog</a>
               </li>
@@ -91,12 +96,7 @@ function Header() {
           </nav>
 
           {/* Mobile menu */}
-         
-
-            {/* Hamburger button */}
-
-
-            {/*Mobile navigation */}
+        
            
 
         </div>

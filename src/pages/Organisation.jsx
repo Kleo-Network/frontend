@@ -1,30 +1,35 @@
 import React from 'react';
 
 import Header from '../partials/Header';
-import PricingTables from '../partials/PricingTables';
-import FeaturesTable from '../partials/FeaturesTable';
-import TestimonialsCarousel from '../partials/TestimonialsCarousel';
-import Faqs from '../partials/Faqs';
-import Cta from '../partials/Cta';
+import OGSpeaks from '../partials/Organisation/OGSpeaks';
 import Footer from '../partials/Footer';
 import HeroVideo from '../partials/HeroVideo';
+import Stats from '../partials/Stats';
+import Process from '../partials/Process';
+import CtaAlternative from '../partials/CtaAlternative';
+import FaqsAlternative from '../partials/FaqsAlternativs';
 function Organisation() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
       <Header />
-
+<HeroVideo/>
       {/*  Page content */}
       <main className="grow">
-      <HeroVideo />
+      <OGSpeaks/>
+     
+
+      <Process />
+      
         {/*  Page sections */}
         
         {/* <TestimonialsCarousel /> */}
        
-
+     
       </main>
-
+      <FaqsAlternative/>
+      <CtaAlternative/>
       {/*  Site footer */}
       <Footer />
 
