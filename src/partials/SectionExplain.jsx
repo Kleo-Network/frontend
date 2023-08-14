@@ -55,9 +55,9 @@ export default function Section06() {
                   Learn the intent of use of the data that you <b>own.</b> <br/> <br/>
                   When we say index <code>github.com</code> more than <code>10 times</code> in last <code>30 days</code>, it means 
                   if <code>github.com</code> was present in your browsing history more than 10 times in last 30 days. It can be used similarly
-                  for other websites / titles as well. This will help organisation to personalise the experience  
+                  for other websites / titles as well. This will help organization to personalize the experience  
 
-                  <br/> <br/> In order to avoid unintended use (ex. targeted manipulation) of such information, the organisation will have to reveal the intent of use of such data and also reward you with $KLEO tokens.  
+                  <br/> <br/> In order to avoid unintended use (ex. targeted manipulation) of such information, the organization will have to reveal the intent of use of such data and also reward you with $KLEO tokens.  
                 </p>
                 
               </div>
