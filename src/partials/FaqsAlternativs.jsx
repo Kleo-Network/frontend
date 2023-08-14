@@ -18,16 +18,18 @@ function Faqs() {
               Yes. Always will be. 
             </Accordion>
             <Accordion title="How does this protect me?">
-              Organisations today use third party cookies to seek information about you, without your consent and you have no idea how this information will be used. <br/> <br/>
-              Kleo not only pushes organisations to ask for consent, share intent of use of that data but also rewards it's users with $KLEO tokens.
+              Organizations today use third party cookies to seek information about you, without your consent and you have no idea how this information will be used. <br/> <br/>
+              Kleo not only pushes organizations to ask for consent, share intent of use of that data but also rewards it's users with $KLEO tokens.
             </Accordion>
             <Accordion title="Can I control the intent of use of my data?">
-              You can take part in KLEO governance where we validate the intent of use of data by organisations. If found inappropiate by the community, the organisation ends up paying hefty price. 
+              You can take part in KLEO governance where we validate the intent of use of data by organizations. If found inappropriate by the community, the organization ends up paying hefty price. 
             </Accordion>
             <Accordion title="Where is my data stored?">
-             Your data is stored in your local computer. The previously shared data is stored on (decentralised storage) arweave with AES encryption. 
+             Your data is stored in your local computer. The previously shared data is stored on (decentralized storage) arweave with AES encryption. 
             </Accordion>
-           
+            <Accordion title="What if users don't have the chrome extension installed?">
+              No worries, we will act as a normal cookie popup manager!
+            </Accordion>
                                              
             <span className="block border-t border-gray-200" aria-hidden="true"></span>
           </ul >

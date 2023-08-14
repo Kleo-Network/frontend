@@ -39,9 +39,9 @@ export default function Section05() {
                   Give consent for your data!</h2>
                  
                 </div>
-                    <h4 className="text-white text-xl font-bold mb-1">Organisations should ask for your permission.</h4>
+                    <h4 className="text-white text-xl font-bold mb-1">Organizations should ask for your permission.</h4>
                     <p className="text-blue-200">
-                    Organisations specifically ask for your data consent on their website, same as a cookie popup appears. If you wish to manage, you can select or deselct what behaviour you want to share. You can also choose to accept the KLEO verified default settings.
+                    Organizations specifically ask for your data consent on their website, same as a cookie popup appears. If you wish to manage, you can select or deselct what behaviour you want to share. You can also choose to accept the KLEO verified default settings.
 
                     </p>
                   </div>

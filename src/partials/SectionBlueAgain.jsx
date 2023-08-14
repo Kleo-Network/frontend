@@ -57,7 +57,7 @@ export default function Section05() {
                     </div>
                     <h4 className="text-white text-xl font-bold mb-1">Governance</h4>
                     <p className="text-blue-200">
-                     $KLEO tokens will allow you to vote on organisation intent and misuse of user data issues. If found guilty, the claimant would be rewarded handsomely
+                     $KLEO tokens will allow you to vote on organization intent and misuse of user data issues. If found guilty, the claimant would be rewarded handsomely
                     </p>
                   </div>
   
