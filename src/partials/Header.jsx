@@ -43,7 +43,13 @@ function Header() {
   }, [top]);  
 
   return (
+    <>
+    <header class="py-2 bg-gray-700 text-white text-center">
+    <a href="https://twitter.com/kleo_network/status/1691712047678202039" target="_blank">$KLEO needs your help! Contribute in protecting your privacy. Confused How?  Shoot us a DM on Twitter. </a>
+      </header>
+   
     <header className={`w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top && 'bg-white backdrop-blur-sm shadow-lg'}`}>
+      
       <div className="max-w-6xl mx-auto px-5 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
 
@@ -102,6 +108,7 @@ function Header() {
         </div>
       </div>
     </header>
+    </>
   );
 }
 

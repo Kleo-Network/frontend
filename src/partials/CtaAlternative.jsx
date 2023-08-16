@@ -19,7 +19,7 @@ function CtaAlternative() {
 
               {/* CTA button */}
               <div>
-                <Link to="/signup" className="btn text-white bg-blue-600 hover:bg-blue-700">Join us today</Link>
+                <Link to="https://discord.gg/Qn6ZmecTEw" className="btn text-white bg-blue-600 hover:bg-blue-700">Ask us Anything</Link>
               </div>
 
             </div>

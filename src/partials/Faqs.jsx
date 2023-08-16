@@ -31,7 +31,7 @@ function Faqs() {
             </Accordion>
             <Accordion title="Where is my data stored?">
               Your data is stored in your local computer. The previously shared
-              data is stored on (decentralized storage) arweave with AES
+              data is stored on (decentralized storage) with AES
               encryption.
             </Accordion>
           
