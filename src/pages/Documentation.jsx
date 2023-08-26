@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Header from '../partials/Header';
+import Header from '../partials/HeaderLogin';
 import DocumentationContent from '../partials/DocumentationContent';
 import Footer from '../partials/Footer';
 import { DocumentationOptions, DocumentationOptionsText, BrowserHistoryDefault } from '../utils/constants';
