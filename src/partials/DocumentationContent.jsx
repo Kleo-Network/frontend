@@ -13,11 +13,61 @@ const DocumentationContent = ({
   setStep,
   browsingTiers,
   setBrowsingTiers,
+  neolineN3,
+  neoline,
+  account
 }) => {
   let [loading, setLoading] = useState(false);
   let [intent, setIntent] = useState('');
   let [error, setError] = useState(false);
 
+  const clickerDocument = async () => {
+
+    console.log("where to get signer?", (await neoline.getPublicKey()));
+   // const scriptHash = await neolineN3.AddressToScriptHash({ address: '0x5728a0e465b3db32bb4f75fabe97081e5c3e282f' });
+   neolineN3.send({
+    fromAddress: account.address,
+    toAddress: 'NUe3ZeHZM2wqVUcNUsuVu5NHCBpNEe3GHa',
+    asset: '0x9f028511b75bcb285e948f94b69a1a94db1dddd4',
+    amount: '1',
+    fee: '0.0001',
+    broadcastOverride: false
+})
+.then(result => {
+    console.log('Send transaction success!');
+    console.log('Transaction ID: ' + result.txid);
+    console.log('RPC node URL: ' + result.nodeURL);
+});
+    neolineN3.signTransaction({
+      transaction: {
+        version: 0,
+        nonce: 1262108766,
+        systemFee: 997775,
+        networkFee: 122862,
+        validUntilBlock: 667132,
+        attributes: [],
+        signers: [{ account: "03c7216f0702ac4d5acb649129e6954313290d83468ca8db342485b298b9010201", scopes: 1 }],
+        witnesses: [],
+        script: "5728a0e465b3db32bb4f75fabe97081e5c3e282f"
+      },
+      magicNumber: 877933390
+    })
+    .then(signedTx => {
+      console.log('Signed Transaction:', signedTx);
+    })
+    .catch((error) => {
+      const {type, description, data} = error;
+      switch(type) {
+        case 'UNKNOWN_ERROR':
+            console.log(description);
+            break;
+        default:
+            // Not an expected error object.  Just write the error to the console.
+            console.error(error);
+            break;
+      }
+    });
+  }
   const removeTier = (index) => {
     const tempState = [...browsingTiers.filter((val, idx) => idx !== index)];
     setBrowsingTiers(tempState);
@@ -63,6 +113,8 @@ const DocumentationContent = ({
   return (
     <div className="md:grow">
       <div className="text-lg text-gray-600">
+        <button onClick={() => clickerDocument()}>TEST</button>
+        
         <ol className="flex items-center w-full space-x-2 text-medium font-medium text-center text-gray-500 bg-white rounded-lg">
           <li
             className={`flex items-center ${
@@ -275,7 +327,7 @@ const DocumentationContent = ({
           <div>
             <div className="flex flex-wrap -mx-3 mt-6">
               <div className="w-full px-3">
-                $USD per user (Min Cap: 0.02$)
+                Please Stake Kleo
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   labelHidden
@@ -288,8 +340,8 @@ const DocumentationContent = ({
                 >
                   <div className="w-full px-3 mb-5">
                     <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                      {" "}
-                      Pay{" "}
+                      
+                      Pay
                     </button>
                   </div>
                 </div>

@@ -3,22 +3,27 @@ import { Link } from 'react-router-dom';
 import Transition from '../utils/Transition';
 import Dropdown from '../utils/Dropdown';
 import Image from '../images/klleo.png';
-function Header({neoline, setNeoLine, account, setAccount}) {
+function Header({ neoline, setNeoLine, account, setAccount, neolineN3, setneoLineN3 }) {
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [top, setTop] = useState(true);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
-  
+
   const getAccounts = async () => {
-    if(!neoline){
+    if (!neoline) {
       window.addEventListener('NEOLine.NEO.EVENT.READY', () => {
         let neolinetemp = new NEOLine.Init();
         setNeoLine(neolinetemp);
         console.log("neoline", neolinetemp);
+      });
+    }
+    window.addEventListener('NEOLine.N3.EVENT.READY', () => {
+      let neolineN3 = new NEOLineN3.Init();
+      console.log("neoline n3 ready", neolineN3);
+      setneoLineN3(neolineN3);
     });
-  }
-    const accounts =  await neoline.getAccount();
+    const accounts = await neoline.getAccount();
     setAccount(accounts);
     console.log("get neo accounts", accounts);
 
@@ -30,16 +35,22 @@ function Header({neoline, setNeoLine, account, setAccount}) {
       let neolinetemp = new NEOLine.Init();
       setNeoLine(neolinetemp);
       console.log("neoline", neolinetemp);
-      
-      const accounts =  neolinetemp.getAccount().then(account => {
+
+      const accounts = neolinetemp.getAccount().then(account => {
         setAccount(account);
       });
-      
-      console.log("get neo accounts", accounts);
-  });
 
-    
-  
+      console.log("get neo accounts", accounts);
+    });
+
+    window.addEventListener('NEOLine.N3.EVENT.READY', () => {
+      let neolineN3 = new NEOLineN3.Init();
+      console.log("neoline n3 ready", neolineN3);
+      setneoLineN3(neolineN3);
+    });
+
+
+
 
     const clickHandler = ({ target }) => {
       if (!mobileNav.current || !trigger.current) return;
@@ -98,25 +109,25 @@ function Header({neoline, setNeoLine, account, setAccount}) {
               {/* Desktop sign in links */}
               <ul className="flex grow justify-end flex-wrap items-center">
 
-               
+
                 <li>
                   {!neoline ? <>
-                  <a onClick={() => {getAccounts()}} target="_blank" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                  <span>Connect with NeoLine </span>
-                  <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg>
-                </a></> : <>
-                  <a onClick={() => setNeoLine(null)} target="_blank" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
-                  <span>Disconnect account </span>
-                  <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
-                  </svg>
-                </a></>
-                
-                
-                }
-                  
+                    <a onClick={() => { getAccounts() }} target="_blank" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                      <span>Connect with NeoLine </span>
+                      <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                      </svg>
+                    </a></> : <>
+                    <a onClick={() => setNeoLine(null)} target="_blank" className="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3">
+                      <span>Disconnect account </span>
+                      <svg className="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fillRule="nonzero" />
+                      </svg>
+                    </a></>
+
+
+                  }
+
                 </li>
               </ul>
 

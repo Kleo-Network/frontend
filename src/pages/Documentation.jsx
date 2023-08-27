@@ -12,6 +12,7 @@ const Documentation = () => {
   const [account, setAccount] = useState();
 
   const [neoline, setNeoLine] = useState(null);
+  const [neolineN3, setneoLineN3] = useState(null);
   const browsingHistory = {
     tierName: 'Developer related cookies',
     lookups: [{...BrowserHistoryDefault}]
@@ -21,7 +22,7 @@ const Documentation = () => {
     <div className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
-      <Header neoline={neoline} setNeoLine={setNeoLine} account={account} setAccount={setAccount} />
+      <Header neolineN3={neolineN3} setneoLineN3={setneoLineN3} neoline={neoline} setNeoLine={setNeoLine} account={account} setAccount={setAccount} />
       {neoline ? <main className="grow">
         <section>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -130,7 +131,7 @@ const Documentation = () => {
                 </aside>
 
                 {/* Page container */}
-                <DocumentationContent key={1} step={active} setStep={setActive} browsingTiers={browsingTiers} setBrowsingTiers={setBrowsingTiers}  />
+                <DocumentationContent account={account} neolineN3={neolineN3} neoline={neoline} key={1} step={active} setStep={setActive} browsingTiers={browsingTiers} setBrowsingTiers={setBrowsingTiers}  />
 
               </div>
 
