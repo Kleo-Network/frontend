@@ -20,53 +20,76 @@ const DocumentationContent = ({
   let [loading, setLoading] = useState(false);
   let [intent, setIntent] = useState('');
   let [error, setError] = useState(false);
+  let [amount, setPayAmount] = useState(1);
 
+  const uploadOrganisation = async () => {
+    const {scriptHash}  = await neolineN3.AddressToScriptHash({ address: 'NepW89XQ81URt4m3xhDfRcjoCVrkPezGVA' });
+    console.log(scriptHash);
+
+    neolineN3.invoke({
+      scriptHash: '5728a0e465b3db32bb4f75fabe97081e5c3e282f',
+      operation: 'createOrganisation',
+      args: [
+        {
+          type: "Address",
+          valye: account.address,
+        },
+        {
+          type: "String",
+          value: intent,
+        },
+        {
+          type: "String",
+          value: "something",
+        },
+        {
+          type: "String",
+          value: "something",
+        },
+        {
+          type: "String",
+          value: "something",
+        }
+       
+      ],
+      fee: '0.0001',
+      broadcastOverride: false,
+      signers: [
+        {
+          account: account.address,
+          scopes: 16,
+          allowedContracts: ["0x9f028511b75bcb285e948f94b69a1a94db1dddd4", "0x5728a0e465b3db32bb4f75fabe97081e5c3e282f"],
+          allowedGroups: []
+        }
+      ]
+    })
+      .then(result => {
+        console.log('Invoke transaction success!');
+        console.log('Transaction ID: ' + result.txid);
+        console.log('RPC node URL: ' + result.nodeURL);
+      })
+
+
+  }
   const clickerDocument = async () => {
 
-    console.log("where to get signer?", (await neoline.getPublicKey()));
-   // const scriptHash = await neolineN3.AddressToScriptHash({ address: '0x5728a0e465b3db32bb4f75fabe97081e5c3e282f' });
-   neolineN3.send({
-    fromAddress: account.address,
-    toAddress: 'NUe3ZeHZM2wqVUcNUsuVu5NHCBpNEe3GHa',
-    asset: '0x9f028511b75bcb285e948f94b69a1a94db1dddd4',
-    amount: '1',
-    fee: '0.0001',
-    broadcastOverride: false
-})
-.then(result => {
-    console.log('Send transaction success!');
-    console.log('Transaction ID: ' + result.txid);
-    console.log('RPC node URL: ' + result.nodeURL);
-});
-    neolineN3.signTransaction({
-      transaction: {
-        version: 0,
-        nonce: 1262108766,
-        systemFee: 997775,
-        networkFee: 122862,
-        validUntilBlock: 667132,
-        attributes: [],
-        signers: [{ account: "03c7216f0702ac4d5acb649129e6954313290d83468ca8db342485b298b9010201", scopes: 1 }],
-        witnesses: [],
-        script: "5728a0e465b3db32bb4f75fabe97081e5c3e282f"
-      },
-      magicNumber: 877933390
+    // console.log("where to get signer?", (await neoline.getPublicKey()));
+    // const scriptHash = await neolineN3.AddressToScriptHash({ address: '0x5728a0e465b3db32bb4f75fabe97081e5c3e282f' });
+    alert(amount);
+    neolineN3.send({
+      fromAddress: account.address,
+      toAddress: 'NUe3ZeHZM2wqVUcNUsuVu5NHCBpNEe3GHa',
+      asset: '0x9f028511b75bcb285e948f94b69a1a94db1dddd4',
+      amount: amount,
+      fee: '0.0001',
+      broadcastOverride: false
     })
-    .then(signedTx => {
-      console.log('Signed Transaction:', signedTx);
-    })
-    .catch((error) => {
-      const {type, description, data} = error;
-      switch(type) {
-        case 'UNKNOWN_ERROR':
-            console.log(description);
-            break;
-        default:
-            // Not an expected error object.  Just write the error to the console.
-            console.error(error);
-            break;
-      }
-    });
+      .then(result => {
+        console.log('Send transaction success!');
+        console.log('Transaction ID: ' + result.txid);
+        console.log('RPC node URL: ' + result.nodeURL);
+      });
+
   }
   const removeTier = (index) => {
     const tempState = [...browsingTiers.filter((val, idx) => idx !== index)];
@@ -74,11 +97,11 @@ const DocumentationContent = ({
   };
 
   const formatTierData = () => {
-    return browsingTiers.map(({tierName, lookups}) => {
+    return browsingTiers.map(({ tierName, lookups }) => {
       return {
         header: tierName,
         default: true,
-        subMenu: lookups.map(({lookup, indexedTimes, lastDays})=> {
+        subMenu: lookups.map(({ lookup, indexedTimes, lastDays }) => {
           return {
             index: lookup,
             times: indexedTimes,
@@ -95,13 +118,13 @@ const DocumentationContent = ({
     try {
       setLoading(true);
       setError(false);
-      let data = await  axios.post(`http://0.0.0.0:8000/api/organizations/`, {
+      let data = await axios.post(`http://0.0.0.0:8000/api/organizations/`, {
         intent: intent,
         intentGeneric: "",
         domainUrl: "",
         formData: formatTierData()
       })
-        setStep(DocumentationOptions.EMBED);
+      setStep(DocumentationOptions.EMBED);
     } catch (error) {
       console.log("error in creating org:", error);
       setError(true)
@@ -113,23 +136,20 @@ const DocumentationContent = ({
   return (
     <div className="md:grow">
       <div className="text-lg text-gray-600">
-        <button onClick={() => clickerDocument()}>TEST</button>
-        
+
         <ol className="flex items-center w-full space-x-2 text-medium font-medium text-center text-gray-500 bg-white rounded-lg">
           <li
-            className={`flex items-center ${
-              step === DocumentationOptions.BROWSING
+            className={`flex items-center ${step === DocumentationOptions.BROWSING
                 ? "text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
             onClick={() => setStep(DocumentationOptions.BROWSING)}
           >
             <span
-              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${
-                step === DocumentationOptions.BROWSING
+              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.BROWSING
                   ? "border-blue-600"
                   : "border-gray-600"
-              } rounded-full shrink-0`}
+                } rounded-full shrink-0`}
             >
               1
             </span>
@@ -151,19 +171,17 @@ const DocumentationContent = ({
             </svg>
           </li>
           <li
-            className={`flex items-center ${
-              step === DocumentationOptions.COOKIE_MANAGER
+            className={`flex items-center ${step === DocumentationOptions.COOKIE_MANAGER
                 ? "text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
             onClick={() => setStep(DocumentationOptions.COOKIE_MANAGER)}
           >
             <span
-              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${
-                step === DocumentationOptions.COOKIE_MANAGER
+              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.COOKIE_MANAGER
                   ? "border-blue-500"
                   : "border-gray-500"
-              } rounded-full shrink-0`}
+                } rounded-full shrink-0`}
             >
               2
             </span>
@@ -185,19 +203,17 @@ const DocumentationContent = ({
             </svg>
           </li>
           <li
-            className={`flex items-center ${
-              step === DocumentationOptions.PAYMENT
+            className={`flex items-center ${step === DocumentationOptions.PAYMENT
                 ? "text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
             onClick={() => setStep(DocumentationOptions.PAYMENT)}
           >
             <span
-              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${
-                step === DocumentationOptions.PAYMENT
+              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.PAYMENT
                   ? "border-blue-500"
                   : "border-gray-500"
-              } rounded-full shrink-0`}
+                } rounded-full shrink-0`}
             >
               3
             </span>
@@ -219,18 +235,16 @@ const DocumentationContent = ({
             </svg>
           </li>
           <li
-            className={`flex items-center ${
-              step === DocumentationOptions.EMBED
+            className={`flex items-center ${step === DocumentationOptions.EMBED
                 ? "text-blue-600"
                 : "text-gray-600"
-            }`}
+              }`}
           >
             <span
-              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${
-                step === DocumentationOptions.EMBED
+              className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.EMBED
                   ? "border-blue-500"
                   : "border-gray-500"
-              } rounded-full shrink-0`}
+                } rounded-full shrink-0`}
             >
               4
             </span>
@@ -282,7 +296,7 @@ const DocumentationContent = ({
                     const nextState = [...browsingTiers];
                     nextState.push({
                       tierName: 'Developer related cookies',
-                      lookups: [{...BrowserHistoryDefault}]
+                      lookups: [{ ...BrowserHistoryDefault }]
                     });
                     setBrowsingTiers(nextState);
                   }}
@@ -331,6 +345,7 @@ const DocumentationContent = ({
                 <input
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                   labelHidden
+                  onChange={(e) => setPayAmount(e.target.value)}
                   hasIcon="right"
                   placeholder="Price in USD"
                 ></input>
@@ -339,8 +354,8 @@ const DocumentationContent = ({
                   className="flex flex-wrap -mx-3 mt-6"
                 >
                   <div className="w-full px-3 mb-5">
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                      
+                    <button onClick={() => clickerDocument()} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+
                       Pay
                     </button>
                   </div>
@@ -354,14 +369,14 @@ const DocumentationContent = ({
                   hasIcon="right"
                   placeholder="Intent"
                   value={intent}
-                  onChange={(e)=>setIntent(e.currentTarget.value)}
+                  onChange={(e) => setIntent(e.currentTarget.value)}
                 ></textarea>
                 <div
                   style={{ textAlign: "right" }}
                   className="flex flex-wrap -mx-3 mt-6"
                 >
                   <div className="w-full px-3 mb-5">
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                    <button onClick={() => uploadOrganisation()} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                       {" "}
                       Submit{" "}
                     </button>
@@ -369,7 +384,7 @@ const DocumentationContent = ({
                 </div>
                 {error && <div class="text-sm bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-3 rounded relative" role="alert">
                   <span class="block sm:inline">Something went wrong, please try again.</span>
-                  <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={()=> setError(false)}>
+                  <span class="absolute top-0 bottom-0 right-0 px-4 py-3" onClick={() => setError(false)}>
                     <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
                   </span>
                 </div>}
@@ -381,9 +396,9 @@ const DocumentationContent = ({
                   Next &#62;&#62; {DocumentationOptionsText.EMBED}
                   {loading && (<>
                     <svg aria-hidden="true" class="inline w-8 h-8 ml-3 fill-gray-200 animate-spin text-blue-400" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                      <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                  </svg>
+                      <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor" />
+                      <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill" />
+                    </svg>
                   </>)}
                 </button>
               </div>
