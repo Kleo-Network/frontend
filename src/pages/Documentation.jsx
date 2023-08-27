@@ -9,6 +9,9 @@ const Documentation = () => {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);
   const [sidebarLinkOpen, setSidebarLinkOpen] = useState(true);
   const [active, setActive] = useState(DocumentationOptions.BROWSING);
+  const [account, setAccount] = useState();
+
+  const [neoline, setNeoLine] = useState(null);
   const browsingHistory = {
     tierName: 'Developer related cookies',
     lookups: [{...BrowserHistoryDefault}]
@@ -18,17 +21,16 @@ const Documentation = () => {
     <div className="flex flex-col min-h-screen overflow-hidden">
 
       {/*  Site header */}
-      <Header />
-   
-      {/*  Page content */}
-      <main className="grow">
+      <Header neoline={neoline} setNeoLine={setNeoLine} account={account} setAccount={setAccount} />
+      {neoline ? <main className="grow">
         <section>
           <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          {account && <> Connected to account: <b> {account.address} </b></>}
+
             <div className="pt-10 pb-10 md:pt-10 md:pb-10">
 
               {/* Main content */}
               <div className="md:flex md:justify-between" data-sticky-container>
-
                 {/* Sidebar */}
                 <aside className="relative my-12 md:my-0 md:w-64 md:mr-12 lg:mr-20 md:shrink-0">
                   <div data-sticky data-margin-top="100" data-sticky-for="768" data-sticky-wrap>
@@ -136,7 +138,24 @@ const Documentation = () => {
           </div>
         </section>
 
-      </main>
+      </main> : 
+      
+      <main className="grow">
+        <section>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
+            <div className="pt-10 pb-10 md:pt-10 md:pb-10">
+
+              {/* Main content */}
+              <div className="md:flex md:justify-between" data-sticky-container>
+              <h1>Please Connect / Download NeoLine to proceed</h1>
+              </div>
+              </div>
+              </div>
+              </section>
+              </main>
+      }
+      {/*  Page content */}
+      
 
       {/*  Site footer */}
       <Footer />
