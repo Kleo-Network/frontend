@@ -7,7 +7,12 @@ import {
 import CookieManager from "./CookieManager/CookieManager";
 import ParagraphSection from "./ParagraphSection";
 import axios from "axios";
-
+import {
+  default as Neon
+} from "@cityofzion/neon-js";
+import {
+  sc
+} from '@cityofzion/neon-core';
 const DocumentationContent = ({
   step,
   setStep,
@@ -21,13 +26,13 @@ const DocumentationContent = ({
   let [intent, setIntent] = useState('');
   let [error, setError] = useState(false);
   let [amount, setPayAmount] = useState(1);
-
+  let [domain, setDomain] = useState("");
   const uploadOrganisation = async () => {
-    const {scriptHash}  = await neolineN3.AddressToScriptHash({ address: 'NepW89XQ81URt4m3xhDfRcjoCVrkPezGVA' });
-    console.log(scriptHash);
-
+    // const {scriptHash}  = await neolineN3.AddressToScriptHash({ address: 'NepW89XQ81URt4m3xhDfRcjoCVrkPezGVA' });
+    // console.log(scriptHash);
+    console.log(Neon.u.HexString.fromHex("5728a0e465b3db32bb4f75fabe97081e5c3e282f"));
     neolineN3.invoke({
-      scriptHash: '5728a0e465b3db32bb4f75fabe97081e5c3e282f',
+      scriptHash: Neon.u.HexString.fromHex("5728a0e465b3db32bb4f75fabe97081e5c3e282f"),
       operation: 'createOrganisation',
       args: [
         {
@@ -50,9 +55,9 @@ const DocumentationContent = ({
           type: "String",
           value: "something",
         }
-       
+
       ],
-      fee: '0.0001',
+      fee: '1',
       broadcastOverride: false,
       signers: [
         {
@@ -68,6 +73,37 @@ const DocumentationContent = ({
         console.log('Transaction ID: ' + result.txid);
         console.log('RPC node URL: ' + result.nodeURL);
       })
+
+    // const contractHash = "0x5728a0e465b3db32bb4f75fabe97081e5c3e282f" //GAS Contract
+    // const networkMagic = Neon.CONST.MAGIC_NUMBER.TestNet
+    // const rpcAddress = "http://seed2t5.neo.org:20332/"
+    // //const WIF = "L4VqMgXehi1k97C3dH3xR5XWMWt1BxfYNj87QrYxVVBhjo7woAKa"
+    // //const account = Neon.create.account(WIF)
+    // const contract = new Neon.experimental.SmartContract(Neon.u.HexString.fromHex(contractHash),
+    //   {
+    //     networkMagic,
+    //     rpcAddress,
+    //     account
+    //   }
+    // )
+
+    // const amountMain = amount * Math.pow(10, 8)
+    // const operation = "createOrganisation"
+    // const params = [
+    //   sc.ContractParam.hash160(account.address),
+    //   sc.ContractParam.fromString("hello"),
+    //   sc.ContractParam.fromString("hello"),
+    //   sc.ContractParam.fromString("hello"),
+    //   sc.ContractParam.fromString("hello")
+    // ]
+
+    // let result;
+    // try {
+    //   const txHash = await contract.invoke(operation, params);
+    //   console.log(txHash)
+    // } catch (e) {
+    //   console.log(e);
+    // }
 
 
   }
@@ -121,7 +157,7 @@ const DocumentationContent = ({
       let data = await axios.post(`http://0.0.0.0:8000/api/organizations/`, {
         intent: intent,
         intentGeneric: "",
-        domainUrl: "",
+        domainUrl: domain,
         formData: formatTierData()
       })
       setStep(DocumentationOptions.EMBED);
@@ -140,15 +176,15 @@ const DocumentationContent = ({
         <ol className="flex items-center w-full space-x-2 text-medium font-medium text-center text-gray-500 bg-white rounded-lg">
           <li
             className={`flex items-center ${step === DocumentationOptions.BROWSING
-                ? "text-blue-600"
-                : "text-gray-600"
+              ? "text-blue-600"
+              : "text-gray-600"
               }`}
             onClick={() => setStep(DocumentationOptions.BROWSING)}
           >
             <span
               className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.BROWSING
-                  ? "border-blue-600"
-                  : "border-gray-600"
+                ? "border-blue-600"
+                : "border-gray-600"
                 } rounded-full shrink-0`}
             >
               1
@@ -172,15 +208,15 @@ const DocumentationContent = ({
           </li>
           <li
             className={`flex items-center ${step === DocumentationOptions.COOKIE_MANAGER
-                ? "text-blue-600"
-                : "text-gray-600"
+              ? "text-blue-600"
+              : "text-gray-600"
               }`}
             onClick={() => setStep(DocumentationOptions.COOKIE_MANAGER)}
           >
             <span
               className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.COOKIE_MANAGER
-                  ? "border-blue-500"
-                  : "border-gray-500"
+                ? "border-blue-500"
+                : "border-gray-500"
                 } rounded-full shrink-0`}
             >
               2
@@ -204,15 +240,15 @@ const DocumentationContent = ({
           </li>
           <li
             className={`flex items-center ${step === DocumentationOptions.PAYMENT
-                ? "text-blue-600"
-                : "text-gray-600"
+              ? "text-blue-600"
+              : "text-gray-600"
               }`}
             onClick={() => setStep(DocumentationOptions.PAYMENT)}
           >
             <span
               className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.PAYMENT
-                  ? "border-blue-500"
-                  : "border-gray-500"
+                ? "border-blue-500"
+                : "border-gray-500"
                 } rounded-full shrink-0`}
             >
               3
@@ -236,14 +272,14 @@ const DocumentationContent = ({
           </li>
           <li
             className={`flex items-center ${step === DocumentationOptions.EMBED
-                ? "text-blue-600"
-                : "text-gray-600"
+              ? "text-blue-600"
+              : "text-gray-600"
               }`}
           >
             <span
               className={`flex items-center justify-center w-5 h-5 mr-2 text-xs border ${step === DocumentationOptions.EMBED
-                  ? "border-blue-500"
-                  : "border-gray-500"
+                ? "border-blue-500"
+                : "border-gray-500"
                 } rounded-full shrink-0`}
             >
               4
@@ -263,6 +299,7 @@ const DocumentationContent = ({
             >
               Browsing History
             </h3>
+
             {browsingTiers.map((form, index) => (
               <div key={index} className="flex justify-center items-start pb-3">
                 <ParagraphSection
@@ -362,6 +399,16 @@ const DocumentationContent = ({
                 </div>
               </div>
               <div className="w-full px-3">
+                Website URL
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                  labelHidden
+                  hasIcon="right"
+                  placeholder="Domain"
+                  value={domain}
+                  onChange={(e) => setDomain(e.currentTarget.value)}
+                ></input>
+                <br />
                 Intent
                 <textarea
                   className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -416,10 +463,12 @@ const DocumentationContent = ({
               Embed Code
             </h3>
             <code id="code">
-              &lt;div id="{crypto.randomUUID()}"&gt; <br />
-              &lt;button "" your custom className "" /&gt;
-              <br />
-              &lt;/div&gt;
+
+              window.kleo.wallet.connect(&#123;orgId: 1&#125;).then((msg) =&gt; &#123;
+              document.getElementById(&quot;
+              terminal&quot;).value = JSON.stringify(msg);&#125;);
+
+
             </code>
             <h4 className="h4 text-gray-900 mb-4">How to catch data?</h4>
             <p>

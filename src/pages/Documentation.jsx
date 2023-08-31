@@ -4,6 +4,9 @@ import Header from '../partials/HeaderLogin';
 import DocumentationContent from '../partials/DocumentationContent';
 import Footer from '../partials/Footer';
 import { DocumentationOptions, DocumentationOptionsText, BrowserHistoryDefault } from '../utils/constants';
+import {
+  default as Neon
+} from "@cityofzion/neon-js";
 
 const Documentation = () => {
   const [sidebarNavOpen, setSidebarNavOpen] = useState(false);

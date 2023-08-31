@@ -258,12 +258,12 @@
   dependencies:
     "@cityofzion/neon-core" "^5.2.0"
 
-"@cityofzion/neon-api@^5.0.0-next.17", "@cityofzion/neon-api@^5.4.0":
+"@cityofzion/neon-api@^5.4.0":
   version "5.4.0"
   resolved "https://registry.npmjs.org/@cityofzion/neon-api/-/neon-api-5.4.0.tgz"
   integrity sha512-FHjdq2RnZLK37Hpd71yhVMkmbhl/iyPrmmAiEKb4mf5/rLtbNaKEEEJsxRkSNasio9+14cd7+BecIZ/35L1Sbg==
 
-"@cityofzion/neon-core@^5.0.0", "@cityofzion/neon-core@^5.0.0-next.17", "@cityofzion/neon-core@^5.2.0", "@cityofzion/neon-core@^5.5.0":
+"@cityofzion/neon-core@^5.0.0", "@cityofzion/neon-core@^5.2.0", "@cityofzion/neon-core@^5.5.0":
   version "5.5.0"
   resolved "https://registry.npmjs.org/@cityofzion/neon-core/-/neon-core-5.5.0.tgz"
   integrity sha512-jIE/fHIHjzSI5Lw2KpxctOx7i93vDziZ9swQt7nYjp4Stv09aXNDHHPKhDZNeGdINw+vjvmfu8Wp9uHEjwXzMQ==
@@ -279,15 +279,7 @@
     loglevel "1.8.1"
     loglevel-plugin-prefix "0.8.4"
 
-"@cityofzion/neon-js@^5.0.0-next.17":
-  version "5.0.0-next.17"
-  resolved "https://registry.npmjs.org/@cityofzion/neon-js/-/neon-js-5.0.0-next.17.tgz"
-  integrity sha512-36Gzh1wrDYvHKoCn7tBenbAOP2ke/rvpkzMwRILxGc3PmY4xJATzGKlpbw9koNFR4fs8uLKZCnyC4aT4XWWDKQ==
-  dependencies:
-    "@cityofzion/neon-api" "^5.0.0-next.17"
-    "@cityofzion/neon-core" "^5.0.0-next.17"
-
-"@cityofzion/neon-js@^5.2.0":
+"@cityofzion/neon-js@^5.2.0", "@cityofzion/neon-js@^5.5.0":
   version "5.5.0"
   resolved "https://registry.npmjs.org/@cityofzion/neon-js/-/neon-js-5.5.0.tgz"
   integrity sha512-S6lYJa9+2UQnRAkCytoNbQaynMsPhdJBTrsvvV1PoAUhVVaaO5aR0rJB+mMMk686y537Bn8vJFXbT+HSAdw1Kg==
@@ -656,7 +648,7 @@
     "@walletconnect/types" "2.0.0-rc.3"
     better-sqlite3 "^7.6.2"
 
-"@rentfuse-labs/neo-wallet-adapter-wallets@^0.4.4":
+"@rentfuse-labs/neo-wallet-adapter-wallets@^0.4.0":
   version "0.4.4"
   resolved "https://registry.npmjs.org/@rentfuse-labs/neo-wallet-adapter-wallets/-/neo-wallet-adapter-wallets-0.4.4.tgz"
   integrity sha512-x6/vnDqZj5KBFLVfegvvBhs2dS0oX8aGDv9fpyAR0IQu/SU2QYjZcr3yJrM4bEj6pSUOXX+qWQHWXUCu8TEXxw==
