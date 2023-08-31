@@ -78,7 +78,9 @@ function Header() {
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
-
+            <li>
+                <a href="https://cal.com/vaibhav-kleo/30min" target='blank' className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Schedule Demo</a>
+              </li>
             <li>
                 <a href="https://www.kleo.wiki" target='blank' className="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out">Docs</a>
               </li>

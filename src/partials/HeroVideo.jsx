@@ -60,9 +60,9 @@ export default function HeroFeatures() {
           >
             <a
               className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0"
-              href="https://discord.gg/Qn6ZmecTEw"
+              href="https://cal.com/vaibhav-kleo/30min"
             >
-              Join Waitlist and get free credits worth $1000 USD
+             Schedule Demo! Be eligibe for 1000$ of credits
             </a>
             <p className=" text-lg text-gray-500 text-center pt-2">
               Valid only for first 200 organizations.
