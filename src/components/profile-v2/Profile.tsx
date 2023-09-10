@@ -63,7 +63,7 @@ const Profile: React.FC = () => {
   })
 
   return (
-    <div className="grid grid-cols-3 bg-[#e8ebf6] p-3">
+    <div className="grid grid-cols-3 gap-6 bg-[#e8ebf6] p-3">
       <div className="">
         <ProfileCard user={user} />
       </div>
