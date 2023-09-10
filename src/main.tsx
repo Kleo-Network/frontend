@@ -9,7 +9,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route
+        {/* <Route
           path="/about"
           element={
             <>
@@ -23,7 +23,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
               </div>
             </>
           }
-        />
+        /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
