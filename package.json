@@ -10,8 +10,12 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@types/d3": "^7.4.0",
+    "d3": "^7.8.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-svg-timeline": "^0.24.2",
+    "recharts": "^2.8.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
