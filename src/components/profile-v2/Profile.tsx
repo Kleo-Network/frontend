@@ -67,7 +67,7 @@ const Profile: React.FC = () => {
       <div className="">
         <ProfileCard user={user} />
       </div>
-      <div className="container col-span-2 flex flex-row flex-wrap bg-slate-300">
+      <div className="container col-span-2 bg-white rounded-3xl">
         <ul
           className="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0"
           role="tablist"
@@ -128,9 +128,9 @@ const Profile: React.FC = () => {
           </li>
         </ul>
 
-        <div className="mb-6">
+        <div className="mb-6 ">
           <div
-            className="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+            className="flex flex-row flex-wrap"
             id="tabs-home"
             role="tabpanel"
             aria-labelledby="tabs-home-tab"
@@ -139,7 +139,7 @@ const Profile: React.FC = () => {
             {user.pills.map((pill, index) => (
               <div
                 key={index}
-                className="py-3 px-10 m-3 w-fit h-fit rounded-2xl shadow-lg bg-slate-200"
+                className="py-3 px-10 m-3 rounded-2xl shadow-lg bg-slate-200"
               >
                 {pill}
               </div>
