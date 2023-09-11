@@ -14,7 +14,7 @@ const MultiProgressBar: React.FC<MultiProgressBarProps> = ({
   progressBars
 }) => {
   return (
-    <div className="mb-2 flex flex-col w-[500px]">
+    <div className="mb-2 flex flex-col">
       <div className="mb-6 h-5 w-full flex flex-row bg-gray-400">
         {progressBars.map((bar, index) => (
           <div
