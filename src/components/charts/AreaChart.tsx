@@ -12,102 +12,51 @@ import {
 } from 'recharts'
 import MultiProgressBar from './MultiProgressBar'
 
-const data = [
-  {
-    name: "Jan '23",
-    amt: 2400
-  },
-  {
-    name: "Feb '23",
-    amt: 2210
-  },
-  {
-    name: "Mar '23",
-    amt: 2400
-  },
-  {
-    name: "Apr '23",
-    amt: 2210
-  },
-  {
-    name: "May '23",
-    amt: 2290
-  },
-  {
-    name: "Jun '23",
-    amt: 2000
-  },
-  {
-    name: "Jul '23",
-    amt: 2181
-  },
-  {
-    name: "Aug '23",
-    amt: 2500
-  },
-  {
-    name: "Sept '23",
-    amt: 2100
-  }
-]
+interface BrowsingData {
+  name: string
+  amt: number
+}
 
-const websiteArr = [
-  {
-    label: 'Website 1',
-    percentage: 40,
-    colorClass: 'bg-blue-500'
-  },
-  {
-    label: 'Website 2',
-    percentage: 20,
-    colorClass: 'bg-red-500'
-  },
-  {
-    label: 'Website 3',
-    percentage: 5,
-    colorClass: 'bg-green-500'
-  },
-  {
-    label: 'Website 4',
-    percentage: 5,
-    colorClass: 'bg-yellow-500'
-  },
-  {
-    label: 'Website 5',
-    percentage: 0,
-    colorClass: 'bg-green-500'
-  },
-  {
-    label: 'Website 6',
-    percentage: 0,
-    colorClass: 'bg-yellow-500'
-  }
-]
+interface Website {
+  label: string
+  link: string
+  percentage: number
+  colorClass: string
+}
+interface CustomTooltipProps {
+  websites: Website[]
+  // add other props here
+}
 
-const CustomTooltip = ({ label }: any) => {
+interface BrowsingHistoryChartProps {
+  browsingData: BrowsingData[]
+  websitesArr: Website[]
+}
+
+const CustomTooltip: React.FC<CustomTooltipProps> = ({ websites }) => {
   //   if (active && payload && payload.length) {
   return (
     <div className="custom-tooltip rounded-3xl bg-white p-5 shadow-lg text-xs">
-      <MultiProgressBar progressBars={websiteArr} />
+      <MultiProgressBar progressBars={websites} />
       <div className="flex flex-row flex-wrap">
-        {websiteArr.map((bar, index) => (
+        {websites.map((bar, index) => (
           <div className="overflow-x-auto sm:-mx-6 lg:-mx-8" key={index}>
-            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div className="inline-block min-w-full py-2 sm:px-3 lg:pl-10">
               <div className="overflow-hidden">
                 <div
                   data-te-chip-init
                   data-te-ripple-init
-                  className="[word-wrap: break-word] my-[5px] mr-4 flex h-[42px] cursor-pointer items-center justify-between rounded-[21px] bg-[#eceff1] px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-[#4f4f4f] shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none"
+                  className={`[word-wrap: break-word] my-[5px] mr-3 flex h-[42px] cursor-pointer items-center justify-between rounded-[21px] ${bar.colorClass} px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-white shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none`}
                 >
                   <img
                     className="my-0 -ml-[12px] mr-[8px] h-10 w-10 rounded-[100%]"
-                    src="https://picsum.photos/200/300"
+                    src={bar.link}
                     alt="Contact Person"
                   />
                   {bar.label}
                   <span
                     data-te-chip-close
-                    className="float-right w-4 cursor-pointer pl-[8px] text-[16px] text-black opacity-[.53] transition-all duration-200 ease-in-out"
+                    className="float-right w-4 cursor-pointer pl-[8px] text-[16px] text-white opacity-[.83] transition-all duration-200 ease-in-out"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +64,7 @@ const CustomTooltip = ({ label }: any) => {
                       viewBox="0 0 24 24"
                       stroke-width="1.5"
                       stroke="currentColor"
-                      className="h-3 w-3 fill-black"
+                      className="h-3 w-3 fill-white"
                     >
                       <path
                         stroke-linecap="round"
@@ -137,7 +86,10 @@ const CustomTooltip = ({ label }: any) => {
   return null
 }
 
-const BrowsingHistoryChart: React.FC = () => {
+const BrowsingHistoryChart: React.FC<BrowsingHistoryChartProps> = ({
+  browsingData,
+  websitesArr
+}) => {
   return (
     <div className="grid grid-cols-3 gap-5">
       <div className="bg-[#1e293b] p-5 rounded-3xl col-span-2 shadow-lg">
@@ -151,7 +103,7 @@ const BrowsingHistoryChart: React.FC = () => {
           <AreaChart
             width={400}
             height={400}
-            data={data}
+            data={browsingData}
             margin={{
               top: 20,
               right: 0,
@@ -186,7 +138,7 @@ const BrowsingHistoryChart: React.FC = () => {
         </ResponsiveContainer>
       </div>
       <div>
-        <CustomTooltip label={''} />
+        <CustomTooltip websites={websitesArr} />
       </div>
     </div>
   )
