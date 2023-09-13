@@ -221,7 +221,7 @@ const Profile: React.FC = () => {
             className="font-bold text-lg p-5 text-gray-600 bg-white shadow-md rounded-3xl"
             contentEditable
           >
-            Top Pinned Searches
+            Pinned Websites
           </div>
           <StarredCards topPinned={user.topPinned} />
         </div>
