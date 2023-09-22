@@ -36,17 +36,20 @@ interface BrowsingHistoryChartProps {
 const CustomTooltip: React.FC<CustomTooltipProps> = ({ websites }) => {
   //   if (active && payload && payload.length) {
   return (
-    <div className="custom-tooltip rounded-3xl bg-white p-5 shadow-lg text-xs">
+    <div className="custom-tooltip rounded-3xl bg-white p-3 shadow-lg text-xs">
+      <h3 className="text-center text-lg text-gray-700 font-medium leading-8 mb-3 shadow-sm bg-slate-100 rounded">
+        Time Snapshot
+      </h3>
       <MultiProgressBar progressBars={websites} />
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap justify-between">
         {websites.map((bar, index) => (
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8" key={index}>
-            <div className="inline-block min-w-full py-2 sm:px-3 lg:pl-10">
-              <div className="overflow-hidden">
+          <div className="" key={index}>
+            <div className=" py-2">
+              <div className="">
                 <div
                   data-te-chip-init
                   data-te-ripple-init
-                  className={`[word-wrap: break-word] my-[5px] mr-3 flex h-[42px] cursor-pointer items-center justify-between rounded-[21px] ${bar.colorClass} px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-white shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none`}
+                  className={`[word-wrap: break-word] my-[5px] flex h-[42px] cursor-pointer items-center justify-between rounded-[21px] ${bar.colorClass} px-[12px] py-0 text-[13px] font-normal normal-case leading-loose text-white shadow-none transition-[opacity] duration-300 ease-linear hover:!shadow-none`}
                 >
                   <img
                     className="my-0 -ml-[12px] mr-[8px] h-10 w-10 rounded-[100%]"

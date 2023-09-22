@@ -1,6 +1,7 @@
 // create component
 
 import React, { useState } from 'react'
+import CopyIcon from '../../assets/copy.svg'
 
 interface User {
   user: {
@@ -12,12 +13,16 @@ interface User {
 }
 
 const ProfileCard: React.FC<User> = ({ user }) => {
+  const [copied, setCopied] = useState(false)
+
   const shortenAddress = (address: string) => {
     return address.substring(0, 6) + '...' + address.substring(38, 42)
   }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(user.address)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
   return (
     <div className="bg-white shadow-xl rounded-3xl py-3">
@@ -40,13 +45,17 @@ const ProfileCard: React.FC<User> = ({ user }) => {
             >
               <span>
                 {shortenAddress(user.address)}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 inline-block pb-1 ml-1 fill-white"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M64 464H288c8.8 0 16-7.2 16-16V384h48v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h64v48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM224 304H448c8.8 0 16-7.2 16-16V64c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16V288c0 8.8 7.2 16 16 16zm-64-16V64c0-35.3 28.7-64 64-64H448c35.3 0 64 28.7 64 64V288c0 35.3-28.7 64-64 64H224c-35.3 0-64-28.7-64-64z" />{' '}
-                </svg>
+                {copied ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4 inline-block pb-1 ml-1 fill-green-500"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                  </svg>
+                ) : (
+                  <CopyIcon />
+                )}
               </span>
             </button>
           </div>
