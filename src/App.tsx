@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from 'react'
-import Profile from './components/profile-v2/Profile'
+import Profile from './components/profile/Profile'
 
 function App(): ReactElement {
   // const [count, setCount] = useState(0)

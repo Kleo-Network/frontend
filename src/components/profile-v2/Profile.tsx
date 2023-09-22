@@ -6,7 +6,7 @@ import BrowsingHistoryChart from '../charts/AreaChart'
 import StarredCards from './StarredCards'
 import Navbar from '../navbar/Navbar'
 
-const Profile: React.FC = () => {
+const ProfileV2: React.FC = () => {
   const [user, setUser] = useState({
     name: 'Ada Lovelace',
     image: 'https://bootdey.com/img/Content/avatar/avatar3.png',
@@ -236,4 +236,4 @@ const Profile: React.FC = () => {
   )
 }
 
-export default Profile
+export default ProfileV2
