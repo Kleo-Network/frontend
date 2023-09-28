@@ -17,6 +17,10 @@ module.exports = {
           '0 35px 35px rgba(0, 0, 0, 0.25)',
           '0 85px 65px rgba(0, 0, 0, 0.15)'
         ]
+      },
+      colors: {
+        overlay: 'rgba(52, 64, 84, 0.7)',
+        primary: '#7F56D9'
       }
     }
   }

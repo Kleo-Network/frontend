@@ -1,6 +1,6 @@
 import React from 'react'
-import AreaChart from '../charts/AreaChart'
-import { BrowsingData } from '../charts/AreaChart'
+import AreaChart from '../common/charts/AreaChart'
+import { BrowsingData } from '../common/charts/AreaChart'
 import { ReactComponent as StarIcon } from '../../assets/images/star.svg'
 import { ReactComponent as EyeIcon } from '../../assets/images/eye.svg'
 
@@ -104,7 +104,7 @@ export function SelectedHistoryTabData({
                         {visits} visits
                       </span>
                     </div>
-                    <StarIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
+                    <StarIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200" />
                     <EyeIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
                   </div>
                 )
