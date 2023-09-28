@@ -5,6 +5,7 @@ import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory'
 import Modal from '../common/Modal'
 import Onboarding from './Onboarding'
+import { WebsiteProps } from './PinnedWebsites'
 
 export default function Profile() {
   const [user, setUser] = React.useState({
@@ -92,6 +93,11 @@ export default function Profile() {
 
   const [isModalOpen, setIsModalOpen] = React.useState(true)
 
+  const setWebsites = (websites: WebsiteProps[]) => {
+    console.log(websites)
+    setUser({ ...user, pinnedWebsites: websites })
+  }
+
   return (
     <section>
       <div className="flex flex-col items-start px-24 py-8">
@@ -105,7 +111,10 @@ export default function Profile() {
           </button>
         </header>
         <div className="flex flex-col items-start justify-between py-8 gap-6 md:flex-row">
-          <PinnedWebsites websites={user.pinnedWebsites} />
+          <PinnedWebsites
+            websites={user.pinnedWebsites}
+            setWebsites={setWebsites}
+          />
           <ProfileCard user={user} />
         </div>
         <BrowsingHistory graphData={user.graphData} />
