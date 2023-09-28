@@ -9,12 +9,12 @@ interface ModalProps {
   hideCloseButton?: boolean
 }
 
-const Modal: React.FC<ModalProps> = ({
+const Modal = ({
   isOpen,
   onClose,
   hideCloseButton = false,
   children
-}) => {
+}: React.PropsWithChildren<ModalProps>) => {
   useBodyScroll(isOpen)
 
   const modal = (

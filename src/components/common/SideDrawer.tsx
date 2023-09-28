@@ -12,7 +12,7 @@ type SideDrawerProps = {
   showCloseButton?: boolean
 }
 
-const SideDrawer: React.FC<SideDrawerProps> = React.memo(
+const SideDrawer = React.memo(
   ({
     isOpen,
     onClose,
@@ -20,7 +20,7 @@ const SideDrawer: React.FC<SideDrawerProps> = React.memo(
     showCloseButton = false,
     //   removeWhenClosed = true,
     children
-  }) => {
+  }: React.PropsWithChildren<SideDrawerProps>) => {
     const bodyRef = useRef(document.querySelector('body'))
     const portalRootRef = useRef(
       document.getElementById('drawer-root') || createPortalRoot()

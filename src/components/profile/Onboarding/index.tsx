@@ -66,13 +66,13 @@ const accordionHeader = (expanded: boolean) => {
       <span className="text-gray-900 text-sm font-medium">
         Why should I install Kleo Plugin?
       </span>
-      <button className="text-gray-400 text-sm font-regular">
+      <div className="text-gray-400 text-sm font-regular">
         {expanded ? (
           <Arrow className="w-5 h-5" />
         ) : (
           <Arrow className=" w-5 h-5transform rotate-180" />
         )}
-      </button>
+      </div>
     </div>
   )
 }

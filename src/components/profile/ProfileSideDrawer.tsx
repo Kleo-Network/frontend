@@ -12,7 +12,7 @@ interface ProfileSideDrawerProps {
   onClose: () => void
 }
 
-interface WebsiteProps {
+export interface WebsiteProps {
   name: string
   url: string
   icon: string
