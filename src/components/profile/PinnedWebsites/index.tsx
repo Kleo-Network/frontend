@@ -1,6 +1,6 @@
 import { ReactComponent as AddIcon } from '../../../assets/images/add.svg'
 import SideDrawer from '../../common/SideDrawer'
-import ProfileSideDrawer from '../ProfileSideDrawer'
+import ProfileSideDrawer from '../SideDrawerContainer'
 import PinnedWebsite from './PinnedWebsite'
 import { useCallback, useState } from 'react'
 import { DndContext, DragEndEvent, closestCorners } from '@dnd-kit/core'

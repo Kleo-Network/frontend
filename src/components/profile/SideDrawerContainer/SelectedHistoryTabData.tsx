@@ -1,23 +1,13 @@
 import React from 'react'
-import AreaChart from '../common/charts/AreaChart'
-import { BrowsingData } from '../common/charts/AreaChart'
-import { ReactComponent as StarIcon } from '../../assets/images/star.svg'
-import { ReactComponent as EyeIcon } from '../../assets/images/eye.svg'
+import AreaChart from '../../common/charts/AreaChart'
+import { BrowsingData } from '../../common/charts/AreaChart'
+import { ReactComponent as StarIcon } from '../../../assets/images/star.svg'
+import { ReactComponent as EyeIcon } from '../../../assets/images/eye.svg'
+import { CurrentBrowserHistory } from '../../constants/Website'
 
 interface SelectedHistoryTabDataProps {
   areaChartData: BrowsingData[]
   currentBrowserHistory: CurrentBrowserHistory
-}
-
-export interface CurrentBrowserHistory {
-  [key: string]: WebsiteHistoryProps[]
-}
-
-interface WebsiteHistoryProps {
-  name: string
-  url: string
-  time: string
-  visits: number
 }
 
 export function SelectedHistoryTabData({

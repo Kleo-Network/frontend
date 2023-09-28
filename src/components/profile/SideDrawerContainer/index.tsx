@@ -1,11 +1,9 @@
 import React from 'react'
-import { ReactComponent as PinIcon } from '../../assets/images/pin.svg'
-import { ReactComponent as CloseIcon } from '../../assets/images/cross.svg'
-import {
-  CurrentBrowserHistory,
-  SelectedHistoryTabData
-} from './SelectedHistoryTabData'
+import { ReactComponent as PinIcon } from '../../../assets/images/pin.svg'
+import { ReactComponent as CloseIcon } from '../../../assets/images/cross.svg'
+import { SelectedHistoryTabData } from './SelectedHistoryTabData'
 import { SummaryTabData } from './SummaryTabData'
+import { CurrentBrowserHistory } from '../../constants/Website'
 
 interface ProfileSideDrawerProps {
   website: WebsiteProps | null
