@@ -1,5 +1,5 @@
-import { BarChartContainer } from '../charts/BarChartContainer'
-import MultiProgressBar from '../charts/MultiProgressBar'
+import { BarChartContainer } from '../common/charts/BarChartContainer'
+import MultiProgressBar from '../common/charts/MultiProgressBar'
 import { ReactComponent as SortIcon } from '../../assets/images/sort.svg'
 
 interface BrowsingHistoryProps {
@@ -12,7 +12,7 @@ const tags = [
   { label: 'Shopping', color: '#82CA9D', percentage: 5 },
   { label: 'Finance', color: '#FFD700', percentage: 5 },
   { label: 'Gaming', color: '#4169E1', percentage: 15 },
-  { label: 'Other', color: '#A9A9A9', percentage: 1 }
+  { label: 'Other', color: '#A9A9A9', percentage: 10 }
 ]
 
 export default function BrowsingHistory({ graphData }: BrowsingHistoryProps) {

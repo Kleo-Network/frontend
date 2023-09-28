@@ -2,6 +2,7 @@ import React from 'react'
 import { ReactComponent as Logo } from '../../assets/images/kleoLogo.svg'
 import { ReactComponent as Settings } from '../../assets/images/settings.svg'
 import { ReactComponent as Notifications } from '../../assets/images/notifications.svg'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 interface NavbarProps {
   avatar: {
@@ -10,7 +11,24 @@ interface NavbarProps {
   }
 }
 
+enum Tab {
+  DASHBOARD = 'Dashboard',
+  HISTORY = 'History'
+}
+
 const Navbar = ({ avatar }: NavbarProps) => {
+  const [selectedTab, setSelectedTab] = React.useState(Tab.DASHBOARD)
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  React.useEffect(() => {
+    if (pathname === '/') {
+      setSelectedTab(Tab.DASHBOARD)
+    } else if (pathname === '/history') {
+      setSelectedTab(Tab.HISTORY)
+    }
+  }, [pathname])
+
   return (
     <nav className="flex justify-between items-center px-24 w-full">
       <div className="flex items-center">
@@ -19,12 +37,20 @@ const Navbar = ({ avatar }: NavbarProps) => {
           <h3 className="font-bold text-xl tracking-tighter">KLEO</h3>
         </div>
         <div className="flex items-center gap-1 ml-8">
-          <button className="px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-100">
-            Home
-          </button>
-          <button className="px-3 py-2 bg-purple-50 hover:bg-purple-100 text-purple-700 rounded-md font-medium text-base">
-            Dashboard
-          </button>
+          {Object.values(Tab).map((tab, i) => (
+            <button
+              key={i}
+              className={`px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-50 ${
+                selectedTab === tab ? 'text-purple-700 bg-purple-100' : ''
+              }`}
+              onClick={() => {
+                setSelectedTab(tab)
+                navigate(`/${tab.toLowerCase()}`)
+              }}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       </div>
       <div className="flex items-center">
