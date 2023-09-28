@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as AddIcon } from '../../assets/images/add.svg'
+import { ReactComponent as AddIcon } from '../../../assets/images/add.svg'
 
 export function SummaryTabData() {
   return (
