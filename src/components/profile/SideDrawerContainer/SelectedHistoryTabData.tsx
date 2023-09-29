@@ -86,7 +86,7 @@ export function SelectedHistoryTabData({
                         href={url}
                         title={url}
                         target="_blank"
-                        className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700"
+                        className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
                       >
                         {url}
                       </a>

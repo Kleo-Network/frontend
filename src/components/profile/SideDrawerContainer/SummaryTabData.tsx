@@ -32,12 +32,12 @@ export function SummaryTabData() {
                 with dataframe
               </h4>
               <a
-                className="text-xs font-regular text-gray-400 flex overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700"
+                className="text-xs font-regular text-gray-400 flex overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
                 title="https://www.youtube.com/"
                 href="https://www.youtube.com/"
                 target="_blank"
               >
-                https://stackoverflow.com/questions/77129583/python-dash-app-problem-over-callback-for-multiple-filtering-with-dataframe{' '}
+                https://stackoverflow.com/questions/77129583/python-dash-app-problem-over-callback-for-multiple-filtering-with-dataframe
               </a>
               <span className="text-xs font-regular text-gray-400 pt-2">
                 {29 + i} Visits

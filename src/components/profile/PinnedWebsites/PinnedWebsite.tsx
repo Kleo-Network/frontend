@@ -39,7 +39,7 @@ export default function PinnedWebsites({
       <div className="text-left w-full">
         <h4 className="text-sm font-medium text-gray-800">{name}</h4>
         <a
-          className="text-xs font-regular text-gray-500 flex max-w-[150px] overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700"
+          className="text-xs font-regular text-gray-500 flex max-w-[150px] overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
           title={url}
           href={url}
           target="_blank"

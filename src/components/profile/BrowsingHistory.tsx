@@ -131,7 +131,7 @@ export default function BrowsingHistory({ graphData }: BrowsingHistoryProps) {
                       <a
                         href={label}
                         target="_blank"
-                        className="hover:text-purple-700"
+                        className="hover:text-purple-700 hover:underline"
                       >
                         https://github.com
                         {/* {label} */}
