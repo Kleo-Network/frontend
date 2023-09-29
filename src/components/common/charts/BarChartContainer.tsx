@@ -68,6 +68,7 @@ export function BarChartContainer({ data }: BarChartContainerProps) {
             radius: 8
           }}
           content={() => null}
+          trigger="click"
         />
         // TODO: use forEach here to create bars dynamically
         <Bar
