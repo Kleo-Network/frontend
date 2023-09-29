@@ -69,9 +69,9 @@ export default function PinnedWebsites({
             items={websites.map((w) => w.name)}
             strategy={rectSortingStrategy}
           >
-            {websites.map((website, i) => (
+            {websites.map((website) => (
               <PinnedWebsite
-                key={i}
+                key={website.name}
                 isSelected={selectedWebsite?.url === website.url}
                 onClick={() => setSelectedWebsite(website)}
                 website={website}
