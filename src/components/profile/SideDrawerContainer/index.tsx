@@ -125,7 +125,7 @@ export default function ProfileSideDrawer({
             <a
               href={website.url}
               title={website.url}
-              className="font-regular max-w-[250px] text-sm text-gray-500 hover:text-purple-700 overflow-hidden overflow-ellipsis whitespace-nowrap"
+              className="font-regular max-w-[250px] text-sm text-gray-500 hover:text-purple-700 hover:underline overflow-hidden overflow-ellipsis whitespace-nowrap"
             >
               {website.url}
             </a>

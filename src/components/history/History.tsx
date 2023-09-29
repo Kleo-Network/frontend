@@ -8,14 +8,14 @@ import { CurrentBrowserHistory } from '../constants/Website'
 const websiteHistory: CurrentBrowserHistory = {
   today: [
     {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
+      name: 'Stack Overflow Node.js problem set',
+      url: 'https://stackoverflow.com/questions/tagged/node.js',
       time: '12:00 PM',
       visits: 10
     },
     {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
+      name: 'Stack Overflow Ethereum problem set',
+      url: 'https://stackoverflow.com/questions/tagged/ethereum',
       time: '12:00 PM',
       visits: 10
     },
@@ -127,7 +127,7 @@ export default function History() {
                     href={url}
                     title={url}
                     target="_blank"
-                    className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700"
+                    className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
                   >
                     {url}
                   </a>
