@@ -7,4 +7,5 @@ export interface WebsiteHistoryProps {
   url: string
   time: string
   visits: number
+  isHidden?: boolean
 }

@@ -9,14 +9,16 @@ interface PinnedWebsitesProps {
   website: {
     icon: string
     name: string
-    url: string
+    domain_name: string
+    id: string
+    order: string
   }
 }
 
 export default function PinnedWebsites({
   isSelected,
   onClick,
-  website: { icon, name, url }
+  website: { icon, name, domain_name: url }
 }: React.PropsWithChildren<PinnedWebsitesProps>) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: name })

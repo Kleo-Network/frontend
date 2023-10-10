@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   BarChart,
   Bar,
@@ -10,24 +11,66 @@ import {
 } from 'recharts'
 
 interface BarChartContainerProps {
-  data: any
+  data: StackedBarChartData[]
+  xAxisLabel?: string
+  yAxisLabel?: string
+  handleBarClick: (e: number) => void
+}
+
+interface StackedBarChartData {
+  type: string
+  items: BarChartData[]
+}
+
+interface BarChartData {
+  type: string
+  value: number
+  color: string
 }
 
 const ANIMATION_DURATION = 600
-const TOTAL_BARS = 3
 
-export function BarChartContainer({ data }: BarChartContainerProps) {
+export function BarChartContainer({
+  data,
+  xAxisLabel,
+  yAxisLabel,
+  handleBarClick
+}: BarChartContainerProps) {
+  const [activeTooltipIndex, setActiveTooltipIndex] = React.useState(0)
+  const flattenData = data.map((week) => {
+    const flattenedItems = week.items.reduce((acc, item) => {
+      acc[item.type] = item.value
+      return acc
+    }, {})
+    const sortedItems = Object.entries(flattenedItems)
+      .sort((a, b) => b[1] - a[1])
+      .reduce((acc, [key, value]) => {
+        acc[key] = value
+        return acc
+      }, {})
+    return { type: week.type, ...sortedItems }
+  })
+  const allCategories = [
+    ...new Set(data.flatMap((week) => week.items.map((item) => item.type)))
+  ]
+  const categoryColors = data
+    .flatMap((week) => week.items)
+    .reduce((acc, item) => {
+      acc[item.type] = item.color
+      return acc
+    }, {})
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        data={data}
+        data={flattenData}
         margin={{
           top: 20,
           right: 30,
           left: 20,
           bottom: 20
         }}
-        onClick={(e) => console.log(e)} //TODO: make tooltip appear on click and hover
+        onClick={(e) => handleBarClick(e?.activeTooltipIndex || 0)}
       >
         <CartesianGrid
           stroke="#F2F4F7"
@@ -35,14 +78,14 @@ export function BarChartContainer({ data }: BarChartContainerProps) {
           vertical={false}
         />
         <XAxis
-          dataKey="name"
+          dataKey="type"
           axisLine={false}
           fontSize={12}
           fill="#667085"
           tickLine={false}
         >
           <Label
-            value="Month"
+            value={xAxisLabel}
             offset={-8}
             position="insideBottom"
             fontSize={12}
@@ -51,7 +94,7 @@ export function BarChartContainer({ data }: BarChartContainerProps) {
         </XAxis>
         <YAxis axisLine={false} fontSize={12} fill="#667085" tickLine={false}>
           <Label
-            value="Browser Visits"
+            value={yAxisLabel}
             offset={-8}
             position="insideLeft"
             angle={-90}
@@ -65,39 +108,32 @@ export function BarChartContainer({ data }: BarChartContainerProps) {
             strokeWidth: 1,
             strokeDasharray: '5 5',
             fill: '#F2F4F7',
-            radius: 8
+            radius: 8,
+            pointerEvents: 'auto'
           }}
           content={() => null}
           trigger="click"
+          active={activeTooltipIndex === 1 || activeTooltipIndex === 2}
         />
-        // TODO: use forEach here to create bars dynamically
-        <Bar
-          dataKey="pv"
-          stackId="a"
-          fill="#8884d8"
-          maxBarSize={32}
-          radius={[0, 0, 8, 8]}
-          animationBegin={(ANIMATION_DURATION / TOTAL_BARS) * 0}
-          animationDuration={ANIMATION_DURATION / TOTAL_BARS}
-          animationEasing="ease-in"
-        />
-        <Bar
-          dataKey="uv"
-          stackId="a"
-          fill="#82ca9d"
-          maxBarSize={32}
-          animationBegin={(ANIMATION_DURATION / TOTAL_BARS) * 1}
-          animationDuration={ANIMATION_DURATION / TOTAL_BARS}
-        />
-        <Bar
-          dataKey="amt"
-          stackId="a"
-          fill="#824a99"
-          maxBarSize={32}
-          radius={[8, 8, 0, 0]}
-          animationBegin={(ANIMATION_DURATION / TOTAL_BARS) * 2}
-          animationDuration={ANIMATION_DURATION / TOTAL_BARS}
-        />
+        {allCategories.map((category, index) => (
+          <Bar
+            key={'bar-' + category}
+            dataKey={category}
+            stackId="bar"
+            fill={categoryColors[category]}
+            radius={
+              index === 0
+                ? [0, 0, 8, 8]
+                : index === allCategories.length - 1
+                ? [8, 8, 0, 0]
+                : [0, 0, 0, 0]
+            }
+            animationBegin={(ANIMATION_DURATION / allCategories.length) * index}
+            animationDuration={ANIMATION_DURATION / allCategories.length}
+            animationEasing="ease-in"
+            onClick={(e) => setActiveTooltipIndex(e?.activeTooltipIndex || 0)}
+          />
+        ))}
       </BarChart>
     </ResponsiveContainer>
   )
