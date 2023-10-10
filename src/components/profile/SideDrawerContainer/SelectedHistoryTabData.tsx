@@ -1,19 +1,93 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AreaChart from '../../common/charts/AreaChart'
 import { BrowsingData } from '../../common/charts/AreaChart'
 import { ReactComponent as StarIcon } from '../../../assets/images/star.svg'
 import { ReactComponent as EyeIcon } from '../../../assets/images/eye.svg'
-import { CurrentBrowserHistory } from '../../constants/Website'
+import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
+import {
+  TimeRange,
+  TimeRangeEpoch,
+  TimeRangeMapping
+} from '../../constants/BrowsingHistory'
+import { getKeyByValue, getVisitTime } from '../../utils/utils'
+import { Data } from './interfaces'
+import { HistoryListLoader, HistoryTabGraphLoader } from './SkeletonLoaders'
+import Alert from '../../common/Alerts'
+import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 
 interface SelectedHistoryTabDataProps {
-  areaChartData: BrowsingData[]
-  currentBrowserHistory: CurrentBrowserHistory
+  userId: string
+  domain: string
 }
 
+const API_URL =
+  'pinned/get_pinned_data_domain?user_id={userId}&from={from}&to={to}&domain_name={domain}&filter={filter}'
+
+const STAR_URL_API = `history/add_to_favourites?user_id={userId}&visitTime={visitTime}`
+
 export function SelectedHistoryTabData({
-  areaChartData,
-  currentBrowserHistory
+  userId,
+  domain
 }: SelectedHistoryTabDataProps) {
+  const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
+  const { status, data, fetchData: fetchData1 } = useFetch<Data>(makeApiUrl())
+  const { data: starred, fetchData: fetchData2 } = useFetch<Data>('', {
+    method: 'POST',
+    onSuccessfulFetch: () => {
+      fetchData1(makeApiUrl())
+    }
+  })
+
+  useEffect(() => {
+    fetchData1(makeApiUrl())
+  }, [timeRange])
+
+  const starUrl = (visitTime: number) => {
+    const url = STAR_URL_API.replace('{userId}', userId).replace(
+      '{visitTime}',
+      String(visitTime)
+    )
+    fetchData2(url)
+  }
+
+  const getSortedData = (data: Data | null): Data => {
+    const sortedData: Data = {}
+    Object.keys(data || {}).forEach((key) => {
+      sortedData[key] = {
+        ...data![key],
+        urls: data![key].urls.sort((a, b) => b.visitTime - a.visitTime)
+      }
+    })
+    return sortedData
+  }
+
+  function makeApiUrl(): string {
+    const timeRangeKey = getKeyByValue(TimeRange, timeRange)
+
+    const currentTime = new Date().getTime()
+    const fromTime =
+      currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
+    const toTime = currentTime
+
+    return API_URL.replace('{userId}', userId)
+      .replace('{from}', fromTime.toString())
+      .replace('{to}', toTime.toString())
+      .replace('{domain}', domain)
+      .replace(
+        '{filter}',
+        TimeRangeMapping[timeRangeKey as keyof typeof TimeRangeMapping]
+      )
+  }
+
+  const getGraphData = (data: Data): BrowsingData[] => {
+    return Object.keys(data).map((key) => {
+      return {
+        name: key,
+        amt: data[key].visits
+      }
+    })
+  }
+
   return (
     <div className="data-[te-tab-active]:block" role="tabpanel">
       <div className="flex flex-col items-center">
@@ -23,85 +97,98 @@ export function SelectedHistoryTabData({
             className="inline-flex  text-sm font-regular text-gray-700 shadow-sm rounded-lg"
             role="group"
           >
-            <button
-              type="button"
-              className="inline-block rounded-l-lg border border-gray-200 px-4 py-[10px]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              24 Hours
-            </button>
-            <button
-              type="button"
-              className="-ml-0.5 inline-block border border-gray-200 px-4 py-[10px]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              7 days
-            </button>
-            <button
-              type="button"
-              className="-ml-0.5 inline-block border border-gray-200 px-4 py-[10px]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              30 days
-            </button>
-            <button
-              type="button"
-              className="-ml-0.5 inline-block rounded-r-lg border border-gray-200 px-4 py-[10px]"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
-              12 months
-            </button>
+            {Object.values(TimeRange).map((range, i) => (
+              <button
+                key={i}
+                className={`${
+                  range === timeRange ? 'bg-gray-100' : 'bg-white'
+                } text-gray-700 hover:bg-gray-50 border border-gray-200 px-4 py-2 text-sm font-medium ${
+                  i === 0 && 'rounded-l-lg'
+                } ${
+                  i === Object.values(TimeRange).length - 1 && 'rounded-r-lg'
+                }`}
+                onClick={() => setTimeRange(range)}
+              >
+                {range}
+              </button>
+            ))}
           </div>
         </div>
-        <div className="h-[260px] w-full flex items-center  rounded-lg border border-gray-200">
-          <AreaChart browsingData={areaChartData} />
-        </div>
-        {Object.keys(currentBrowserHistory).map((key, index) => (
-          <div
-            key={index}
-            className="flex flex-col mt-4 self-stretch items-start justify-start border border-gray-200 rounded-lg"
-          >
-            <div className="text-xs self-stretch text-gray-400 font-semibold p-4 border-b border-gray-200 capitalize">
-              {key}
-            </div>
-            <div className="flex flex-col self-stretch mx-6">
-              {currentBrowserHistory[key].map(
-                ({ time, name, visits, url }, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-row gap-4 justify-between items-center self-stretch py-3 border-b border-gray-200 last:border-b-0"
-                  >
-                    <div className="text-xs text-gray-500 font-regular pt-1">
-                      {time}
-                    </div>
-                    <div className="flex flex-col flex-1 items-start justify-center">
-                      <span className="text-sm text-gray-800 font-medium overflow-hidden overflow-ellipsis whitespace-nowrap">
-                        {name}
-                      </span>
-                      <a
-                        href={url}
-                        title={url}
-                        target="_blank"
-                        className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
-                      >
-                        {url}
-                      </a>
-                      <span className="text-xs pt-1 text-gray-500 font-medium">
-                        {visits} visits
-                      </span>
-                    </div>
-                    <StarIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200" />
-                    <EyeIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
-                  </div>
-                )
-              )}
-            </div>
+        {status === FetchStatus.LOADING && <HistoryTabGraphLoader />}
+        {status === FetchStatus.SUCCESS && (
+          <div className="h-[260px] w-full flex items-center  rounded-lg border border-gray-200">
+            <AreaChart
+              browsingData={getGraphData(data || {})}
+              xAxisLabel={timeRange}
+              yAxisLabel="Browser Visits"
+            />
           </div>
-        ))}
+        )}
+
+        {status === FetchStatus.LOADING && <HistoryListLoader />}
+        {status === FetchStatus.SUCCESS &&
+          Object.keys(data || {}).map((key, index) => (
+            <div
+              key={index}
+              className="flex flex-col mt-4 self-stretch items-start justify-start border border-gray-200 rounded-lg"
+            >
+              <div className="text-xs self-stretch text-gray-400 font-semibold p-4 border-b border-gray-200 capitalize">
+                {key}
+              </div>
+              <div className="flex flex-col self-stretch mx-6">
+                {getSortedData(data)[key].urls.map(
+                  ({ visitTime, title, url, favourite }, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-row gap-4 justify-between items-center self-stretch py-3 border-b border-gray-200 last:border-b-0"
+                    >
+                      <div className="text-xs text-gray-500 font-regular pt-1">
+                        {getVisitTime(visitTime.toString())}
+                      </div>
+                      <div className="flex flex-col flex-1 items-start justify-center max-w-xs overflow-hidden overflow-ellipsis whitespace-nowrap">
+                        <span
+                          title={title}
+                          className="text-sm text-gray-800 font-medium"
+                        >
+                          {title}
+                        </span>
+                        <a
+                          href={url}
+                          title={url}
+                          target="_blank"
+                          className="text-xs text-gray-400 font-regular hover:text-purple-700 hover:underline"
+                        >
+                          {url}
+                        </a>
+                        {/* <span className="text-xs pt-1 text-gray-500 font-medium">
+                      {visits} visits
+                    </span> */}
+                      </div>
+                      <StarIcon
+                        className={`${
+                          favourite && 'fill-yellow-500 stroke-yellow-500'
+                        } w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200`}
+                        onClick={() => starUrl(visitTime)}
+                      />
+                      <EyeIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
+                    </div>
+                  )
+                )}
+              </div>
+            </div>
+          ))}
+
+        {status === FetchStatus.ERROR && (
+          <div className="m-3">
+            <Alert
+              type="danger"
+              message="Could not fetch the data, please try again later."
+              icon={
+                <AlertIcon className="w-5 h-5 fill-red-200 stroke-red-600" />
+              }
+            />
+          </div>
+        )}
       </div>
     </div>
   )

@@ -18,11 +18,16 @@ export interface BrowsingData {
 
 interface BrowsingHistoryChartProps {
   browsingData: BrowsingData[]
+  xAxisLabel?: string
+  yAxisLabel?: string
 }
 
 const BrowsingHistoryChart: React.FC<BrowsingHistoryChartProps> = ({
-  browsingData
+  browsingData,
+  xAxisLabel,
+  yAxisLabel
 }) => {
+  console.log(browsingData)
   return (
     <ResponsiveContainer width="100%" height="100%">
       <AreaChart
@@ -54,7 +59,7 @@ const BrowsingHistoryChart: React.FC<BrowsingHistoryChartProps> = ({
           tickLine={false}
         >
           <Label
-            value="Month"
+            value={xAxisLabel}
             offset={-8}
             position="insideBottom"
             fontSize={12}
@@ -63,7 +68,7 @@ const BrowsingHistoryChart: React.FC<BrowsingHistoryChartProps> = ({
         </XAxis>
         <YAxis axisLine={false} fontSize={12} fill="#667085" tickLine={false}>
           <Label
-            value="Website Visits"
+            value={yAxisLabel}
             position="insideLeft"
             angle={-90}
             fontSize={12}

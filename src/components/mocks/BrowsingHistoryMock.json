@@ -1,0 +1,187 @@
+{
+  "Week 1": {},
+  "Week 2": {},
+  "Week 3": {
+    "Category: Business": {
+      "domains": [
+        {
+          "domain": "www.omio.com",
+          "icon": "https://www.google.com/s2/favicons?domain=www.omio.com&sz=48",
+          "name": "www.omio.com",
+          "visitCounterTimeRange": 8
+        },
+        {
+          "domain": "a16zcrypto.com",
+          "icon": "https://www.google.com/s2/favicons?domain=a16zcrypto.com&sz=48",
+          "name": "a16zcrypto.com",
+          "visitCounterTimeRange": 2
+        }
+      ],
+      "totalCategoryVisits": 10
+    },
+    "Category: Dating": {
+      "domains": [
+        {
+          "domain": "bumble.com",
+          "icon": "https://www.google.com/s2/favicons?domain=bumble.com&sz=48",
+          "name": "bumble.com",
+          "visitCounterTimeRange": 3
+        }
+      ],
+      "totalCategoryVisits": 3
+    },
+    "Category: File Sharing and Storage": {
+      "domains": [
+        {
+          "domain": "drive.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=drive.google.com&sz=48",
+          "name": "drive.google.com",
+          "visitCounterTimeRange": 7
+        }
+      ],
+      "totalCategoryVisits": 7
+    },
+    "Category: Freeware and Software Downloads": {
+      "domains": [
+        {
+          "domain": "chrome.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=chrome.google.com&sz=48",
+          "name": "chrome.google.com",
+          "visitCounterTimeRange": 2
+        }
+      ],
+      "totalCategoryVisits": 2
+    },
+    "Category: Information Technology": {
+      "domains": [
+        {
+          "domain": "chat.openai.com",
+          "icon": "https://www.google.com/s2/favicons?domain=chat.openai.com&sz=48",
+          "name": "chat.openai.com",
+          "visitCounterTimeRange": 7
+        },
+        {
+          "domain": "docs.lens.xyz",
+          "icon": "https://www.google.com/s2/favicons?domain=docs.lens.xyz&sz=48",
+          "name": "docs.lens.xyz",
+          "visitCounterTimeRange": 10
+        },
+        {
+          "domain": "www.lens.xyz",
+          "icon": "https://www.google.com/s2/favicons?domain=www.lens.xyz&sz=48",
+          "name": "www.lens.xyz",
+          "visitCounterTimeRange": 2
+        },
+        {
+          "domain": "github.com",
+          "icon": "https://www.google.com/s2/favicons?domain=github.com&sz=48",
+          "name": "github.com",
+          "visitCounterTimeRange": 3
+        },
+        {
+          "domain": "aave.notion.site",
+          "icon": "https://www.google.com/s2/favicons?domain=aave.notion.site&sz=48",
+          "name": "aave.notion.site",
+          "visitCounterTimeRange": 2
+        },
+        {
+          "domain": "kumuluz.io",
+          "icon": "https://www.google.com/s2/favicons?domain=kumuluz.io&sz=48",
+          "name": "kumuluz.io",
+          "visitCounterTimeRange": 1
+        }
+      ],
+      "totalCategoryVisits": 25
+    },
+    "Category: Online Meeting": {
+      "domains": [
+        {
+          "domain": "meet.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=meet.google.com&sz=48",
+          "name": "meet.google.com",
+          "visitCounterTimeRange": 9
+        }
+      ],
+      "totalCategoryVisits": 9
+    },
+    "Category: Reference": {
+      "domains": [
+        {
+          "domain": "www.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=www.google.com&sz=48",
+          "name": "www.google.com",
+          "visitCounterTimeRange": 9
+        }
+      ],
+      "totalCategoryVisits": 9
+    },
+    "Category: Search Engines and Portals": {
+      "domains": [
+        {
+          "domain": "www.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=www.google.com&sz=48",
+          "name": "www.google.com",
+          "visitCounterTimeRange": 12
+        }
+      ],
+      "totalCategoryVisits": 12
+    },
+    "Category: Social Networking": {
+      "domains": [
+        {
+          "domain": "twitter.com",
+          "icon": "https://www.google.com/s2/favicons?domain=twitter.com&sz=48",
+          "name": "twitter.com",
+          "visitCounterTimeRange": 39
+        }
+      ],
+      "totalCategoryVisits": 39
+    },
+    "Category: Streaming Media and Download": {
+      "domains": [
+        {
+          "domain": "www.youtube.com",
+          "icon": "https://www.google.com/s2/favicons?domain=www.youtube.com&sz=48",
+          "name": "www.youtube.com",
+          "visitCounterTimeRange": 80
+        }
+      ],
+      "totalCategoryVisits": 80
+    },
+    "Category: Travel": {
+      "domains": [
+        {
+          "domain": "sp.booking.com",
+          "icon": "https://www.google.com/s2/favicons?domain=sp.booking.com&sz=48",
+          "name": "sp.booking.com",
+          "visitCounterTimeRange": 1
+        }
+      ],
+      "totalCategoryVisits": 1
+    },
+    "Category: Web-based Applications": {
+      "domains": [
+        {
+          "domain": "excalidraw.com",
+          "icon": "https://www.google.com/s2/favicons?domain=excalidraw.com&sz=48",
+          "name": "excalidraw.com",
+          "visitCounterTimeRange": 2
+        }
+      ],
+      "totalCategoryVisits": 2
+    },
+    "Category: Web-based Email": {
+      "domains": [
+        {
+          "domain": "mail.google.com",
+          "icon": "https://www.google.com/s2/favicons?domain=mail.google.com&sz=48",
+          "name": "mail.google.com",
+          "visitCounterTimeRange": 3
+        }
+      ],
+      "totalCategoryVisits": 3
+    }
+  },
+  "Week 4": {},
+  "Week 5": {}
+}

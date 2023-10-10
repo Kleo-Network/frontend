@@ -2,29 +2,35 @@ import { ReactComponent as AddIcon } from '../../../assets/images/add.svg'
 import SideDrawer from '../../common/SideDrawer'
 import ProfileSideDrawer from '../SideDrawerContainer'
 import PinnedWebsite from './PinnedWebsite'
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { DndContext, DragEndEvent, closestCorners } from '@dnd-kit/core'
 import {
   SortableContext,
   arrayMove,
   rectSortingStrategy
 } from '@dnd-kit/sortable'
-
-interface PinnedWebsitesProps {
-  websites: WebsiteProps[]
-  setWebsites: (websites: WebsiteProps[]) => void
-}
-
+import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
+import PinSkeletonLoader from './PinnedSectionLoader'
+import ZeroState from '../../common/ZeroState'
 export interface WebsiteProps {
   name: string
-  url: string
+  domain_name: string
   icon: string
+  id: string
+  order: string
 }
 
-export default function PinnedWebsites({
-  websites,
-  setWebsites
-}: PinnedWebsitesProps) {
+export default function PinnedWebsites() {
+  const { status, data, error } = useFetch<WebsiteProps[]>(
+    'pinned/get_pinned_websites?user_id=200'
+  )
+
+  const [websites, setWebsites] = useState<WebsiteProps[] | null>(data)
+
+  useEffect(() => {
+    setWebsites(data)
+  }, [data])
+
   const [selectedWebsite, setSelectedWebsite] = useState<WebsiteProps | null>(
     null
   )
@@ -32,9 +38,10 @@ export default function PinnedWebsites({
   const handleDragEnd = useCallback(
     ({ active, over }: DragEndEvent) => {
       if (active.id !== over?.id) {
-        const overIndex = websites.findIndex((w) => w.name === over?.id)
-        const activeIndex = websites.findIndex((w) => w.name === active.id)
-        const newWebsites = arrayMove(websites, activeIndex, overIndex)
+        const overIndex = websites?.findIndex((w) => w.name === over?.id) || 0
+        const activeIndex =
+          websites?.findIndex((w) => w.name === active.id) || 0
+        const newWebsites = arrayMove(websites || [], activeIndex, overIndex)
         setWebsites(newWebsites)
       }
     },
@@ -60,26 +67,32 @@ export default function PinnedWebsites({
         </button>
       </header>
 
-      <section className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-5">
-        <DndContext
-          collisionDetection={closestCorners}
-          onDragEnd={handleDragEnd}
-        >
-          <SortableContext
-            items={websites.map((w) => w.name)}
-            strategy={rectSortingStrategy}
+      {status === FetchStatus.LOADING && <PinSkeletonLoader />}
+      {(!websites || websites?.length === 0) &&
+        status === FetchStatus.SUCCESS && <ZeroState />}
+      {websites && websites.length > 0 && status === FetchStatus.SUCCESS && (
+        <section className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-5">
+          <DndContext
+            collisionDetection={closestCorners}
+            onDragEnd={handleDragEnd}
           >
-            {websites.map((website) => (
-              <PinnedWebsite
-                key={website.name}
-                isSelected={selectedWebsite?.url === website.url}
-                onClick={() => setSelectedWebsite(website)}
-                website={website}
-              />
-            ))}
-          </SortableContext>
-        </DndContext>
-      </section>
+            <SortableContext
+              items={websites.map((w) => w.name)}
+              strategy={rectSortingStrategy}
+            >
+              {websites.map((website) => (
+                <PinnedWebsite
+                  key={website.name}
+                  isSelected={selectedWebsite?.name === website.name}
+                  onClick={() => setSelectedWebsite(website)}
+                  website={website}
+                />
+              ))}
+            </SortableContext>
+          </DndContext>
+        </section>
+      )}
+      {status === FetchStatus.ERROR && <div>{error}</div>}
       <SideDrawer isOpen={!!selectedWebsite} onClose={closeDrawer}>
         <ProfileSideDrawer website={selectedWebsite} onClose={closeDrawer} />
       </SideDrawer>

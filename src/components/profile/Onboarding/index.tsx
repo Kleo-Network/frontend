@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ReactComponent as Kleo } from '../../../assets/images/kleoWithBg.svg'
 import { ReactComponent as Arrow } from '../../../assets/images/arrow.svg'
+import { ReactComponent as Tick } from '../../../assets/images/check.svg'
 import Accordion from '../../common/Accordion'
 
-export default function Onboarding() {
-  const [expanded, setExpanded] = React.useState(false)
+interface OnboardingProps {
+  closeModal: () => void
+}
+
+export default function Onboarding({ closeModal }: OnboardingProps) {
+  const [infoExpanded, setInfoExpanded] = React.useState(false)
+  const [isPluginInstalled, setIsPluginInstalled] = React.useState(false)
+  const [isLensConnected, setIsLensConnected] = React.useState(false)
+
+  useEffect(() => {
+    if (isPluginInstalled && isLensConnected) {
+      closeModal()
+    }
+  }, [isPluginInstalled, isLensConnected])
 
   return (
     <div className="flex flex-col items-start">
@@ -12,7 +25,15 @@ export default function Onboarding() {
         Connect these to get started!
       </div>
       <div className="flex flex-row items-start gap-4 p-6">
-        <Kleo className="w-16 h-16" />
+        <div className="relative">
+          {isPluginInstalled && (
+            <div className="absolute bottom-0 left-auto right-0 top-auto z-10 rounded-full bg-green-600 p-1 border-4 border-white ">
+              <Tick className="w-3 h-3 fill-white" />
+            </div>
+          )}
+
+          <Kleo className="w-16 h-16" />
+        </div>
         <div className="flex flex-col items-start justify-center">
           <span className="text-gray-900 text-base font-medium">
             Install Kleo Plugin
@@ -22,7 +43,10 @@ export default function Onboarding() {
             privacy
           </span>
           <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
-            <button className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1">
+            <button
+              className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
+              onClick={() => setIsPluginInstalled(true)}
+            >
               Install Plugin
             </button>
             <button className="px-4 py-3 ml-1 rounded-lg shadow border border-gray-200 text-gray-700">
@@ -32,7 +56,14 @@ export default function Onboarding() {
         </div>
       </div>
       <div className="flex flex-row items-start gap-4 p-6">
-        <Kleo className="w-16 h-16" />
+        <div className="relative">
+          {isLensConnected && (
+            <div className="absolute bottom-0 left-auto right-0 top-auto z-10 rounded-full bg-green-600 p-1 border-4 border-white">
+              <Tick className="w-3 h-3 fill-white" />
+            </div>
+          )}
+          <Kleo className="w-16 h-16" />
+        </div>
         <div className="flex flex-col items-start justify-center">
           <span className="text-gray-900 text-base font-medium">
             Connect Lens
@@ -42,7 +73,10 @@ export default function Onboarding() {
             privacy
           </span>
           <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
-            <button className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1">
+            <button
+              className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
+              onClick={() => setIsLensConnected(true)}
+            >
               Connect with Lens
             </button>
           </div>
@@ -50,9 +84,9 @@ export default function Onboarding() {
       </div>
       <div className="p-6 border-t border-gray-200 w-full">
         <Accordion
-          expanded={expanded}
-          setExpanded={setExpanded}
-          header={accordionHeader(expanded)}
+          expanded={infoExpanded}
+          setExpanded={setInfoExpanded}
+          header={accordionHeader(infoExpanded)}
           body={accordionBody()}
         />
       </div>
