@@ -1,13 +1,13 @@
 import { BrowsingHistory } from './API_interface'
 import { TimeRange } from '../../constants/BrowsingHistory'
 
-const generateRandomColor = () => {
-  const letters = '0123456789ABCDEF'
-  let color = '#'
-  for (let _ = 0; _ < 6; _++) {
-    color += letters[Math.floor(Math.random() * 16)]
+const generateRandomColor = (category: string): string => {
+  let hash = 0
+  for (let i = 0; i < category.length; i++) {
+    hash = category.charCodeAt(i) + ((hash << 5) - hash)
   }
-  return color
+  const c = (hash & 0x00ffffff).toString(16).toUpperCase()
+  return '#' + '00000'.substring(0, 6 - c.length) + c
 }
 
 export const transformBrowsingHistory = (
@@ -23,11 +23,25 @@ export const transformBrowsingHistory = (
       acc[month] = data?.[month] || {}
       return acc
     }, {} as BrowsingHistory)
+  } else if (timeRange === TimeRange.WEEK) {
+    const weekdays = [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday'
+    ]
+    data = weekdays.reduce((acc, weekday) => {
+      acc[weekday] = data?.[weekday] || {}
+      return acc
+    }, {} as BrowsingHistory)
   }
 
   return Object.entries(data || {}).map(([key, value]) => {
     const categories = Object.entries(value || {}).map(([key, value]) => {
-      const color = categoryColors[key] || generateRandomColor()
+      const color = categoryColors[key] || generateRandomColor(key)
       categoryColors[key] = color
 
       return {
@@ -71,6 +85,7 @@ export const lightenColor = (color: string, percent = 40): string => {
       .slice(1)
   )
 }
+
 function getLast6Months() {
   const currentDate = new Date()
   return Array.from({ length: 6 }, (_, index) => {
