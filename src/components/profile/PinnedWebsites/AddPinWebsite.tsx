@@ -6,7 +6,7 @@ import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import { ReactComponent as PinIcon } from '../../../assets/images/pin.svg'
 
-const API_URL = '../../mocks/PinnedWebsitesSearch.json'
+const API_URL = 'pinned/get_domain?domain={domain}'
 
 export function AddPinWebsite() {
   const [search, setSearch] = React.useState('')
@@ -14,7 +14,7 @@ export function AddPinWebsite() {
 
   const onSearch = (searchText: string) => {
     setSearch(searchText)
-    fetchData(API_URL.replace('{search}', searchText))
+    fetchData(API_URL.replace('{domain}', searchText))
   }
 
   return (
@@ -38,7 +38,7 @@ export function AddPinWebsite() {
             />
           </div>
         )}
-        {status === FetchStatus.LOADING && <WebsiteListLoader />}
+        {status === FetchStatus.LOADING && search && <WebsiteListLoader />}
         {status === FetchStatus.SUCCESS && search && !data && (
           <div className="flex w-full mb-6">
             <ZeroState
@@ -50,23 +50,28 @@ export function AddPinWebsite() {
         )}
         {status === FetchStatus.SUCCESS && search && data && (
           <div className="flex flex-col w-full">
-            {data.map((website: any) => (
+            {data.map((website: any, idx: number) => (
               <div
-                key={website.id}
-                className="flex flex-row items-center p-4 gap-4 rounded-xl bg-white border border-gray-200 w-64"
+                key={idx}
+                className="flex flex-row items-center p-4 gap-4 rounded-xl bg-white"
               >
                 <div className="text-left w-full">
                   <h4 className="text-sm font-medium text-gray-800">
-                    {website.name}
+                    {website.domain}
                   </h4>
                   <a
                     className="text-xs font-regular text-gray-500 flex max-w-[150px] overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
-                    title={website.domain_name}
-                    href={website.domain_name}
+                    title={website.domain}
+                    href={website.domain}
                     target="_blank"
                   >
-                    {website.domain_name}
+                    {website.domain}
                   </a>
+                  {website.visits && (
+                    <span className="text-xs pt-1 text-gray-500 font-medium">
+                      {website.visits} visits
+                    </span>
+                  )}
                 </div>
                 <button className="px-3 py-2 flex flex-row items-center gap-2 shadow rounded-lg border border-gray-200">
                   <PinIcon className="w-5 h-5" />
