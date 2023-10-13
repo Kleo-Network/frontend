@@ -3,73 +3,33 @@ import { ReactComponent as BinIcon } from '../../assets/images/bin.svg'
 import { ReactComponent as StarIcon } from '../../assets/images/star.svg'
 import { ReactComponent as EyeIcon } from '../../assets/images/eye.svg'
 import { ReactComponent as SearchIcon } from '../../assets/images/search.svg'
-import { CurrentBrowserHistory } from '../constants/Website'
+import {
+  CurrentBrowserHistory,
+  WebsiteHistoryProps
+} from '../constants/Website'
+import useFetch, { FetchStatus } from '../common/hooks/useFetch'
+import Alert from '../common/Alerts'
+import { ReactComponent as AlertIcon } from '../../assets/images/alert.svg'
+import Modal from '../common/Modal'
+// TODO: Remove this import
+import data from '../mocks/History.json'
 
-const websiteHistory: CurrentBrowserHistory = {
-  today: [
-    {
-      name: 'Stack Overflow Node.js problem set',
-      url: 'https://stackoverflow.com/questions/tagged/node.js',
-      time: '12:00 PM',
-      visits: 10
-    },
-    {
-      name: 'Stack Overflow Ethereum problem set',
-      url: 'https://stackoverflow.com/questions/tagged/ethereum',
-      time: '12:00 PM',
-      visits: 10
-    },
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    },
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    },
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    }
-  ],
-  yesterday: [
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    },
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    }
-  ],
-  '2 days ago': [
-    {
-      name: 'Stack Overflow',
-      url: 'https://stackoverflow.com/',
-      time: '12:00 PM',
-      visits: 10
-    }
-  ]
-}
+const API_URL = '../mocks/History.json'
 
 export default function History() {
   const [search, setSearch] = React.useState('')
+  // const { status, data, fetchData } = useFetch<CurrentBrowserHistory>(API_URL)
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
+
+  // React.useEffect(() => {
+  //   fetchData(API_URL)
+  // }, [])
 
   const filteredHistory: CurrentBrowserHistory = React.useMemo(() => {
-    return Object.keys(websiteHistory).reduce(
+    return Object.keys(data as CurrentBrowserHistory).reduce(
       (acc, key) => ({
         ...acc,
-        [key]: websiteHistory[key].filter(
+        [key]: data![key].filter(
           ({ name, url }) =>
             name.toLowerCase().includes(search.toLowerCase()) ||
             url.toLowerCase().includes(search.toLowerCase())
@@ -94,7 +54,10 @@ export default function History() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <button className="flex flex-row items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 ml-4">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex flex-row items-center justify-center gap-2 rounded-lg border border-gray-300 px-4 py-2 ml-4"
+          >
             <BinIcon className="w-5 h-5 text-red-600" />
             <span className="text-sm text-red-600 font-medium">
               Clear History
@@ -102,6 +65,8 @@ export default function History() {
           </button>
         </div>
       </div>
+      {/* {status === FetchStatus.LOADING && <LoadingSpinner />} */}
+      {/* {status === FetchStatus.SUCCESS && */}
       {Object.keys(filteredHistory).map((key, index) => (
         <div
           key={index}
@@ -142,6 +107,43 @@ export default function History() {
           </div>
         </div>
       ))}
+      {status === FetchStatus.ERROR && (
+        <div className="w-full my-6">
+          <Alert
+            type="danger"
+            message="Could not fetch the data, please try again later."
+            icon={<AlertIcon className="w-5 h-5 fill-red-200 stroke-red-600" />}
+          />
+        </div>
+      )}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="flex flex-col items-center justify-center p-6">
+          <div className="rounded-full bg-red-100 p-2 border-8 border-red-50">
+            <BinIcon className="w-6 h-6 text-red-600" />
+          </div>
+          <span className="text-gray-900 text-lg font-medium mt-4">
+            Delete browsing history?
+          </span>
+          <span className="text-gray-500 text-sm font-regular mt-1 text-center">
+            Are you sure you want to delete the browsing history? This action
+            cannot be undone.
+          </span>
+          <div className="flex flex-row self-stretch justify-center items-center gap-3 mt-6">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="px-4 py-2 self-stretch flex-1 rounded-lg shadow border border-gray-200 text-gray-700"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="px-4 py-2 self-stretch flex-1 rounded-lg shadow bg-red-600 text-white"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   )
 }

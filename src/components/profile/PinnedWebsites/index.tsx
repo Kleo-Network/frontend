@@ -12,6 +12,8 @@ import {
 import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
 import PinSkeletonLoader from './PinnedSectionLoader'
 import ZeroState from '../../common/ZeroState'
+import Modal from '../../common/Modal'
+import { AddPinWebsite } from './AddPinWebsite'
 export interface WebsiteProps {
   name: string
   domain_name: string
@@ -26,6 +28,7 @@ export default function PinnedWebsites() {
   )
 
   const [websites, setWebsites] = useState<WebsiteProps[] | null>(data)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     setWebsites(data)
@@ -61,11 +64,17 @@ export default function PinnedWebsites() {
             New
           </span>
         </div>
-        <button className="flex flex-row gap-2 items-center shadow border border-gray-200 rounded-lg py-2 px-3">
+        <button
+          className="flex flex-row gap-2 items-center shadow border border-gray-200 rounded-lg py-2 px-3 hover:bg-gray-50 active:bg-gray-100"
+          onClick={() => setIsModalOpen(true)}
+        >
           <AddIcon className="w-5 h-5" />
           <span className="text-sm text-gray-700">Add new</span>
         </button>
       </header>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <AddPinWebsite />
+      </Modal>
 
       {status === FetchStatus.LOADING && <PinSkeletonLoader />}
       {(!websites || websites?.length === 0) &&
