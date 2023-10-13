@@ -29,7 +29,7 @@ export enum FetchStatus {
   ERROR = 'error'
 }
 
-function useFetch<T>(url: string, options?: Options<T>): FetchResponse<T> {
+function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
   const [data, setData] = useState<T | null>(null)
   // const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(FetchStatus.IDLE)
@@ -39,6 +39,9 @@ function useFetch<T>(url: string, options?: Options<T>): FetchResponse<T> {
   const signal = controller.signal
 
   const fetchData = async (url: string) => {
+    if (url === '') {
+      return
+    }
     setStatus(FetchStatus.LOADING)
 
     fetch(`${baseUrl}/${url}`, {
@@ -81,7 +84,7 @@ function useFetch<T>(url: string, options?: Options<T>): FetchResponse<T> {
   }
 
   useEffect(() => {
-    fetchData(url)
+    fetchData(url || '')
   }, [])
 
   return { data, status, error, fetchData: fetchDataManually }

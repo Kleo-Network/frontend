@@ -46,7 +46,7 @@ export default function BrowsingHistory() {
   }
 
   useEffect(() => {
-    const transformedData = transformBrowsingHistory(data)
+    const transformedData = transformBrowsingHistory(data, timeRange)
     setGraphData(transformedData)
   }, [data])
 
@@ -61,7 +61,7 @@ export default function BrowsingHistory() {
     const fromTime =
       currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
 
-    return API_URL.replace('{userId}', '1')
+    return API_URL.replace('{userId}', '4c5fce3c-38aa-4199-b72e-73f195c8ab6d')
       .replace('{from}', fromTime.toString())
       .replace('{to}', String(currentTime))
       .replace(
