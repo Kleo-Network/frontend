@@ -121,7 +121,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
               className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
               onClick={() => connectWallet()}
             >
-              Connect with Lens
+              Connect with Phantom
             </button>
           </div>
         </div>

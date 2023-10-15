@@ -35,7 +35,7 @@ export default function Profile() {
         <BrowsingHistory />
         <Modal
           isOpen={isModalOpen}
-          hideCloseButton={false}
+          hideCloseButton={true}
           onClose={() => setIsModalOpen(false)}
         >
           <Onboarding closeModal={() => setIsModalOpen(false)} />
