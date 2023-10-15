@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { ReactComponent as AddIcon } from '../../../assets/images/add.svg'
 import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
 import { ListLoader, TotalVisitLoader } from './SkeletonLoaders'
@@ -6,9 +6,9 @@ import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import ZeroState from '../../common/ZeroState'
 import { getVisitTime } from '../../utils/utils'
+import { UserContext } from '../../common/contexts/UserContext'
 
 interface SummaryTabDataProps {
-  userId: string
   domain: string
 }
 
@@ -33,7 +33,8 @@ interface SummaryTabData {
 const API_URL =
   'pinned/get_pinned_summary_domain?user_id={userId}&domain_name={domain}'
 
-export function SummaryTabData({ userId, domain }: SummaryTabDataProps) {
+export function SummaryTabData({ domain }: SummaryTabDataProps) {
+  const { user } = useContext(UserContext)
   const { status, data, error } = useFetch<SummaryTabData>(makeApiUrl())
 
   const [summaryData, setSummaryData] = useState<SummaryTabData | null>(data)
@@ -43,7 +44,7 @@ export function SummaryTabData({ userId, domain }: SummaryTabDataProps) {
   }, [data])
 
   function makeApiUrl(): string {
-    return API_URL.replace('{userId}', userId).replace('{domain}', domain)
+    return API_URL.replace('{userId}', user.userId).replace('{domain}', domain)
   }
 
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import AreaChart from '../../common/charts/AreaChart'
 import { BrowsingData } from '../../common/charts/AreaChart'
 import { ReactComponent as StarIcon } from '../../../assets/images/star.svg'
@@ -14,9 +14,9 @@ import { Data } from './interfaces'
 import { HistoryListLoader, HistoryTabGraphLoader } from './SkeletonLoaders'
 import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
+import { UserContext } from '../../common/contexts/UserContext'
 
 interface SelectedHistoryTabDataProps {
-  userId: string
   domain: string
 }
 
@@ -26,9 +26,9 @@ const API_URL =
 const STAR_URL_API = `history/add_to_favourites?user_id={userId}&visitTime={visitTime}`
 
 export function SelectedHistoryTabData({
-  userId,
   domain
 }: SelectedHistoryTabDataProps) {
+  const { user } = useContext(UserContext)
   const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
   const { status, data, fetchData: fetchData1 } = useFetch<Data>(makeApiUrl())
   const { data: starred, fetchData: fetchData2 } = useFetch<Data>('', {
@@ -43,7 +43,7 @@ export function SelectedHistoryTabData({
   }, [timeRange])
 
   const starUrl = (visitTime: number) => {
-    const url = STAR_URL_API.replace('{userId}', userId).replace(
+    const url = STAR_URL_API.replace('{userId}', user.userId).replace(
       '{visitTime}',
       String(visitTime)
     )
@@ -69,7 +69,7 @@ export function SelectedHistoryTabData({
       currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
     const toTime = currentTime
 
-    return API_URL.replace('{userId}', userId)
+    return API_URL.replace('{userId}', user.userId)
       .replace('{from}', fromTime.toString())
       .replace('{to}', toTime.toString())
       .replace('{domain}', domain)
