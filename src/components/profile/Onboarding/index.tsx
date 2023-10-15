@@ -110,7 +110,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
         </div>
         <div className="flex flex-col items-start justify-center">
           <span className="text-gray-900 text-base font-medium">
-            Connect Lens
+            Connect Phantom Wallet
           </span>
           <span className="text-gray-400 text-sm font-regular">
             Unlock insights, personalize your Browsing and safeguard your
@@ -121,7 +121,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
               className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
               onClick={() => connectWallet()}
             >
-              Connect with Phantom
+              Connect
             </button>
           </div>
         </div>
