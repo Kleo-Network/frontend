@@ -11,7 +11,7 @@ import { UserContext } from '../common/contexts/UserContext'
 export default function Profile() {
   const { user } = useContext(UserContext)
 
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <section>
