@@ -4,7 +4,7 @@ import { ReactComponent as SortIcon } from '../../../assets/images/sort.svg'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import ChartLoader from './ChartLoader'
 import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Alert from '../../common/Alerts'
 import {
   BrowserHistoryCategory,
@@ -17,11 +17,13 @@ import {
 import { transformBrowsingHistory, lightenColor } from './transformations'
 import { BrowsingHistory as GraphData } from './API_interface'
 import { getKeyByValue } from '../../utils/utils'
+import { UserContext } from '../../common/contexts/UserContext'
 
 const API_URL =
   'history/get_browsing_history_graph?user_id={userId}&from={from}&to={to}&filter={filter}'
 
 export default function BrowsingHistory() {
+  const { user } = useContext(UserContext)
   const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
   const { status, data, fetchData } = useFetch<GraphData>(makeApiUrl())
   const [graphData, setGraphData] = useState<BrowserHistoryCategory[]>([])
@@ -61,7 +63,7 @@ export default function BrowsingHistory() {
     const fromTime =
       currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
 
-    return API_URL.replace('{userId}', 'e09720d3-15cd-4b39-b9ca-e54534f3c31c')
+    return API_URL.replace('{userId}', user.userId)
       .replace('{from}', fromTime.toString())
       .replace('{to}', String(currentTime))
       .replace(

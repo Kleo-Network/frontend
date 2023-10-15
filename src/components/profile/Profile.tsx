@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import PinnedWebsites from './PinnedWebsites'
 import { ReactComponent as ShareSvg } from '../../assets/images/share.svg'
 import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
@@ -6,16 +6,12 @@ import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
 import Onboarding from './Onboarding'
+import { UserContext } from '../common/contexts/UserContext'
 
 export default function Profile() {
-  const user = {
-    name: 'John Doe',
-    avatar: 'https://avatars.githubusercontent.com/u/47280571?v=4',
-    address: '0x1234567890123456789012345678901234567890',
-    kleo: 3232
-  }
+  const { user } = useContext(UserContext)
 
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(true)
 
   return (
     <section>

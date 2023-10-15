@@ -86,16 +86,10 @@ const ProfileSideDrawer = React.memo(
 
             <div className="m-6">
               {selectedTab === Tab.SUMMARY && (
-                <SummaryTabData
-                  domain={website.domain_name}
-                  userId="e09720d3-15cd-4b39-b9ca-e54534f3c31c"
-                />
+                <SummaryTabData domain={website.domain_name} />
               )}
               {selectedTab === Tab.HISTORY && (
-                <SelectedHistoryTabData
-                  domain={website.domain_name}
-                  userId="e09720d3-15cd-4b39-b9ca-e54534f3c31c"
-                />
+                <SelectedHistoryTabData domain={website.domain_name} />
               )}
             </div>
           </section>
