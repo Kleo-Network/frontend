@@ -80,6 +80,25 @@ export function SelectedHistoryTabData({
   }
 
   const getGraphData = (data: Data): BrowsingData[] => {
+    if (timeRange === TimeRange.WEEK) {
+      const weekdays = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+      ]
+      const graphData: BrowsingData[] = []
+      for (let i = 0; i < 7; i++) {
+        graphData.push({
+          name: weekdays[i],
+          amt: data[weekdays[i]]?.visits || 0
+        })
+      }
+      return graphData
+    }
     return Object.keys(data).map((key) => {
       return {
         name: key,
