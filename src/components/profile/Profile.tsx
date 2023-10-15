@@ -1,6 +1,7 @@
 import React from 'react'
 import PinnedWebsites from './PinnedWebsites'
 import { ReactComponent as ShareSvg } from '../../assets/images/share.svg'
+import { ReactComponent as Phantom } from '../../assets/images/phantom.svg'
 import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
@@ -23,9 +24,13 @@ export default function Profile() {
           <h3 className="text-3xl font-medium text-gray-900">
             Welcome back, {user.name}!
           </h3>
-          <button className="flex flex-row border rounded-lg px-4 py-2 shadow">
+          {/* <button className="flex flex-row border rounded-lg px-4 py-2 shadow">
             <ShareSvg className="w-5 h-5 mr-2" />
             <span className="text-sm">Share</span>
+          </button> */}
+          <button className="flex flex-row border rounded-lg px-4 py-2 shadow">
+            <ShareSvg className="w-5 h-5 mr-2" />
+            <span className="text-sm">Collect</span>
           </button>
         </header>
         <div className="flex flex-col w-full items-start justify-between py-8 gap-6 md:flex-row">
@@ -35,7 +40,7 @@ export default function Profile() {
         <BrowsingHistory />
         <Modal
           isOpen={isModalOpen}
-          hideCloseButton={true}
+          hideCloseButton={false}
           onClose={() => setIsModalOpen(false)}
         >
           <Onboarding closeModal={() => setIsModalOpen(false)} />
