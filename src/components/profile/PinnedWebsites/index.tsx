@@ -68,7 +68,7 @@ export default function PinnedWebsites() {
           className="flex flex-row gap-2 items-center shadow border border-gray-200 rounded-lg py-2 px-3 hover:bg-gray-50 active:bg-gray-100"
           onClick={() => setIsModalOpen(true)}
         >
-          <AddIcon className="w-5 h-5" />
+          <AddIcon className="w-5 h-5 stroke-gray-700" />
           <span className="text-sm text-gray-700">Add new</span>
         </button>
       </header>

@@ -1,6 +1,7 @@
 import React from 'react'
 import PinnedWebsites from './PinnedWebsites'
 import { ReactComponent as ShareSvg } from '../../assets/images/share.svg'
+import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
 import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
@@ -28,8 +29,8 @@ export default function Profile() {
               <ShareSvg className="w-5 h-5 mr-2" />
               <span className="text-sm">Share</span>
             </button>
-            <button className="flex flex-row border rounded-lg px-4 py-2 shadow">
-              <ShareSvg className="w-5 h-5 mr-2" />
+            <button className="flex flex-row border rounded-lg px-4 py-2 shadow bg-primary text-white">
+              <AddSvg className="w-5 h-5 mr-2 stroke-white" />
               <span className="text-sm">Collect</span>
             </button>
           </div>

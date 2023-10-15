@@ -71,7 +71,7 @@ export function SummaryTabData({ userId, domain }: SummaryTabDataProps) {
         <div className="flex flex-row self-stretch justify-between items-center border-b border-gray-200 p-6">
           <span className="text-base font-medium text-gray-900">Favorites</span>
           <button className="flex flex-row gap-2 items-center justify-center rounded-lg border border-gray-200 shadow px-3 py-2">
-            <AddIcon className="w-5 h-5" />
+            <AddIcon className="w-5 h-5 stroke-gray-700" />
             <span className="text-sm text-gray-700 font-regular">Add new</span>
           </button>
         </div>
