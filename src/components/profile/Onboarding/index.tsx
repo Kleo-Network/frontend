@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { ReactComponent as Kleo } from '../../../assets/images/kleoWithBg.svg'
+import { ReactComponent as PhantomLogo } from '../../../assets/images/phantom.svg'
 import { ReactComponent as Arrow } from '../../../assets/images/arrow.svg'
 import { ReactComponent as Tick } from '../../../assets/images/check.svg'
 import Accordion from '../../common/Accordion'
@@ -12,6 +13,47 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
   const [infoExpanded, setInfoExpanded] = React.useState(false)
   const [isPluginInstalled, setIsPluginInstalled] = React.useState(false)
   const [isLensConnected, setIsLensConnected] = React.useState(false)
+  const [solanaProvider, setSolanaProvider] = React.useState(null)
+
+  useEffect(() => {
+    if (!isPluginInstalled) {
+      setTimeout(() => {
+        console.log('checking for plugin', (window as any).kleoConnect)
+        if (
+          (window as any).kleoConnect &&
+          (window as any).kleoConnect.extension
+        ) {
+          setIsPluginInstalled(true)
+        }
+      }, 2000)
+    }
+  }, [])
+
+  useEffect(() => {
+    if ('solana' in window) {
+      const provider = window.solana
+      if ((provider as any).isPhantom) {
+        console.log('Phantom is installed!')
+        setSolanaProvider(provider as any)
+      }
+    } else {
+      console.log('Phantom not installed.')
+      // You can redirect the user to the Phantom installation page here
+    }
+  }, [])
+
+  const connectWallet = async () => {
+    if (solanaProvider) {
+      try {
+        await (solanaProvider as any).connect()
+        console.log('Wallet connected')
+        console.log('Public key', (solanaProvider as any).publicKey.toString())
+        setIsLensConnected(true)
+      } catch (err) {
+        console.warn(err)
+      }
+    }
+  }
 
   useEffect(() => {
     if (isPluginInstalled && isLensConnected) {
@@ -42,17 +84,19 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
             Unlock insights, personalize your Browsing and safeguard your
             privacy
           </span>
-          <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
-            <button
-              className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
-              onClick={() => setIsPluginInstalled(true)}
-            >
-              Install Plugin
-            </button>
-            <button className="px-4 py-3 ml-1 rounded-lg shadow border border-gray-200 text-gray-700">
-              I have already installed
-            </button>
-          </div>
+          {!isPluginInstalled && (
+            <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
+              <button
+                className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
+                onClick={() => setIsPluginInstalled(true)}
+              >
+                Install Plugin
+              </button>
+              <button className="px-4 py-3 ml-1 rounded-lg shadow border border-gray-200 text-gray-700">
+                I have already installed
+              </button>
+            </div>
+          )}
         </div>
       </div>
       <div className="flex flex-row items-start gap-4 p-6">
@@ -62,7 +106,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
               <Tick className="w-3 h-3 fill-white" />
             </div>
           )}
-          <Kleo className="w-16 h-16" />
+          <PhantomLogo className="w-16 h-16 fill-[#ab9ff2]" />
         </div>
         <div className="flex flex-col items-start justify-center">
           <span className="text-gray-900 text-base font-medium">
@@ -75,7 +119,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
           <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
             <button
               className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
-              onClick={() => setIsLensConnected(true)}
+              onClick={() => connectWallet()}
             >
               Connect with Lens
             </button>

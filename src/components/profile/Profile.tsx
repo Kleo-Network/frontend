@@ -14,7 +14,7 @@ export default function Profile() {
     kleo: 3232
   }
 
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const [isModalOpen, setIsModalOpen] = React.useState(true)
 
   return (
     <section>
