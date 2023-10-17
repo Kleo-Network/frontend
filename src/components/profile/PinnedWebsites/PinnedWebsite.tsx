@@ -30,7 +30,7 @@ export default function PinnedWebsites({
         transform: CSS.Transform.toString(transform),
         transition
       }}
-      className={`flex flex-1 items-center p-4 gap-4 rounded-xl bg-white border border-gray-200 max-w-[272px] ${
+      className={`group flex flex-1 items-center p-4 gap-4 rounded-xl bg-white border border-gray-200 max-w-[272px] ${
         isSelected ? 'border-purple-700 shadow-md' : 'hover:bg-gray-50'
       }`}
       onClick={onClick}
@@ -53,7 +53,7 @@ export default function PinnedWebsites({
       <div
         {...listeners}
         {...attributes}
-        className="hover:bg-gray-100 hover:cursor-grab active:cursor-grabbing px-1 py-2 rounded"
+        className="hover:cursor-grab active:cursor-grabbing px-1 py-2 rounded invisible group-hover:visible"
       >
         <DragIcon className="w-4 h-4 fill-gray-300" />
       </div>
