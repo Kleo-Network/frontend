@@ -13,7 +13,7 @@ export interface CategoryData {
 export interface DomainData {
   domain: string
   icon: string
-  name: string
+  title: string
   visitCounterTimeRange: number
 }
 

@@ -8,8 +8,8 @@ interface PinnedWebsitesProps {
   onClick: () => void
   website: {
     icon: string
-    name: string
-    domain_name: string
+    title: string
+    domain: string
     id: string
     order: string
   }
@@ -18,7 +18,7 @@ interface PinnedWebsitesProps {
 export default function PinnedWebsites({
   isSelected,
   onClick,
-  website: { icon, name, domain_name: url }
+  website: { icon, title: name, domain: url }
 }: React.PropsWithChildren<PinnedWebsitesProps>) {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id: name })

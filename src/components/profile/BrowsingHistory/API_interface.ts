@@ -1,7 +1,7 @@
 export interface Domain {
   domain: string
   icon: string
-  name: string
+  title: string
   visitCounterTimeRange: number
 }
 
