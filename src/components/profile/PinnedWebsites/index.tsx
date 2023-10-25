@@ -2,7 +2,7 @@ import { ReactComponent as AddIcon } from '../../../assets/images/add.svg'
 import SideDrawer from '../../common/SideDrawer'
 import ProfileSideDrawer from '../SideDrawerContainer'
 import PinnedWebsite from './PinnedWebsite'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useContext } from 'react'
 import { DndContext, DragEndEvent, closestCorners } from '@dnd-kit/core'
 import {
   SortableContext,
@@ -14,21 +14,29 @@ import PinSkeletonLoader from './PinnedSectionLoader'
 import ZeroState from '../../common/ZeroState'
 import Modal from '../../common/Modal'
 import { AddPinWebsite } from './AddPinWebsite'
+import { UserContext } from '../../common/contexts/UserContext'
+
 export interface WebsiteProps {
-  name: string
-  domain_name: string
+  title: string
+  domain: string
   icon: string
   id: string
   order: string
 }
 
-export default function PinnedWebsites() {
-  const { status, data, error } = useFetch<WebsiteProps[]>(
-    'pinned/get_pinned_websites?user_id=200'
-  )
+const API_URL = 'pinned/get_pinned_websites?user_id={userId}'
 
+export default function PinnedWebsites() {
+  const { user } = useContext(UserContext)
+  const { status, data, error, fetchData } = useFetch<WebsiteProps[]>(
+    makeApiUrl()
+  )
   const [websites, setWebsites] = useState<WebsiteProps[] | null>(data)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  function makeApiUrl() {
+    return API_URL.replace('{userId}', user.userId)
+  }
 
   useEffect(() => {
     setWebsites(data)
@@ -38,12 +46,22 @@ export default function PinnedWebsites() {
     null
   )
 
+  const handlePin = () => {
+    setIsModalOpen(false)
+    fetchData(makeApiUrl())
+  }
+
+  const handleUnPin = () => {
+    setSelectedWebsite(null)
+    fetchData(makeApiUrl())
+  }
+
   const handleDragEnd = useCallback(
     ({ active, over }: DragEndEvent) => {
       if (active.id !== over?.id) {
-        const overIndex = websites?.findIndex((w) => w.name === over?.id) || 0
+        const overIndex = websites?.findIndex((w) => w.title === over?.id) || 0
         const activeIndex =
-          websites?.findIndex((w) => w.name === active.id) || 0
+          websites?.findIndex((w) => w.title === active.id) || 0
         const newWebsites = arrayMove(websites || [], activeIndex, overIndex)
         setWebsites(newWebsites)
       }
@@ -73,7 +91,7 @@ export default function PinnedWebsites() {
         </button>
       </header>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <AddPinWebsite />
+        <AddPinWebsite onPinHandler={handlePin} />
       </Modal>
 
       {status === FetchStatus.LOADING && <PinSkeletonLoader />}
@@ -86,13 +104,13 @@ export default function PinnedWebsites() {
             onDragEnd={handleDragEnd}
           >
             <SortableContext
-              items={websites.map((w) => w.name)}
+              items={websites.map((w) => w.title)}
               strategy={rectSortingStrategy}
             >
               {websites.map((website) => (
                 <PinnedWebsite
-                  key={website.name}
-                  isSelected={selectedWebsite?.name === website.name}
+                  key={website.title}
+                  isSelected={selectedWebsite?.title === website.title}
                   onClick={() => setSelectedWebsite(website)}
                   website={website}
                 />
@@ -103,7 +121,11 @@ export default function PinnedWebsites() {
       )}
       {status === FetchStatus.ERROR && <div>{error}</div>}
       <SideDrawer isOpen={!!selectedWebsite} onClose={closeDrawer}>
-        <ProfileSideDrawer website={selectedWebsite} onClose={closeDrawer} />
+        <ProfileSideDrawer
+          website={selectedWebsite}
+          onClose={closeDrawer}
+          handleUnpin={handleUnPin}
+        />
       </SideDrawer>
     </div>
   )

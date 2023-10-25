@@ -193,7 +193,7 @@ export default function BrowsingHistory() {
                   </div>
                 </div>
                 {domains.map(
-                  ({ domain, icon, visitCounterTimeRange, name }, i) => (
+                  ({ domain, icon, visitCounterTimeRange, title }, i) => (
                     <div key={i} className="flex flex-row self-stretch">
                       <div className="flex flex-row items-center gap-6 self-stretch">
                         <div className="flex flex-row flex-none items-center justify-center w-8 h-8 rounded-full">
@@ -201,7 +201,7 @@ export default function BrowsingHistory() {
                         </div>
                         <div className="flex flex-col items-start">
                           <div className="text-sm text-gray-800 font-medium">
-                            {name}
+                            {title}
                           </div>
                           <div className="flex flex-row gap-2 items-center text-xs text-gray-400 font-regular">
                             <span>{visitCounterTimeRange} Visits</span>

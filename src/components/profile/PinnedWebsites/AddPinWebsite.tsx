@@ -1,20 +1,64 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import ZeroState from '../../common/ZeroState'
 import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
 import { WebsiteListLoader } from './PinnedSectionLoader'
 import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import { ReactComponent as PinIcon } from '../../../assets/images/pin.svg'
+import { UserContext } from '../../common/contexts/UserContext'
+import useDebounce from '../../common/hooks/useDebounce'
 
-const API_URL = 'pinned/get_domain?domain={domain}'
+const API_URL = 'pinned/get_domain?domain={domain}&user_id={userId}'
+const PIN_URL = 'pinned/add_pinned_website'
+const UNPIN_URL = 'pinned/remove_pinned_website'
 
-export function AddPinWebsite() {
+interface AddPinWebsiteProps {
+  onPinHandler: () => void
+}
+
+interface SearchResult {
+  domain: string
+  visits: number
+  pinned: boolean
+}
+
+export function AddPinWebsite({ onPinHandler }: AddPinWebsiteProps) {
+  const { user } = useContext(UserContext)
   const [search, setSearch] = React.useState('')
-  const { status, data, error, fetchData } = useFetch<[]>()
+  const { status, data, error, fetchData } = useFetch<SearchResult[]>()
+  const debouncedSearchTerm = useDebounce(search, 500)
+  const { data: pinned, fetchData: fetchData2 } = useFetch<any>()
 
-  const onSearch = (searchText: string) => {
-    setSearch(searchText)
-    fetchData(API_URL.replace('{domain}', searchText))
+  useEffect(() => {
+    if (debouncedSearchTerm) {
+      fetchData(
+        API_URL.replace('{domain}', debouncedSearchTerm).replace(
+          '{userId}',
+          user.userId
+        )
+      )
+    }
+  }, [debouncedSearchTerm])
+
+  const handlePin = (website: SearchResult) => {
+    const url = website.pinned ? UNPIN_URL : PIN_URL
+    fetchData2(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        ...website,
+        order: 0,
+        user_id: user.userId,
+        title: website.domain,
+        pinned: !website.pinned
+      }),
+      onSuccessfulFetch(data) {
+        setSearch('')
+        onPinHandler()
+      }
+    })
   }
 
   return (
@@ -28,7 +72,7 @@ export function AddPinWebsite() {
           className="min-h-[auto] w-full rounded-lg border px-3 py-[0.32rem] leading-[1.6] text-base font-regular text-gray-800 bg-white border-gray-200 shadow-sm focus:outline-none focus:border-primary focus:ring-0"
           placeholder="Search or Enter url here"
           value={search}
-          onChange={(e) => onSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
         {search.length === 0 && (
           <div className="flex w-full mb-6">
@@ -73,10 +117,21 @@ export function AddPinWebsite() {
                     </span>
                   )}
                 </div>
-                <button className="px-3 py-2 flex flex-row items-center gap-2 shadow rounded-lg border border-gray-200">
-                  <PinIcon className="w-5 h-5" />
-                  <span className="text-sm text-gray-700 font-medium">
-                    Unpin
+                <button
+                  className={`px-3 py-2 flex flex-row items-center gap-2 min-w-[96px] shadow rounded-lg border border-gray-200 ${
+                    website.pinned
+                      ? 'bg-primary text-white'
+                      : 'bg-white text-gray-700'
+                  }`}
+                  onClick={() => handlePin(website)}
+                >
+                  <PinIcon
+                    className={`w-5 h-5 ${
+                      website.pinned ? 'stroke-white' : 'stroke-gray-700'
+                    }`}
+                  />
+                  <span className="text-sm font-medium">
+                    {website.pinned ? 'Unpin' : 'Pin'}
                   </span>
                 </button>
               </div>

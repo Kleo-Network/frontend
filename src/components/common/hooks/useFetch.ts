@@ -19,7 +19,7 @@ type FetchResponse<T> = {
   data: T | null
   status: FetchStatus
   error: any
-  fetchData: (url: string) => void
+  fetchData: (url: string, options?: Options<T>) => void
 }
 
 export enum FetchStatus {
@@ -34,11 +34,13 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
   // const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(FetchStatus.IDLE)
   const [error, setError] = useState(null)
-  const baseUrl = 'https://api.kleo.network/api/v1/core'
+  const baseUrl =
+    // 'http://127.0.0.1:5001/api/v1/core' ||
+    'https://api.kleo.network/api/v1/core'
   const controller = new AbortController()
   const signal = controller.signal
 
-  const fetchData = async (url: string) => {
+  const fetchData = async (url: string, options?: Options<T>) => {
     if (url === '') {
       return
     }
@@ -61,9 +63,6 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
         if (!response.ok) {
           throw Error('Could not fetch data for that resource')
         }
-        // for (let i = 0; i < 1000000000; i++) {
-        //   //
-        // }
         return response.json()
       })
       .then((data) => {
@@ -79,12 +78,12 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
       })
   }
 
-  const fetchDataManually = (url: string) => {
-    fetchData(url)
+  const fetchDataManually = (url: string, options?: Options<T>) => {
+    fetchData(url, options)
   }
 
   useEffect(() => {
-    fetchData(url || '')
+    fetchData(url || '', options)
   }, [])
 
   return { data, status, error, fetchData: fetchDataManually }

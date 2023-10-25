@@ -1,17 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { ReactComponent as PinIcon } from '../../../assets/images/pin.svg'
 import { ReactComponent as CloseIcon } from '../../../assets/images/cross.svg'
 import { SelectedHistoryTabData } from './SelectedHistoryTabData'
 import { SummaryTabData } from './SummaryTabData'
+import useFetch from '../../common/hooks/useFetch'
+import { UserContext } from '../../common/contexts/UserContext'
 
 interface ProfileSideDrawerProps {
   website: WebsiteProps | null
   onClose: () => void
+  handleUnpin: () => void
 }
 
 export interface WebsiteProps {
-  name: string
-  domain_name: string
+  title: string
+  domain: string
   icon: string
   id: string
   order: string
@@ -22,9 +25,32 @@ enum Tab {
   HISTORY = 'History'
 }
 
+const UNPIN_URL = 'pinned/remove_pinned_website'
+
 const ProfileSideDrawer = React.memo(
-  ({ website, onClose }: ProfileSideDrawerProps) => {
+  ({ website, onClose, handleUnpin }: ProfileSideDrawerProps) => {
+    const { user } = useContext(UserContext)
     const [selectedTab, setSelectedTab] = useState(Tab.SUMMARY)
+    const { fetchData } = useFetch<WebsiteProps[]>()
+
+    const onUnpin = () => {
+      fetchData(UNPIN_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...website,
+          order: 0,
+          user_id: user.userId,
+          title: website!.domain,
+          pinned: false
+        }),
+        onSuccessfulFetch(data) {
+          handleUnpin()
+        }
+      })
+    }
 
     return (
       website && (
@@ -35,18 +61,21 @@ const ProfileSideDrawer = React.memo(
             </div>
             <div className="flex flex-col flex-1 items-start">
               <span className="font-medium text-xl text-gray-800">
-                {website.name}
+                {website.title}
               </span>
               <a
-                href={website.domain_name}
-                title={website.domain_name}
+                href={website.domain}
+                title={website.domain}
                 className="font-regular max-w-[250px] text-sm text-gray-500 hover:text-purple-700 hover:underline overflow-hidden overflow-ellipsis whitespace-nowrap"
               >
-                {website.domain_name}
+                {website.domain}
               </a>
             </div>
-            <button className="px-3 py-2 flex flex-row items-center gap-2 shadow rounded-lg border border-gray-200">
-              <PinIcon className="w-5 h-5" />
+            <button
+              onClick={onUnpin}
+              className="px-3 py-2 flex flex-row items-center gap-2 shadow rounded-lg border border-gray-200"
+            >
+              <PinIcon className="w-5 h-5 stroke-gray-700" />
               <span className="text-sm text-gray-700 font-medium">Unpin</span>
             </button>
             <button
@@ -86,10 +115,10 @@ const ProfileSideDrawer = React.memo(
 
             <div className="m-6">
               {selectedTab === Tab.SUMMARY && (
-                <SummaryTabData domain={website.domain_name} />
+                <SummaryTabData domain={website.domain} />
               )}
               {selectedTab === Tab.HISTORY && (
-                <SelectedHistoryTabData domain={website.domain_name} />
+                <SelectedHistoryTabData domain={website.domain} />
               )}
             </div>
           </section>
