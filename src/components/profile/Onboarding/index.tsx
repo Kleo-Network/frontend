@@ -170,12 +170,12 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
             />
             <button
               onClick={handleSign}
-              className="px-4 py-2 bg-primary flex-shrink text-white rounded mb-4"
+              className="px-4 py-2 bg-primary text-white rounded mb-4"
             >
               Sign Message
             </button>
             {signedData && (
-              <div className="bg-white p-4 rounded shadow-md">
+              <div className="bg-white p-2 rounded">
                 {/* <p className="mb-2 font-semibold">Signature:</p> 
                  <code className="text-sm bg-gray-200 p-2 rounded">
                   {Array.from(signedData.signature).join(', ')}
