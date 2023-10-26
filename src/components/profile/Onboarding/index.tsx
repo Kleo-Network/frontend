@@ -4,8 +4,11 @@ import { ReactComponent as PhantomLogo } from '../../../assets/images/phantom.sv
 import { ReactComponent as Arrow } from '../../../assets/images/arrow.svg'
 import { ReactComponent as Tick } from '../../../assets/images/check.svg'
 import Accordion from '../../common/Accordion'
+import useFetch from '../../common/hooks/useFetch'
 import { usePhantomWallet } from '../../common/hooks/usePhantomWallet'
 import { PublicKey } from '@solana/web3.js'
+import Alert from '../../common/Alerts'
+import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 
 interface OnboardingProps {
   closeModal: () => void
@@ -16,6 +19,8 @@ enum PluginState {
   NOT_INSTALLED,
   INSTALLED
 }
+
+const AUTH_API = 'auth/create_jwt_authentication'
 
 export default function Onboarding({ closeModal }: OnboardingProps) {
   const [infoExpanded, setInfoExpanded] = useState(false)
@@ -31,11 +36,26 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
     signature: Uint8Array
     publicKey: PublicKey
   } | null>(null)
+  const { fetchData, data: login, error: loginError, status } = useFetch<any>()
 
   const handleSign = async () => {
     if (message) {
       const result = await signMessage(message)
       setSignedData(result)
+      console.log('result', result)
+      fetchData(AUTH_API, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          signature: Array.from(result.signature),
+          public_key: result.publicKey.toString()
+        }),
+        onSuccessfulFetch(data) {
+          console.log('data', data)
+        }
+      })
     }
   }
 
@@ -59,7 +79,8 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
       pluginState === PluginState.INSTALLED &&
       isWalletConnected &&
       signedData &&
-      signedData.publicKey
+      signedData.publicKey &&
+      login
     ) {
       closeModal()
     }
@@ -140,16 +161,16 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
             </div>
           </div>
         ) : (
-          <div>
+          <div className="w-full flex flex-col">
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Enter message to sign"
-              className="w-full p-2 border rounded mb-4"
+              className="p-2 border rounded mb-4"
             />
             <button
               onClick={handleSign}
-              className="px-4 py-2 bg-primary text-white rounded mb-4"
+              className="px-4 py-2 bg-primary flex-shrink text-white rounded mb-4"
             >
               Sign Message
             </button>
@@ -168,6 +189,15 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
           </div>
         )}
       </div>
+      {loginError && (
+        <div className="m-3">
+          <Alert
+            type="danger"
+            message="Could not authenticate user, please try again later."
+            icon={<AlertIcon className="w-5 h-5 fill-red-200 stroke-red-600" />}
+          />
+        </div>
+      )}
       <div className="p-6 border-t border-gray-200 w-full">
         <Accordion
           expanded={infoExpanded}

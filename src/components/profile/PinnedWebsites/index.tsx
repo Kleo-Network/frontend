@@ -15,6 +15,8 @@ import ZeroState from '../../common/ZeroState'
 import Modal from '../../common/Modal'
 import { AddPinWebsite } from './AddPinWebsite'
 import { UserContext } from '../../common/contexts/UserContext'
+import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
+import Alert from '../../common/Alerts'
 
 export interface WebsiteProps {
   title: string
@@ -119,7 +121,15 @@ export default function PinnedWebsites() {
           </DndContext>
         </section>
       )}
-      {status === FetchStatus.ERROR && <div>{error}</div>}
+      {status === FetchStatus.ERROR && (
+        <div className="m-3">
+          <Alert
+            type="danger"
+            message="Could not fetch the data, please try again later."
+            icon={<AlertIcon className="w-5 h-5 fill-red-200 stroke-red-600" />}
+          />
+        </div>
+      )}
       <SideDrawer isOpen={!!selectedWebsite} onClose={closeDrawer}>
         <ProfileSideDrawer
           website={selectedWebsite}
