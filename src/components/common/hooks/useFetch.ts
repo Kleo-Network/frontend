@@ -69,7 +69,7 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
         setData(data)
         setStatus(FetchStatus.SUCCESS)
         if (options?.onSuccessfulFetch) {
-          options.onSuccessfulFetch()
+          options.onSuccessfulFetch(data)
         }
       })
       .catch((err) => {

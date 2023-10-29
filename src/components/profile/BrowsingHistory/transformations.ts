@@ -86,7 +86,7 @@ export const lightenColor = (color: string, percent = 40): string => {
   )
 }
 
-function getLast6Months() {
+export function getLast6Months() {
   const currentDate = new Date()
   return Array.from({ length: 6 }, (_, index) => {
     const monthIndex = currentDate.getMonth() - (6 - index - 1)

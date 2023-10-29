@@ -15,6 +15,7 @@ import { HistoryListLoader, HistoryTabGraphLoader } from './SkeletonLoaders'
 import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import { UserContext } from '../../common/contexts/UserContext'
+import { getLast6Months } from '../BrowsingHistory/transformations'
 
 interface SelectedHistoryTabDataProps {
   domain: string
@@ -24,6 +25,8 @@ const API_URL =
   'pinned/get_pinned_data_domain?user_id={userId}&from={from}&to={to}&domain_name={domain}&filter={filter}'
 
 const STAR_URL_API = `history/add_to_favourites?user_id={userId}&visitTime={visitTime}`
+const UNSTAR_URL_API = `history/remove_from_favourites?user_id={userId}&url={url}`
+const HIDE_URL_API = `history/hide_history_items`
 
 export function SelectedHistoryTabData({
   domain
@@ -31,23 +34,51 @@ export function SelectedHistoryTabData({
   const { user } = useContext(UserContext)
   const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
   const { status, data, fetchData: fetchData1 } = useFetch<Data>(makeApiUrl())
-  const { data: starred, fetchData: fetchData2 } = useFetch<Data>('', {
-    method: 'POST',
-    onSuccessfulFetch: () => {
-      fetchData1(makeApiUrl())
-    }
-  })
+  const { data: starred, fetchData: fetchData2 } = useFetch<Data>()
 
   useEffect(() => {
     fetchData1(makeApiUrl())
   }, [timeRange])
 
-  const starUrl = (visitTime: number) => {
-    const url = STAR_URL_API.replace('{userId}', user.userId).replace(
+  const handleFavourites = (
+    visitTime: number,
+    url: string,
+    favourite: boolean
+  ) => {
+    let apiUrl = STAR_URL_API.replace('{userId}', user.userId).replace(
       '{visitTime}',
       String(visitTime)
     )
-    fetchData2(url)
+    if (favourite) {
+      apiUrl = UNSTAR_URL_API.replace('{userId}', user.userId).replace(
+        '{url}',
+        url
+      )
+    }
+
+    fetchData2(apiUrl, {
+      method: 'POST',
+      onSuccessfulFetch: () => {
+        fetchData1(makeApiUrl())
+      }
+    })
+  }
+
+  const handleUrlHide = (visitTimes: number[], hidden: boolean) => {
+    fetchData2(HIDE_URL_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: user.userId,
+        visit_times: visitTimes,
+        hide: !hidden
+      }),
+      onSuccessfulFetch: () => {
+        fetchData1(makeApiUrl())
+      }
+    })
   }
 
   const getSortedData = (data: Data | null): Data => {
@@ -80,7 +111,16 @@ export function SelectedHistoryTabData({
   }
 
   const getGraphData = (data: Data): BrowsingData[] => {
-    if (timeRange === TimeRange.WEEK) {
+    if (timeRange === TimeRange.YEAR) {
+      const lastSixMonths = getLast6Months()
+
+      return lastSixMonths.map((month) => {
+        return {
+          name: month,
+          amt: data[month]?.visits || 0
+        }
+      })
+    } else if (timeRange === TimeRange.WEEK) {
       const weekdays = [
         'Monday',
         'Tuesday',
@@ -156,7 +196,7 @@ export function SelectedHistoryTabData({
               </div>
               <div className="flex flex-col self-stretch mx-6">
                 {getSortedData(data)[key].urls.map(
-                  ({ visitTime, title, url, favourite }, index) => (
+                  ({ visitTime, title, url, favourite, hidden }, index) => (
                     <div
                       key={index}
                       className="flex flex-row gap-4 justify-between items-center self-stretch py-3 border-b border-gray-200 last:border-b-0"
@@ -187,9 +227,16 @@ export function SelectedHistoryTabData({
                         className={`${
                           favourite && 'fill-yellow-500 stroke-yellow-500'
                         } w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200`}
-                        onClick={() => starUrl(visitTime)}
+                        onClick={() =>
+                          handleFavourites(visitTime, url, favourite)
+                        }
                       />
-                      <EyeIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
+                      <EyeIcon
+                        className={`
+                        ${hidden && 'fill-purple-700 stroke-purple-700'}
+                        w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700`}
+                        onClick={() => handleUrlHide([visitTime], hidden)}
+                      />
                     </div>
                   )
                 )}
