@@ -4,6 +4,7 @@ export interface UrlData {
   url: string
   visitTime: number
   favourite: boolean
+  hidden: boolean
 }
 
 export interface WeekData {

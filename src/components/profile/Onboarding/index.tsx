@@ -36,7 +36,8 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
     signature: Uint8Array
     publicKey: PublicKey
   } | null>(null)
-  const { fetchData, data: login, error: loginError, status } = useFetch<any>()
+  const { fetchData, error: loginError, data: loginData } = useFetch<any>()
+  const [login, setLogin] = useState(false)
 
   const handleSign = async () => {
     if (message) {
@@ -50,10 +51,12 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
         },
         body: JSON.stringify({
           signature: Array.from(result.signature),
-          public_key: result.publicKey.toString()
+          publicAddress: result.publicKey.toString(),
+          chain: 'solana'
         }),
         onSuccessfulFetch(data) {
-          console.log('data', data)
+          sessionStorage.setItem('token', data.accessToken)
+          setLogin(true)
         }
       })
     }
@@ -84,7 +87,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
     ) {
       closeModal()
     }
-  }, [pluginState, isWalletConnected, signedData])
+  }, [pluginState, isWalletConnected, signedData, login])
 
   return (
     <div className="flex flex-col items-start">

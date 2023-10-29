@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import PinnedWebsites from './PinnedWebsites'
 import { ReactComponent as ShareSvg } from '../../assets/images/share.svg'
 import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
@@ -12,6 +12,14 @@ export default function Profile() {
   const { user } = useContext(UserContext)
 
   const [isModalOpen, setIsModalOpen] = useState(true)
+
+  useEffect(() => {
+    if (sessionStorage.getItem('token')) {
+      setIsModalOpen(false)
+    } else {
+      setIsModalOpen(true)
+    }
+  }, [])
 
   return (
     <section>
