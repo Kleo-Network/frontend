@@ -11,7 +11,7 @@ function App(): ReactElement {
     avatar: 'https://avatars.githubusercontent.com/u/47280571?v=4',
     address: '0x1234567890123456789012345678901234567890',
     kleo: 3232,
-    userId: '4c5fce3c-38aa-4199-b72e-73f195c8ab6d'
+    userId: '05ecb209-8e92-4e2b-a2f0-c0d638f415ae'
   })
 
   return (
