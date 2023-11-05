@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { ReactComponent as Kleo } from '../../../../assets/images/kleoWithBg.svg'
-import { ReactComponent as PhantomLogo } from '../../../../assets/images/phantom.svg'
+import { ReactComponent as MetaMaskLogo } from '../../../../assets/images/metamask.svg'
 import { ReactComponent as Arrow } from '../../../../assets/images/arrow.svg'
 import { ReactComponent as Tick } from '../../../../assets/images/check.svg'
 import Accordion from '../../../common/Accordion'
 import useFetch from '../../../common/hooks/useFetch'
-import { usePhantomWallet } from '../../../common/hooks/usePhantomWallet'
-import { PublicKey } from '@solana/web3.js'
 import Alert from '../../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../../assets/images/alert.svg'
+import { ethers, BrowserProvider } from 'ethers'
 
 interface OnboardingProps {
   closeModal: () => void
@@ -21,39 +20,78 @@ enum PluginState {
 }
 
 const AUTH_API = 'auth/create_jwt_authentication'
-
+const INVITE_CODE_API = 'auth/check_invite_code'
 export default function Onboarding({ closeModal }: OnboardingProps) {
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [pluginState, setPluginState] = useState(PluginState.CHECKING)
   const [currentStep, setCurrentStep] = useState(1)
-  const {
-    connected: isWalletConnected,
-    connect,
-    signMessage
-  } = usePhantomWallet()
+  const [code, setCode] = useState('')
+  const [isWalletConnected, setIsWalletConnected] = useState(false)
+  const [provider, setProvider] = useState<any>(null)
+  const [signer, setSigner] = useState<any>(null)
+  const [account, setAccount] = useState<string | null>(null)
 
   const [message, setMessage] = useState<string>('Sign in to Kleo')
   const [signedData, setSignedData] = useState<{
     signature: Uint8Array
-    publicKey: PublicKey
-  } | null>(null)
+    publicKey: string
+  }>()
+
   const { fetchData, error: loginError, data: loginData } = useFetch<any>()
+  const { fetchData: fetchInviteCheck } = useFetch<any>()
   const [login, setLogin] = useState(false)
 
+  const connectMetaMask = async () => {
+    if ((window as any).ethereum) {
+      try {
+        const newProvider = new BrowserProvider((window as any).ethereum)
+
+        setProvider(newProvider)
+        const newSigner = await newProvider.getSigner()
+        setSigner(newSigner)
+        const accounts = await newProvider.send('eth_requestAccounts', [])
+        setAccount(accounts[0])
+        setIsWalletConnected(true)
+      } catch (error) {
+        console.error('Could not get accounts', error)
+      }
+    } else {
+      console.error('Please install MetaMask!')
+    }
+  }
+
+  const inviteCodeNextStep = async () => {
+    const urlWithParams = `${INVITE_CODE_API}?code=${code}`
+    fetchInviteCheck(urlWithParams, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      onSuccessfulFetch(data) {
+        if (data.toString() === 'OK') setCurrentStep(2)
+      }
+    })
+  }
   const handleSign = async () => {
-    if (message) {
-      const result = await signMessage(message)
-      setSignedData(result)
-      console.log('result', result)
+    if (message && signer) {
+      console.log(signer)
+      const signature = await signer.signMessage(message)
+      console.log('signature', signature)
+      if (account)
+        setSignedData({
+          signature: signature,
+          publicKey: account
+        })
+
       fetchData(AUTH_API, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          signature: Array.from(result.signature),
-          publicAddress: result.publicKey.toString(),
-          chain: 'solana'
+          signature: signature,
+          publicAddress: account,
+          chain: 'ethereum'
         }),
         onSuccessfulFetch(data) {
           sessionStorage.setItem('token', data.accessToken)
@@ -81,37 +119,40 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
   useEffect(() => {
     if (
       pluginState === PluginState.INSTALLED &&
-      isWalletConnected &&
       signedData &&
       signedData.publicKey &&
       login
     ) {
       closeModal()
     }
-  }, [pluginState, isWalletConnected, signedData, login])
+  }, [pluginState, signedData, login])
 
   return (
     <div className="flex flex-col items-start">
       {currentStep == 1 && (
         <>
           <div className="p-6 text-lg w-full font-medium text-gray-900 border-b border-gray-200">
-            Invite Only! Kleo is currently invite only. <br />
+            Invite Only! Did you bring out the coupon?. <br />
             <span className="text-gray-400 text-sm font-regular">STEP 1/2</span>
           </div>
-          <div className="w-full flex flex-row flex-start">
-            <div></div>
-            <input
-              type="text"
-              className="bg-white rounded-lg border border-gray-300 px-6 py-2 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary"
-              placeholder="Enter your Invite Code here"
-            />
+          <div className="w-full flex flex-row justify-center">
+            <div>
+              <input
+                style={{ float: 'right', marginTop: '5px' }}
+                onChange={(e) => setCode(e.target.value)}
+                type="text"
+                className="w-full bg-white rounded-lg border border-gray-300 px-6 py-2 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary"
+                placeholder="Enter your Invite Code here"
+              />
 
-            <button
-              className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1 ml-auto"
-              onClick={() => setCurrentStep(2)}
-            >
-              Next Step
-            </button>
+              <button
+                className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-50 ml-auto"
+                style={{ float: 'right', marginTop: '5px' }}
+                onClick={() => inviteCodeNextStep()}
+              >
+                Next Step
+              </button>
+            </div>
           </div>
         </>
       )}
@@ -171,12 +212,12 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
                   <Tick className="w-3 h-3 fill-white" />
                 </div>
               )}
-              <PhantomLogo className="w-16 h-16 fill-[#ab9ff2]" />
+              <MetaMaskLogo className="w-16 h-16 fill-[#FFE6D5]" />
             </div>
             {!isWalletConnected ? (
               <div className="flex flex-col items-start justify-center">
                 <span className="text-gray-900 text-base font-medium">
-                  Connect Phantom Wallet
+                  Connect Metamask Wallet
                 </span>
                 <span className="text-gray-400 text-sm font-regular">
                   Connect with your Phantom wallet to get started
@@ -184,7 +225,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
                 <div className="flex flex-row justify-start items-center mt-4 text-sm font-medium">
                   <button
                     className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-1"
-                    onClick={connect}
+                    onClick={connectMetaMask}
                   >
                     Connect
                   </button>
@@ -199,7 +240,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
                   className="p-2 border rounded mb-4"
                 />
                 <button
-                  onClick={() => closeModal()}
+                  onClick={handleSign}
                   className="px-4 py-2 bg-primary text-white rounded mb-4"
                 >
                   Sign Message
@@ -207,9 +248,9 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
                 {signedData && (
                   <div className="bg-white p-2 rounded">
                     {/* <p className="mb-2 font-semibold">Signature:</p> 
-                 <code className="text-sm bg-gray-200 p-2 rounded">
-                  {Array.from(signedData.signature).join(', ')}
-                </code> */}
+                  <code className="text-sm bg-gray-200 p-2 rounded">
+                    {Array.from(signedData.signature).join(', ')}
+                  </code> */}
                     <p className="mt-4 mb-2 font-semibold">Public Key:</p>
                     <code className="text-sm bg-gray-200 p-2 rounded">
                       {signedData.publicKey.toString()}
