@@ -38,3 +38,9 @@
   font-weight: 200;
   font-style: normal;
 }
+@font-face {
+  font-family: 'shoreline';
+  src: url('./assets/fonts/Shorelines-Script-Bold.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
