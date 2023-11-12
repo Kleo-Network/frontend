@@ -52,7 +52,7 @@ export default function ProfileCard({ user }: User) {
           {user.kleo} $KLEO
         </span>
         <span className="text-center text-base font-regular text-gray-500">
-          Available Balance
+          Reputation Score
         </span>
       </div>
     </div>

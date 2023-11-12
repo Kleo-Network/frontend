@@ -5,7 +5,7 @@ import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
 import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
-import Onboarding from './Onboarding'
+import Onboarding from './Onboarding/MetaMask'
 import { UserContext } from '../common/contexts/UserContext'
 
 export default function Profile() {
