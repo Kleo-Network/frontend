@@ -1,43 +1,98 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { ReactComponent as BinIcon } from '../../assets/images/bin.svg'
 import { ReactComponent as StarIcon } from '../../assets/images/star.svg'
 import { ReactComponent as EyeIcon } from '../../assets/images/eye.svg'
 import { ReactComponent as SearchIcon } from '../../assets/images/search.svg'
-import {
-  CurrentBrowserHistory,
-  WebsiteHistoryProps
-} from '../constants/Website'
 import useFetch, { FetchStatus } from '../common/hooks/useFetch'
 import Alert from '../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../assets/images/alert.svg'
 import Modal from '../common/Modal'
-// TODO: Remove this import
-import data from '../mocks/History.json'
+import { HistoryListLoader } from '../profile/SideDrawerContainer/SkeletonLoaders'
+import { UserContext } from '../common/contexts/UserContext'
+import { UrlData } from '../constants/UrlData'
+import { Data } from '../profile/SideDrawerContainer/interfaces'
+import { getVisitTime } from '../utils/utils'
 
-const API_URL = '../mocks/History.json'
+const STAR_URL_API = `history/add_to_favourites?user_id={userId}&visitTime={visitTime}`
+const UNSTAR_URL_API = `history/remove_from_favourites?user_id={userId}&url={url}`
+const HIDE_URL_API = `history/hide_history_items`
+const API_URL =
+  'history/scan_history_by_url_or_title?user_id={userId}&search={search}&page={pageNo}&size={pageSize}'
 
 export default function History() {
-  const [search, setSearch] = React.useState('')
-  // const { status, data, fetchData } = useFetch<CurrentBrowserHistory>(API_URL)
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const { user } = useContext(UserContext)
+  const [search, setSearch] = useState('')
+  const [pageNo, setPageNo] = useState(1)
+  const pageSize = 50
+  const { status, data, fetchData } = useFetch<UrlData[]>(makeApiUrl())
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const { data: starred, fetchData: fetchData2 } = useFetch<Data>()
 
-  // React.useEffect(() => {
-  //   fetchData(API_URL)
-  // }, [])
+  function makeApiUrl(): string {
+    return API_URL.replace('{userId}', user.userId)
+      .replace('{search}', search)
+      .replace('{pageNo}', pageNo.toString())
+      .replace('{pageSize}', pageSize.toString())
+  }
 
-  const filteredHistory: CurrentBrowserHistory = React.useMemo(() => {
-    return Object.keys(data as CurrentBrowserHistory).reduce(
-      (acc, key) => ({
-        ...acc,
-        [key]: data![key].filter(
-          ({ name, url }) =>
-            name.toLowerCase().includes(search.toLowerCase()) ||
-            url.toLowerCase().includes(search.toLowerCase())
-        )
-      }),
-      {}
+  const handleFavourites = (
+    visitTime: number,
+    url: string,
+    favourite: boolean
+  ) => {
+    let apiUrl = STAR_URL_API.replace('{userId}', user.userId).replace(
+      '{visitTime}',
+      String(visitTime)
     )
-  }, [search])
+    if (favourite) {
+      apiUrl = UNSTAR_URL_API.replace('{userId}', user.userId).replace(
+        '{url}',
+        url
+      )
+    }
+
+    fetchData2(apiUrl, {
+      method: 'POST',
+      onSuccessfulFetch: () => {
+        fetchData(makeApiUrl())
+      }
+    })
+  }
+
+  const handleUrlHide = (visitTimes: number[], hidden: boolean) => {
+    fetchData2(HIDE_URL_API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user_id: user.userId,
+        visit_times: visitTimes,
+        hide: !hidden
+      }),
+      onSuccessfulFetch: () => {
+        fetchData(makeApiUrl())
+      }
+    })
+  }
+
+  function markKeywords(text: string) {
+    if (!search) {
+      return [text]
+    }
+    const regex = new RegExp(`(${search})`, 'gi')
+    const parts = text.split(regex)
+    return parts.map((part, index) => {
+      if (part.match(regex)) {
+        return <mark key={index}>{part}</mark>
+      }
+      return part
+    })
+  }
+
+  const filteredHistory: UrlData[] = React.useMemo(() => {
+    return (data || []).filter((item) => item.url.includes(search))
+  }, [search, data])
 
   return (
     <div className="py-12 px-24 flex flex-col items-start justify-center">
@@ -65,48 +120,53 @@ export default function History() {
           </button>
         </div>
       </div>
-      {/* {status === FetchStatus.LOADING && <LoadingSpinner />} */}
-      {/* {status === FetchStatus.SUCCESS && */}
-      {Object.keys(filteredHistory).map((key, index) => (
-        <div
-          key={index}
-          className="flex flex-col mt-4 self-stretch items-start justify-start border border-gray-200 rounded-lg"
-        >
-          <div className="text-xs self-stretch text-gray-400 font-semibold p-4 border-b border-gray-200 capitalize">
-            {key}
-          </div>
+      {status === FetchStatus.LOADING && <HistoryListLoader />}
+      {status === FetchStatus.SUCCESS && (
+        <div className="flex flex-col mt-4 self-stretch items-start justify-start border border-gray-200 rounded-lg">
           <div className="flex flex-col self-stretch mx-6">
-            {filteredHistory[key].map(({ time, name, visits, url }, index) => (
-              <div
-                key={index}
-                className="flex flex-row gap-8 justify-between items-center self-stretch py-3 border-b border-gray-200 last:border-b-0"
-              >
-                <div className="text-xs text-gray-500 font-regular pt-1">
-                  {time}
+            {filteredHistory.map(
+              ({ favourite, hidden, icon, url, title, visitTime }, index) => (
+                <div
+                  key={index}
+                  className="flex flex-row gap-4 justify-between items-center self-stretch py-3 border-b border-gray-200 last:border-b-0"
+                >
+                  <div className="text-xs text-gray-500 font-regular pt-1">
+                    {getVisitTime(visitTime.toString())}
+                  </div>
+                  <div className="flex flex-col flex-1 items-start justify-center overflow-hidden overflow-ellipsis whitespace-nowrap">
+                    <span
+                      title={title}
+                      className="text-sm text-gray-800 font-medium"
+                    >
+                      {markKeywords(title)}
+                    </span>
+                    <a
+                      href={url}
+                      title={url}
+                      target="_blank"
+                      className="text-xs text-gray-400 font-regular hover:text-purple-700 hover:underline"
+                    >
+                      {markKeywords(url)}
+                    </a>
+                  </div>
+                  <StarIcon
+                    className={`${
+                      favourite && 'fill-yellow-500 stroke-yellow-500'
+                    } w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200`}
+                    onClick={() => handleFavourites(visitTime, url, favourite)}
+                  />
+                  <EyeIcon
+                    className={`
+                        ${hidden && 'stroke-purple-700'}
+                        w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700`}
+                    onClick={() => handleUrlHide([visitTime], hidden)}
+                  />
                 </div>
-                <div className="flex flex-col flex-1 items-start justify-center">
-                  <span className="text-sm text-gray-800 font-medium overflow-hidden overflow-ellipsis whitespace-nowrap">
-                    {name}
-                  </span>
-                  <a
-                    href={url}
-                    title={url}
-                    target="_blank"
-                    className="text-xs text-gray-400 font-regular overflow-hidden overflow-ellipsis whitespace-nowrap hover:text-purple-700 hover:underline"
-                  >
-                    {url}
-                  </a>
-                  <span className="text-xs pt-1 text-gray-500 font-medium">
-                    {visits} visits
-                  </span>
-                </div>
-                <StarIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:fill-yellow-200 hover:stroke-yellow-200" />
-                <EyeIcon className="w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700" />
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
-      ))}
+      )}
       {status === FetchStatus.ERROR && (
         <div className="w-full my-6">
           <Alert

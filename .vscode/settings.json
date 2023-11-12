@@ -2,10 +2,17 @@
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "[typescript]": {
+<<<<<<< HEAD
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+=======
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+>>>>>>> main
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -20,4 +27,8 @@
     "kleo"
   ],
   "gitlens.ai.experimental.openai.model": "gpt-4-32k-0613"
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

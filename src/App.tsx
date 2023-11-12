@@ -4,6 +4,7 @@ import Profile from './components/profile/Profile'
 import Navbar from './components/navbar/Navbar'
 import History from './components/history/History'
 import { UserContext } from './components/common/contexts/UserContext'
+import { Home } from './components/home'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -11,7 +12,7 @@ function App(): ReactElement {
     avatar: 'https://avatars.githubusercontent.com/u/47280571?v=4',
     address: '0x1234567890123456789012345678901234567890',
     kleo: 3232,
-    userId: '05ecb209-8e92-4e2b-a2f0-c0d638f415ae'
+    userId: '4c5fce3c-38aa-4199-b72e-73f195c8ab6d'
   })
 
   return (
@@ -24,6 +25,7 @@ function App(): ReactElement {
           <Routes>
             <Route path="/dashboard" element={<Profile />} />
             <Route path="/history" element={<History />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/" element={<Navigate to="/dashboard" />} />
           </Routes>
         </div>

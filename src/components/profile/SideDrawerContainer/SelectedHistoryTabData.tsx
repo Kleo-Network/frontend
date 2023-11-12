@@ -233,7 +233,7 @@ export function SelectedHistoryTabData({
                       />
                       <EyeIcon
                         className={`
-                        ${hidden && 'fill-purple-700 stroke-purple-700'}
+                        ${hidden && 'stroke-purple-700'}
                         w-6 h-6 cursor-pointer stroke-gray-300 hover:stroke-purple-700`}
                         onClick={() => handleUrlHide([visitTime], hidden)}
                       />
