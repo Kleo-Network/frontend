@@ -95,6 +95,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
         }),
         onSuccessfulFetch(data) {
           sessionStorage.setItem('token', data.accessToken)
+          ;(window as any).kleoUploadHistory(account)
           setLogin(true)
         }
       })

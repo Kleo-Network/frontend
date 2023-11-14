@@ -81,7 +81,7 @@ export default function PinnedWebsites() {
         <div className="flex flex-row items-center gap-2">
           <h3 className="text-lg text-gray-900 flex-grow-0">Pinned Websites</h3>
           <span className="text-xs text-purple-700 bg-purple-100 py-[2px] px-2 rounded-2xl">
-            New
+            Showcase
           </span>
         </div>
         <button

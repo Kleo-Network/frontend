@@ -10,9 +10,9 @@ function App(): ReactElement {
   const [user, setUser] = useState({
     name: 'John Doe',
     avatar: 'https://avatars.githubusercontent.com/u/47280571?v=4',
-    address: '0x1234567890123456789012345678901234567890',
+    address: '0x57e7b7f1c1a8782ac9d3c4d730051bd60068aeee',
     kleo: 3232,
-    userId: '4c5fce3c-38aa-4199-b72e-73f195c8ab6d'
+    userId: '0x57e7b7f1c1a8782ac9d3c4d730051bd60068aeee'
   })
 
   return (
