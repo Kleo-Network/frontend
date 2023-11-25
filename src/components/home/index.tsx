@@ -1,4 +1,4 @@
-// import { BackedBy } from './sections/BackedBy'
+import { BackedBy } from './sections/BackedBy'
 import { FAQSection } from './sections/FAQSection'
 import { Feature1 } from './sections/Feature1'
 import { Feature2 } from './sections/Feature2'
@@ -17,7 +17,7 @@ export function Home() {
       <Feature2 />
       <Feature3 />
       <Feature4 />
-      {/* <BackedBy /> */}
+      <BackedBy />
       <FAQSection />
       <Footer />
     </div>

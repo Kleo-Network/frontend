@@ -13,7 +13,8 @@ interface NavbarProps {
 
 enum Tab {
   DASHBOARD = 'Dashboard',
-  HISTORY = 'History'
+  HISTORY = 'History',
+  PRIVACY = 'Privacy'
 }
 
 const Navbar = ({ avatar }: NavbarProps) => {
@@ -26,6 +27,8 @@ const Navbar = ({ avatar }: NavbarProps) => {
       setSelectedTab(Tab.DASHBOARD)
     } else if (pathname === '/history') {
       setSelectedTab(Tab.HISTORY)
+    } else if (pathname === '/privacy') {
+      setSelectedTab(Tab.PRIVACY)
     }
   }, [pathname])
 

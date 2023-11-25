@@ -223,7 +223,7 @@ const accordionHeader = (expanded: boolean) => {
         {expanded ? (
           <Arrow className="w-5 h-5" />
         ) : (
-          <Arrow className=" w-5 h-5transform rotate-180" />
+          <Arrow className=" w-5 h-5 transform rotate-180" />
         )}
       </div>
     </div>
