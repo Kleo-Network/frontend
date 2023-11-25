@@ -23,8 +23,8 @@ export default function Accordion({
         {header}
       </button>
       <div
-        className={`overflow-hidden transition-max-height ease-out duration-300 ${
-          expanded ? 'max-h-fit' : 'max-h-0'
+        className={`overflow-hidden transition-height duration-200 ease-linear delay-100; ${
+          expanded ? 'h-fit' : 'h-0'
         }`}
       >
         {body}

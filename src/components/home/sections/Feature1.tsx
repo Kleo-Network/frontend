@@ -9,7 +9,7 @@ export function Feature1() {
   return (
     <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] lg:sticky lg:top-0">
       <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1">
-        <div className="self-stretch flex-1 mx-24 py-6 basis-1/2 flex-col justify-center items-center lg:items-start gap-8 flex">
+        <div className="self-stretch flex-1 mx-24 py-6 basis-1 flex-col justify-center items-center lg:items-start gap-8 flex">
           <div className="self-stretch flex-col justify-center items-center lg:items-start gap-8 flex">
             <div className="self-stretch flex-col justify-center items-center gap-12 flex">
               <div className="self-stretch flex-col justify-center items-center gap-5 flex">
@@ -39,7 +39,7 @@ export function Feature1() {
             </div>
           </div>
         </div>
-        <div className="px-16 py-10 flex-1 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1/2 flex-col flex h-fit justify-between">
+        <div className="px-16 py-10 flex-1 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex h-fit justify-between">
           <div className="w-fit relative bg-white rounded-2xl shadow-6xl border border-gray-200 flex-col justify-start items-start flex">
             <div className="self-stretch pb-4 bg-white  border-b border-b-gray-200 flex-col justify-start items-start rounded-t-2xl gap-4 flex">
               <div className="px-4 pt-3 justify-center items-end gap-3 flex">

@@ -3,8 +3,8 @@ import { ReactComponent as BoltIcon } from '../../../assets/images/lighteningBol
 export function Feature3() {
   return (
     <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] lg:sticky lg:top-0">
-      <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1">
-        <div className="self-stretch mx-24 py-6 basis-1/2 flex-col justify-center items-center lg:items-start gap-8 flex">
+      <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1 h-screen">
+        <div className="self-stretch mx-24 py-6 flex-1 basis-1 flex-col justify-center items-center lg:items-start gap-8 flex">
           <div className="self-stretch flex-col justify-center items-center gap-12 flex">
             <div className="self-stretch flex-col justify-center items-center lg:items-start gap-5 flex">
               <div className="self-stretch flex-col justify-center items-center lg:items-start gap-3 flex">
@@ -30,7 +30,7 @@ export function Feature3() {
             </div>
           </div>
         </div>
-        <div className="px-16 py-10 flex-1 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1/2 flex-col flex h-fit justify-between">
+        <div className="px-16 py-10 flex-1 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex h-fit justify-between">
           <div className="w-fit relative bg-white rounded-2xl shadow-6xl border border-gray-200 flex-col justify-start items-start flex">
             <div className="self-stretch p-6 justify-center items-center gap-8 flex">
               <div className="grow shrink basis-0 justify-start items-start gap-4 flex">

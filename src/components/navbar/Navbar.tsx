@@ -12,6 +12,7 @@ interface NavbarProps {
 }
 
 enum Tab {
+  HOME = 'Home',
   DASHBOARD = 'Dashboard',
   HISTORY = 'History',
   PRIVACY = 'Privacy'
@@ -24,6 +25,8 @@ const Navbar = ({ avatar }: NavbarProps) => {
 
   React.useEffect(() => {
     if (pathname === '/') {
+      setSelectedTab(Tab.HOME)
+    } else if (pathname === '/dashboard') {
       setSelectedTab(Tab.DASHBOARD)
     } else if (pathname === '/history') {
       setSelectedTab(Tab.HISTORY)
@@ -35,25 +38,35 @@ const Navbar = ({ avatar }: NavbarProps) => {
   return (
     <nav className="flex justify-between items-center px-24 w-full">
       <div className="flex items-center">
-        <div className="flex flex-row items-center justify-center gap-2">
+        <button
+          className="flex flex-row items-center justify-center gap-2"
+          onClick={() => {
+            setSelectedTab(Tab.HOME)
+            navigate('/')
+          }}
+        >
           <Logo className="w-8 h-8" />
           <h3 className="font-bold text-xl tracking-tighter">KLEO</h3>
-        </div>
+        </button>
         <div className="flex items-center gap-1 ml-8">
-          {Object.values(Tab).map((tab, i) => (
-            <button
-              key={i}
-              className={`px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-50 ${
-                selectedTab === tab ? 'text-purple-700 bg-purple-100' : ''
-              }`}
-              onClick={() => {
-                setSelectedTab(tab)
-                navigate(`/${tab.toLowerCase()}`)
-              }}
-            >
-              {tab}
-            </button>
-          ))}
+          {Object.values(Tab).map((tab, i) => {
+            return (
+              tab !== Tab.HOME && (
+                <button
+                  key={i}
+                  className={`px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-50 ${
+                    selectedTab === tab ? 'text-purple-700 bg-purple-100' : ''
+                  }`}
+                  onClick={() => {
+                    setSelectedTab(tab)
+                    navigate(`/${tab.toLowerCase()}`)
+                  }}
+                >
+                  {tab}
+                </button>
+              )
+            )
+          })}
         </div>
       </div>
       <div className="flex items-center">

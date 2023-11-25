@@ -5,6 +5,7 @@ import Navbar from './components/navbar/Navbar'
 import History from './components/history/History'
 import { UserContext } from './components/common/contexts/UserContext'
 import { Home } from './components/home'
+import PrivacyPolicy from './components/home/sections/PrivacyPolicy'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -25,8 +26,8 @@ function App(): ReactElement {
           <Routes>
             <Route path="/dashboard" element={<Profile />} />
             <Route path="/history" element={<History />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/" element={<Home />} />
           </Routes>
         </div>
       </div>
