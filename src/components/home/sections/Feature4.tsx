@@ -1,13 +1,13 @@
 import { ReactComponent as CrossIcon } from '../../../assets/images/cross.svg'
 import { ReactComponent as KleoIcon } from '../../../assets/images/kleoWithBg.svg'
 import { ReactComponent as TickIcon } from '../../../assets/images/check.svg'
-import MetaMaskIcon from '../../../assets/images/metaMask.png'
 import { ReactComponent as ShieldIcon } from '../../../assets/images/shield.svg'
+import MetaMaskIcon from '../../../assets/images/metaMask.png'
 
 export function Feature4() {
   return (
-    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh]">
-      <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1">
+    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh]  z-10">
+      <div className="self-stretch bg-gray-50 justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1">
         <div className="self-stretch flex-1 mx-24 py-6 basis-1/2 flex-col justify-center items-center lg:items-start gap-8 flex">
           <div className="flex flex-col justify-center items-center gap-12">
             <div className="flex flex-col justify-center items-center lg:items-start gap-5">

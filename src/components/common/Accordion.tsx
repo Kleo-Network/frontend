@@ -18,11 +18,17 @@ export default function Accordion({
   }
 
   return (
-    <div>
+    <div className="w-full">
       <button className="w-full" onClick={toggleAccordion}>
         {header}
       </button>
-      {expanded && <div>{body}</div>}
+      <div
+        className={`overflow-hidden transition-max-height ease-out duration-300 ${
+          expanded ? 'max-h-fit' : 'max-h-0'
+        }`}
+      >
+        {body}
+      </div>
     </div>
   )
 }

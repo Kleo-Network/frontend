@@ -6,7 +6,7 @@ import { ReactComponent as KleoIcon } from '../../../assets/images/kleoLogo.svg'
 
 export const Footer = () => {
   return (
-    <div className="pt-16 pb-12 bg-violet-900 flex-col justify-start items-center gap-16 flex self-stretch">
+    <div className="pt-16 pb-12 bg-violet-900 flex-col justify-start items-center gap-16 flex self-stretch z-10">
       <div className="self-stretch h-[184px] px-8 flex-col justify-center items-center gap-12 flex">
         <div className="self-stretch justify-center items-center gap-8 inline-flex">
           <div className="grow shrink basis-0 flex-col justify-center items-center gap-8 inline-flex">

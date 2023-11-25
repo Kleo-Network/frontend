@@ -2,7 +2,7 @@ import { ReactComponent as BoltIcon } from '../../../assets/images/lighteningBol
 
 export function Feature3() {
   return (
-    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh]">
+    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] lg:sticky lg:top-0">
       <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row flex-1">
         <div className="self-stretch mx-24 py-6 basis-1/2 flex-col justify-center items-center lg:items-start gap-8 flex">
           <div className="self-stretch flex-col justify-center items-center gap-12 flex">
