@@ -107,7 +107,7 @@ export const FAQSection = () => {
 const accordionHeader = (expanded: boolean, headerText: string) => {
   return (
     <div className="flex flex-row gap-2 justify-between items-start">
-      <span className="self-stretch text-gray-900 text-lg font-medium">
+      <span className="self-stretch text-gray-900 text-lg font-medium text-left">
         {headerText}
       </span>
       <div className="text-gray-400 text-sm font-regular">
