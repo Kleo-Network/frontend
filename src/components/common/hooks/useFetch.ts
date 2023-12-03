@@ -11,6 +11,7 @@ type Options<T> = {
   redirect?: RequestRedirect
   referrerPolicy?: ReferrerPolicy
   integrity?: string
+  signal?: AbortSignal
   keepalive?: boolean
   onSuccessfulFetch?: (data?: T) => void
 }
@@ -31,12 +32,10 @@ export enum FetchStatus {
 
 function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
   const [data, setData] = useState<T | null>(null)
-  // const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState(FetchStatus.IDLE)
   const [error, setError] = useState(null)
-  const baseUrl = 'http://127.0.0.1:5001/api/v1/core' //|| 'https://api.kleo.network/api/v1/core'
-  const controller = new AbortController()
-  const signal = controller.signal
+  const [controller, setController] = useState<AbortController | null>(null)
+  const baseUrl = 'https://api.kleo.network/api/v1/core'
 
   const fetchData = async (url: string, options?: Options<T>) => {
     if (url === '') {
@@ -55,7 +54,7 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
       referrerPolicy: options?.referrerPolicy || 'no-referrer',
       integrity: options?.integrity || '',
       keepalive: options?.keepalive || false,
-      signal: signal
+      signal: options?.signal
     })
       .then((response) => {
         if (!response.ok) {
@@ -71,17 +70,33 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
         }
       })
       .catch((err) => {
-        setError(err.message)
-        setStatus(FetchStatus.ERROR)
+        if (err.name !== 'AbortError') {
+          setError(err.message)
+          setStatus(FetchStatus.ERROR)
+        }
       })
   }
 
   const fetchDataManually = (url: string, options?: Options<T>) => {
-    fetchData(url, options)
+    if (controller) {
+      controller.abort()
+    }
+    const newController = new AbortController()
+    setController(newController)
+    fetchData(url || '', { ...(options || {}), signal: newController.signal })
   }
 
   useEffect(() => {
-    fetchData(url || '', options)
+    if (controller) {
+      controller.abort()
+    }
+    const newController = new AbortController()
+    setController(newController)
+    fetchData(url || '', { ...(options || {}), signal: newController.signal })
+
+    return () => {
+      newController.abort()
+    }
   }, [])
 
   return { data, status, error, fetchData: fetchDataManually }
