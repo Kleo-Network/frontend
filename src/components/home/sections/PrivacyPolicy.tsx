@@ -2,7 +2,7 @@ import React from 'react'
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="mx-24 mt-12 mb-20 flex flex-col">
+    <div className="mx-12 lg:mx-24 mt-12 mb-20 flex flex-col">
       <h1 className="text-3xl font-bold mb-4">
         Privacy Policy for Kleo Network
       </h1>

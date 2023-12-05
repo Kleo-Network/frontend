@@ -26,7 +26,16 @@ export function HeroSection() {
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center self-stretch font-inter">
+    <div
+      className={`flex flex-col items-center justify-center self-stretch font-inter bg-no-repeat ${
+        orientation === 'landscape' ? 'bg-cover' : 'bg-contain'
+      }`}
+      style={{
+        backgroundImage: `url(${
+          orientation === 'landscape' ? BgLandscape : BgPortrait
+        })`
+      }}
+    >
       <div className="background-pattern">
         <div className="mask">
           <div className="background-mask"></div>
@@ -38,16 +47,9 @@ export function HeroSection() {
         </div>
       </div>
       <div
-        className={`flex flex-col lg:flex-row items-center justify-between gap-16 self-stretch lg:px-32 px-4 py-40 ${
-          orientation === 'landscape' ? 'bg-cover' : 'bg-contain'
-        }`}
-        style={{
-          backgroundImage: `url(${
-            orientation === 'landscape' ? BgLandscape : BgPortrait
-          })`
-        }}
+        className={`flex flex-col lg:flex-row items-center justify-between gap-16 self-stretch lg:px-32 px-4 py-40 `}
       >
-        <div className="flex flex-col items-center gap-8 px-8">
+        <div className="flex flex-col items-center gap-8 px-8 py-24 lg:py-0">
           <div className="flex flex-col justify-center items-start gap-12">
             <div className="flex flex-col items-start gap-6 self-stretch relative">
               <div className="flex flex-col items-start gap-6 relative self-stretch text-gray-800 font-inter text-5xl font-normal md:text-7xl">
@@ -87,9 +89,12 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">
-              <div className="flex items-center justify-center px-4 py-3 border rounded-lg text-white border-primary bg-primary shadow-sm">
+              <a
+                href="/signup"
+                className="flex items-center justify-center px-4 py-3 border rounded-lg text-white border-primary bg-primary shadow-sm"
+              >
                 <div className="text3">Launch KLEO</div>
-              </div>
+              </a>
               <div className="flex items-center justify-center px-4 py-3 border rounded-lg border-gray-300 bg-white shadow-sm">
                 <div className="text-gray-700">Install KLEO Plugin</div>
               </div>

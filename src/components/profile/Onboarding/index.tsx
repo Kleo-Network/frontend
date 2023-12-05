@@ -11,7 +11,7 @@ import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 
 interface OnboardingProps {
-  closeModal: () => void
+  handleLogin: () => void
 }
 
 enum PluginState {
@@ -22,7 +22,7 @@ enum PluginState {
 
 const AUTH_API = 'auth/create_jwt_authentication'
 
-export default function Onboarding({ closeModal }: OnboardingProps) {
+export default function Onboarding({ handleLogin }: OnboardingProps) {
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [pluginState, setPluginState] = useState(PluginState.CHECKING)
   const {
@@ -85,7 +85,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
       signedData.publicKey &&
       login
     ) {
-      closeModal()
+      handleLogin()
     }
   }, [pluginState, isWalletConnected, signedData, login])
 

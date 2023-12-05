@@ -34,7 +34,7 @@ export function BackedBy() {
         </div>
         <div className="self-stretch justify-center items-center gap-12 lg:gap-36 flex flex-row flex-wrap">
           {BackedByList.map(({ name, imgSrc, width, height }) => (
-            <div className="flex flex-row gap-2 items-center">
+            <div className="flex flex-row gap-2 items-center" key={name}>
               <img
                 className={`min-w-20 h-12 lg:h-20 rounded-lg ${width} ${height}`}
                 src={imgSrc}

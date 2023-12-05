@@ -10,7 +10,7 @@ import { HeroSection } from './sections/HeroSection'
 
 export function Home() {
   return (
-    <div className="flex flex-col items-start justify-center h-full w-full font-inter">
+    <div className="flex flex-col items-start justify-center self-stretch font-inter">
       <HeroSection />
       {/* <StackedCards /> */}
       <Feature1 />

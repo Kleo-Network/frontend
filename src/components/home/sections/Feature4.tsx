@@ -22,9 +22,12 @@ export function Feature4() {
                 friends and know people who have similar tastes as you in
                 sports, entertainment, work etc etc.
               </div>
-              <button className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3">
+              <a
+                href="/signup"
+                className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3"
+              >
                 <div className="text-white text-base font-medium">Try KLEO</div>
-              </button>
+              </a>
             </div>
           </div>
         </div>

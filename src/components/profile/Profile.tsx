@@ -1,25 +1,21 @@
 import React, { useContext, useState, useEffect } from 'react'
 import PinnedWebsites from './PinnedWebsites'
 import { ReactComponent as ShareSvg } from '../../assets/images/share.svg'
-import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
+// import { ReactComponent as AddSvg } from '../../assets/images/add.svg'
 import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
-import Onboarding from './Onboarding/MetaMask'
+import SocialShare from './Onboarding/SocialSharePopUp'
 import { UserContext } from '../common/contexts/UserContext'
+import { useParams } from 'react-router-dom'
 
 export default function Profile() {
   const { user } = useContext(UserContext)
+  const { id } = useParams()
 
-  const [isModalOpen, setIsModalOpen] = useState(true)
+  const kleoProfileUrl = 'https://app.kleo.network/profile/'
 
-  useEffect(() => {
-    if (sessionStorage.getItem('token')) {
-      setIsModalOpen(false)
-    } else {
-      setIsModalOpen(true)
-    }
-  }, [])
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false)
 
   return (
     <section>
@@ -29,14 +25,17 @@ export default function Profile() {
             Welcome back, {user.name}!
           </h3>
           <div className="flex flex-row gap-2">
-            <button className="flex flex-row border rounded-lg px-4 py-2 shadow">
+            <button
+              className="flex flex-row border rounded-lg px-4 py-2 shadow"
+              onClick={() => setIsShareModalOpen(true)}
+            >
               <ShareSvg className="w-5 h-5 mr-2" />
               <span className="text-sm">Share</span>
             </button>
-            <button className="flex flex-row border rounded-lg px-4 py-2 shadow bg-primary text-white">
+            {/* <button className="flex flex-row border rounded-lg px-4 py-2 shadow bg-primary text-white">
               <AddSvg className="w-5 h-5 mr-2 stroke-white" />
               <span className="text-sm">Collect</span>
-            </button>
+            </button> */}
           </div>
         </header>
         <div className="flex flex-col w-full items-start justify-between py-8 gap-6 md:flex-row">
@@ -44,12 +43,14 @@ export default function Profile() {
           <ProfileCard user={user} />
         </div>
         <BrowsingHistory />
+
         <Modal
-          isOpen={isModalOpen}
-          hideCloseButton={true}
-          onClose={() => setIsModalOpen(false)}
+          isOpen={isShareModalOpen}
+          onClose={() => setIsShareModalOpen(false)}
         >
-          <Onboarding closeModal={() => setIsModalOpen(false)} />
+          <div className="container mx-auto p-8">
+            <SocialShare profileUrl={kleoProfileUrl + id} />
+          </div>
         </Modal>
       </div>
     </section>

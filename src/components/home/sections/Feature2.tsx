@@ -17,9 +17,12 @@ export function Feature2() {
               </div>
             </div>
           </div>
-          <button className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3">
+          <a
+            href="/signup"
+            className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3"
+          >
             <div className="text-white text-base font-medium">Try KLEO</div>
-          </button>
+          </a>
         </div>
         <div className="px-6 py-10 flex-1 lg:px-16 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
           <Feature2Svg className="w-full h-full" />

@@ -3,6 +3,7 @@ import { ReactComponent as Kleo } from '../../../../assets/images/kleoWithBg.svg
 import { ReactComponent as MetaMaskLogo } from '../../../../assets/images/metamask.svg'
 import { ReactComponent as Arrow } from '../../../../assets/images/arrow.svg'
 import { ReactComponent as Tick } from '../../../../assets/images/check.svg'
+import { ReactComponent as Welcome } from '../../../../assets/images/welcome.svg'
 import Accordion from '../../../common/Accordion'
 import useFetch from '../../../common/hooks/useFetch'
 import Alert from '../../../common/Alerts'
@@ -10,7 +11,7 @@ import { ReactComponent as AlertIcon } from '../../../../assets/images/alert.svg
 import { ethers, BrowserProvider } from 'ethers'
 
 interface OnboardingProps {
-  closeModal: () => void
+  handleLogin: (userAddress: string) => void
 }
 
 enum PluginState {
@@ -21,7 +22,7 @@ enum PluginState {
 
 const AUTH_API = 'auth/create_jwt_authentication'
 const INVITE_CODE_API = 'auth/check_invite_code'
-export default function Onboarding({ closeModal }: OnboardingProps) {
+export default function Onboarding({ handleLogin }: OnboardingProps) {
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [pluginState, setPluginState] = useState(PluginState.CHECKING)
   const [currentStep, setCurrentStep] = useState(1)
@@ -95,7 +96,7 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
         }),
         onSuccessfulFetch(data) {
           sessionStorage.setItem('token', data.accessToken)
-          ;(window as any).kleoUploadHistory(account)
+          //;(window as any).kleoUploadHistory(account)
           setLogin(true)
         }
       })
@@ -124,38 +125,38 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
       signedData.publicKey &&
       login
     ) {
-      closeModal()
+      handleLogin(account || '')
     }
   }, [pluginState, signedData, login])
 
   return (
     <div className="flex flex-col items-start">
       {currentStep == 1 && (
-        <>
-          <div className="p-6 text-lg w-full font-medium text-gray-900 border-b border-gray-200">
-            Invite Only! Did you bring out the coupon?. <br />
+        <div className="flex flex-col items-center justify-center self-stretch">
+          <div className="flex flex-col gap-2 p-6 text-lg w-full font-medium text-gray-900 border-b border-gray-200">
+            Invite Only! Did you bring out the coupon?.
             <span className="text-gray-400 text-sm font-regular">STEP 1/2</span>
           </div>
-          <div className="w-full flex flex-row justify-center">
-            <div>
-              <input
-                style={{ float: 'right', marginTop: '5px' }}
-                onChange={(e) => setCode(e.target.value)}
-                type="text"
-                className="w-full bg-white rounded-lg border border-gray-300 px-6 py-2 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary"
-                placeholder="Enter your Invite Code here"
-              />
-
-              <button
-                className="px-4 py-3 bg-primary text-white rounded-lg shadow mr-50 ml-auto"
-                style={{ float: 'right', marginTop: '5px' }}
-                onClick={() => inviteCodeNextStep()}
-              >
-                Next Step
-              </button>
-            </div>
+          <div className="flex items-center justify-center self-stretch">
+            <Welcome className="w-96 h-96 -mt-16 -mb-16 ml-16" />
           </div>
-        </>
+          <div className="flex flex-col gap-3 self-stretch px-6 pb-8 justify-center items-center">
+            <input
+              style={{ float: 'right', marginTop: '5px' }}
+              onChange={(e) => setCode(e.target.value)}
+              type="text"
+              className="w-full bg-white rounded-lg border border-gray-300 px-6 py-2 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary"
+              placeholder="Enter your Invite Code here"
+            />
+
+            <button
+              className="px-4 py-3 bg-primary text-white rounded-lg shadow"
+              onClick={() => inviteCodeNextStep()}
+            >
+              Invite Code
+            </button>
+          </div>
+        </div>
       )}
       {currentStep == 2 && (
         <>
@@ -272,17 +273,16 @@ export default function Onboarding({ closeModal }: OnboardingProps) {
               />
             </div>
           )}
+          <div className="p-6 border-t border-gray-200 w-full">
+            <Accordion
+              expanded={infoExpanded}
+              setExpanded={setInfoExpanded}
+              header={accordionHeader(infoExpanded)}
+              body={accordionBody()}
+            />
+          </div>
         </>
       )}
-
-      <div className="p-6 border-t border-gray-200 w-full">
-        <Accordion
-          expanded={infoExpanded}
-          setExpanded={setInfoExpanded}
-          header={accordionHeader(infoExpanded)}
-          body={accordionBody()}
-        />
-      </div>
     </div>
   )
 }
