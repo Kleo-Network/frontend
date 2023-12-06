@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ReactComponent as Kleo } from '../../../../assets/images/kleoWithBg.svg'
 import { ReactComponent as MetaMaskLogo } from '../../../../assets/images/metamask.svg'
 import { ReactComponent as Arrow } from '../../../../assets/images/arrow.svg'
@@ -9,6 +9,7 @@ import useFetch from '../../../common/hooks/useFetch'
 import Alert from '../../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../../assets/images/alert.svg'
 import { ethers, BrowserProvider } from 'ethers'
+import { useAuthContext } from '../../../common/contexts/UserContext'
 
 interface OnboardingProps {
   handleLogin: (userAddress: string) => void
@@ -23,6 +24,7 @@ enum PluginState {
 const AUTH_API = 'auth/create_jwt_authentication'
 const INVITE_CODE_API = 'auth/check_invite_code'
 export default function Onboarding({ handleLogin }: OnboardingProps) {
+  const context = useAuthContext()
   const [infoExpanded, setInfoExpanded] = useState(false)
   const [pluginState, setPluginState] = useState(PluginState.CHECKING)
   const [currentStep, setCurrentStep] = useState(1)
@@ -126,6 +128,11 @@ export default function Onboarding({ handleLogin }: OnboardingProps) {
       login
     ) {
       handleLogin(account || '')
+      const user = context!.user
+      context?.setUser({
+        ...user,
+        address: account || ''
+      })
     }
   }, [pluginState, signedData, login])
 

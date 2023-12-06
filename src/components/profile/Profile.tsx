@@ -6,12 +6,14 @@ import ProfileCard from './ProfileCard'
 import BrowsingHistory from './BrowsingHistory/BrowsingHistory'
 import Modal from '../common/Modal'
 import SocialShare from './Onboarding/SocialSharePopUp'
-import { UserContext } from '../common/contexts/UserContext'
+import { useAuthContext } from '../common/contexts/UserContext'
 import { useParams } from 'react-router-dom'
 
 export default function Profile() {
-  const { user } = useContext(UserContext)
+  const context = useAuthContext()
   const { id } = useParams()
+
+  context!.user.userId = id || ''
 
   const kleoProfileUrl = 'https://app.kleo.network/profile/'
 
@@ -22,7 +24,7 @@ export default function Profile() {
       <div className="flex flex-col items-start px-24 py-8">
         <header className="flex flex-row items-center justify-between self-stretch">
           <h3 className="text-3xl font-medium text-gray-900">
-            Welcome back, {user.name}!
+            Welcome back, {context!.user.name}!
           </h3>
           <div className="flex flex-row gap-2">
             <button
@@ -40,7 +42,7 @@ export default function Profile() {
         </header>
         <div className="flex flex-col w-full items-start justify-between py-8 gap-6 md:flex-row">
           <PinnedWebsites />
-          <ProfileCard user={user} />
+          <ProfileCard user={context!.user} />
         </div>
         <BrowsingHistory />
 

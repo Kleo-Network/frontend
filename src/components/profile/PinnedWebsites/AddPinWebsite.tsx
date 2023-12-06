@@ -5,7 +5,7 @@ import { WebsiteListLoader } from './PinnedSectionLoader'
 import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import { ReactComponent as PinIcon } from '../../../assets/images/pin.svg'
-import { UserContext } from '../../common/contexts/UserContext'
+import { useAuthContext } from '../../common/contexts/UserContext'
 import useDebounce from '../../common/hooks/useDebounce'
 
 const API_URL = 'pinned/get_domain?domain={domain}&user_id={userId}'
@@ -23,7 +23,7 @@ interface SearchResult {
 }
 
 export function AddPinWebsite({ onPinHandler }: AddPinWebsiteProps) {
-  const { user } = useContext(UserContext)
+  const context = useAuthContext()
   const [search, setSearch] = React.useState('')
   const { status, data, error, fetchData } = useFetch<SearchResult[]>()
   const debouncedSearchTerm = useDebounce(search, 500)
@@ -34,7 +34,7 @@ export function AddPinWebsite({ onPinHandler }: AddPinWebsiteProps) {
       fetchData(
         API_URL.replace('{domain}', debouncedSearchTerm).replace(
           '{userId}',
-          user.userId
+          context!.user.userId
         )
       )
     }
@@ -50,7 +50,7 @@ export function AddPinWebsite({ onPinHandler }: AddPinWebsiteProps) {
       body: JSON.stringify({
         ...website,
         order: 0,
-        user_id: user.userId,
+        user_id: context!.user.userId,
         title: website.domain,
         pinned: !website.pinned
       }),

@@ -8,8 +8,12 @@ export interface UrlData {
 }
 
 export interface WeekData {
-  urls: UrlData[]
-  visits: number
+  // urls: UrlData[]
+  // visits: number
+  data: string
+  date: string
+  domain: string
+  domain_user_id: string
 }
 
 export interface Data {

@@ -14,7 +14,7 @@ import PinSkeletonLoader from './PinnedSectionLoader'
 import ZeroState from '../../common/ZeroState'
 import Modal from '../../common/Modal'
 import { AddPinWebsite } from './AddPinWebsite'
-import { UserContext } from '../../common/contexts/UserContext'
+import { useAuthContext } from '../../common/contexts/UserContext'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import Alert from '../../common/Alerts'
 
@@ -29,7 +29,7 @@ export interface WebsiteProps {
 const API_URL = 'pinned/get_pinned_websites?user_id={userId}'
 
 export default function PinnedWebsites() {
-  const { user } = useContext(UserContext)
+  const context = useAuthContext()
   const { status, data, error, fetchData } = useFetch<WebsiteProps[]>(
     makeApiUrl()
   )
@@ -37,7 +37,7 @@ export default function PinnedWebsites() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   function makeApiUrl() {
-    return API_URL.replace('{userId}', user.userId)
+    return API_URL.replace('{userId}', context!.user.userId)
   }
 
   useEffect(() => {

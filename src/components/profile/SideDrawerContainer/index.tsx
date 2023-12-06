@@ -4,7 +4,8 @@ import { ReactComponent as CloseIcon } from '../../../assets/images/cross.svg'
 import { SelectedHistoryTabData } from './SelectedHistoryTabData'
 import { SummaryTabData } from './SummaryTabData'
 import useFetch from '../../common/hooks/useFetch'
-import { UserContext } from '../../common/contexts/UserContext'
+import { useAuthContext } from '../../common/contexts/UserContext'
+import { useParams } from 'react-router-dom'
 
 interface ProfileSideDrawerProps {
   website: WebsiteProps | null
@@ -20,18 +21,23 @@ export interface WebsiteProps {
   order: string
 }
 
-enum Tab {
+enum OwnProfileTabs {
   SUMMARY = 'Summary',
   HISTORY = 'History'
+}
+
+enum ProfileTabs {
+  SUMMARY = 'Summary'
 }
 
 const UNPIN_URL = 'pinned/remove_pinned_website'
 
 const ProfileSideDrawer = React.memo(
   ({ website, onClose, handleUnpin }: ProfileSideDrawerProps) => {
-    const { user } = useContext(UserContext)
-    const [selectedTab, setSelectedTab] = useState(Tab.SUMMARY)
+    const context = useAuthContext()
+    const [selectedTab, setSelectedTab] = useState(OwnProfileTabs.SUMMARY)
     const { fetchData } = useFetch<WebsiteProps[]>()
+    const { id } = useParams()
 
     const onUnpin = () => {
       fetchData(UNPIN_URL, {
@@ -42,7 +48,7 @@ const ProfileSideDrawer = React.memo(
         body: JSON.stringify({
           ...website,
           order: 0,
-          user_id: user.userId,
+          user_id: context!.user.userId,
           title: website!.domain,
           pinned: false
         }),
@@ -92,7 +98,9 @@ const ProfileSideDrawer = React.memo(
               role="tablist"
               data-te-nav-ref
             >
-              {Object.values(Tab).map((tab, i) => (
+              {Object.values(
+                id === context!.user.userId ? OwnProfileTabs : ProfileTabs
+              ).map((tab, i) => (
                 <li
                   key={i}
                   role="presentation"
@@ -114,10 +122,10 @@ const ProfileSideDrawer = React.memo(
             </ul>
 
             <div className="m-6">
-              {selectedTab === Tab.SUMMARY && (
+              {selectedTab === OwnProfileTabs.SUMMARY && (
                 <SummaryTabData domain={website.domain} />
               )}
-              {selectedTab === Tab.HISTORY && (
+              {selectedTab === OwnProfileTabs.HISTORY && (
                 <SelectedHistoryTabData domain={website.domain} />
               )}
             </div>

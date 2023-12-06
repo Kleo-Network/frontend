@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 
 interface UserContextProps {
   user: UserProps
@@ -13,4 +13,8 @@ interface UserProps {
   userId: string
 }
 
-export const UserContext = createContext<any>(null)
+export const UserContext = createContext<UserContextProps | null>(null)
+
+export const useAuthContext = () => {
+  return useContext(UserContext)
+}

@@ -17,13 +17,13 @@ import {
 import { transformBrowsingHistory, lightenColor } from './transformations'
 import { BrowsingHistory as GraphData } from './API_interface'
 import { getKeyByValue } from '../../utils/utils'
-import { UserContext } from '../../common/contexts/UserContext'
+import { useAuthContext } from '../../common/contexts/UserContext'
 
 const API_URL =
   'history/get_browsing_history_graph?user_id={userId}&from={from}&to={to}&filter={filter}'
 
 export default function BrowsingHistory() {
-  const { user } = useContext(UserContext)
+  const context = useAuthContext()
   const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
   const { status, data, fetchData } = useFetch<GraphData>(makeApiUrl())
   const [graphData, setGraphData] = useState<BrowserHistoryCategory[]>([])
@@ -63,7 +63,7 @@ export default function BrowsingHistory() {
     const fromTime =
       currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
 
-    return API_URL.replace('{userId}', user.userId)
+    return API_URL.replace('{userId}', context!.user.userId)
       .replace('{from}', fromTime.toString())
       .replace('{to}', String(currentTime))
       .replace(

@@ -27,7 +27,16 @@ const SocialShare: React.FC<SocialShareProps> = ({ profileUrl }) => {
   const shareToInstagram = () => {
     // Instagram sharing doesn't support pre-filled captions through URL
     // You can guide users to share manually on Instagram
-    alert('Please share manually on Instagram.')
+    // alert('Please share manually on Instagram.')
+    window.open(`https://www.instagram.com`)
+  }
+
+  const shareToLinkedIn = () => {
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+        profileUrl
+      )}`
+    )
   }
 
   const shareToTwitter = () => {
@@ -77,6 +86,14 @@ const SocialShare: React.FC<SocialShareProps> = ({ profileUrl }) => {
           <img
             src="https://www.google.com/s2/favicons?domain=twitter.com&sz=48"
             alt="Twitter"
+            className="w-10 h-10"
+          />
+          {/* Twitter */}
+        </button>
+        <button onClick={shareToLinkedIn}>
+          <img
+            src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=48"
+            alt="LinkedIn"
             className="w-10 h-10"
           />
           {/* Twitter */}

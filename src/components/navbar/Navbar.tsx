@@ -45,11 +45,11 @@ const Navbar = ({ avatar }: NavbarProps) => {
       <div className="flex w-full flex-wrap items-center justify-between px-12">
         {/* <!-- Logo --> */}
         <a
-          className="my-1 gap-2 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
+          className="my-2 gap-2 flex items-center justify-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
           href="/"
         >
           <Logo className="w-8 h-8" />
-          <h3 className="font-bold text-xl tracking-tighter">KLEO</h3>
+          <h3 className="font-bold text-xl">KLEO</h3>
         </a>
         {/* <!-- Hamburger button for mobile view --> */}
         <button
@@ -68,7 +68,7 @@ const Navbar = ({ avatar }: NavbarProps) => {
 
         {/* <!-- Collapsible navigation container --> */}
         <div
-          className="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+          className="!visible mt-2 ml-4 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
           id="navbarSupportedContent"
           data-te-collapse-item
         >

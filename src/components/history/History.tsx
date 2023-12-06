@@ -14,7 +14,7 @@ import Alert from '../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../assets/images/alert.svg'
 import Modal from '../common/Modal'
 import { HistoryListLoader } from '../profile/SideDrawerContainer/SkeletonLoaders'
-import { UserContext } from '../common/contexts/UserContext'
+import { useAuthContext } from '../common/contexts/UserContext'
 import { UrlData } from '../constants/UrlData'
 import { Data } from '../profile/SideDrawerContainer/interfaces'
 import { getVisitTime } from '../utils/utils'
@@ -28,7 +28,7 @@ const API_URL =
 const DELETE_HISTORY = `history/delete_history_items`
 
 export default function History() {
-  const { user } = useContext(UserContext)
+  const context = useAuthContext()
   const [search, setSearch] = useState('')
   const debouncedSearchTerm = useDebounce(search, 500)
   const [pageNo, setPageNo] = useState(1)
@@ -95,7 +95,7 @@ export default function History() {
   }, [])
 
   function makeApiUrl(pageNo: number): string {
-    return API_URL.replace('{userId}', user.userId)
+    return API_URL.replace('{userId}', context!.user.userId)
       .replace('{search}', search)
       .replace('{pageNo}', pageNo.toString())
       .replace('{pageSize}', pageSize.toString())
@@ -106,12 +106,12 @@ export default function History() {
     url: string,
     favourite: boolean
   ) => {
-    let apiUrl = STAR_URL_API.replace('{userId}', user.userId).replace(
+    let apiUrl = STAR_URL_API.replace('{userId}', context!.user.userId).replace(
       '{visitTime}',
       String(visitTime)
     )
     if (favourite) {
-      apiUrl = UNSTAR_URL_API.replace('{userId}', user.userId).replace(
+      apiUrl = UNSTAR_URL_API.replace('{userId}', context!.user.userId).replace(
         '{url}',
         url
       )
@@ -133,7 +133,7 @@ export default function History() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        user_id: user.userId,
+        user_id: context!.user.userId,
         visit_times: selectedItems
       }),
       onSuccessfulFetch: () => {
@@ -150,7 +150,7 @@ export default function History() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        user_id: user.userId,
+        user_id: context!.user.userId,
         visit_times: visitTimes,
         hide: !hidden
       }),
