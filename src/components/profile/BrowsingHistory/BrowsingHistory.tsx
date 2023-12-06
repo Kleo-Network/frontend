@@ -36,7 +36,7 @@ export default function BrowsingHistory() {
     console.log('selectedBarData', graphData[activeBar].items)
   }
 
-  const totalVisits = selectedBarData.reduce((a, b) => a + b.value, 0)
+  const totalVisits = selectedBarData.reduce((a, b) => a + Number(b.value), 0)
   const totalCategoryVisits = (): number => {
     if (filter) {
       return selectedBarData.reduce(
@@ -59,7 +59,7 @@ export default function BrowsingHistory() {
   function makeApiUrl(): string {
     const timeRangeKey = getKeyByValue(TimeRange, timeRange)
 
-    const currentTime = new Date().getTime()
+    const currentTime = new Date().getTime() / 1000
     const fromTime =
       currentTime - TimeRangeEpoch[timeRangeKey as keyof typeof TimeRangeEpoch]
 
@@ -201,7 +201,7 @@ export default function BrowsingHistory() {
                         </div>
                         <div className="flex flex-col items-start">
                           <div className="text-sm text-gray-800 font-medium">
-                            {title}
+                            {domain}
                           </div>
                           <div className="flex flex-row gap-2 items-center text-xs text-gray-400 font-regular">
                             <span>{visitCounterTimeRange} Visits</span>

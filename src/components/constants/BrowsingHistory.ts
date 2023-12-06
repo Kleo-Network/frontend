@@ -25,10 +25,10 @@ export enum TimeRange {
 }
 
 export enum TimeRangeEpoch {
-  DAY = 86400000,
-  WEEK = 604800000,
-  MONTH = 2592000000,
-  YEAR = 15552000000
+  DAY = 86400,
+  WEEK = 604800,
+  MONTH = 2592000,
+  YEAR = 15552000
 }
 
 export enum TimeRangeMapping {
