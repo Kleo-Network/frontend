@@ -25,6 +25,7 @@
     "react-svg-timeline": "^0.24.2",
     "recharts": "^2.8.0",
     "rollup-plugin-node-polyfills": "^0.2.1",
+    "tw-elements": "^1.1.0",
     "web3": "^4.2.2"
   },
   "devDependencies": {
