@@ -12,7 +12,7 @@ interface MultiProgressBarProps {
 const MultiProgressBar: React.FC<MultiProgressBarProps> = ({
   progressBars
 }) => {
-  const total = progressBars.reduce((a, b) => a + b.value, 0)
+  const total = progressBars.reduce((a, b) => a + Number(b.value), 0)
 
   return (
     <div className="mb-2 flex flex-col rounded-lg self-stretch">

@@ -12,6 +12,8 @@ export default defineConfig({
   base: '/',
   plugins: [react(), svgr()],
   build: {
+    assetsInlineLimit: 1000000,
+    assetsInclude: ['**/*.svg'],
     commonjsOptions: {
       include: []
     },

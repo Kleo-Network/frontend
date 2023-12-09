@@ -90,7 +90,11 @@ const Navbar = ({ avatar }: NavbarProps) => {
                           ? 'text-purple-700 bg-purple-100'
                           : ''
                       }`}
-                      href={`/${tab.toLowerCase()}`}
+                      href={`/${
+                        tab === Tab.PROFILE
+                          ? 'profile/0x57e7b7f1c1a8782ac9d3c4d730051bd60068aeee'
+                          : tab.toLowerCase()
+                      }`}
                       data-te-nav-link-ref
                     >
                       {tab}

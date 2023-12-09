@@ -35,7 +35,7 @@ function useFetch<T>(url?: string, options?: Options<T>): FetchResponse<T> {
   const [status, setStatus] = useState(FetchStatus.IDLE)
   const [error, setError] = useState(null)
   const [controller, setController] = useState<AbortController | null>(null)
-  const baseUrl = 'http://127.0.0.1:5001/api/v1/core'
+  const baseUrl = 'https://api.kleo.network/api/v1/core'
 
   const fetchData = async (url: string, options?: Options<T>) => {
     if (url === '') {
