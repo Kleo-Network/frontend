@@ -17,3 +17,7 @@ export interface TimeRange {
 export interface BrowsingHistory {
   [key: string]: TimeRange
 }
+
+export interface ProcessingHistory {
+  processing: boolean
+}

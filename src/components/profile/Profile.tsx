@@ -21,7 +21,7 @@ export default function Profile() {
 
   return (
     <section>
-      <div className="flex flex-col items-start px-24 py-8">
+      <div className="flex flex-col items-start px-6 md:px-24 py-8">
         <header className="flex flex-row items-center justify-between self-stretch">
           <h3 className="text-3xl font-medium text-gray-900">
             Welcome back, {context!.user.name}!

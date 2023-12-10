@@ -38,13 +38,13 @@ export function BarChartContainer({
 }: BarChartContainerProps) {
   const [activeTooltipIndex, setActiveTooltipIndex] = React.useState(0)
   const flattenData = data.map((week) => {
-    const flattenedItems = week.items.reduce((acc, item) => {
+    const flattenedItems = week.items.reduce((acc: any, item: any) => {
       acc[item.type] = item.value
       return acc
     }, {})
     const sortedItems = Object.entries(flattenedItems)
-      .sort((a, b) => b[1] - a[1])
-      .reduce((acc, [key, value]) => {
+      .sort((a: any, b: any) => b[1] - a[1])
+      .reduce((acc: any, [key, value]) => {
         acc[key] = value
         return acc
       }, {})
@@ -55,7 +55,7 @@ export function BarChartContainer({
   ]
   const categoryColors = data
     .flatMap((week) => week.items)
-    .reduce((acc, item) => {
+    .reduce((acc: any, item) => {
       acc[item.type] = item.color
       return acc
     }, {})

@@ -2,6 +2,9 @@ import { BarChartContainer } from '../../common/charts/BarChartContainer'
 import MultiProgressBar from '../../common/charts/MultiProgressBar'
 import { ReactComponent as SortIcon } from '../../../assets/images/sort.svg'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
+import animationDataProcessing from '../../../assets/images/processing.json'
+import noDataAnimation from '../../../assets/images/NoData.json'
+import Lottie from 'react-lottie'
 import ChartLoader from './ChartLoader'
 import useFetch, { FetchStatus } from '../../common/hooks/useFetch'
 import { useContext, useEffect, useState } from 'react'
@@ -15,17 +18,39 @@ import {
   TimeRangeMapping
 } from '../../constants/BrowsingHistory'
 import { transformBrowsingHistory, lightenColor } from './transformations'
-import { BrowsingHistory as GraphData } from './API_interface'
+import {
+  BrowsingHistory as GraphData,
+  ProcessingHistory
+} from './API_interface'
 import { getKeyByValue } from '../../utils/utils'
 import { useAuthContext } from '../../common/contexts/UserContext'
 
 const API_URL =
   'history/get_browsing_history_graph?user_id={userId}&from={from}&to={to}&filter={filter}'
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationDataProcessing,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+}
+const defaultOptionsNoData = {
+  loop: true,
+  autoplay: true,
+  animationData: noDataAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
+}
+
 export default function BrowsingHistory() {
   const context = useAuthContext()
   const [timeRange, setTimeRange] = useState<TimeRange>(TimeRange.MONTH)
-  const { status, data, fetchData } = useFetch<GraphData>(makeApiUrl())
+  const { status, data, fetchData } = useFetch<GraphData | ProcessingHistory>(
+    makeApiUrl()
+  )
   const [graphData, setGraphData] = useState<BrowserHistoryCategory[]>([])
   const [selectedBarData, setSelectedBarData] = useState<CategoryData[]>([])
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
@@ -48,8 +73,13 @@ export default function BrowsingHistory() {
   }
 
   useEffect(() => {
-    const transformedData = transformBrowsingHistory(data, timeRange)
-    setGraphData(transformedData)
+    if (!data?.processing) {
+      const transformedData = transformBrowsingHistory(
+        data as GraphData,
+        timeRange
+      )
+      setGraphData(transformedData)
+    }
   }, [data])
 
   useEffect(() => {
@@ -93,7 +123,7 @@ export default function BrowsingHistory() {
   return (
     <>
       <div className="flex flex-col self-stretch rounded-lg border border-gray-200">
-        <div className="flex flex-row flex-1 gap-2 justify-between items-center border-b p-5 border-gray-200">
+        <div className="flex flex-col md:flex-row flex-1 gap-2 justify-between items-center border-b p-5 border-gray-200">
           <div className="flex flex-col items-start">
             <h3 className="text-lg font-medium text-gray-900">
               Browsing History
@@ -125,7 +155,7 @@ export default function BrowsingHistory() {
         </div>
         {status === FetchStatus.LOADING && <ChartLoader />}
 
-        {status === FetchStatus.SUCCESS && (
+        {status === FetchStatus.SUCCESS && graphData.length > 0 && (
           <div className="md:flex  md:space-x-4">
             <div className="md:w-3/5 h-[550px] p-6 border-b md:border-r border-gray-200">
               <BarChartContainer
@@ -223,6 +253,41 @@ export default function BrowsingHistory() {
             </div>
           </div>
         )}
+
+        {status === FetchStatus.SUCCESS && data?.processing && (
+          <div className="flex flex-col items-center justify-center py-24 px-6 gap-2">
+            <div className="flex w-1/2 mb-8 md:w-1/3">
+              <Lottie options={defaultOptions} height={'100%'} width={'100%'} />
+            </div>
+            <h3 className="text-gray-700 font-semibold text-base -mt-10">
+              Reports will take some time to load...
+            </h3>
+            <span className="text-gray-700 font-medium text-sm text-center">
+              It might take around 10-12 mins to prepare report. You can come
+              back later.
+            </span>
+          </div>
+        )}
+
+        {status === FetchStatus.SUCCESS && graphData.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-24 px-6 gap-2">
+            <div className="flex w-1/2 mb-4 md:w-1/3 -mt-10">
+              <Lottie
+                options={defaultOptionsNoData}
+                height={'100%'}
+                width={'100%'}
+              />
+            </div>
+            <h3 className="text-gray-700 font-semibold text-base -mt-10">
+              No Data was recorded in this time...
+            </h3>
+            <span className="text-gray-700 font-medium text-sm text-center">
+              Please try again later and make sure the Kleo Extension is
+              installed
+            </span>
+          </div>
+        )}
+
         {status === FetchStatus.ERROR && (
           <div className="m-3">
             <Alert

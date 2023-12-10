@@ -23,18 +23,22 @@ const PinSkeletonLoader: React.FC = () => {
 export default PinSkeletonLoader
 
 export const WebsiteListLoader: React.FC = () => {
-  return Array.from({ length: 3 }).map((_, index) => (
-    <div key={index} className="py-4 w-full">
-      <ContentLoader viewBox="0 0 340 60">
-        <rect x="0" y="0" rx="3" ry="3" width="67" height="8" />
-        <rect x="76" y="0" rx="3" ry="3" width="140" height="8" />
-        <rect x="127" y="48" rx="3" ry="3" width="53" height="8" />
-        <rect x="187" y="48" rx="3" ry="3" width="72" height="8" />
-        <rect x="18" y="48" rx="3" ry="3" width="100" height="8" />
-        <rect x="0" y="71" rx="3" ry="3" width="37" height="8" />
-        <rect x="18" y="23" rx="3" ry="3" width="140" height="8" />
-        <rect x="166" y="23" rx="3" ry="3" width="173" height="8" />
-      </ContentLoader>
-    </div>
-  ))
+  return (
+    <>
+      {Array.from({ length: 3 }).map((_, index) => (
+        <div key={index} className="py-4 w-full">
+          <ContentLoader viewBox="0 0 340 60">
+            <rect x="0" y="0" rx="3" ry="3" width="67" height="8" />
+            <rect x="76" y="0" rx="3" ry="3" width="140" height="8" />
+            <rect x="127" y="48" rx="3" ry="3" width="53" height="8" />
+            <rect x="187" y="48" rx="3" ry="3" width="72" height="8" />
+            <rect x="18" y="48" rx="3" ry="3" width="100" height="8" />
+            <rect x="0" y="71" rx="3" ry="3" width="37" height="8" />
+            <rect x="18" y="23" rx="3" ry="3" width="140" height="8" />
+            <rect x="166" y="23" rx="3" ry="3" width="173" height="8" />
+          </ContentLoader>
+        </div>
+      ))}
+    </>
+  )
 }
