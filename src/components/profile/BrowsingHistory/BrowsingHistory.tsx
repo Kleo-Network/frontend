@@ -282,7 +282,7 @@ export default function BrowsingHistory() {
               No Data was recorded in this time...
             </h3>
             <span className="text-gray-700 font-medium text-sm text-center">
-              Please try again later and make sure the Kleo Extension is
+              Please try again later and make sure you have the Kleo Extension
               installed
             </span>
           </div>

@@ -100,7 +100,7 @@ export default function PinnedWebsites() {
       {(!websites || websites?.length === 0) &&
         status === FetchStatus.SUCCESS && <ZeroState />}
       {websites && websites.length > 0 && status === FetchStatus.SUCCESS && (
-        <section className="flex flex-wrap items-center justify-start gap-x-2 gap-y-4 p-5">
+        <section className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4 p-5">
           <DndContext
             collisionDetection={closestCorners}
             onDragEnd={handleDragEnd}

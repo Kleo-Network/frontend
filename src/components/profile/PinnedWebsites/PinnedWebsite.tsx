@@ -30,7 +30,7 @@ export default function PinnedWebsites({
         transform: CSS.Transform.toString(transform),
         transition
       }}
-      className={`group flex flex-1 items-center p-4 gap-4 rounded-xl bg-white border border-gray-200 max-w-[272px] ${
+      className={`group basis-1/3 flex flex-1  items-center p-4 gap-4 rounded-xl bg-white border border-gray-200 max-w-[272px] ${
         isSelected ? 'border-purple-700 shadow-md' : 'hover:bg-gray-50'
       }`}
       onClick={onClick}
