@@ -93,10 +93,10 @@ export function HeroSection() {
                 href="/signup"
                 className="flex items-center justify-center px-4 py-3 border rounded-lg text-white border-primary bg-primary shadow-sm"
               >
-                <div className="text3">Launch KLEO</div>
+                <div className="text3">Launch</div>
               </a>
               <div className="flex items-center justify-center px-4 py-3 border rounded-lg border-gray-300 bg-white shadow-sm">
-                <div className="text-gray-700">Install KLEO Plugin</div>
+                <div className="text-gray-700">Install Plugin</div>
               </div>
             </div>
           </div>
