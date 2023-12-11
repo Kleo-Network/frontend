@@ -33,6 +33,7 @@ export default function Onboarding({ handleLogin }: OnboardingProps) {
   const [provider, setProvider] = useState<any>(null)
   const [signer, setSigner] = useState<any>(null)
   const [account, setAccount] = useState<string | null>(null)
+  const [token, setToken] = useState<string | null>("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7InB1YmxpY0FkZHJlc3MiOiIweDU3ZTdiN2YxYzFhODc4MmFjOWQzYzRkNzMwMDUxYmQ2MDA2OGFlZWUifX0.ji7cqTRiPYsPUipbkl06PoKQX_GhHf1mnP-whgMnA5I")
 
   const [message, setMessage] = useState<string>('Sign in to Kleo')
   const [signedData, setSignedData] = useState<{
@@ -97,8 +98,9 @@ export default function Onboarding({ handleLogin }: OnboardingProps) {
           chain: 'ethereum'
         }),
         onSuccessfulFetch(data) {
-          sessionStorage.setItem('token', data.accessToken)
-          //;(window as any).kleoUploadHistory(account)
+          //sessionStorage.setItem('token', data.accessToken)
+          // only to be called during signup, uploads previous history.
+          ;(window as any).kleoUploadHistory(account, data.accessToken)
           setLogin(true)
         }
       })

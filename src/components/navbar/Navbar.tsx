@@ -1,7 +1,7 @@
 import React from 'react'
 import { ReactComponent as Logo } from '../../assets/images/kleoLogo.svg'
-import { ReactComponent as Settings } from '../../assets/images/settings.svg'
-import { ReactComponent as Notifications } from '../../assets/images/notifications.svg'
+import { ReactComponent as Settings } from '../../assets/images/privacy.svg'
+import { ReactComponent as Notifications } from '../../assets/images/logout.svg'
 import { ReactComponent as Hamburger } from '../../assets/images/hamburger.svg'
 import { useLocation } from 'react-router-dom'
 import { Collapse, Dropdown, initTE } from 'tw-elements'
@@ -17,8 +17,7 @@ interface NavbarProps {
 enum Tab {
   HOME = 'Home',
   PROFILE = 'Profile',
-  HISTORY = 'History',
-  PRIVACY = 'Privacy'
+  HISTORY = 'History'
 }
 
 const Navbar = ({ avatar }: NavbarProps) => {
@@ -33,7 +32,7 @@ const Navbar = ({ avatar }: NavbarProps) => {
     } else if (pathname === '/history') {
       setSelectedTab(Tab.HISTORY)
     } else if (pathname === '/privacy') {
-      setSelectedTab(Tab.PRIVACY)
+      setSelectedTab('Privacy')
     }
   }, [pathname])
 
@@ -106,25 +105,26 @@ const Navbar = ({ avatar }: NavbarProps) => {
           </ul>
           {/* <!-- Right elements --> */}
           <div className="flex items-center">
-            <button
+            <a
+              href="/privacy"
               data-te-ripple-init
               className="p-2 mr-1 stroke-gray-500 hover:stroke-purple-700 hover:bg-purple-100 rounded-md"
             >
               <Settings className="w-5 h-5 stroke-current" />
-            </button>
-            <button
+            </a>
+            <a
               data-te-ripple-init
               className="p-2 hover:bg-purple-100 stroke-gray-500 hover:stroke-purple-700 rounded-md"
             >
               <Notifications className="w-5 h-5 stroke-current" />
-            </button>
-            <button className="p-2 rounded-full">
+            </a>
+            {/* <button className="p-2 rounded-full">
               <img
                 src={avatar.src}
                 alt={avatar.alt}
                 className="ml-4 w-10 h-10 rounded-full"
               />
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
