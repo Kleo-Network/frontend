@@ -25,7 +25,10 @@ function App(): ReactElement {
             <Navbar avatar={{ src: user.avatar, alt: 'Profile' }} />
           </header>
           <Routes>
-            <Route path="/signup" element={<SignUp />} />
+            <Route
+              path="https://app.kleo.network/signup"
+              element={<SignUp />}
+            />
             <Route path="/profile/:id" element={<Profile />} />
             <Route path="/history" element={<History />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
