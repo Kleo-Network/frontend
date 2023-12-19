@@ -22,7 +22,7 @@ export function Feature1() {
               </div>
             </div>
             <a
-              href="/signup"
+              href="https://app.kleo.network/signup"
               className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3"
             >
               <div className="text-white text-base font-medium">Try Kleo</div>

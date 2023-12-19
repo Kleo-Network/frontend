@@ -98,7 +98,7 @@ export function HeroSection() {
               <div className="flex items-center justify-center px-4 py-3 border rounded-lg border-gray-300 bg-white shadow-sm">
                 <div className="text-gray-700">
                   <a
-                    href="https://drive.google.com/file/d/1FulX6OpWC-gcEsdjCbcReWItuAJYZUa0/view?usp=sharing"
+                    href="https://chromewebstore.google.com/detail/kleo-connect/jimpblheogbjfgajkccdoehjfadmimoo?hl=en"
                     target="_blank"
                   >
                     Install Plugin
