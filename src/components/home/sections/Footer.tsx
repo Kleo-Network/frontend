@@ -67,10 +67,18 @@ export const Footer = () => {
             © 2023 KLEO. All rights reserved.
           </div>
           <div className="justify-start items-center gap-6 flex">
-            <XIcon className="w-6 h-6 relative" />
-            <Linkedin className="w-6 h-6 justify-center items-center flex" />
-            <Facebook className="w-6 h-6 relative" />
-            <Github className="w-6 h-6 relative" />
+            <a href="https://twitter.com/kleo_network" target="_blank">
+              <XIcon className="w-6 h-6 relative" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/kleonetwork"
+              target="_blank"
+            >
+              <Linkedin className="w-6 h-6 justify-center items-center flex" />
+            </a>
+            <a href="https://github.com/Kleo-Network" target="_blank">
+              <Github className="w-6 h-6 relative" />
+            </a>
           </div>
         </div>
       </div>
