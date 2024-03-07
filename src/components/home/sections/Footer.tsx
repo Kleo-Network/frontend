@@ -18,7 +18,10 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="self-stretch text-center text-purple-200 text-base font-normal leading-normal">
-                Discover a smarter way to understand your online activities
+                CHATURBOTS AI PRIVATE LIMITED <br />
+                Phone: 918369683781, Email: vaibhavblogger@gmail.com <br/> 
+                B-71, Alpine Heights, Opp Sakar-3, Income Tax Char Rasta,
+                Navrangpura AHMEDABAD Ahmedabad GJ 380009 IN
               </div>
             </div>
             {/* <div className="self-stretch justify-center items-center gap-8 inline-flex">
