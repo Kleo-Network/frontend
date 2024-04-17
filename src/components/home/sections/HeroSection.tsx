@@ -67,12 +67,12 @@ export function HeroSection() {
                     <TickIcon className="w-6 h-6 md:w-11 md:h-12" />
                   </div>
                   <p>
-                    Your <span className="text-primary font-bold">Groove</span>
+                    Your <span className="text-primary font-bold">Story</span>
                   </p>
                 </div>
                 <div>
-                  <div className="text-4xl font-shoreline md:text-6xl">
-                    stay true to you
+                  <div className="text-3xl font-inter md:text-4xl">
+                    your home on internet
                   </div>
                   <LineIcon className="h-2 w-36 md:h-4 md:w-64 float-right" />
                 </div>
@@ -84,20 +84,21 @@ export function HeroSection() {
                 </div>
               </div>
               <div className="font-inter text-xl font-normal text-gray-500">
-                We use your browsing history to define you anonymously.
+                Kleo Connect creates an identity page for you, that you can own!
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">
               <a
                 href="https://app.kleo.network/signup"
-                className="flex items-center justify-center px-4 py-3 border rounded-lg text-white border-primary bg-primary shadow-sm"
+                className="flex items-center justify-center px-4 py-5 border rounded-lg text-white border-primary bg-primary shadow-sm text-medium"
               >
-                <div className="text3">Launch</div>
+                <div className="text-xl">Launch Kleo Connect</div>
               </a>
-              <div className="flex items-center justify-center px-4 py-3 border rounded-lg border-gray-300 bg-white shadow-sm">
+              <div className="flex items-center justify-center px-4 py-5 border rounded-lg border-gray-300 bg-white shadow-sm text-medium">
                 <div className="text-gray-700">
                   <a
+                    className="text-xl"
                     href="https://chromewebstore.google.com/detail/kleo-connect/jimpblheogbjfgajkccdoehjfadmimoo?hl=en"
                     target="_blank"
                   >

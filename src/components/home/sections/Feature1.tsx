@@ -16,8 +16,8 @@ export function Feature1() {
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                  Categorize your internet browsing under umbrella of different
-                  categories.
+                 Brag about your best!
+                LinkedIn Cards, Instagram Cards, Github Cards!
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@ export function Feature1() {
               <div className="text-white text-base font-medium">Try Kleo</div>
             </a>
           </div>
-          <div className="pl-6 pr-8 py-3 bg-purple-50 rounded-2xl justify-start items-start gap-6 flex">
+          {/* <div className="pl-6 pr-8 py-3 bg-purple-50 rounded-2xl justify-start items-start gap-6 flex">
             <div className="py-3 justify-start items-start gap-2.5 flex">
               <QuotesIcon className="w-12 h-12 relative" />
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
@@ -36,7 +36,7 @@ export function Feature1() {
                 we don’t put lipstick on a pig.
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="px-16 py-10 flex-1 lg:px-16 lg:py-36 rounded-2xl lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
           <img src={image1} className="w-4/5" />
