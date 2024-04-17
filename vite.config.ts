@@ -9,16 +9,17 @@ export default defineConfig({
     alias: {
       '!rawloader!': ''
     }
-  },
-  build: {
-    assetsInlineLimit: 1000000,
-    commonjsOptions: {
-      include: []
-    }
-    // rollupOptions: {
-    //   plugins: [rollupNodePolyFill()]
-    // }
   }
+  // build: {
+  //   assetsInlineLimit: 1000000,
+  //   assetsInclude: ['**/*.svg'],
+  //   commonjsOptions: {
+  //     include: []
+  //   }
+  //   // rollupOptions: {
+  //   //   plugins: [rollupNodePolyFill()]
+  //   // }
+  // }
   // optimizeDeps: {
   //   disabled: false,
   //   esbuildOptions: {

@@ -16,8 +16,8 @@ export function Feature1() {
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                 Brag about your best!
-                LinkedIn Cards, Instagram Cards, Github Cards!
+                  Brag about your best! LinkedIn Cards, Instagram Cards, Github
+                  Cards!
                 </div>
               </div>
             </div>
