@@ -8,17 +8,17 @@ export function Feature3() {
               <div className="self-stretch flex-col justify-center items-center lg:items-start gap-3 flex">
                 <div className="pl-2.5 pr-3 py-1 mix-blend-multiply bg-purple-50 rounded-2xl justify-start items-center gap-1 flex">
                   <div className="text-center text-violet-700 text-sm sm:text-base font-medium">
-                    Coming soon
+                    Lots of things in store
                   </div>
                 </div>
                 <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                  Human Experiences
+                  Coming Soon!
                 </div>
               </div>
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                Connect with individuals who have the same browsing patterns as
-                what you put into a textbox! Learn from human experiences on
-                specific topic and earn from contributing your time.
+                Community Pages . Me and You . Personalised Physical Cards 
+                <br /> <br /> <br />
+                We have a lot in store.
               </div>
               {/* <a
                 href="/signup"

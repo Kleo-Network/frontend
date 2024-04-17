@@ -84,25 +84,25 @@ export function HeroSection() {
                 </div>
               </div>
               <div className="font-inter text-xl font-normal text-gray-500">
-                Kleo Connect creates an identity page for you, that you can own!
+                Kleo creates an identity page for you, that you can earn from!
               </div>
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">
               <a
                 href="https://app.kleo.network/signup"
-                className="flex items-center justify-center px-4 py-5 border rounded-lg text-white border-primary bg-primary shadow-sm text-medium"
+                className="flex items-center justify-center px-4 py-4 border rounded-lg text-white border-primary bg-primary shadow-sm text-medium"
               >
                 <div className="text-xl">Launch Kleo Connect</div>
               </a>
-              <div className="flex items-center justify-center px-4 py-5 border rounded-lg border-gray-300 bg-white shadow-sm text-medium">
+              <div className="flex items-center justify-center px-4 py-4 border rounded-lg border-gray-300 bg-white shadow-sm text-medium">
                 <div className="text-gray-700">
                   <a
                     className="text-xl"
                     href="https://chromewebstore.google.com/detail/kleo-connect/jimpblheogbjfgajkccdoehjfadmimoo?hl=en"
                     target="_blank"
                   >
-                    Install Plugin
+                    Install Kleo Plugin
                   </a>
                 </div>
               </div>

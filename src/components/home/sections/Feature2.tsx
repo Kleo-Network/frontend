@@ -16,19 +16,26 @@ export function Feature2() {
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                  Learn and share more with your internet friends! Share what
-                  you browse, own and control what you share!
+                  Follow up on that conversation with your recent activity on
+                  the internet.
+                  <br /> <br /> <br />
+                  Kleo creates interesting cards{' '}
+                  <span className="text-purple-800 text-bold">
+                    everyday
+                  </span>{' '}
+                  from your browsing history, you can choose to share and
+                  associate them with your identity.
                 </div>
               </div>
             </div>
             <a
-              href="https://app.kleo.network/signup"
+              href="https://app.kleo.network/"
               className="px-4 py-2 sm:px-6 sm:py-3 md:px-7 md:py-4 bg-violet-700 rounded-lg shadow border border-violet-700 flex justify-center items-center gap-3"
             >
-              <div className="text-white text-base font-medium">Try Kleo</div>
+              <div className="text-white text-base font-medium">Try it!</div>
             </a>
           </div>
-          <div className="pl-6 pr-8 py-3 bg-purple-50 rounded-2xl justify-start items-start gap-6 flex">
+          {/* <div className="pl-6 pr-8 py-3 bg-purple-50 rounded-2xl justify-start items-start gap-6 flex">
             <div className="py-3 justify-start items-start gap-2.5 flex">
               <QuotesIcon className="w-12 h-12 relative" />
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
@@ -36,7 +43,7 @@ export function Feature2() {
                 nobody knows you are a dog!
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="px-6 py-10 flex-1 lg:px-16 lg:py-20 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
           <img src={image1} className="w-full" />

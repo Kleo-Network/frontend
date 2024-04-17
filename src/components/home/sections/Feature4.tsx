@@ -1,4 +1,3 @@
-
 export function Feature4() {
   return (
     <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] z-10">
@@ -9,19 +8,23 @@ export function Feature4() {
               <div className="flex flex-col justify-center items-center lg:items-start gap-3">
                 <div className="pl-2.5 pr-3 py-1 text-center lg:text-left bg-purple-100 rounded-2xl flex justify-start items-center gap-1">
                   <div className="text-center text-violet-700 text-sm sm:text-base font-medium">
-                    Coming soon
+                    Stop being a product.
                   </div>
                 </div>
                 <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                  Completely Decentralised
+                  Ownership is yours!
                 </div>
               </div>
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
                 You own your data. No Cap.{' '}
               </div>
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                Right now we have semi decentralised solution but soon enough we
-                intend to build a fully decentralised model.
+                By minting the NFT, you own your profile.The NFT contains your
+                cards in encryped format, which only your private key has access
+                to.
+                <span className="text-purple-800 font-bold">
+                  Remember to mint everyday
+                </span>
               </div>
               {/* <a
                 href="/signup"

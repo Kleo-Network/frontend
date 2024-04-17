@@ -16,8 +16,11 @@ export function Feature1() {
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                  Brag about your best! LinkedIn Cards, Instagram Cards, Github
-                  Cards!
+                  Brag about your best! Start your conversation with what
+                  defines you.
+                  <br /> <br /> <br />
+                  Github . Instagram . LinkedIn . Twitter . Calendly . Location
+                  . Text Cards!
                 </div>
               </div>
             </div>
