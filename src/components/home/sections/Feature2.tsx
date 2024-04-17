@@ -1,4 +1,6 @@
 import { ReactComponent as QuotesIcon } from '../../../assets/images/qoutes.svg'
+import image1 from '../../../assets/images/feature2.svg'
+import { image } from 'd3'
 
 export function Feature2() {
   return (
@@ -10,7 +12,7 @@ export function Feature2() {
               <div className="self-stretch flex-col justify-center items-center gap-5 flex">
                 <div className="self-stretch flex-col justify-center items-center lg:items-start gap-3 flex">
                   <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                    Build Deeper Connections
+                    Dynamic Cards
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
@@ -36,8 +38,8 @@ export function Feature2() {
             </div>
           </div>
         </div>
-        <div className="px-6 py-10 flex-1 lg:px-16 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
-          <img src="/feature2.svg" className="w-full h-full" />
+        <div className="px-6 py-10 flex-1 lg:px-16 lg:py-20 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
+          <img src={image1} className="w-full" />
         </div>
       </div>
     </div>

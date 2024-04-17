@@ -29,6 +29,14 @@ const Navbar = ({ avatar }: NavbarProps) => {
           <Logo className="w-8 h-8" />
           <h3 className="font-bold text-xl">KLEO NETWORK</h3>
         </a>
+        <div className="flex items-center gap-1 ml-8">
+          <button className="px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-100">
+            <a href="/degen">degen corner</a>
+          </button>
+          <button className="px-3 py-2 hover:bg-purple-100 rounded-md font-medium text-base">
+            <a href="/docs">docs</a>
+          </button>
+        </div>
         {/* <!-- Hamburger button for mobile view --> */}
         <button
           className="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
