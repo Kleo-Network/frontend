@@ -45,8 +45,8 @@ export function Feature2() {
             </div>
           </div> */}
         </div>
-        <div className="px-6 py-10 flex-1 lg:px-16 lg:py-20 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
-          <img src={image1} className="w-full" />
+        <div className="px-6 py-10 flex-1 lg:px-16 lg:py-36 rounded-2xl m-6 lg:rounded-none lg:m-0 bg-purple-50 basis-1 flex-col flex justify-between">
+          <img src={image1} className="w-full h-full" />
         </div>
       </div>
     </div>
