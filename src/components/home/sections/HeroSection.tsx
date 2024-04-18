@@ -84,7 +84,7 @@ export function HeroSection() {
                 </div>
               </div>
               <div className="font-inter text-xl font-normal text-gray-500">
-                Kleo creates an identity page for you, that you can earn from!
+                Kleo creates an identity page for you, that you earn from!
               </div>
             </div>
 
