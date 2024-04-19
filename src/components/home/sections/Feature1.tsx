@@ -11,6 +11,11 @@ export function Feature1() {
             <div className="self-stretch flex-col justify-center items-center gap-12 flex">
               <div className="self-stretch flex-col justify-center items-center gap-5 flex">
                 <div className="self-stretch flex-col justify-center items-center lg:items-start gap-3 flex">
+                  <div className="pl-2.5 pr-3 py-1 text-center lg:text-left bg-purple-100 rounded-2xl flex justify-start items-center gap-1">
+                    <div className="text-center text-violet-700 text-sm sm:text-base font-medium">
+                      Who are you on the internet?
+                    </div>
+                  </div>
                   <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
                     Static Cards
                   </div>

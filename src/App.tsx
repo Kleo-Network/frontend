@@ -6,7 +6,7 @@ import History from './components/history/History'
 import { UserContext } from './components/common/contexts/UserContext'
 import { Home } from './components/home'
 import PrivacyPolicy from './components/home/sections/PrivacyPolicy'
-import SignUp from './components/signup'
+import { Degen } from './components/degen/index'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -25,12 +25,7 @@ function App(): ReactElement {
             <Navbar avatar={{ src: user.avatar, alt: 'Profile' }} />
           </header>
           <Routes>
-            <Route
-              path="https://app.kleo.network/signup"
-              element={<SignUp />}
-            />
-            <Route path="/profile/:id" element={<Profile />} />
-            <Route path="/history" element={<History />} />
+            <Route path="/degen" element={<Degen />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Navigate to="/" />} />
