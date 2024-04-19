@@ -34,7 +34,7 @@ const Navbar = ({ avatar }: NavbarProps) => {
             <a href="/degen">degen corner</a>
           </button>
           <button className="px-3 py-2 hover:bg-purple-100 rounded-md font-medium text-base">
-            <a href="/docs">docs</a>
+            <a href="https://github.com/Kleo-Network" target="_blank">github</a>
           </button>
         </div>
         {/* <!-- Hamburger button for mobile view --> */}
