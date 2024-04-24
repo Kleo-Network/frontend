@@ -25,7 +25,12 @@ export function Card({ name, address }: CardProps) {
         </div>
         <div className="flex flex-row gap-2 px-2 items-center justify-center self-stretch">
           <button className="bg-white border border-gray-200 rounded-lg px-3 py-2 flex-1 shadow-sm">
-            Visit Example Profile
+            <a
+              href="https://www.app.kleo.network/profilev2/vaibhavgeek/"
+              target="_blank"
+            >
+              Visit Example Profile
+            </a>
           </button>
         </div>
       </div>

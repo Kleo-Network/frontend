@@ -7,16 +7,16 @@ import { useState } from 'react'
 const FAQs = [
   {
     header: 'Does KLEO collect and store my browsing history?',
-    body: `No, KLEO does not collect or store your browsing history. We prioritize
-        your privacy and ensure that your data remains secure and private on
-        your device.`
+    body: `No, KLEO collects and creates cards from your browsing history, it then deletes that browsing history.
+    The cards that you do not publish also get deleted permanently.
+    `
   },
   {
-    header: 'How does KLEO analyze my browser history?',
-    body: 'KLEO analyzes your browser history locally on your device using advanced algorithms. No data is sent to our servers, ensuring your privacy and security.'
+    header: 'Are you sending my browsing history to an external API¯?',
+    body: 'Yes, we use third party APIs for LLM inference, we ensure that the LLM servers are not aware of any of your PII and do not use the LLM prompts. '
   },
   {
-    header: 'What kind of insights can I expect to receive from KLEO?',
+    header: 'What kind of cards can I expect to receive from KLEO?',
     body: 'KLEO provides insights into your browsing habits, including most visited websites, time spent online, and other relevant statistics to help you manage your digital well-being.'
   },
   {
