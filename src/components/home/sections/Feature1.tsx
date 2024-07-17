@@ -16,8 +16,8 @@ export function Feature1() {
                       Who are you on the internet?
                     </div>
                   </div>
-                  <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                    Static Cards
+                  <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-5xl font-semibold">
+                    Curate your identity!
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">

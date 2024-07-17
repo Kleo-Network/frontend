@@ -13,11 +13,11 @@ export function Feature2() {
                 <div className="self-stretch flex-col justify-center items-center lg:items-start gap-3 flex">
                   <div className="pl-2.5 pr-3 py-1 text-center lg:text-left bg-purple-100 rounded-2xl flex justify-start items-center gap-1">
                     <div className="text-center text-violet-700 text-sm sm:text-base font-medium">
-                      Recent activity!
+                      Find your tribe!
                     </div>
                   </div>
                   <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                    Dynamic Cards
+                    Connect
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">

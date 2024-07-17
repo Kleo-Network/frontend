@@ -71,8 +71,8 @@ export function HeroSection() {
                   </p>
                 </div>
                 <div>
-                  <div className="text-3xl font-inter md:text-4xl">
-                    your home on internet
+                  <div className="text-xl font-inter md:text-xl">
+                    connecting people based on their consumption data
                   </div>
                   <LineIcon className="h-2 w-36 md:h-4 md:w-64 float-right" />
                 </div>
@@ -83,9 +83,7 @@ export function HeroSection() {
                   <span>Connect</span>
                 </div>
               </div>
-              <div className="font-inter text-xl font-normal text-gray-500">
-                Kleo creates an identity page for you, that you earn from!
-              </div>
+              
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">
@@ -115,7 +113,7 @@ export function HeroSection() {
             <div className="flex flex-col self-end gap-1 absolute -translate-x-[40%] lg:-translate-x-[110%] bottom-0 translate-y-[260%] lg:translate-y-[200%]">
               <RedArrow className="h-7 w-7 fill-red-500 absolute right-0 bottom-2 -translate-y-full" />
               <div className="px-2 py-1 bg-red-500 rounded-sm shadow-sm text-sm text-white font-medium">
-                <span>Anonymous</span>
+                <span>Private</span>
               </div>
             </div>
           </div>
