@@ -10,7 +10,7 @@ This is a repository for home page for [Kleo Network](https://www.kleo.network/)
 - [ ] Kleo Token and Partnerships
 - [ ] User metrics
 
-## Controbuting
+## Contributing
 1. Raise a pull request
 2. Specify the problem you solved along with screenshots.
 3. Merge PR
