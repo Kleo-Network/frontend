@@ -72,7 +72,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <div className="text-xl font-inter md:text-xl">
-                    connecting people based on their consumption data
+                    worried about AI taking your job? have a stake instead!
                   </div>
                   <LineIcon className="h-2 w-36 md:h-4 md:w-64 float-right" />
                 </div>
