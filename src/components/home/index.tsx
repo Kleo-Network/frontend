@@ -13,7 +13,7 @@ export function Home() {
     <div className="flex flex-col items-start justify-center self-stretch font-inter">
       <HeroSection />
       {/* <StackedCards /> */}
-      <Feature1 />
+     
       <Feature2 />
       <Feature4 />
       <Feature3 />
