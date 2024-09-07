@@ -2,6 +2,8 @@ import { ReactElement, useState } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { UserContext } from './components/common/contexts/UserContext'
 import Navbar from './shared/navbar/Navbar'
+import { HomeComponent } from './pages/home/Home'
+import { About } from './pages/about'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -22,10 +24,10 @@ function App(): ReactElement {
         </header>
 
         <Routes>
-          {/* <Route path="/" element={<HomeComponent />} />
+          <Route path="/" element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="*" element={<Navigate to="/" />} /> */}
+          {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </UserContext.Provider>
