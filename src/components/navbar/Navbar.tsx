@@ -17,7 +17,7 @@ interface NavbarProps {
 const Navbar = ({ avatar }: NavbarProps) => {
   return (
     <nav
-      className="relative flex w-full flex-wrap items-center justify-between py-2 border-gray-200 bg-white text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 lg:py-3"
+      className="relative flex w-full flex-wrap items-center justify-between py-2 border-gray-200 bg-transparent text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 lg:py-3"
       data-te-navbar-ref
     >
       <div className="flex w-full flex-wrap items-center justify-between px-12">
@@ -34,7 +34,9 @@ const Navbar = ({ avatar }: NavbarProps) => {
             <a href="/degen">about</a>
           </button>
           <button className="px-3 py-2 hover:bg-purple-100 rounded-md font-medium text-base">
-            <a href="https://docs.kleo.network/" target="_blank">docs</a>
+            <a href="https://docs.kleo.network/" target="_blank">
+              docs
+            </a>
           </button>
         </div>
         {/* <!-- Hamburger button for mobile view --> */}
