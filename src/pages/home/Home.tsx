@@ -1,6 +1,7 @@
 import { HeroSection } from './HeroSection'
 import DashboardImage from '../../assets/images/home/KleoDashboard.png'
 import React, { useState } from 'react'
+import { HowKleoWorksSection } from './HowKleoWorksSection'
 
 // Constants for initial and maximum scale
 const INITIAL_SCALE = 1
@@ -39,6 +40,8 @@ export const HomeComponent = () => {
           }}
         />
       </div>
+
+      <HowKleoWorksSection />
     </div>
   )
 }
