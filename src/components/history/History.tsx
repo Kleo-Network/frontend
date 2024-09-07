@@ -15,9 +15,9 @@ import { ReactComponent as AlertIcon } from '../../assets/images/alert.svg'
 import Modal from '../common/Modal'
 import { HistoryListLoader } from '../profile/SideDrawerContainer/SkeletonLoaders'
 import { useAuthContext } from '../common/contexts/UserContext'
-import { UrlData } from '../constants/UrlData'
+import { UrlData } from '../../core/constants/UrlData'
 import { Data } from '../profile/SideDrawerContainer/interfaces'
-import { getVisitTime } from '../utils/utils'
+import { getVisitTime } from '../../core/utils/utils'
 import useDebounce from '../common/hooks/useDebounce'
 
 const STAR_URL_API = `history/add_to_favourites?user_id={userId}&visitTime={visitTime}`

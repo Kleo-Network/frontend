@@ -5,14 +5,14 @@ import { ListLoader, TotalVisitLoader } from './SkeletonLoaders'
 import Alert from '../../common/Alerts'
 import { ReactComponent as AlertIcon } from '../../../assets/images/alert.svg'
 import ZeroState from '../../common/ZeroState'
-import { getKeyByValue, getVisitTime } from '../../utils/utils'
+import { getKeyByValue, getVisitTime } from '../../../core/utils/utils'
 import { useAuthContext } from '../../common/contexts/UserContext'
 import { HistoryTabGraphLoader } from './SkeletonLoaders'
 import {
   TimeRange,
   TimeRangeEpoch,
   TimeRangeMapping
-} from '../../constants/BrowsingHistory'
+} from '../../../core/constants/BrowsingHistory'
 import AreaChart, { BrowsingData } from '../../common/charts/AreaChart'
 import { Data, WeekData } from './interfaces'
 import { useParams } from 'react-router-dom'
