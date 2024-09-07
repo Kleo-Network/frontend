@@ -1,10 +1,7 @@
 import { ReactElement, useState } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
 import { UserContext } from './components/common/contexts/UserContext'
-import { Home } from './components/home'
-import PrivacyPolicy from './components/home/sections/PrivacyPolicy'
 import Navbar from './shared/navbar/Navbar'
-import { About } from './pages/about'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -17,18 +14,18 @@ function App(): ReactElement {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="flex flex-col font-inter h-full w-full items-center bg-gray-900">
-        <header className="flex w-full justify-center h-[88px] bg-white bg-opacity-[0.16] fixed top-0 backdrop-blur-md z-50">
+      <div className="flex flex-col font-inter h-full w-full items-center">
+        <header className="flex w-full justify-center h-[68px] bg-white bg-opacity-[0.16] fixed top-0 backdrop-blur-md z-50">
           <div className="max-w-[1592px] flex w-full h-full items-center">
             <Navbar />
           </div>
         </header>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<Navigate to="/" />} /> */}
         </Routes>
       </div>
     </UserContext.Provider>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { ReactComponent as GrayLogo } from '../../assets/images/navbar/kleoLogoGray.svg'
+import { ReactComponent as Hamburger } from '../../assets/images/navbar/hamburger.svg'
+import { ReactComponent as Cross } from '../../assets/images/navbar/cross.svg'
 import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
@@ -14,8 +16,8 @@ const Navbar = () => {
     <nav className="flex justify-between items-center px-9 py-4 w-full">
       {/* LEFT : Logo + Name */}
       <a className="flex w-max justify-start items-center gap-4" href="/">
-        <GrayLogo className="size-[55px]" />
-        <h3 className="font-bold text-[34px] text-white">KLEO</h3>
+        <GrayLogo width={'45px'} height={'45px'} />
+        <h3 className="font-bold text-2xl text-white">KLEO</h3>
       </a>
 
       {/* Hamburger Menu (Visible on small screens only) */}
@@ -24,24 +26,16 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!isMenuOpen)}
           className="flex items-center text-white focus:outline-none"
         >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16m-7 6h7'} // Toggle between X and hamburger
-            />
-          </svg>
+          {isMenuOpen ? (
+            <Cross className="w-5 h-5" />
+          ) : (
+            <Hamburger className="w-5 h-5" />
+          )}
         </button>
       </div>
 
       {/* RIGHT : NavLinks + LaunchBtn (hidden on small screens) */}
-      <div className="hidden lg:flex w-max justify-end items-center gap-10 font-regular text-lg text-white">
+      <div className="hidden lg:flex w-max justify-end items-center gap-10 font-regular text-base text-white">
         <a
           className={`hover:underline hover:underline-offset-4 ${
             pathname === '/' ? 'font-bold' : ''
@@ -72,7 +66,7 @@ const Navbar = () => {
           Discord ↗
         </a>
         <a
-          className="h-[56px] px-[28px] py-[14px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-lg text-primary-800"
+          className="h-11 px-[14px] py-[10px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800"
           href="https://www.app.kleo.network"
         >
           Launch
@@ -116,7 +110,7 @@ const Navbar = () => {
           Discord ↗
         </a>
         <a
-          className="block h-[56px] px-10 py-[14px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-lg text-primary-800"
+          className="block h-[48px] px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800"
           href="https://www.app.kleo.network"
         >
           Launch
