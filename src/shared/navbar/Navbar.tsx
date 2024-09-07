@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ReactComponent as GrayLogo } from '../../../assets/images/navbar/kleoLogoGray.svg'
+import { ReactComponent as GrayLogo } from '../../assets/images/navbar/kleoLogoGray.svg'
 import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
