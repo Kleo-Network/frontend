@@ -1,4 +1,4 @@
-import { Footer } from '../../components/home/sections/Footer'
+import { Footer } from '../../components/_old_home/sections/Footer'
 import { Feature1 } from './sections/Feature1'
 import { Feature2 } from './sections/Feature2'
 import { HeroSection } from './sections/HeroSection'
