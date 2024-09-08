@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { HowKleoWorksSection } from './HowKleoWorksSection'
 import { FeatureGridSection } from './FeatureGridSection'
 import { OurPartnersSection } from './OurPartners'
+import { FaqSection } from './FaqSection'
 
 // Constants for initial and maximum scale
 const INITIAL_SCALE = 1
@@ -47,6 +48,8 @@ export const HomeComponent = () => {
       <FeatureGridSection />
 
       <OurPartnersSection />
+
+      <FaqSection />
     </div>
   )
 }
