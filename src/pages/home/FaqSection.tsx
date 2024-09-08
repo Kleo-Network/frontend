@@ -47,23 +47,23 @@ export const FaqSection = () => {
   return (
     <div className="mt-[60px] sm:mt-[80px] lg:mt-[100px]">
       <section className="w-full flex justify-center">
-        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] lg:max-w-[704px]">
-          <div className="flex flex-col w-full items-center gap-6 lg:gap-10">
+        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] lg:max-w-[704px] xl:min-w-[980px] ">
+          <div className="flex flex-col w-full items-center gap-6 lg:gap-10 xl:flex-row xl:items-start">
             {/* Title */}
-            <div className="font-semibold text-2xl text-center max-w-[250px] lg:font-bold lg:text-[40px] lg:leading-tight lg:max-w-[350px]">
+            <div className="font-semibold text-2xl text-center max-w-[250px] lg:font-bold lg:text-[40px] lg:leading-tight lg:max-w-[350px] xl:text-left xl:max-w-[240px] xl:font-semibold xl:text-[38px] xl:leading-snug">
               Frequently Asked Questions
             </div>
             {/* Question Container */}
-            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg sm:rounded-2xl md:px-6 lg:py-8">
+            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg sm:rounded-2xl md:px-6 lg:py-8 xl:py-6 xl:w-full">
               {faqs.map((faq, index) => (
-                <div key={index} className="flex flex-col gap-2">
+                <div key={index} className="flex flex-col gap-2 xl:gap-[10px]">
                   {/* Question */}
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full text-left flex justify-between items-center gap-4"
                   >
                     <div
-                      className={`font-medium text-sm md:text-base lg:text-2xl ${
+                      className={`font-medium text-sm md:text-base lg:text-2xl xl:text-xl ${
                         openIndex === index ? 'text-primary-600' : 'text-black'
                       }`}
                     >

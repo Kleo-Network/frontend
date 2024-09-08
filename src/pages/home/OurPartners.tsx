@@ -4,7 +4,7 @@ import HorizontalPartnersGrid from '../../assets/images/home/partners-horizontal
 export const OurPartnersSection = () => {
   return (
     <section className="w-full flex justify-center pt-[60px] sm:pt-[80px] lg:pt-[100px] mac:pt-[120px] 2xl:pt-[150px]">
-      <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[488px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center px-4">
+      <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[488px] lg:max-w-[980px] xl:max-w-[980px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center px-4">
         <div className="flex flex-col gap-6 lg:gap-[40px] w-full items-center xl:flex-row-reverse xl:justify-between">
           {/* Text Of Partners */}
           <div className="flex flex-col w-full gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 sm:max-w-[288px] md:max-w-[318px] lg:max-w-[464px] text-center xl:max-w-[310px] xl:text-left mac:max-w-[365px] 2xl:max-w-[487px]">
