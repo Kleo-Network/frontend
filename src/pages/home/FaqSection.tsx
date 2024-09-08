@@ -47,14 +47,14 @@ export const FaqSection = () => {
   return (
     <div className="mt-[60px] sm:mt-[80px]">
       <section className="w-full flex justify-center">
-        <div className="max-w-[328px] sm:max-w-[440px]">
-          <div className="flex flex-col w-full items-center gap-6 sm:gap-6">
+        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px]">
+          <div className="flex flex-col w-full items-center gap-6">
             {/* Title */}
             <div className="font-semibold text-2xl text-center max-w-[250px]">
               Frequently Asked Questions
             </div>
             {/* Question Container */}
-            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg sm:rounded-2xl">
+            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg sm:rounded-2xl md:px-6">
               {faqs.map((faq, index) => (
                 <div key={index} className="flex flex-col gap-2">
                   {/* Question */}
@@ -63,7 +63,7 @@ export const FaqSection = () => {
                     className="w-full text-left flex justify-between items-center gap-4"
                   >
                     <div
-                      className={`font-medium text-sm ${
+                      className={`font-medium text-sm md:text-base ${
                         openIndex === index ? 'text-primary-600' : 'text-black'
                       }`}
                     >
@@ -79,7 +79,7 @@ export const FaqSection = () => {
 
                   {/* Answer */}
                   {openIndex === index && (
-                    <div className="font-roboto font-normal text-[11px] text-black">
+                    <div className="font-roboto font-normal text-[11px] md:text-sm text-black">
                       {faq.answer}
                     </div>
                   )}
