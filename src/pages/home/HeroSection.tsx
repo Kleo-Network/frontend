@@ -4,26 +4,28 @@ import { ReactComponent as TopRightGrid } from '../../assets/images/home/hero_to
 
 export const HeroSection = () => {
   return (
-    <section className="h-[840px] w-full bg-gray-900 flex justify-center rounded-bl-[50px] rounded-br-[50px] relative overflow-y-hidden">
-      <div className="max-w-[1592px] w-full">
-        <div className="px-9 w-full flex flex-col mt-[110px] z-30">
-          <div className="flex w-full font-medium text-[96px] items-center text-white px-[7%]">
-            Earn Your
-            <Sparkle className="ml-16" />
+    <section className="h-[520px] pt-[124px] bg-gray-900 flex justify-center relative rounded-bl-[50px] rounded-br-[50px] overflow-hidden">
+      <div className="z-[45] h-max max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full items-start">
+        {/* Hero Text */}
+        <div className="flex h-full w-full flex-col justify-start items-start px-4">
+          {/* Earn Your + Stack in the AI */}
+          <div className="flex flex-col text-white font-medium text-[40px]">
+            <span className="flex items-center justify-start">
+              Earn Your
+              <Sparkle className="w-8 h-auto" />
+            </span>
+            <span className="ml-10">Stake In The AI</span>
           </div>
-          <div className="flex w-full justify-center items-center text-[96px] font-medium text-white">
-            Stake In The AI
-          </div>
-          <div className="flex w-full justify-center items-start gap-14 pl-32">
-            <span className="text-[96px] font-medium text-white">
+          {/* Revolution + Create Account */}
+          <div className="flex flex-col gap-4">
+            <span className="text-white font-medium text-[40px]">
               Revolution
             </span>
-            <div className="flex flex-col max-w-md font-normal text-[20px] text-white mt-14">
+            <div className="flex flex-col font-roboto font-normal text-sm text-white max-w-[240px] gap-4">
               Earn, Govern and Own your data. Earn upto $400/mo with your data.
-              {/* TODO: Update bellow Link */}
               <a
                 href="#"
-                className="mt-3 py-4 px-8 bg-primary-500 hover:bg-primary-700 text-white font-medium text-[20px] w-max rounded-md"
+                className="py-2 px-7 bg-primary-500 hover:bg-primary-700 text-white font-medium text-[20px] w-max rounded-[4px] font-inter text-sm"
               >
                 Create Account
               </a>
@@ -31,8 +33,8 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-      <BottomLeftGrid className="z-20 absolute bottom-0 left-0 w-[560px] h-[560px] -translate-x-32 pointer-events-none" />
-      <TopRightGrid className="z-20 absolute top-0 right-0 w-[560px] h-[560px] pointer-events-none" />
+      <BottomLeftGrid className="z-20 absolute bottom-0 left-0 w-[318px] h-auto -translate-x-24 translate-y-24 pointer-events-none" />
+      <TopRightGrid className="z-20 absolute top-0 right-0 w-[318px] h-[292px] pointer-events-none" />
     </section>
   )
 }
