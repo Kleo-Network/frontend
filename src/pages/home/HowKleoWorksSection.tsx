@@ -17,7 +17,7 @@ export const HowKleoWorksSection = () => {
             <div className="w-24 h-24 bg-gray-100 rounded-lg"></div>
             <div className="flex flex-col justify-start gap-[11px]">
               <h4 className="font-semibold text-[22px]">Removing PIIs</h4>
-              <p className="font-normal text-xs">
+              <p className="font-normal font-roboto text-xs">
                 Kleo removes all the personally identifiable information. This
                 includes, names, emails, usernames, addresses, specific
                 locations and more.
@@ -31,7 +31,7 @@ export const HowKleoWorksSection = () => {
               <h4 className="font-semibold text-[22px] text-white">
                 You Govern Your Data
               </h4>
-              <p className="font-normal text-xs text-white">
+              <p className="font-normal font-roboto text-xs text-white">
                 There is snapshot voting process to the respective audiences
                 regarding the governance decisions that are taken.
               </p>
@@ -42,7 +42,7 @@ export const HowKleoWorksSection = () => {
             <div className="w-24 h-24 bg-gray-100 rounded-lg"></div>
             <div className="flex flex-col justify-start gap-[11px]">
               <h4 className="font-semibold text-[22px]">Own</h4>
-              <p className="font-normal text-xs">
+              <p className="font-normal font-roboto text-xs">
                 Kleo gives you rewards based on the data quality of your
                 contribution. We give rewards every 15 days. It is upto the user
                 to convert them or not.
