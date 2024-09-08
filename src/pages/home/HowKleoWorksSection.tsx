@@ -2,30 +2,30 @@ export const HowKleoWorksSection = () => {
   return (
     <section className="w-full flex justify-center mb-[100px]">
       <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[488px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center px-4">
-        <div className="flex flex-col gap-6 w-full h-max items-center">
+        <div className="flex flex-col gap-6 xl:gap-10 w-full h-max items-center">
           {/* How Kleo Works Question & Answer */}
-          <div className="flex flex-col items-center justify-normal gap-1 md:max-w-[320px]">
-            <div className="font-semibold text-2xl md:text-[32px]">
+          <div className="flex flex-col items-center justify-normal gap-1 xl:gap-[10px] md:max-w-[320px] lg:max-w-[428px] xl:max-w-[500px]">
+            <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[42px]">
               How Kleo Works?
             </div>
-            <div className="font-roboto font-normal text-[11px] md:text-sm text-center">
+            <div className="font-roboto font-normal text-[11px] md:text-sm xl:text-base text-center">
               Kleo has a three step process to ensure that you are in control of
               your own data and yet get maximum benefits from it.
             </div>
           </div>
 
           {/* 3 Cards explaining workflow */}
-          <div className="flex flex-col justify-start items-center gap-4 md:gap-6">
+          <div className="flex flex-col lg:flex-row justify-start lg:justify-evenly items-center lg:items-stretch gap-4 md:gap-6 xl:gap-[21px] [text-wrap:balance]">
             {/* Card - 1 */}
-            <div className="w-full flex flex-col p-4 bg-white justify-start rounded-lg md:rounded-2xl gap-4">
+            <div className="w-full lg:w-1/3 lg:min-h-full flex flex-col p-4 lg:p-6 bg-white justify-start rounded-lg md:rounded-2xl lg:rounded-3xl gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 rounded-[4px] md:rounded-lg bg-gray-100"></div>
+              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] rounded-[4px] md:rounded-lg bg-gray-100"></div>
               {/* Text */}
-              <div className="flex flex-col justify-start items-start gap-2">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px]">
                 <div className="font-semibold text-lg md:text-2xl">
                   Removing PIIs
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm">
+                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base">
                   Kleo removes all the personally identifiable information. This
                   includes, names, emails, usernames, addresses, specific
                   locations and more.
@@ -33,28 +33,28 @@ export const HowKleoWorksSection = () => {
               </div>
             </div>
             {/* Card - 2 */}
-            <div className="w-full text-white flex flex-col p-4 bg-primary-600 justify-start rounded-lg md:rounded-2xl gap-4">
+            <div className="w-full lg:w-1/3 lg:min-h-full text-white flex flex-col p-4 lg:p-6 bg-primary-600 justify-start rounded-lg md:rounded-2xl lg:rounded-3xl gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 rounded-[4px] md:rounded-lg bg-primary-500"></div>
+              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] rounded-[4px] md:rounded-lg bg-primary-500"></div>
               {/* Text */}
-              <div className="flex flex-col justify-start items-start gap-2">
-                <div className="font-semibold text-lg">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px]">
+                <div className="font-semibold text-lg md:text-2xl">
                   You Govern Your Data
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm">
+                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base">
                   There is snapshot voting process to the respective audiences
                   regarding the governance decisions that are taken.
                 </div>
               </div>
             </div>
             {/* Card - 3 */}
-            <div className="w-full flex flex-col p-4 bg-white justify-start rounded-lg md:rounded-2xl gap-4">
+            <div className="w-full lg:w-1/3 lg:min-h-full flex flex-col p-4 lg:p-6 bg-white justify-start rounded-lg md:rounded-2xl lg:rounded-3xl gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 rounded-[4px] md:rounded-lg bg-gray-100"></div>
+              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] rounded-[4px] md:rounded-lg bg-gray-100"></div>
               {/* Text */}
-              <div className="flex flex-col justify-start items-start gap-2">
-                <div className="font-semibold text-lg">Own</div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm">
+              <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px]">
+                <div className="font-semibold text-lg md:text-2xl">Own</div>
+                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base">
                   Kleo gives you rewards based on the data quality of your
                   contribution. We give rewards every 15 days. It is upto the
                   user to convert them or not.
