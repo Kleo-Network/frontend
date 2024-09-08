@@ -30,11 +30,11 @@ export const HomeComponent = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      <div className="flex justify-center relative -top-[50px] lg:-top-[150px] xl:-top-[80px] mac:-top-[90px]">
+      <div className="flex justify-center relative -top-[50px] lg:-top-[150px] xl:-top-[80px] mac:-top-[90px] 2xl:-top-[110px]">
         <img
           src={DashboardImage}
           alt="Kleo Dashboard"
-          className="max-w-4xl w-[60%] h-auto z-50"
+          className="max-w-4xl w-[60%] h-auto z-50 2xl:w-[60%] 2xl:max-w-5xl"
           style={{
             transform: `scale(${scale})`,
             transition: 'transform 0.1s ease-out'
