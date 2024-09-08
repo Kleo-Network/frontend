@@ -8,9 +8,14 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        mb: '360px' // Adds a custom mobile breakpoint at 360px
+      },
       fontFamily: {
         inter: ['inter', 'sans-serif'],
-        shoreline: ['shoreline', 'sans-serif']
+        shoreline: ['shoreline', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'], // Adds Montserrat as the default sans-serif font
+        roboto: ['Roboto', 'sans-serif']
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
