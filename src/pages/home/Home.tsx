@@ -30,7 +30,7 @@ export const HomeComponent = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      <div className="flex justify-center relative -top-[50px] lg:-top-[100px]">
+      <div className="flex justify-center relative -top-[50px] lg:-top-[100px] xl:-top-[80px]">
         <img
           src={DashboardImage}
           alt="Kleo Dashboard"
