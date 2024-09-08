@@ -45,16 +45,16 @@ export const FaqSection = () => {
   }
 
   return (
-    <div className="mt-[60px]">
+    <div className="mt-[60px] sm:mt-[80px]">
       <section className="w-full flex justify-center">
-        <div className="max-w-[328px]">
-          <div className="flex flex-col w-full items-center gap-6">
+        <div className="max-w-[328px] sm:max-w-[440px]">
+          <div className="flex flex-col w-full items-center gap-6 sm:gap-6">
             {/* Title */}
             <div className="font-semibold text-2xl text-center max-w-[250px]">
               Frequently Asked Questions
             </div>
             {/* Question Container */}
-            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg">
+            <div className="py-6 px-4 bg-white flex flex-col gap-4 rounded-lg sm:rounded-2xl">
               {faqs.map((faq, index) => (
                 <div key={index} className="flex flex-col gap-2">
                   {/* Question */}
