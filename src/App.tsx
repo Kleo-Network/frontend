@@ -17,8 +17,8 @@ function App(): ReactElement {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="flex flex-col font-inter h-full w-full items-center">
-        <header className="flex w-full justify-center h-[68px] bg-white bg-opacity-[0.16] fixed top-0 backdrop-blur-md z-50">
-          <div className="max-w-[1592px] flex w-full h-full items-center">
+        <header className="flex w-full justify-center h-[44px] lg:h-[62px] xl:h-[62px] mac:h-[66px] 2xl:h-[88px] bg-white bg-opacity-[0.16] fixed top-0 backdrop-blur-md z-50">
+          <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center">
             <Navbar />
           </div>
         </header>

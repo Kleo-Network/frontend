@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        mb: '360px' // Adds a custom mobile breakpoint at 360px
+        mac: '1440px'
       },
       fontFamily: {
         inter: ['inter', 'sans-serif'],
