@@ -8,13 +8,13 @@ import { ReactComponent as Discord } from '../../assets/images/home/footer/disco
 
 export const FooterSection = () => {
   return (
-    <div className="mt-[150px]">
+    <div className="mt-[150px] md:mt-[185px] lg:mt-[212px]">
       {/* Footer section */}
-      <section className="w-full flex justify-center items-end h-[680px] bg-gray-blue-100 rounded-t-3xl p-4 pt-[130px] relative">
-        <div className="w-[328px] sm:w-[440px] md:w-[488px]">
+      <section className="w-full flex justify-center items-end h-[680px] md:h-[743px] bg-gray-blue-100 rounded-t-3xl sm:rounded-t-[32px] md:rounded-t-[40px] p-4 pt-[130px] md:pt-[160px] lg:pt-[163px] relative">
+        <div className="w-[328px] sm:w-[440px] md:w-[488px] lg:w-[704px]">
           <div className="flex flex-col gap-6 items-start w-full">
             {/* Company Logo and Text */}
-            <div className="flex flex-col w-full gap-2 items-start">
+            <div className="flex flex-col w-full gap-2 lg:gap-4 items-start">
               <FooterKleoLogo className="h-8 w-auto" />
               <div className="font-roboto font-normal text-base">
                 Kleo Network is a user owned data DAO.
@@ -79,13 +79,13 @@ export const FooterSection = () => {
           </div>
         </div>
         {/* Join Discord Card */}
-        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] absolute -top-[90px] sm:-top-[70px] md:-top-[105px] w-full text-white bg-primary-600 rounded-lg md:rounded-[32px] flex flex-col py-6 px-4 md:p-8 items-center text-center gap-4">
+        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] lg:max-w-[704px] absolute -top-[90px] sm:-top-[70px] md:-top-[105px] w-full text-white bg-primary-600 rounded-lg md:rounded-[32px] flex flex-col py-6 px-4 md:p-8 items-center text-center gap-4">
           {/* Text */}
-          <div className="flex flex-col gap-1 w-full">
-            <div className="font-semibold text-2xl md:text-[32px]">
+          <div className="flex flex-col gap-1 lg:gap-4 w-full leading-[1.3]">
+            <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px]">
               Still have questions?
             </div>
-            <div className="font-roboto font-normal text-[11px] md:text-sm">
+            <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base">
               Can't find the answer you're looking for? Please chat to our
               friendly team. We will do our best to assist you with the
               questions.
