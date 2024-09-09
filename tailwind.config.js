@@ -33,6 +33,10 @@ module.exports = {
       },
       colors: {
         overlay: 'rgba(52, 64, 84, 0.7)',
+        'gray-blue': {
+          100: '#EAECF5',
+          200: '#D5D9EB'
+        },
         primary: {
           25: '#FCFAFF',
           50: '#F9F5FF',

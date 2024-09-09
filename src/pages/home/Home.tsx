@@ -5,6 +5,7 @@ import { HowKleoWorksSection } from './HowKleoWorksSection'
 import { FeatureGridSection } from './FeatureGridSection'
 import { OurPartnersSection } from './OurPartners'
 import { FaqSection } from './FaqSection'
+import { FooterSection } from './FooterSection'
 
 // Constants for initial and maximum scale
 const INITIAL_SCALE = 1
@@ -50,6 +51,8 @@ export const HomeComponent = () => {
       <OurPartnersSection />
 
       <FaqSection />
+
+      <FooterSection />
     </div>
   )
 }
