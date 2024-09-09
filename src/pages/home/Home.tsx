@@ -1,5 +1,6 @@
 import { HeroSection } from './HeroSection'
-import DashboardImage from '../../assets/images/home/KleoDashboard.png'
+// import DashboardImage from '../../assets/images/home/KleoDashboard.png'
+import { ReactComponent as DashboardImage } from '../../assets/images/home/KleoDashboard.svg'
 import React, { useState } from 'react'
 import { HowKleoWorksSection } from './HowKleoWorksSection'
 import { FeatureGridSection } from './FeatureGridSection'
@@ -33,9 +34,7 @@ export const HomeComponent = () => {
       <HeroSection />
 
       <div className="flex justify-center relative -top-[50px] lg:-top-[150px] xl:-top-[80px] mac:-top-[90px] 2xl:-top-[110px] mb-[60px]">
-        <img
-          src={DashboardImage}
-          alt="Kleo Dashboard"
+        <DashboardImage
           className="max-w-4xl w-[60%] h-auto z-50 2xl:w-[60%] 2xl:max-w-5xl"
           style={{
             transform: `scale(${scale})`,
