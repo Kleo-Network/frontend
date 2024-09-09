@@ -44,29 +44,30 @@ const Navbar = () => {
           Home
         </a>
         <a
-          className={`hover:underline hover:underline-offset-4 ${
-            pathname === '/about' ? 'font-bold' : ''
-          }`}
-          href="/about"
-        >
-          About
-        </a>
-        <a
           className="hover:underline hover:underline-offset-4"
           href="https://docs.kleo.network/"
           target="_blank"
         >
           Docs
         </a>
-        <a className="hover:underline hover:underline-offset-4" href="#">
+        <a
+          className="hover:underline hover:underline-offset-4"
+          href="https://twitter.com/kleo_network"
+          target="_blank"
+        >
           Twitter ↗
         </a>
-        <a className="hover:underline hover:underline-offset-4" href="#">
+        <a
+          className="hover:underline hover:underline-offset-4"
+          href="https://discord.gg/duvjD6yvzf"
+          target="_blank"
+        >
           Discord ↗
         </a>
         <a
           className="h-11 px-[14px] py-[10px] lg:px-[18px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-sm mac:text-base 2xl:text-lg text-primary-800"
           href="https://www.app.kleo.network"
+          target="_blank"
         >
           Launch
         </a>
@@ -87,30 +88,30 @@ const Navbar = () => {
           Home
         </a>
         <a
-          className={`block hover:underline ${
-            pathname === '/about' ? 'font-bold' : ''
-          }`}
-          href="/about"
-        >
-          About
-        </a>
-        <a
           className="block hover:underline"
           href="https://docs.kleo.network/"
           target="_blank"
         >
           Docs
         </a>
-        {/* TODO: Update bellow Links */}
-        <a className="block hover:underline" href="#">
+        <a
+          className="block hover:underline"
+          href="https://twitter.com/kleo_network"
+          target="_blank"
+        >
           Twitter ↗
         </a>
-        <a className="block hover:underline" href="#">
+        <a
+          className="block hover:underline"
+          href="https://discord.gg/duvjD6yvzf"
+          target="_blank"
+        >
           Discord ↗
         </a>
         <a
           className="block h-[48px] px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800"
           href="https://www.app.kleo.network"
+          target="_blank"
         >
           Launch
         </a>

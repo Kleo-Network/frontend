@@ -43,11 +43,8 @@ export const FooterSection = () => {
 
             {/* Navigation Links */}
             <div className="flex flex-col xl:flex-row items-start xl:justify-between w-full gap-2 font-roboto font-normal text-sm md:text-base 2xl:text-[18px] leading-[1.3] xl:mt-[28px] xl:pb-[16px] mac:mt-[33px] mac:pb-[18px] 2xl:mt-[44px] 2xl:pb-[24px]">
-              <a href="#" className="hover:font-semibold">
+              <a href="/" className="hover:font-semibold">
                 Home
-              </a>
-              <a href="#" className="hover:font-semibold">
-                About
               </a>
               <a href="#" className="hover:font-semibold">
                 Team
@@ -55,26 +52,41 @@ export const FooterSection = () => {
               <a href="#" className="hover:font-semibold">
                 Fundraising Memo
               </a>
-              <a href="#" className="hover:font-semibold">
-                Github Documentation
+              <a
+                href="https://github.com/Kleo-Network"
+                className="hover:font-semibold"
+                target="_blank"
+              >
+                Github
+              </a>
+              <a
+                href="http://docs.kleo.network/"
+                className="hover:font-semibold"
+                target="_blank"
+              >
+                Documentation
               </a>
               <a href="#" className="hover:font-semibold">
                 Legal
               </a>
-              <a href="#" className="hover:font-semibold">
+              <a
+                href="mailto:contact@kleo.network"
+                className="hover:font-semibold"
+                target="_blank"
+              >
                 Contact Us
               </a>
             </div>
 
             {/* Social Media Links */}
             <div className="flex items-center justify-between gap-6 w-132 xl:absolute xl:bottom-3 mac:bottom-[14px] 2xl:bottom-[18px] xl:right-0">
-              <a href="#">
+              <a href="#" target="_blank">
                 <LinkedIn className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
-              <a href="#">
+              <a href="#" target="_blank">
                 <Instagram className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
-              <a href="#">
+              <a href="#" target="_blank">
                 <FaceBook className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
             </div>
@@ -101,7 +113,11 @@ export const FooterSection = () => {
             </div>
 
             {/* Discord Button */}
-            <a className="px-4 py-2 bg-white text-primary-800 flex gap-2 items-center rounded-md hover:bg-gray-200 cursor-pointer">
+            <a
+              className="px-4 py-2 bg-white text-primary-800 flex gap-2 items-center rounded-md hover:bg-gray-200 cursor-pointer"
+              href="https://discord.gg/duvjD6yvzf"
+              target="_blank"
+            >
               <Discord className="h-[14px]" />
               <p className="font-normal text-sm">Join Our Discord</p>
             </a>
