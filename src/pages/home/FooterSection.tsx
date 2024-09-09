@@ -11,8 +11,8 @@ export const FooterSection = () => {
     <div className="mt-[150px]">
       {/* Footer section */}
       <section className="w-full flex justify-center items-end h-[680px] bg-gray-blue-100 rounded-t-3xl p-4 pt-[130px] relative">
-        <div className="max-w-[328px]">
-          <div className="flex flex-col gap-6 items-start">
+        <div className="w-[328px] sm:w-[440px] md:w-[488px]">
+          <div className="flex flex-col gap-6 items-start w-full">
             {/* Company Logo and Text */}
             <div className="flex flex-col w-full gap-2 items-start">
               <FooterKleoLogo className="h-8 w-auto" />
@@ -41,7 +41,7 @@ export const FooterSection = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="flex flex-col items-start w-full gap-2 font-roboto font-normal text-sm leading-[1.3]">
+            <div className="flex flex-col items-start w-full gap-2 font-roboto font-normal text-sm md:text-base leading-[1.3]">
               <a href="#" className="hover:font-semibold">
                 Home
               </a>
@@ -79,11 +79,13 @@ export const FooterSection = () => {
           </div>
         </div>
         {/* Join Discord Card */}
-        <div className="max-w-[328px] absolute -top-[90px] w-full text-white bg-primary-600 rounded-lg flex flex-col py-6 px-4 items-center text-center gap-4">
+        <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] absolute -top-[90px] sm:-top-[70px] md:-top-[105px] w-full text-white bg-primary-600 rounded-lg md:rounded-[32px] flex flex-col py-6 px-4 md:p-8 items-center text-center gap-4">
           {/* Text */}
           <div className="flex flex-col gap-1 w-full">
-            <div className="font-semibold text-2xl">Still have questions?</div>
-            <div className="font-roboto font-normal text-[11px]">
+            <div className="font-semibold text-2xl md:text-[32px]">
+              Still have questions?
+            </div>
+            <div className="font-roboto font-normal text-[11px] md:text-sm">
               Can't find the answer you're looking for? Please chat to our
               friendly team. We will do our best to assist you with the
               questions.
@@ -91,7 +93,7 @@ export const FooterSection = () => {
           </div>
 
           {/* Discord Button */}
-          <a className="px-4 py-2 bg-white text-primary-800 flex gap-2 items-center rounded-md">
+          <a className="px-4 py-2 bg-white text-primary-800 flex gap-2 items-center rounded-md hover:bg-gray-200 cursor-pointer">
             <Discord className="h-[14px]" />
             <p className="font-normal text-sm">Join Our Discord</p>
           </a>
