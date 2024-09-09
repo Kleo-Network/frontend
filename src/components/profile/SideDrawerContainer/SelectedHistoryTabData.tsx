@@ -8,8 +8,8 @@ import {
   TimeRange,
   TimeRangeEpoch,
   TimeRangeMapping
-} from '../../constants/BrowsingHistory'
-import { getKeyByValue, getVisitTime } from '../../utils/utils'
+} from '../../../core/constants/BrowsingHistory'
+import { getKeyByValue, getVisitTime } from '../../../core/utils/utils'
 import { Data, UrlData, WeekData } from './interfaces'
 import { HistoryListLoader, HistoryTabGraphLoader } from './SkeletonLoaders'
 import Alert from '../../common/Alerts'

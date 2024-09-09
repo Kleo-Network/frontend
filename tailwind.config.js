@@ -8,9 +8,14 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        mac: '1440px'
+      },
       fontFamily: {
         inter: ['inter', 'sans-serif'],
-        shoreline: ['shoreline', 'sans-serif']
+        shoreline: ['shoreline', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'], // Adds Montserrat as the default sans-serif font
+        roboto: ['Roboto', 'sans-serif']
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
@@ -28,7 +33,23 @@ module.exports = {
       },
       colors: {
         overlay: 'rgba(52, 64, 84, 0.7)',
-        primary: '#7F56D9'
+        'gray-blue': {
+          100: '#EAECF5',
+          200: '#D5D9EB'
+        },
+        primary: {
+          25: '#FCFAFF',
+          50: '#F9F5FF',
+          100: '#F4EBFF',
+          200: '#E9D7FE',
+          300: '#D6BBFB',
+          400: '#B692F6',
+          500: '#9E77ED',
+          600: '#7F56D9',
+          700: '#7F56D9',
+          800: '#53389E',
+          900: '#42307D'
+        }
       }
     }
   }

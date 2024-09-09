@@ -8,12 +8,12 @@ import { Footer } from './sections/Footer'
 import { HeroSection } from './sections/HeroSection'
 // import StackedCards from './sections/StackedCards'
 
-export function Home() {
+export function OldHome() {
   return (
     <div className="flex flex-col items-start justify-center self-stretch font-inter">
       <HeroSection />
       {/* <StackedCards /> */}
-     
+
       <Feature2 />
       <Feature4 />
       <Feature3 />

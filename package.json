@@ -1,6 +1,6 @@
 {
-  "name": "vite-react-typescript-tailwind-starter",
-  "version": "0.0.0",
+  "name": "kleo-landing-page",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",

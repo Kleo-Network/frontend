@@ -16,13 +16,13 @@ import {
   TimeRange,
   TimeRangeEpoch,
   TimeRangeMapping
-} from '../../constants/BrowsingHistory'
+} from '../../../core/constants/BrowsingHistory'
 import { transformBrowsingHistory, lightenColor } from './transformations'
 import {
   BrowsingHistory as GraphData,
   ProcessingHistory
 } from './API_interface'
-import { getKeyByValue } from '../../utils/utils'
+import { getKeyByValue } from '../../../core/utils/utils'
 import { useAuthContext } from '../../common/contexts/UserContext'
 
 const API_URL =

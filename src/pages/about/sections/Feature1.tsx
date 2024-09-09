@@ -1,6 +1,7 @@
 import { ReactComponent as QuotesIcon } from '../../../assets/images/qoutes.svg'
-import { GraphBrowsingHistory } from '../../mocks/LandingPage'
+
 import image1 from '../../../assets/images/graph.svg'
+import { GraphBrowsingHistory } from '../../../components/mocks/LandingPage'
 
 export function Feature1() {
   console.log('GraphBrowsingHistory', GraphBrowsingHistory)
@@ -24,7 +25,8 @@ export function Feature1() {
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
                   The fees collected from minting the NFTs, is distributed back
-                  to those who were actively minting everyday, earlier you signup the more rewards you get. 
+                  to those who were actively minting everyday, earlier you
+                  signup the more rewards you get.
                   <br />
                   <br />
                   <br />

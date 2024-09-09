@@ -1,12 +1,9 @@
 import { ReactElement, useState } from 'react'
 import { Route, Routes, Navigate } from 'react-router-dom'
-import Profile from './components/profile/Profile'
-import Navbar from './components/navbar/Navbar'
-import History from './components/history/History'
 import { UserContext } from './components/common/contexts/UserContext'
-import { Home } from './components/home'
-import PrivacyPolicy from './components/home/sections/PrivacyPolicy'
-import { Degen } from './components/degen/index'
+import Navbar from './shared/navbar/Navbar'
+import { HomeComponent } from './pages/home/Home'
+import { About } from './pages/about'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -19,18 +16,19 @@ function App(): ReactElement {
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="h-full w-full">
-        <div className="flex flex-col font-inter self-stretch h-full">
-          <header className="flex flex-row self-stretch items-center">
-            <Navbar avatar={{ src: user.avatar, alt: 'Profile' }} />
-          </header>
-          <Routes>
-            <Route path="/degen" element={<Degen />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
-        </div>
+      <div className="flex flex-col font-inter h-full w-full items-center">
+        <header className="flex w-full justify-center h-[44px] lg:h-[62px] xl:h-[62px] mac:h-[66px] 2xl:h-[88px] bg-white bg-opacity-[0.16] fixed top-0 backdrop-blur-md z-50">
+          <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center">
+            <Navbar />
+          </div>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<HomeComponent />} />
+          <Route path="/about" element={<About />} />
+          {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
       </div>
     </UserContext.Provider>
   )

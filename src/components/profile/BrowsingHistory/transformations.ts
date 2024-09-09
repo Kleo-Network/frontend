@@ -1,5 +1,5 @@
+import { TimeRange } from '../../../core/constants/BrowsingHistory'
 import { BrowsingHistory } from './API_interface'
-import { TimeRange } from '../../constants/BrowsingHistory'
 
 const generateRandomColor = (category: string): string => {
   let hash = 0
