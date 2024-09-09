@@ -68,9 +68,15 @@ export const FooterSection = () => {
 
             {/* Social Media Links */}
             <div className="flex items-center justify-between gap-6 w-132 xl:absolute xl:bottom-3 mac:bottom-[14px] 2xl:bottom-[18px] xl:right-0">
-              <LinkedIn className="size-[28px] hover:text-primary-700" />
-              <Instagram className="size-[28px] hover:text-primary-700" />
-              <FaceBook className="size-[28px] hover:text-primary-700" />
+              <a href="#">
+                <LinkedIn className="size-[28px] hover:text-primary-700 cursor-pointer" />
+              </a>
+              <a href="#">
+                <Instagram className="size-[28px] hover:text-primary-700 cursor-pointer" />
+              </a>
+              <a href="#">
+                <FaceBook className="size-[28px] hover:text-primary-700 cursor-pointer" />
+              </a>
             </div>
 
             {/* All rights reserved */}
