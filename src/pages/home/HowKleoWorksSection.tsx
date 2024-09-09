@@ -1,3 +1,7 @@
+import { ReactComponent as RemovePII } from '../../assets/images/home/howKleoWorks/removePII.svg'
+import { ReactComponent as Govern } from '../../assets/images/home/howKleoWorks/govern.svg'
+import { ReactComponent as Own } from '../../assets/images/home/howKleoWorks/own.svg'
+
 export const HowKleoWorksSection = () => {
   return (
     <section className="w-full flex justify-center">
@@ -19,7 +23,7 @@ export const HowKleoWorksSection = () => {
             {/* Card - 1 */}
             <div className="w-full lg:w-1/3 lg:min-h-full flex flex-col p-4 lg:p-6 bg-white justify-start rounded-lg md:rounded-2xl lg:rounded-3xl mac:rounded-[18px] 2xl:rounded-[20px] gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px] bg-gray-100"></div>
+              <RemovePII className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px]"></RemovePII>
               {/* Text */}
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
@@ -35,7 +39,7 @@ export const HowKleoWorksSection = () => {
             {/* Card - 2 */}
             <div className="w-full lg:w-1/3 lg:min-h-full text-white flex flex-col p-4 lg:p-6 bg-primary-600 justify-start rounded-lg md:rounded-2xl lg:rounded-3xl mac:rounded-[18px] 2xl:rounded-[20px] gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px] bg-primary-500"></div>
+              <Govern className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px]"></Govern>
               {/* Text */}
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
@@ -50,7 +54,7 @@ export const HowKleoWorksSection = () => {
             {/* Card - 3 */}
             <div className="w-full lg:w-1/3 lg:min-h-full flex flex-col p-4 lg:p-6 bg-white justify-start rounded-lg md:rounded-2xl lg:rounded-3xl mac:rounded-[18px] 2xl:rounded-[20px] gap-4 lg:gap-6">
               {/* Icon */}
-              <div className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px] bg-gray-100"></div>
+              <Own className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px]"></Own>
               {/* Text */}
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
