@@ -14,7 +14,7 @@ export const HowKleoWorksSection = () => {
             </div>
             <div className="font-roboto font-normal text-[11px] md:text-sm xl:text-base 2xl:text-lg text-center">
               Kleo has a three step process to ensure that you are in control of
-              your own data and yet get maximum benefits from it.
+              your data and <b>your data earns while you sleep.</b>
             </div>
           </div>
 
@@ -27,12 +27,19 @@ export const HowKleoWorksSection = () => {
               {/* Text */}
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
-                  Removing PIIs
+                  Confidential
                 </div>
                 <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Kleo removes all the personally identifiable information. This
                   includes, names, emails, usernames, addresses, specific
-                  locations and more.
+                  locations and{' '}
+                  <a
+                    href="https://docs.kleo.network/kleo_network/pii/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    more
+                  </a>
                 </div>
               </div>
             </div>
@@ -46,8 +53,15 @@ export const HowKleoWorksSection = () => {
                   You Govern Your Data
                 </div>
                 <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-                  There is snapshot voting process to the respective audiences
-                  regarding the governance decisions that are taken.
+                  Decentralised smart contracts ensure that your data can only
+                  be accessed if it passes majority{' '}
+                  <a
+                    href="https://snapshot.org/#/kleo-network.eth/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    vote on snapshot.org
+                  </a>
                 </div>
               </div>
             </div>
@@ -58,12 +72,12 @@ export const HowKleoWorksSection = () => {
               {/* Text */}
               <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
-                  Own
+                  Ownership
                 </div>
                 <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-                  Kleo gives you rewards based on the data quality of your
-                  contribution. We give rewards every 15 days. It is upto the
-                  user to convert them or not.
+                  Fair Equity Ownership. <br />
+                  Proof of contribution based on quantity and quality of your
+                  data determines your reward. Earn upto $400/month.
                 </div>
               </div>
             </div>

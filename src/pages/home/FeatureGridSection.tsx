@@ -17,16 +17,12 @@ export const FeatureGridSection = () => {
                 Own A Stake For Your Data
               </div>
               <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
-                Machine Learning Models / Analytics Houses want this data. Kleo
-                and VANA DAO will come up with a proof of contribution which
-                will then decide on user contribution tokens/$ amount that will
-                be shared based on the requirement. Rest assured no personally
-                identifiable information will be leaked.
-                <br />
-                <br />
-                We will be using snapshot for Kleo token holders to manage
-                conversation between data requirement and data liquidity
-                provider.
+                Every individual generates a massive amounts of data. These
+                workflows are extremely important LLMs and AI models.Right now
+                centralised entities are building billion dollar IPs without you
+                getting anythin in return. <br /> <br />
+                Its' high time ownership of your data returns back to you as an
+                user.
               </p>
             </div>
           </div>
@@ -38,7 +34,7 @@ export const FeatureGridSection = () => {
             {/* Text */}
             <div className="flex flex-col gap-1 md:gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px]">
               <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
-                Earn Rewards
+                Proof of Contribution
               </div>
               <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
                 Based on intelligence and complexity of your actions inside the
@@ -65,17 +61,17 @@ export const FeatureGridSection = () => {
                   Kleo SDK
                 </div>
                 <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
-                  Earn from your extension! Be a part of Kleo Data DAO.
-                  <br />
-                  <br />
-                  Personalize your DAPP.
+                  We want your users to earn from your extension! Be a part of
+                  Kleo Data DAO.If you are a crypto wallet and want to have this
+                  feature enabled, please reach out to us on Discord.
                 </p>
               </div>
               <a
-                href="#"
+                href="https://discord.gg/duvjD6yvzf"
                 className="font-medium text-sm text-white bg-primary-500 hover:bg-primary-600 px-[14px] py-[8px] rounded-[4px]"
+                target="_blank"
               >
-                Learn More
+                Talk to us
               </a>
             </div>
           </div>

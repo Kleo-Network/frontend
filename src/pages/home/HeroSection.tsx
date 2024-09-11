@@ -9,7 +9,7 @@ export const HeroSection = () => {
         {/* Hero Text */}
         <div className="flex h-full w-full flex-col justify-start md:items-center xl:items-start xl:ml-16 mac:ml-0 items-start px-4">
           {/* Earn Your + Stack in the AI */}
-          <div className="flex flex-col text-white font-medium text-[40px] sm:text-[50px] md:text-[55px] lg:text-[80px] xl:text-[97px] mac:text-[110px] 2xl:text-[145px]">
+          <div className="flex flex-col text-white font-medium text-[28px] sm:text-[40px] md:text-[44px] lg:text-[48px] xl:text-[78px] mac:text-[88px] 2xl:text-[116px]">
             <span className="flex items-center justify-start">
               Earn Your
               <Sparkle className="w-8 sm:w-9 md:w-10 lg:w-[57px] xl:w-[68px] mac:w-[77px] 2xl:w-[103px] sm:ml-9 lg:ml-[52px] xl:ml-[64px] mac:ml-[72px] 2xl:ml-[96px] h-auto" />
