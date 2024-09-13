@@ -16,7 +16,7 @@ export const FeatureGridSection = () => {
               <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                 Own A Stake For Your Data
               </div>
-              <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
+              <p className=" font-light text-[11px] md:text-sm mac:text-base 2xl:text-md">
                 Every individual generates a massive amounts of data. These
                 workflows are extremely important LLMs and AI models.Right now
                 centralised entities are building billion dollar IPs without you
@@ -36,7 +36,7 @@ export const FeatureGridSection = () => {
               <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                 Proof of Contribution
               </div>
-              <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
+              <p className="font-light text-[11px] md:text-sm mac:text-base 2xl:text-md">
                 Based on intelligence and complexity of your actions inside the
                 browser, kleo will reward kleo XP points. Kleo will be
                 transparent about the activity that helps you get the maximum
@@ -60,7 +60,7 @@ export const FeatureGridSection = () => {
                 <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                   Kleo SDK
                 </div>
-                <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
+                <p className="font-light text-[11px] md:text-sm mac:text-base 2xl:text-md">
                   We want your users to earn from your extension! Be a part of
                   Kleo Data DAO.If you are a crypto wallet and want to have this
                   feature enabled, please reach out to us on Discord.

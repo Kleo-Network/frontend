@@ -12,7 +12,7 @@ export const HowKleoWorksSection = () => {
             <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[42px] mac:text-5xl 2xl:text-[58px]">
               How Kleo Works?
             </div>
-            <div className="font-roboto font-normal text-[11px] md:text-sm xl:text-base 2xl:text-lg text-center">
+            <div className="font font-normal text-[11px] md:text-sm xl:text-base 2xl:text-lg text-center">
               Kleo has a three step process to ensure that you are in control of
               your data and <b>your data earns while you sleep.</b>
             </div>
@@ -29,14 +29,14 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Confidential
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-medium text-[11px] md:text-sm lg:text-base 2xl:text-md">
                   Kleo removes all the personally identifiable information. This
                   includes, names, emails, usernames, addresses, specific
                   locations and{' '}
                   <a
                     href="https://docs.kleo.network/kleo_network/pii/"
                     target="_blank"
-                    className="underline"
+                    className="underline hover:font-semibold"
                   >
                     more
                   </a>
@@ -52,13 +52,13 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   You Govern Your Data
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font font-medium text-[11px] md:text-sm lg:text-base 2xl:text-md">
                   Decentralised smart contracts ensure that your data can only
                   be accessed if it passes majority{' '}
                   <a
                     href="https://snapshot.org/#/kleo-network.eth/"
                     target="_blank"
-                    className="underline"
+                    className="underline hover:font-semibold"
                   >
                     vote on snapshot.org
                   </a>
@@ -74,8 +74,8 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Ownership
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-                  Fair Equity Ownership. <br />
+                <div className="font font-medium text-[11px] md:text-lg lg:text-base 2xl:text-md">
+                  <span className='font-semibold text-lg'>Fair Equity Ownership.</span> <br />
                   Proof of contribution based on quantity and quality of your
                   data determines your reward. Earn upto $400/month.
                 </div>

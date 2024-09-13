@@ -23,7 +23,7 @@ export const HeroSection = () => {
             <span className="text-white font-medium text-[40px] sm:text-[50px] md:text-[55px] lg:text-[80px] xl:text-[97px] mac:text-[110px] 2xl:text-[145px]">
               Revolution
             </span>
-            <div className="flex flex-col font-roboto font-normal text-sm sm:text-[11px] lg:text-sm xl:text-xl mac:text-[23px] text-white max-w-[240px] sm:max-w-[136px] lg:max-w-[220px] xl:max-w-[394px] mac:max-w-[443px] 2xl:max-w-[590px] gap-4 md:gap-[22px] lg:gap-4 sm:mt-6 lg:mt-9">
+            <div className="flex flex-col font-thin text-sm sm:text-[11px] lg:text-sm xl:text-xl mac:text-[23px] text-white max-w-[240px] sm:max-w-[136px] lg:max-w-[220px] xl:max-w-[394px] mac:max-w-[443px] 2xl:max-w-[590px] gap-4 md:gap-[22px] lg:gap-4 sm:mt-6 lg:mt-9">
               Earn, Govern and Own your data. Earn upto $400/mo with your data.
               <a
                 href="#"

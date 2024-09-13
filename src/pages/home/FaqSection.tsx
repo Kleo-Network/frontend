@@ -82,7 +82,7 @@ export const FaqSection = () => {
 
                   {/* Answer */}
                   {openIndex === index && (
-                    <div className="font-roboto font-normal text-[11px] md:text-sm text-black lg:text-base 2xl:text-lg">
+                    <div className="font-normal text-[11px] md:text-sm text-black lg:text-base 2xl:text-lg">
                       {faq.answer}
                     </div>
                   )}

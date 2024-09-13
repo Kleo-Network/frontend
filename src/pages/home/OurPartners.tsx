@@ -11,7 +11,7 @@ export const OurPartnersSection = () => {
             <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[38px] mac:text-[46px] 2xl:text-[58px]">
               Our Partners
             </div>
-            <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+            <div className="font-normal text-[11px] md:text-sm lg:text-base 2xl:text-md">
               We have partnered with industry leaders to help us build and scale
               this solution. Notable partners are mentioned here.
             </div>

@@ -17,7 +17,7 @@ export const FooterSection = () => {
             {/* Company Logo and Text */}
             <div className="flex flex-col w-full gap-2 lg:gap-4 items-start xl:items-center xl:gap-3 2xl:gap-4">
               <FooterKleoLogo className="h-8 xl:h-10 mac:h-[45px] 2xl:h-[60px] w-auto" />
-              <div className="font-roboto font-normal text-base mac:text-[18px] 2xl:text-[24px]">
+              <div className="font-light text-base mac:text-[18px] 2xl:text-[24px]">
                 Kleo Network is a user owned data DAO.
               </div>
             </div>
@@ -27,7 +27,7 @@ export const FooterSection = () => {
               {/* Phone Number Pill */}
               <div className="flex items-center px-3 xl:px-4 2xl:px-6 py-[6px] xl:py-3 mac:px-[18px] 2xl:py-4 bg-gray-blue-200 gap-2 leading-[34px] w-max rounded-s-full rounded-e-full">
                 <PhoneIcon className="size-[14px] xl:size-[12px] mac:size-[14px] 2xl:size-[18px]" />
-                <div className="font-roboto font-medium text-sm xl:text-[12px] mac:text-sm 2xl:text-base">
+                <div className="font-normal text-sm xl:text-[12px] mac:text-sm 2xl:text-base">
                   91 8369683781
                 </div>
               </div>
@@ -35,14 +35,14 @@ export const FooterSection = () => {
               {/* Email Pill */}
               <div className="flex items-center px-3 xl:px-4 py-[6px] xl:py-3 mac:px-[18px] 2xl:py-4 2xl:px-6 bg-gray-blue-200 gap-2 leading-[34px] w-max rounded-s-full rounded-e-full">
                 <EmailIcon className="h-18 xl:h-[11px] mac:h-[13px] 2xl:h-[17px]" />
-                <div className="font-roboto font-medium text-sm xl:text-[12px] mac:text-sm 2xl:text-base">
+                <div className="font-normal text-sm xl:text-[12px] mac:text-sm 2xl:text-base">
                   contact@kleo.network
                 </div>
               </div>
             </div>
 
             {/* Navigation Links */}
-            <div className="flex flex-col xl:flex-row items-start xl:justify-between w-full gap-2 font-roboto font-normal text-sm md:text-base 2xl:text-[18px] leading-[1.3] xl:mt-[28px] xl:pb-[16px] mac:mt-[33px] mac:pb-[18px] 2xl:mt-[44px] 2xl:pb-[24px]">
+            <div className="flex flex-col xl:flex-row items-start xl:justify-between w-full gap-2 font-light text-sm md:text-base 2xl:text-[18px] leading-[1.3] xl:mt-[28px] xl:pb-[16px] mac:mt-[33px] mac:pb-[18px] 2xl:mt-[44px] 2xl:pb-[24px]">
               <a href="/" className="hover:font-semibold">
                 Home
               </a>
@@ -105,7 +105,7 @@ export const FooterSection = () => {
               <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[38px] mac:text-[44px]">
                 Still have questions?
               </div>
-              <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base mac:text-sm">
+              <div className="font-normal text-[11px] md:text-sm lg:text-base mac:text-sm">
                 Can't find the answer you're looking for? Please chat to our
                 friendly team. We will do our best to assist you with the
                 questions.
