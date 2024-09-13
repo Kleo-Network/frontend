@@ -30,11 +30,11 @@ const Navbar = ({ avatar }: NavbarProps) => {
           <h3 className="font-bold text-xl">KLEO NETWORK</h3>
         </a>
         <div className="flex items-center gap-1 ml-8">
-          <button className="px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-100">
-            <a href="/degen">about</a>
-          </button>
           <button className="px-3 py-2 hover:bg-purple-100 rounded-md font-medium text-base">
-            <a href="https://docs.kleo.network/" target="_blank">docs</a>
+            <a href="https://docs.kleo.network/" target="_blank">Documentation</a>
+          </button>
+          <button className="px-3 py-2 text-gray-700 rounded-md font-medium text-base hover:bg-purple-100">
+            <a href="/degen">About</a>
           </button>
         </div>
         {/* <!-- Hamburger button for mobile view --> */}
@@ -66,7 +66,7 @@ const Navbar = ({ avatar }: NavbarProps) => {
             href="https://www.app.kleo.network"
             className="flex items-center justify-center px-4 py-3 border rounded-lg text-white border-primary bg-primary shadow-sm"
           >
-            <div className="text3">Launch</div>
+            <div className="text3">Login/SignUp </div>
           </a>
         </div>
       </div>

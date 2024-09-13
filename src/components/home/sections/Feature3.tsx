@@ -12,7 +12,7 @@ export function Feature3() {
                   </div>
                 </div>
                 <div className="text-gray-900 text-center lg:text-left text-4xl sm:text-5xl md:text-6xl font-semibold">
-                  Coming Soon!
+                Kleo SDK (Coming Soon)
                 </div>
               </div>
               <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">

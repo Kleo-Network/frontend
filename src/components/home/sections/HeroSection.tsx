@@ -36,7 +36,7 @@ export function HeroSection() {
         })`
       }}
     >
-      <div className="background-pattern">
+      <div className="background-pattern bg-[z] ">
         <div className="mask">
           <div className="background-mask"></div>
         </div>
@@ -53,26 +53,31 @@ export function HeroSection() {
           <div className="flex flex-col justify-center items-start gap-12">
             <div className="flex flex-col items-start gap-6 self-stretch relative">
               <div className="flex flex-col items-start gap-6 relative self-stretch text-gray-800 font-inter text-5xl font-normal md:text-7xl">
-                <div className="flex flex-col self-end gap-1 absolute -translate-x-[200%] -translate-y-[200%]">
+                <div className="flex flex-col self-end gap-1 absolute -translate-x-[50%] -translate-y-[250%]">
                   <div className="px-2 py-1 bg-green-600 rounded-sm shadow-sm text-sm text-white font-medium">
-                    <span>Identity</span>
+                    <span>AI</span>
                   </div>
                   <GreenArrow className="h-7 w-7 fill-green-600 absolute -translate-x-full translate-y-full " />
                 </div>
                 <div className="flex flex-col justify-center items-start">
-                  <div className="flex items-start gap-[-17px]">
+                  <div className="flex items-start gap-[-17px] mb-2 font-medium max-sm:text-3xl">
                     <span>
-                      Your <span className="text-primary font-bold">Data</span>
+                      Worried About{' '}
+                      <span className="text-primary font-bold">AI</span>
                     </span>
                     <TickIcon className="w-6 h-6 md:w-11 md:h-12" />
                   </div>
-                  <p>
-                    Your <span className="text-primary font-bold">Story</span>
+                  <p className="font-medium">
+                    Taking Your{' '}
+                    <span className="text-primary font-bold">JOB?</span>
                   </p>
                 </div>
                 <div>
-                  <div className="text-xl font-inter md:text-xl">
-                    worried about AI taking your job? have a stake instead!
+                  <div className="text-xl ml-3 font-inter md:text-xl ">
+                    <span className="text-[#6d2de3] font-bold text-4xl">
+                      {' '}
+                      Have a Stake Instead!
+                    </span>
                   </div>
                   <LineIcon className="h-2 w-36 md:h-4 md:w-64 float-right" />
                 </div>
@@ -83,17 +88,19 @@ export function HeroSection() {
                   <span>Connect</span>
                 </div>
               </div>
-              
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">
               <a
-                href="https://app.kleo.network/signup"
+                // href="https://app.kleo.network/signup"
+                href="https://chromewebstore.google.com/detail/kleo-connect/jimpblheogbjfgajkccdoehjfadmimoo?hl=en"
                 className="flex items-center justify-center px-4 py-4 border rounded-lg text-white border-primary bg-primary shadow-sm text-medium"
               >
-                <div className="text-xl">Launch Kleo Connect</div>
+                <div className="text-xl font-medium">
+                  Install Kleo Extension
+                </div>
               </a>
-              <div className="flex items-center justify-center px-4 py-4 border rounded-lg border-gray-300 bg-white shadow-sm text-medium">
+              {/* <div className="flex items-center justify-center px-4 py-4 border rounded-lg border-gray-300 bg-white shadow-sm text-medium">
                 <div className="text-gray-700">
                   <a
                     className="text-xl"
@@ -103,7 +110,7 @@ export function HeroSection() {
                     Install Kleo Plugin
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

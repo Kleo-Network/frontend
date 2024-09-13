@@ -27,7 +27,7 @@
     "react-dom": "^18.2.0",
     "react-lottie": "^1.2.3",
     "react-spring": "^9.7.2",
-    "react-svg-timeline": "^0.24.2",
+    "react-svg-timeline": "^0.1.1",
     "recharts": "^2.8.0",
     "tw-elements": "^1.1.0",
     "web3": "^4.2.2"
