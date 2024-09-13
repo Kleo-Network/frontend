@@ -48,7 +48,7 @@ export const HowKleoWorksSection = () => {
               {/* Icon */}
               <Govern className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px]"></Govern>
               {/* Text */}
-              <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
+              <div className="selection:bg-white selection:text-primary-600 flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   You Govern Your Data
                 </div>
