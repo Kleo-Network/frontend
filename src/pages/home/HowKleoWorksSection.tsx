@@ -1,6 +1,6 @@
-import { ReactComponent as RemovePII } from '../../assets/images/home/howKleoWorks/removePII.svg'
 import { ReactComponent as Govern } from '../../assets/images/home/howKleoWorks/govern.svg'
 import { ReactComponent as Own } from '../../assets/images/home/howKleoWorks/own.svg'
+import { ReactComponent as RemovePII } from '../../assets/images/home/howKleoWorks/removePII.svg'
 
 export const HowKleoWorksSection = () => {
   return (
@@ -29,7 +29,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Confidential
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Kleo removes all the personally identifiable information. This
                   includes, names, emails, usernames, addresses, specific
                   locations and{' '}
@@ -52,7 +52,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   You Govern Your Data
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Decentralised smart contracts ensure that your data can only
                   be accessed if it passes majority{' '}
                   <a
@@ -74,7 +74,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Ownership
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Fair Equity Ownership. <br />
                   Proof of contribution based on quantity and quality of your
                   data determines your reward. Earn upto $400/month.
