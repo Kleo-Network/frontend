@@ -23,7 +23,7 @@ export function Feature2() {
                   </div>
                 </div>
                 <div className="text-slate-600 text-center lg:text-left text-base sm:text-lg md:text-2xl font-normal">
-                 <img src={image2} />
+                  <img src={image2} />
                 </div>
               </div>
             </div>
