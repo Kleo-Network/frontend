@@ -19,7 +19,7 @@ export const Footer = () => {
               </div>
               <div className="self-stretch text-center text-purple-200 text-base font-normal leading-normal">
                 CHATURBOTS AI PRIVATE LIMITED <br />
-                Phone: 918369683781, Email: vaibhavblogger@gmail.com <br/> 
+                Phone: 918369683781, Email: vaibhavblogger@gmail.com <br />
                 B-71, Alpine Heights, Opp Sakar-3, Income Tax Char Rasta,
                 Navrangpura AHMEDABAD Ahmedabad GJ 380009 IN
               </div>
