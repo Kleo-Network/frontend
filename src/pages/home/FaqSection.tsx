@@ -21,7 +21,7 @@ const faqs = [
   {
     question: 'How frequently are users awarded Kleo Points?',
     answer:
-      'Users are awarded Kleo Points every 15 days, these can be claimed anytime user wants. We intend to start distributing rewards from End of Ocotober' 2024.'
+      'Users are awarded Kleo Points every 15 days, these can be claimed anytime user wants. We intend to start distributing rewards from End of Ocotober 2024.'
   },
   {
     question: 'Is KLEO a paid service, or is there a free version available?',
