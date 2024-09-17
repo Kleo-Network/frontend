@@ -6,32 +6,27 @@ const faqs = [
   {
     question: 'Does KLEO collect and store my browsing history?',
     answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
+      'No, Kleo encrypts and stores your browsing history on Decentralised Storage. Our Smart Contracts ensure that only the DAO proposed scripts or you can access your data. '
   },
   {
-    question: 'Are you sending my browsing history to an external API?',
+    question: 'What is Kleo DATA DAO? How can I participate?',
     answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
+      'Kleo DATA DAO is a community driven collective which decides how user owned data is to be utlised. The aim is to drive benefits for the community. Install Extension, Join our discord, and check out Snapshot Voting Processes.'
   },
   {
-    question: 'What kind of cards can I expect to receive from KLEO?',
+    question: 'What is Proof Of Contribution Algorithm?',
     answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
+      'Kleo has an algorithm known as Proof of Contribution which decides the value of an individual user data to the entire DATA DAO. This algorithm is how our users are awarded!'
   },
   {
-    question: 'Is KLEO compatible with all web browsers?',
+    question: 'How frequently are users awarded Kleo Points?',
     answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
-  },
-  {
-    question: 'Can I customize the insights I receive from KLEO?',
-    answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
+      'Users are awarded Kleo Points every 15 days, these can be claimed anytime user wants. We intend to start distributing rewards from End of Ocotober' 2024.'
   },
   {
     question: 'Is KLEO a paid service, or is there a free version available?',
     answer:
-      'No, Kleo encrypts and stores your browsing history. Only you have access to this data and the governance body from the snapshot voting process.'
+      'Kleo is free to use for our users who want to protect their privacy and do not want it to be used as part of DATA DAO. It is user owned data. '
   }
 ]
 
