@@ -25,12 +25,12 @@ export const FooterSection = () => {
             {/* Contact Number and Email */}
             <div className="flex flex-col w-full gap-4 xl:flex-row xl:gap-[20px] xl:justify-center">
               {/* Phone Number Pill */}
-              <div className="flex items-center px-3 xl:px-4 2xl:px-6 py-[6px] xl:py-3 mac:px-[18px] 2xl:py-4 bg-gray-blue-200 gap-2 leading-[34px] w-max rounded-s-full rounded-e-full">
+              {/* <div className="flex items-center px-3 xl:px-4 2xl:px-6 py-[6px] xl:py-3 mac:px-[18px] 2xl:py-4 bg-gray-blue-200 gap-2 leading-[34px] w-max rounded-s-full rounded-e-full">
                 <PhoneIcon className="size-[14px] xl:size-[12px] mac:size-[14px] 2xl:size-[18px]" />
                 <div className="font-roboto font-medium text-sm xl:text-[12px] mac:text-sm 2xl:text-base">
-                  91 8369683781
+                  
                 </div>
-              </div>
+              </div> */}
 
               {/* Email Pill */}
               <div className="flex items-center px-3 xl:px-4 py-[6px] xl:py-3 mac:px-[18px] 2xl:py-4 2xl:px-6 bg-gray-blue-200 gap-2 leading-[34px] w-max rounded-s-full rounded-e-full">
@@ -46,11 +46,13 @@ export const FooterSection = () => {
               <a href="/" className="hover:font-semibold">
                 Home
               </a>
-              <a href="#" className="hover:font-semibold">
-                Team
-              </a>
-              <a href="#" className="hover:font-semibold">
-                Fundraising Memo
+
+              <a
+                href="https://docsend.com/view/7rrstxhqid62n66v"
+                className="hover:font-semibold"
+                target="_blank"
+              >
+                PitchDeck
               </a>
               <a
                 href="https://github.com/Kleo-Network"
@@ -66,9 +68,7 @@ export const FooterSection = () => {
               >
                 Documentation
               </a>
-              <a href="#" className="hover:font-semibold">
-                Legal
-              </a>
+
               <a
                 href="mailto:contact@kleo.network"
                 className="hover:font-semibold"
@@ -80,14 +80,14 @@ export const FooterSection = () => {
 
             {/* Social Media Links */}
             <div className="flex items-center justify-between gap-6 w-132 xl:absolute xl:bottom-3 mac:bottom-[14px] 2xl:bottom-[18px] xl:right-0">
-              <a href="#" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/kleonetwork/"
+                target="_blank"
+              >
                 <LinkedIn className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
-              <a href="#" target="_blank">
-                <Instagram className="size-[28px] hover:text-primary-700 cursor-pointer" />
-              </a>
-              <a href="#" target="_blank">
-                <FaceBook className="size-[28px] hover:text-primary-700 cursor-pointer" />
+              <a href="https://discord.gg/duvjD6yvzf" target="_blank">
+                <Discord className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
             </div>
 
