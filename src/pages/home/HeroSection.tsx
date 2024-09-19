@@ -26,7 +26,7 @@ export const HeroSection = () => {
             <div className="flex flex-col font-roboto font-normal text-sm sm:text-[11px] lg:text-sm xl:text-xl mac:text-[23px] text-white max-w-[240px] sm:max-w-[136px] lg:max-w-[220px] xl:max-w-[394px] mac:max-w-[443px] 2xl:max-w-[590px] gap-4 md:gap-[22px] lg:gap-4 sm:mt-6 lg:mt-9">
               Earn, Govern and Own your data. Earn upto $400/mo with your data.
               <a
-                href="#"
+                href="https://app.kleo.network"
                 className="py-2 px-7 sm:px-[14px] sm:py-2 lg:px-4 lg:py-[10px] xl:py-[18px] xl:px-8 mac:py-[20px] mac:px-9 text-white font-medium w-max font-inter text-sm xl:text-xl mac:text-[23px] 2xl:text-[30px] rounded-[4px] xl:rounded-[6px] bg-primary-500 hover:bg-primary-700"
               >
                 Create Account
