@@ -83,7 +83,6 @@ export function HeroSection() {
                   <span>Connect</span>
                 </div>
               </div>
-              
             </div>
 
             <div className="flex flex-col md:flex-row items-center self-stretch text-center gap-3">

@@ -1,6 +1,6 @@
-import { ReactComponent as RemovePII } from '../../assets/images/home/howKleoWorks/removePII.svg'
 import { ReactComponent as Govern } from '../../assets/images/home/howKleoWorks/govern.svg'
 import { ReactComponent as Own } from '../../assets/images/home/howKleoWorks/own.svg'
+import { ReactComponent as RemovePII } from '../../assets/images/home/howKleoWorks/removePII.svg'
 
 export const HowKleoWorksSection = () => {
   return (
@@ -29,7 +29,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Confidential
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Kleo removes all the personally identifiable information. This
                   includes, names, emails, usernames, addresses, specific
                   locations and{' '}
@@ -48,11 +48,11 @@ export const HowKleoWorksSection = () => {
               {/* Icon */}
               <Govern className="w-20 h-20 xl:w-[94px] xl:h-[94px] mac:w-[105px] mac:h-[105px] 2xl:w-[140px] 2xl:h-[140px] rounded-[4px] md:rounded-lg mac:rounded-[10px] 2xl:rounded-[14px]"></Govern>
               {/* Text */}
-              <div className="flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
+              <div className="selection:bg-white selection:text-primary-600 flex flex-col justify-start items-start gap-2 lg:gap-4 xl:gap-[12px] mac:gap-[14px] 2xl:gap-4">
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   You Govern Your Data
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Decentralised smart contracts ensure that your data can only
                   be accessed if it passes majority{' '}
                   <a
@@ -74,7 +74,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-semibold text-lg md:text-2xl 2xl:text-[32px]">
                   Ownership
                 </div>
-                <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
+                <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Fair Equity Ownership. <br />
                   Proof of contribution based on quantity and quality of your
                   data determines your reward. Earn upto $400/month.
