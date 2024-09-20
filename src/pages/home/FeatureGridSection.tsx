@@ -12,7 +12,7 @@ export const FeatureGridSection = () => {
             {/* Image */}
             <GridFirstImage className="w-full lg:w-1/2 h-auto rounded-lg sm:rounded-[16px] md:rounded-[18px] lg:rounded-[16px] mac:rounded-[18px] 2xl:rounded-[24px] lg:min-h-[456px] mac:min-h-[560px] 2xl:min-h-[746px]" />
             {/* Text */}
-            <div className="flex flex-col gap-1 md:gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px]">
+            <div className="flex flex-col gap-1 md:gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px] m-auto">
               <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                 Own A Stake For Your Data
               </div>
@@ -32,7 +32,7 @@ export const FeatureGridSection = () => {
             {/* Image */}
             <GridSecondImage className="w-full lg:w-1/2 h-auto rounded-lg lg:min-h-[456px] mac:min-h-[560px] 2xl:min-h-[746px]" />
             {/* Text */}
-            <div className="flex flex-col gap-1 md:gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px]">
+            <div className="flex flex-col gap-1 md:gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px] m-auto">
               <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                 Proof of Contribution
               </div>
@@ -55,7 +55,7 @@ export const FeatureGridSection = () => {
             {/* Image */}
             <GridThirdImage className="w-full lg:w-1/2 h-auto rounded-lg lg:min-h-[456px] mac:min-h-[560px] 2xl:min-h-[746px]" />
             {/* Text */}
-            <div className="flex flex-col gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px]">
+            <div className="flex flex-col gap-4 items-start w-full lg:w-1/2 xl:max-w-[395px] m-auto">
               <div className="flex flex-col gap-1 md:gap-4 items-start w-full">
                 <div className="font-semibold text-2xl md:text-[32px] xl:text-[42px] xl:leading-tight mac:text-[48px] 2xl:text-[58px]">
                   Kleo SDK
