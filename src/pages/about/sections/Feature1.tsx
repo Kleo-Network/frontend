@@ -4,10 +4,8 @@ import image1 from '../../../assets/images/graph.svg'
 import { GraphBrowsingHistory } from '../../../components/mocks/LandingPage'
 
 export function Feature1() {
-  console.log('GraphBrowsingHistory', GraphBrowsingHistory)
-
   return (
-    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] lg:sticky lg:top-0">
+    <div className="flex-col justify-start items-center gap-2.5 flex self-stretch md:min-h-[100vh] lg:sticky lg:top-10">
       <div className="self-stretch bg-white justify-start items-stretch gap-6 flex flex-col lg:flex-row">
         <div className="self-stretch flex-1 mx-6 lg:mx-24 py-6 basis-2/5 flex-col justify-center items-center lg:items-start gap-8 flex">
           <div className="self-stretch flex-col justify-center items-center lg:items-start gap-8 flex">
