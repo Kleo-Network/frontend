@@ -30,15 +30,15 @@ export const HowKleoWorksSection = () => {
                   Confidential
                 </div>
                 <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-                  Kleo removes all the personally identifiable information. This
-                  includes, names, emails, usernames, addresses, specific
-                  locations and{' '}
+                  We prioritize your privacy. Kleo removes all personally
+                  identifiable information, including names, emails, usernames,
+                  addresses, specific locations, and
                   <a
                     href="https://docs.kleo.network/kleo_network/pii/"
                     target="_blank"
                     className="underline"
                   >
-                    more
+                    more.
                   </a>
                 </div>
               </div>
@@ -53,8 +53,8 @@ export const HowKleoWorksSection = () => {
                   You Govern Your Data
                 </div>
                 <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-                  Decentralised smart contracts ensure that your data can only
-                  be accessed if it passes majority{' '}
+                  Through decentralized smart contracts, your data can only be
+                  accessed if approved by a majority
                   <a
                     href="https://snapshot.org/#/kleo-network.eth/"
                     target="_blank"
@@ -76,8 +76,8 @@ export const HowKleoWorksSection = () => {
                 </div>
                 <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Fair Equity Ownership. <br />
-                  Proof of contribution based on quantity and quality of your
-                  data determines your reward. Earn upto $400/month.
+                  Your rewards are determined by the quantity and quality of
+                  your data contributions. Earn upto $400/month!
                 </div>
               </div>
             </div>

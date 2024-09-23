@@ -12,8 +12,8 @@ export const OurPartnersSection = () => {
               Our Partners
             </div>
             <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-              We have partnered with industry leaders to help us build and scale
-              this solution. Notable partners are mentioned here.
+              We've collaborated with industry leaders to build and scale our
+              solution. Notable partners include.
             </div>
           </div>
 

@@ -17,12 +17,11 @@ export const FeatureGridSection = () => {
                 Own A Stake For Your Data
               </div>
               <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
-                Every individual generates a massive amounts of data. These
-                workflows are extremely important LLMs and AI models.Right now
-                centralised entities are building billion dollar IPs without you
-                getting anythin in return. <br /> <br />
-                Its' high time ownership of your data returns back to you as an
-                user.
+                Every individual generates a massive amount of data essential
+                for LLMs and AI models. Currently, centralized entities build
+                billion-dollar IPs without you receiving anything in return.{' '}
+                <br /> <br />
+                <b>It's time to reclaim ownership of your data as a user.</b>
               </p>
             </div>
           </div>
@@ -37,15 +36,16 @@ export const FeatureGridSection = () => {
                 Proof of Contribution
               </div>
               <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
-                Based on intelligence and complexity of your actions inside the
-                browser, kleo will reward kleo XP points. Kleo will be
-                transparent about the activity that helps you get the maximum
-                kleo points but the exact algorithm will be closed source to
-                ensure there is no farming.
+                Earn Kleo XP points based on the intelligence and complexity of
+                your actions within the browser. While we're transparent about
+                activities that maximize your Kleo points, the exact algorithm
+                remains proprietary to prevent farming.
                 <br />
                 <br />
-                Just do what you do and earn rewards on the basis of the
-                activity.
+                <b>
+                  Continue your usual activities and earn rewards based on your
+                  engagement.
+                </b>
               </p>
             </div>
           </div>
@@ -61,9 +61,9 @@ export const FeatureGridSection = () => {
                   Kleo SDK
                 </div>
                 <p className="font-roboto font-normal text-[11px] md:text-sm mac:text-base 2xl:text-lg">
-                  We want your users to earn from your extension! Be a part of
-                  Kleo Data DAO.If you are a crypto wallet and want to have this
-                  feature enabled, please reach out to us on Discord.
+                  We want your users to earn from your extension! Join the Kleo
+                  Data DAO. If you're a crypto wallet and want this feature
+                  enabled, please reach out to us on Discord.
                 </p>
               </div>
               <a
