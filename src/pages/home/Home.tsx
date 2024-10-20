@@ -33,7 +33,7 @@ export const HomeComponent = () => {
     >
       <HeroSection />
 
-      <div className="flex justify-center relative -top-[50px] lg:-top-[150px] xl:-top-[80px] mac:-top-[90px] 2xl:-top-[110px] mb-[60px]">
+      <div className="flex justify-center relative -top-[50px] lg:-top-[150px] xl:-top-[80px] mac:-top-[90px] 2xl:-top-[110px] mb-[60px] pointer-events-none">
         <DashboardImage
           className="max-w-4xl w-[60%] h-auto z-50 2xl:w-[60%] 2xl:max-w-5xl"
           style={{
