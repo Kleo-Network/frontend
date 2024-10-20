@@ -101,8 +101,7 @@ export const HeroSection = () => {
             </span>
             <div className="flex flex-col text-sm sm:text-[11px] lg:text-sm xl:text-xl mac:text-[23px] text-white max-w-[240px] sm:max-w-[136px] lg:max-w-[220px] xl:max-w-[394px] mac:max-w-[443px] 2xl:max-w-[590px] gap-4 md:gap-[22px] lg:gap-4 md:mt-[6px] lg:mt-2">
               <div className="xl:leading-[47.6px] font-nokora font-light">
-                Earn, Govern and Own your data.<br></br>
-                Earn upto $400/mo with your data.
+                Earn, Govern and Own your data.
               </div>
               <a
                 href="https://app.kleo.network"
