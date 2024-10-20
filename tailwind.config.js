@@ -15,7 +15,8 @@ module.exports = {
         inter: ['inter', 'sans-serif'],
         shoreline: ['shoreline', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'], // Adds Montserrat as the default sans-serif font
-        roboto: ['Roboto', 'sans-serif']
+        roboto: ['Roboto', 'sans-serif'],
+        nokora: ['Nokora', 'sans-serif']
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
