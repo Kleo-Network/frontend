@@ -67,7 +67,7 @@ export const FeatureGridSection = () => {
                 </p>
               </div>
               <a
-                href="https://discord.gg/duvjD6yvzf"
+                href="https://discord.gg/Qn6ZmecTEw"
                 className="font-medium text-sm text-white bg-primary-500 hover:bg-primary-600 px-[14px] py-[8px] rounded-[4px]"
                 target="_blank"
               >

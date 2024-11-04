@@ -62,7 +62,7 @@ const Navbar = () => {
         </a>
         <a
           className="hover:underline hover:underline-offset-4 pointer-events-auto"
-          href="https://discord.gg/duvjD6yvzf"
+          href="https://discord.gg/Qn6ZmecTEw"
           target="_blank"
         >
           Discord ↗
@@ -106,7 +106,7 @@ const Navbar = () => {
         </a>
         <a
           className="block hover:underline pointer-events-auto"
-          href="https://discord.gg/duvjD6yvzf"
+          href="https://discord.gg/Qn6ZmecTEw"
           target="_blank"
         >
           Discord ↗

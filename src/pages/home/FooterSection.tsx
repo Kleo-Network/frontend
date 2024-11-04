@@ -86,7 +86,7 @@ export const FooterSection = () => {
               >
                 <LinkedIn className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
-              <a href="https://discord.gg/duvjD6yvzf" target="_blank">
+              <a href="https://discord.gg/Qn6ZmecTEw" target="_blank">
                 <Discord className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
             </div>
