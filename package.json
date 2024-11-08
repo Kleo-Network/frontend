@@ -30,7 +30,8 @@
     "react-svg-timeline": "^0.24.2",
     "recharts": "^2.8.0",
     "tw-elements": "^1.1.0",
-    "web3": "^4.2.2"
+    "web3": "^4.2.2",
+    "lucide-react": "^0.454.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",
