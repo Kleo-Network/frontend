@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from './Carousel'
 import { StatsCards } from './StatsCards'
+import { Tabs } from './Tabs'
 
 const Memo: React.FC = () => {
   return (
@@ -15,6 +16,9 @@ const Memo: React.FC = () => {
             <StatsCards />
           </div>
         </div>
+
+        {/* Tabs */}
+        <Tabs />
       </div>
     </div>
   )

@@ -30,7 +30,7 @@ const Memo: React.FC = () => {
       data-carousel="static"
     >
       {/* Carousel wrapper */}
-      <div className="relative h-[300px] object-contain rounded-lg md:h-[500px] py-12">
+      <div className="relative h-[300px] overflow-hidden object-fill rounded-lg md:h-[500px] py-12">
         {images.map((image, index) => (
           <div
             key={index}
