@@ -4,6 +4,7 @@ import { UserContext } from './components/common/contexts/UserContext'
 import Navbar from './shared/navbar/Navbar'
 import { HomeComponent } from './pages/home/Home'
 import { About } from './pages/about'
+import Memo from './pages/memo'
 
 function App(): ReactElement {
   const [user, setUser] = useState({
@@ -26,6 +27,7 @@ function App(): ReactElement {
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
+          <Route path="/memo" element={<Memo />} />
           {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
