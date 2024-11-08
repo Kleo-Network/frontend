@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import GitcoinImage from '../../assets/images/gitcoin.webp'
-import PolygonImage from '../../assets/images/polygon.png'
-import Content4Image from '../../assets/images/content4.png'
+import Image1 from '../../assets/images/memo/image1.svg'
+import Image2 from '../../assets/images/memo/image2.svg'
 
-const images = [GitcoinImage, PolygonImage, Content4Image]
+const images = [Image1, Image2]
 
 const Memo: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -31,7 +30,7 @@ const Memo: React.FC = () => {
       data-carousel="static"
     >
       {/* Carousel wrapper */}
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <div className="relative h-[300px] object-contain rounded-lg md:h-[500px] py-12">
         {images.map((image, index) => (
           <div
             key={index}
