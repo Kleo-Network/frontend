@@ -12,7 +12,7 @@ const Memo: React.FC = () => {
           <div className="w-full">
             <Carousel />
           </div>
-          <div className="w-full">
+          <div className="w-full xl:pt-7 2xl:pt-8">
             <StatsCards />
           </div>
         </div>
