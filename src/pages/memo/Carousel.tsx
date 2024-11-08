@@ -34,7 +34,7 @@ const Memo: React.FC = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+            className={`absolute inset-8 lg:inset-36 xl:inset-8 2xl:inset-40 transition-all duration-700 ease-in-out ${
               index === currentIndex ? 'block' : 'hidden'
             }`}
             data-carousel-item={index === currentIndex ? 'active' : undefined}

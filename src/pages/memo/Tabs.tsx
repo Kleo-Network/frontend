@@ -19,7 +19,7 @@ export const Tabs = () => {
   }
 
   return (
-    <div className="my-6">
+    <div className="my-5">
       {/* Mobile Select Dropdown for Tabs */}
       <div className="sm:hidden">
         <label htmlFor="tabs" className="sr-only">
