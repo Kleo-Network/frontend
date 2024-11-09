@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image1 from '../../assets/images/memo/image1.svg'
-import Image2 from '../../assets/images/memo/image2.svg'
+import Image2 from '../../assets/images/memo/Image2.svg'
 
 const images = [Image1, Image2]
 
