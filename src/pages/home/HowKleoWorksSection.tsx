@@ -32,7 +32,7 @@ export const HowKleoWorksSection = () => {
                 <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   We prioritize your privacy. Kleo removes all personally
                   identifiable information, including names, emails, usernames,
-                  addresses, specific locations, and
+                  addresses, specific locations, and{' '}
                   <a
                     href="https://docs.kleo.network/kleo_network/pii/"
                     target="_blank"
@@ -54,7 +54,7 @@ export const HowKleoWorksSection = () => {
                 </div>
                 <div className="font-inter font-light text-[11px] md:text-sm lg:text-base 2xl:text-lg">
                   Through decentralized smart contracts, your data can only be
-                  accessed if approved by a majority
+                  accessed if approved by a majority{' '}
                   <a
                     href="https://snapshot.org/#/kleo-network.eth/"
                     target="_blank"
