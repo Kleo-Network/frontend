@@ -21,6 +21,7 @@
     "classnames": "^2.3.2",
     "d3": "^7.8.5",
     "ethers": "^6.8.1",
+    "lucide-react": "^0.454.0",
     "near-api-js": "^2.1.4",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.1",
@@ -30,8 +31,7 @@
     "react-svg-timeline": "^0.24.2",
     "recharts": "^2.8.0",
     "tw-elements": "^1.1.0",
-    "web3": "^4.2.2",
-    "lucide-react": "^0.454.0"
+    "web3": "^4.2.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.3",

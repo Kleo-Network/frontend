@@ -13,7 +13,7 @@ export const StatsCards = () => {
             <ArrowDownToLine className="w-16 h-16" />
           </div>
           <div className="flex flex-col justify-center items-start">
-            <h1 className="text-4xl font-bold">3450</h1>
+            <h1 className="text-4xl font-bold">20,000</h1>
             <h3 className="text-lg font-normal">Downloads</h3>
           </div>
         </div>
@@ -31,7 +31,7 @@ export const StatsCards = () => {
             <Users className="w-16 h-16 text-grayblue-600" />
           </div>
           <div className="flex flex-col justify-center items-start">
-            <h1 className="text-4xl font-bold">100000</h1>
+            <h1 className="text-4xl font-bold">18000</h1>
             <h3 className="text-lg font-normal">Active Users</h3>
           </div>
         </div>
@@ -43,7 +43,7 @@ export const StatsCards = () => {
           <ArrowRightLeft className="w-16 h-16" />
         </div>
         <div className="flex flex-col justify-center items-start">
-          <h1 className="text-4xl font-bold">55000000</h1>
+          <h1 className="text-4xl font-bold">1500</h1>
           <h3 className="text-lg font-normal">On Chain Transactions</h3>
         </div>
       </div>

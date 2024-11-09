@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
-
+import KleoNewsfeed from './Update'
+import About from './About'
+import Team from './Team'
+import Funding from './Funding'
 export const Tabs = () => {
   const [activeTab, setActiveTab] = useState('Profile')
 
   const renderContent = () => {
     switch (activeTab) {
       case 'Profile':
-        return <p>This is the Profile content.</p>
+        return <KleoNewsfeed />
       case 'Dashboard':
-        return <p>This is the Dashboard content.</p>
+        return <About />
       case 'Settings':
-        return <p>This is the Settings content.</p>
+        return <Team />
       case 'Invoice':
-        return <p>This is the Invoice content.</p>
+        return <Funding />
       default:
         return null
     }
@@ -48,7 +51,7 @@ export const Tabs = () => {
               activeTab === 'Profile' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 rounded-s-lg hover:bg-grayblue-300`}
           >
-            Profile
+            Updates
           </a>
         </li>
         <li className="w-full focus-within:z-10">
@@ -59,7 +62,7 @@ export const Tabs = () => {
               activeTab === 'Dashboard' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 hover:bg-grayblue-300`}
           >
-            Dashboard
+            About
           </a>
         </li>
         <li className="w-full focus-within:z-10">
@@ -70,7 +73,7 @@ export const Tabs = () => {
               activeTab === 'Settings' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 hover:bg-grayblue-300`}
           >
-            Settings
+            Team
           </a>
         </li>
         <li className="w-full focus-within:z-10">
@@ -81,7 +84,7 @@ export const Tabs = () => {
               activeTab === 'Invoice' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 rounded-e-lg hover:bg-grayblue-300`}
           >
-            Invoice
+            Treasury
           </a>
         </li>
       </ul>
