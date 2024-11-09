@@ -47,6 +47,14 @@ const Navbar = () => {
           Home
         </a>
         <a
+          className={`hover:underline hover:underline-offset-4 pointer-events-auto ${
+            pathname === '/memo' ? 'font-bold' : ''
+          }`}
+          href="/memo"
+        >
+          Memo
+        </a>
+        <a
           className="hover:underline hover:underline-offset-4 pointer-events-auto"
           href="https://docs.kleo.network/"
           target="_blank"

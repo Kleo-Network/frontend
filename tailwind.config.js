@@ -34,9 +34,18 @@ module.exports = {
       },
       colors: {
         overlay: 'rgba(52, 64, 84, 0.7)',
-        'gray-blue': {
-          100: '#EAECF5',
-          200: '#D5D9EB'
+        grayblue: {
+          25: '#FCFCFD', // AA 6.07
+          50: '#F8F9FC', // AA 5.91
+          100: '#EAECF5', // AA 5.29
+          200: '#D5D9EB', // AA 4.43
+          300: '#B3B8DB', // AA 1.94
+          400: '#717BBC', // AA 4.01
+          500: '#4E5BA6', // AA 6.24
+          600: '#3E4784', // AA 8.59
+          700: '#363F72', // AAA 9.99
+          800: '#293056', // AAA 12.72
+          900: '#101323' // AAA 18.43
         },
         primary: {
           25: '#FCFAFF',
