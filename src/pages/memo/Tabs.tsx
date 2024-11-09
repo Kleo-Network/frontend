@@ -4,17 +4,17 @@ import About from './About'
 import Team from './Team'
 import Funding from './Funding'
 export const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('Profile')
+  const [activeTab, setActiveTab] = useState('Updates')
 
   const renderContent = () => {
     switch (activeTab) {
-      case 'Profile':
+      case 'Updates':
         return <KleoNewsfeed />
-      case 'Dashboard':
+      case 'About':
         return <About />
-      case 'Settings':
+      case 'Team':
         return <Team />
-      case 'Invoice':
+      case 'Funding':
         return <Funding />
       default:
         return null
@@ -34,10 +34,10 @@ export const Tabs = () => {
           value={activeTab}
           onChange={(e) => setActiveTab(e.target.value)}
         >
-          <option>Profile</option>
-          <option>Dashboard</option>
-          <option>Settings</option>
-          <option>Invoice</option>
+          <option>Updates</option>
+          <option>About</option>
+          <option>Team</option>
+          <option>Funding</option>
         </select>
       </div>
 
@@ -46,7 +46,7 @@ export const Tabs = () => {
         <li className="w-full focus-within:z-10">
           <a
             href="#"
-            onClick={() => setActiveTab('Profile')}
+            onClick={() => setActiveTab('Updates')}
             className={`inline-block w-full p-4 text-lg ${
               activeTab === 'Profile' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 rounded-s-lg hover:bg-grayblue-300`}
@@ -57,9 +57,9 @@ export const Tabs = () => {
         <li className="w-full focus-within:z-10">
           <a
             href="#"
-            onClick={() => setActiveTab('Dashboard')}
+            onClick={() => setActiveTab('About')}
             className={`inline-block w-full p-4 text-lg ${
-              activeTab === 'Dashboard' ? 'bg-grayblue-200' : 'bg-grayblue-100'
+              activeTab === 'About' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 hover:bg-grayblue-300`}
           >
             About
@@ -68,9 +68,9 @@ export const Tabs = () => {
         <li className="w-full focus-within:z-10">
           <a
             href="#"
-            onClick={() => setActiveTab('Settings')}
+            onClick={() => setActiveTab('Team')}
             className={`inline-block w-full p-4 text-lg ${
-              activeTab === 'Settings' ? 'bg-grayblue-200' : 'bg-grayblue-100'
+              activeTab === 'Team' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 hover:bg-grayblue-300`}
           >
             Team
@@ -79,9 +79,9 @@ export const Tabs = () => {
         <li className="w-full focus-within:z-10">
           <a
             href="#"
-            onClick={() => setActiveTab('Invoice')}
+            onClick={() => setActiveTab('Funding')}
             className={`inline-block w-full p-4 text-lg ${
-              activeTab === 'Invoice' ? 'bg-grayblue-200' : 'bg-grayblue-100'
+              activeTab === 'Funding' ? 'bg-grayblue-200' : 'bg-grayblue-100'
             } border-grayblue-100 rounded-e-lg hover:bg-grayblue-300`}
           >
             Treasury
