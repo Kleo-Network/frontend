@@ -48,11 +48,11 @@ const Navbar = () => {
         </a>
         <a
           className={`hover:underline hover:underline-offset-4 pointer-events-auto ${
-            pathname === '/memo' ? 'font-bold' : ''
+            pathname === '/about' ? 'font-bold' : ''
           }`}
-          href="/memo"
+          href="/about"
         >
-          Memo
+          About
         </a>
         <a
           className="hover:underline hover:underline-offset-4 pointer-events-auto"
@@ -97,6 +97,14 @@ const Navbar = () => {
           href="/"
         >
           Home
+        </a>
+        <a
+          className={`block hover:underline pointer-events-auto ${
+            pathname === '/about' ? 'font-bold' : ''
+          }`}
+          href="/about"
+        >
+          About
         </a>
         <a
           className="block hover:underline pointer-events-auto"
