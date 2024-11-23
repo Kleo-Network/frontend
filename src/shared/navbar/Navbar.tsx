@@ -128,7 +128,7 @@ const Navbar = () => {
           Discord ↗
         </a>
         <a
-          className="block h-[48px] px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800 pointer-events-auto"
+          className="block h-12 px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800 pointer-events-auto"
           href="https://www.app.kleo.network"
           target="_blank"
         >
