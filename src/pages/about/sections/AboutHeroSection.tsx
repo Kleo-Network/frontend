@@ -31,10 +31,10 @@ const ABOUT_HERO_DATA = {
 
 export const AboutHeroSection = () => {
   return (
-    <section className="w-full h-full py-24 px-4 lg:px-9 font-inter">
-      <div className="flex justify-start items-center h-fit">
-        <div className="flex flex-col justify-start items-start gap-[70px] w-3/4 z-20">
-          <div className="text-wrapper max-w-[750px] text-balance gap-6 flex flex-col">
+    <section className="w-full h-full py-16 lg:py-20 xl:py-24 px-4 lg:px- font-inter">
+      <div className="flex justify-center xl:justify-start items-center h-fit">
+        <div className="flex flex-col justify-start items-center xl:items-start gap-14 xl:gap-[70px] z-20">
+          <div className="text-wrapper max-w-[750px] text-balance gap-6 flex flex-col text-center xl:text-left">
             <h1 className="text-8xl font-medium text-white">
               {ABOUT_HERO_DATA.aboutTitle}
             </h1>
@@ -42,7 +42,7 @@ export const AboutHeroSection = () => {
               {ABOUT_HERO_DATA.aboutDescription}
             </p>
           </div>
-          <div className="stats-wrapper flex justify-start gap-[30px] flex-wrap">
+          <div className="stats-wrapper flex justify-center xl:justify-start gap-[30px] flex-wrap">
             {ABOUT_HERO_DATA.statsCards.map((card, index) => (
               <StatCard
                 key={index}
@@ -74,18 +74,18 @@ interface StatCardProps {
 const StatCard = ({ title, count, type, iconPath }: StatCardProps) => {
   return (
     <div
-      className={`p-[20px] flex justify-start items-center gap-8 rounded-[14px] ${
+      className={`p-5 flex justify-start items-center gap-8 rounded-[14px] ${
         type === 'DARK'
           ? 'bg-gray-800 border border-white border-opacity-40'
           : 'bg-white'
       }`}
     >
       <div
-        className={`w-[80px] h-[80px] flex justify-center items-center rounded-lg ${
+        className={`w-20 h-20 p-4 flex justify-center items-center rounded-lg ${
           type === 'DARK' ? 'bg-[#EAECF5] bg-opacity-20' : 'bg-grayblue-100'
         }`}
       >
-        <img src={iconPath} className="w-[50px] h-[50px]" />
+        <img src={iconPath} className="w-full h-full" />
       </div>
       <div
         className={`flex flex-col justify-center items-start gap-2 font-inter w-max ${
