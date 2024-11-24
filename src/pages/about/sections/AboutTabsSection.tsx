@@ -1,9 +1,9 @@
 import { useState } from 'react'
+import { TeamTab } from './aboutTabs/TeamTab'
 
 // Placeholder components for tab content
 const UpdatesTab = () => <div>Updates Tab Content</div>
 const AboutTab = () => <div>About Tab Content</div>
-const TeamTab = () => <div>Team Tab Content</div>
 const TreasuryTab = () => <div>Treasury Tab Content</div>
 const RoadmapTab = () => <div>Roadmap Tab Content</div>
 
