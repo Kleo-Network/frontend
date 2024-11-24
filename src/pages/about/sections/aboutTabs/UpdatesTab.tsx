@@ -6,18 +6,26 @@ const ABOUT_UPDATES_DATA = {
   updates: [
     {
       date: 'November 4th, 2024',
-      goalsIconPath: GoalIconPath,
       goals: [
         'Pooling data to build novel AI models',
         'Building hyper-personalized user experiences',
         'Creating use cases for research data sales'
       ],
-      hightLightIconPath: HightLightIconPath,
       highlights: [
         'Surpassed 10,000+ extension downloads',
         'Successfully managed community during server issues',
         'Preparing for Devcon in Bangkok (Nov 6-11)'
       ]
+    },
+    {
+      date: 'October 29th, 2024',
+      highlights: [
+        'Launched web dashboard with referral features & leaderboards',
+        'Reached 8,000 users (25% WoW increase)',
+        "Integrated with Polygon's Safe Gas Station",
+        'Selected for POL Rush at Devcon'
+      ],
+      specialNote: 'Software ate the world; now, AI is eating software'
     }
   ]
 }
@@ -28,7 +36,7 @@ export const UpdatesTab = () => {
       <div className="flex w-full justify-center px-6">
         <ol className="relative border-s-4 border-primary-600 pl-8 w-full max-w-[980px]">
           {/* First Item on TimeLine */}
-          <li className="mb-10 ms-6 w-full">
+          <li className="mb-12 ms-6 w-full">
             {/* Left Side Dot on timeline */}
             <span className="absolute flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full -start-8 border-[12px] border-primary-300" />
             {/* Right Side Dot on timeline */}
@@ -44,15 +52,44 @@ export const UpdatesTab = () => {
               {/* SDK end goal */}
               <ListCard
                 title="SDK End Goals"
-                iconPath={ABOUT_UPDATES_DATA.updates[0].goalsIconPath}
-                list={ABOUT_UPDATES_DATA.updates[0].goals}
+                iconPath={GoalIconPath}
+                list={ABOUT_UPDATES_DATA.updates[0].goals!}
               />
 
               {/* Highlights */}
               <ListCard
                 title="Hightlights"
                 iconPath={HightLightIconPath}
-                list={ABOUT_UPDATES_DATA.updates[0].highlights}
+                list={ABOUT_UPDATES_DATA.updates[0].highlights!}
+              />
+            </div>
+          </li>
+
+          {/* Second Item on TimeLine */}
+          <li className="mg-12 ms-6 w-full">
+            {/* Left Side Dot on timeline */}
+            <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
+            {/* Right Side Dot on timeline */}
+            <div className="flex flex-col gap-6">
+              {/* Date */}
+              <div className="py-4 px-7 flex justify-center items-center gap-3 w-fit bg-grayblue-700 rounded-full text-white">
+                <img src={CalendarIconPath} alt="" className="h-6 w-6" />
+                <p className="font-semibold text-2xl">
+                  {ABOUT_UPDATES_DATA.updates[1].date}
+                </p>
+              </div>
+              {/* Special Note */}
+              <div className="flex justify-start items-center gap-8 p-4 rounded-2xl bg-primary-200">
+                <div className="h-20 w-3 bg-primary-800" />
+                <div className="text-primary-800 font-semibold text-3xl">
+                  {ABOUT_UPDATES_DATA.updates[1].specialNote}
+                </div>
+              </div>
+              {/* Highlights */}
+              <ListCard
+                title="Hightlights"
+                iconPath={HightLightIconPath}
+                list={ABOUT_UPDATES_DATA.updates[1].highlights!}
               />
             </div>
           </li>
