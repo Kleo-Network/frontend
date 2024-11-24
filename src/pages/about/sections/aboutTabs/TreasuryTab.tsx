@@ -101,8 +101,8 @@ export const TreasuryTab = () => {
             className={`p-6 rounded-2xl shadow flex flex-col gap-8 ${
               card.theme === 'WHITE'
                 ? 'bg-white text-black'
-                : `bg-no-repeat bg-cover h-full text-white`
-            } col-span-4`}
+                : `bg-no-repeat bg-cover h-full text-white bg-center`
+            } col-span-12 lg:col-span-4`}
             style={
               card.theme === 'WHITE'
                 ? {}
@@ -112,19 +112,19 @@ export const TreasuryTab = () => {
             <img src={card.iconPath} alt="" className="h-20 w-20" />
             <div className="flex flex-col gap-2">
               <h4 className="font-medium text-lg">{card.title}</h4>
-              <h1 className="font-bold text-6xl">{card.amount}</h1>
+              <h1 className="font-bold text-5xl xl:text-6xl">{card.amount}</h1>
             </div>
           </div>
         ))}
 
         {/* Spend Breakdown */}
-        <div className="col-span-6 p-8 bg-gray-700 text-white rounded-2xl shadow h-[380px]">
-          <div className="h-full flex justify-evenly items-center gap-12">
+        <div className="col-span-12 lg:col-span-6 p-8 bg-gray-700 text-white rounded-2xl shadow min-h-[380px]">
+          <div className="h-full flex flex-col xl:flex-row justify-evenly items-center gap-12">
             <CircularGraph
               data={ABOUT_TREASURY_DATA.spendBreakdown.graphConfig}
               totalAmount={ABOUT_TREASURY_DATA.spendBreakdown.totalAmount}
             />
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left sm:flex-row xl:flex-col gap-8 xl:gap-12">
               <div className="flex flex-col gap-2">
                 <h1 className="font-semibold text-2xl">
                   {ABOUT_TREASURY_DATA.spendBreakdown.title}
@@ -133,12 +133,12 @@ export const TreasuryTab = () => {
                   {ABOUT_TREASURY_DATA.spendBreakdown.description}
                 </h4>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col justify-center gap-4 w-fit">
                 {ABOUT_TREASURY_DATA.spendBreakdown.graphConfig.map(
                   (item, index) => (
                     <div
                       key={index}
-                      className="flex justify-start items-center gap-4"
+                      className="flex justify-start items-center gap-4 w-max"
                     >
                       <div
                         className={`h-4 w-4 rounded-full bg-[${item.color.toString()}]`}
@@ -151,11 +151,11 @@ export const TreasuryTab = () => {
             </div>
           </div>
         </div>
-        <div className="p-6 bg-white rounded-lg shadow col-span-6 flex flex-col gap-6">
+        <div className="p-6 bg-white rounded-lg shadow col-span-12 lg:col-span-6 flex flex-col gap-6">
           <h1 className="font-semibold text-2xl">
             {ABOUT_TREASURY_DATA.spendCategories.title}
           </h1>
-          <div className="flex flex-col justify-evenly h-full w-full">
+          <div className="flex flex-col justify-start gap-6 lg:justify-evenly h-full w-full">
             {ABOUT_TREASURY_DATA.spendCategories.categories.map(
               (category, index) => (
                 <div
@@ -181,7 +181,7 @@ export const TreasuryTab = () => {
         </div>
 
         {/* Funding Sources */}
-        <div className="p-6 bg-white rounded-lg shadow col-span-9 flex flex-col w-full gap-6">
+        <div className="p-6 bg-white rounded-lg shadow col-span-12 lg:col-span-8 xl:col-span-9 flex flex-col w-full gap-6">
           <h1 className="font-semibold text-2xl">
             {ABOUT_TREASURY_DATA.fundingSources.title}
           </h1>
@@ -202,7 +202,7 @@ export const TreasuryTab = () => {
             ))}
           </div>
         </div>
-        <div className="p-6 bg-gray-800 text-white rounded-lg shadow col-span-3 flex flex-col gap-6">
+        <div className="p-6 bg-gray-800 text-white rounded-lg shadow col-span-12 lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
           <h1 className="font-semibold text-2xl">
             {ABOUT_TREASURY_DATA.treasuryTracking.title}
           </h1>
@@ -238,7 +238,7 @@ const CircularGraph = ({ data, totalAmount }: CircularGraphProps) => {
   let currentOffset = 0
 
   return (
-    <div className="relative w-full h-full">
+    <div className="relative w-1/2 xl:w-full h-full">
       <svg viewBox="0 0 36 36" className="w-full h-full transform -rotate-90">
         {data.map((item, index) => {
           const segmentPercentage = (item.percentage / total) * 100
