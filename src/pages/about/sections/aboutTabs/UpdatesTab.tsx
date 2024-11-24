@@ -69,7 +69,7 @@ const ABOUT_UPDATES_DATA = {
 export const UpdatesTab = () => {
   return (
     <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6 flex justify-center">
-      <div className="flex w-full justify-center px-6 mb-[560px]">
+      <div className="flex w-full justify-center px-6 mb-[520px] sm:mb-[560px]">
         <ol className="relative border-s-4 border-primary-600 pl-8 w-full max-w-[980px]">
           {/* First Item on TimeLine */}
           <li className="mb-16 ms-6 w-full">
@@ -229,8 +229,10 @@ const StatsHighLightCard = ({ title, list }: StatsHighLightCardProps) => {
               <img src={highlight.iconPath} alt="" className="w-20 h-20" />
               <div className="flex flex-col gap-2">
                 <h4 className="font-medium text-lg">{highlight.title}</h4>
-                <div className="flex justify-start items-baseline gap-4">
-                  <span className="font-bold text-5xl">{highlight.number}</span>
+                <div className="flex justify-start items-baseline gap-4 flex-wrap">
+                  <span className="font-bold text-4xl sm:text-5xl">
+                    {highlight.number}
+                  </span>
                   <div className="flex justify-start items-baseline text-[#12B76A]">
                     <span className="font-bold text-xl">
                       {highlight.progressRate}%
