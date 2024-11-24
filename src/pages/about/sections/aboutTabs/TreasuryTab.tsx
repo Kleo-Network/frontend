@@ -133,7 +133,7 @@ export const TreasuryTab = () => {
                   {ABOUT_TREASURY_DATA.spendBreakdown.description}
                 </h4>
               </div>
-              <div className="flex flex-col justify-center gap-4 w-fit">
+              <div className="flex sm:flex-col justify-center gap-4 w-fit">
                 {ABOUT_TREASURY_DATA.spendBreakdown.graphConfig.map(
                   (item, index) => (
                     <div
