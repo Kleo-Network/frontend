@@ -63,6 +63,21 @@ const ABOUT_TREASURY_DATA = {
         amount: '$8,000'
       }
     ]
+  },
+  fundingSources: {
+    title: 'Funding Sources',
+    sources: [
+      {
+        name: 'Thrive X Polygon Grant',
+        amount: '$24,000',
+        description: 'Grant'
+      },
+      {
+        name: 'Vaibhav Maheshwari',
+        amount: '$40,000',
+        description: 'Investment'
+      }
+    ]
   }
 }
 
@@ -127,7 +142,7 @@ export const TreasuryTab = () => {
             </div>
           </div>
         </div>
-        <div className="p-4 bg-white rounded-lg shadow col-span-6 flex flex-col gap-6">
+        <div className="p-6 bg-white rounded-lg shadow col-span-6 flex flex-col gap-6">
           <h1 className="font-semibold text-2xl">
             {ABOUT_TREASURY_DATA.spendCategories.title}
           </h1>
@@ -157,8 +172,26 @@ export const TreasuryTab = () => {
         </div>
 
         {/* Funding Sources */}
-        <div className="p-4 bg-white rounded-lg shadow col-span-9">
-          Funding Sources
+        <div className="p-6 bg-white rounded-lg shadow col-span-9 flex flex-col w-full gap-6">
+          <h1 className="font-semibold text-2xl">
+            {ABOUT_TREASURY_DATA.fundingSources.title}
+          </h1>
+          <div className="flex flex-col gap-6">
+            {ABOUT_TREASURY_DATA.fundingSources.sources.map((source, index) => (
+              <div
+                key={index}
+                className="flex justify-between p-4 bg-[#F5F5FA] items-center rounded-lg"
+              >
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-semibold text-lg">{source.name}</h3>
+                  <h4 className="font-normal text-base">
+                    {source.description}
+                  </h4>
+                </div>
+                <h3 className="font-semibold text-xl">{source.amount}</h3>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="p-4 bg-gray-800 text-white rounded-lg shadow col-span-3">
           Treasury Tracking

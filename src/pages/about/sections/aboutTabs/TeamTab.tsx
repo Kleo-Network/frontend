@@ -81,8 +81,11 @@ export const TeamTab = () => {
   return (
     <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full">
       <div className="flex flex-wrap gap-8 justify-evenly">
-        {ABOUT_TEAM_TAB_DATA.teamMembers.map((member) => (
-          <div className="flex flex-col justify-start items-center max-w-[440px] bg-white p-8 rounded-2xl mt-20">
+        {ABOUT_TEAM_TAB_DATA.teamMembers.map((member, index) => (
+          <div
+            className="flex flex-col justify-start items-center max-w-[440px] bg-white p-8 rounded-2xl mt-20"
+            key={index}
+          >
             <div className="relative -top-[35%] md:-top-1/3 h-20">
               <img
                 src={member.profilePath}
