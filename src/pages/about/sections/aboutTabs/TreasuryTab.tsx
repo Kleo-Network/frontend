@@ -5,6 +5,7 @@ import RemainingBalanceIconPath from '../../../../assets/images/about/tabs/treas
 import BuildingTechIconPath from '../../../../assets/images/about/tabs/treasury/buldingTech.svg'
 import MarketingIconPath from '../../../../assets/images/about/tabs/treasury/marketing.svg'
 import TeamIconPath from '../../../../assets/images/about/tabs/treasury/team.svg'
+import RedirectIconPath from '../../../../assets/images/about/tabs/treasury/redirectIcon.svg'
 
 const ABOUT_TREASURY_DATA = {
   fundingCards: [
@@ -78,6 +79,14 @@ const ABOUT_TREASURY_DATA = {
         description: 'Investment'
       }
     ]
+  },
+  // TODO: @vaibhav Update this Zapper Link and wallet address both
+  treasuryTracking: {
+    title: 'Treasury Tracking',
+    walletAddress: '0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',
+    zapperLink:
+      'https://zapper.fi/dashboard?address=0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',
+    redirectIconPath: RedirectIconPath
   }
 }
 
@@ -193,8 +202,25 @@ export const TreasuryTab = () => {
             ))}
           </div>
         </div>
-        <div className="p-4 bg-gray-800 text-white rounded-lg shadow col-span-3">
-          Treasury Tracking
+        <div className="p-6 bg-gray-800 text-white rounded-lg shadow col-span-3 flex flex-col gap-6">
+          <h1 className="font-semibold text-2xl">
+            {ABOUT_TREASURY_DATA.treasuryTracking.title}
+          </h1>
+          <div className="flex flex-col gap-4 bg-white bg-opacity-10 rounded-lg p-4 flex-1 justify-between">
+            <h4 className="font-normal text-base break-words">
+              {ABOUT_TREASURY_DATA.treasuryTracking.walletAddress}
+            </h4>
+            <a
+              href={ABOUT_TREASURY_DATA.treasuryTracking.zapperLink}
+              target="_blank"
+              className="px-5 py-3 flex items-center w-fit justify-start bg-primary-500 rounded-lg gap-2 hover:bg-primary-600 transition-all"
+            >
+              View on Zapper
+              <span>
+                <img src={RedirectIconPath} alt="" className="h-5 w-5" />
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
