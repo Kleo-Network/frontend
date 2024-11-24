@@ -2,6 +2,9 @@ import BgGridPath from '../../../../assets/images/about/tabs/treasury/Grid.svg'
 import TotalFundingIconPath from '../../../../assets/images/about/tabs/treasury/totalFunding.svg'
 import TotalSpentIconPath from '../../../../assets/images/about/tabs/treasury/totalSpent.svg'
 import RemainingBalanceIconPath from '../../../../assets/images/about/tabs/treasury/remainingBalance.svg'
+import BuildingTechIconPath from '../../../../assets/images/about/tabs/treasury/buldingTech.svg'
+import MarketingIconPath from '../../../../assets/images/about/tabs/treasury/marketing.svg'
+import TeamIconPath from '../../../../assets/images/about/tabs/treasury/team.svg'
 
 const ABOUT_TREASURY_DATA = {
   fundingCards: [
@@ -37,6 +40,29 @@ const ABOUT_TREASURY_DATA = {
     title: 'Spend Breakdown',
     description:
       "Here's how we allocate your contributions to make a meaningful impact:"
+  },
+  spendCategories: {
+    title: 'Spend Categories',
+    categories: [
+      {
+        iconPath: BuildingTechIconPath,
+        title: 'Building Tech',
+        percentage: 45.8,
+        amount: '$11,000'
+      },
+      {
+        iconPath: MarketingIconPath,
+        title: 'Marketing',
+        percentage: 20.8,
+        amount: '$5,000'
+      },
+      {
+        iconPath: TeamIconPath,
+        title: 'Team',
+        percentage: 33.3,
+        amount: '$8,000'
+      }
+    ]
   }
 }
 
@@ -68,7 +94,7 @@ export const TreasuryTab = () => {
         ))}
 
         {/* Spend Breakdown */}
-        <div className="col-span-6 p-8 bg-gray-700 text-white rounded-2xl shadow">
+        <div className="col-span-6 p-8 bg-gray-700 text-white rounded-2xl shadow h-[380px]">
           <div className="h-full flex justify-evenly items-center gap-12">
             <CircularGraph
               data={ABOUT_TREASURY_DATA.spendBreakdown.graphConfig}
@@ -101,8 +127,33 @@ export const TreasuryTab = () => {
             </div>
           </div>
         </div>
-        <div className="p-4 bg-white rounded-lg shadow col-span-6">
-          Spend Categories
+        <div className="p-4 bg-white rounded-lg shadow col-span-6 flex flex-col gap-6">
+          <h1 className="font-semibold text-2xl">
+            {ABOUT_TREASURY_DATA.spendCategories.title}
+          </h1>
+          <div className="flex flex-col justify-evenly h-full w-full">
+            {ABOUT_TREASURY_DATA.spendCategories.categories.map(
+              (category, index) => (
+                <div
+                  key={index}
+                  className="flex justify-between p-2 pr-4 bg-[#F5F5FA] items-center rounded-lg"
+                >
+                  <div className="flex justify-start items-center gap-6">
+                    <img src={category.iconPath} alt="" className="h-14 w-14" />
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-semibold text-lg">
+                        {category.title}
+                      </h3>
+                      <h4 className="font-normal text-base">
+                        {category.percentage}% of total spend
+                      </h4>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-xl">{category.amount}</h3>
+                </div>
+              )
+            )}
+          </div>
         </div>
 
         {/* Funding Sources */}
