@@ -20,6 +20,17 @@ const ABOUT_TABS_DATA = {
 // Main AboutTabsSection Component
 export const AboutTabsSection = () => {
   const [activeTab, setActiveTab] = useState('updatesTab')
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const handleTabChange = (tabId: string) => {
+    if (activeTab !== tabId) {
+      setIsTransitioning(true) // Start transition
+      setTimeout(() => {
+        setActiveTab(tabId) // Change tab after transition delay
+        setIsTransitioning(false) // End transition
+      }, 300) // Match this duration with your transition class
+    }
+  }
 
   return (
     <div className="w-full h-fit flex justify-center">
@@ -31,8 +42,8 @@ export const AboutTabsSection = () => {
               {ABOUT_TABS_DATA.tabList.map((tab) => (
                 <p
                   key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`py-3 px-7 text-xl w-full flex justify-center rounded-lg cursor-pointer ${
+                  onClick={() => handleTabChange(tab.id)}
+                  className={`py-2 px-2 md:py-3 md:px-7 text-xl w-full flex justify-center rounded-lg cursor-pointer transition-all ${
                     activeTab === tab.id
                       ? 'bg-grayblue-800 text-white'
                       : 'text-grayblue-800'
@@ -45,7 +56,13 @@ export const AboutTabsSection = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="w-full py-20">
+          <div
+            className={`w-full py-20 transition-all duration-300 ease-in-out transform ${
+              isTransitioning
+                ? 'opacity-0 translate-x-4'
+                : 'opacity-100 translate-x-0'
+            }`}
+          >
             {
               ABOUT_TABS_DATA.tabList.find((tab) => tab.id === activeTab)
                 ?.component
