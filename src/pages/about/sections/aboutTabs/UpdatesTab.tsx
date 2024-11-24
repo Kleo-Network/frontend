@@ -1,6 +1,10 @@
 import CalendarIconPath from '../../../../assets/images/about/tabs/updates/calendar.svg'
 import GoalIconPath from '../../../../assets/images/about/tabs/updates/goal.svg'
 import HightLightIconPath from '../../../../assets/images/about/tabs/updates/hightlight.svg'
+import DownloadsIconPath from '../../../../assets/images/about/tabs/updates/downloads.svg'
+import GrantIconPath from '../../../../assets/images/about/tabs/updates/grant.svg'
+import ProgressIconPath from '../../../../assets/images/about/tabs/updates/progress.svg'
+import XIconPath from '../../../../assets/images/about/tabs/updates/x.svg'
 
 const ABOUT_UPDATES_DATA = {
   updates: [
@@ -26,6 +30,29 @@ const ABOUT_UPDATES_DATA = {
         'Selected for POL Rush at Devcon'
       ],
       specialNote: 'Software ate the world; now, AI is eating software'
+    },
+    {
+      date: 'October 22nd, 2024',
+      highlights: [
+        {
+          iconPath: DownloadsIconPath,
+          title: 'Extension Downloads',
+          number: '6,400',
+          progressRate: '25'
+        },
+        {
+          iconPath: XIconPath,
+          title: 'X Followers',
+          number: '43,000',
+          progressRate: '10'
+        },
+        {
+          iconPath: DownloadsIconPath,
+          title: 'Grant Received',
+          number: '$24,000',
+          progressRate: '25'
+        }
+      ]
     }
   ]
 }
@@ -60,13 +87,13 @@ export const UpdatesTab = () => {
               <ListCard
                 title="Hightlights"
                 iconPath={HightLightIconPath}
-                list={ABOUT_UPDATES_DATA.updates[0].highlights!}
+                list={ABOUT_UPDATES_DATA.updates[0].highlights as string[]}
               />
             </div>
           </li>
 
           {/* Second Item on TimeLine */}
-          <li className="mg-12 ms-6 w-full">
+          <li className="mb-12 ms-6 w-full">
             {/* Left Side Dot on timeline */}
             <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
             {/* Right Side Dot on timeline */}
@@ -89,7 +116,29 @@ export const UpdatesTab = () => {
               <ListCard
                 title="Hightlights"
                 iconPath={HightLightIconPath}
-                list={ABOUT_UPDATES_DATA.updates[1].highlights!}
+                list={ABOUT_UPDATES_DATA.updates[1].highlights! as string[]}
+              />
+            </div>
+          </li>
+
+          {/* Third Item on TimeLine */}
+          <li className="mb-12 ms-6 w-full">
+            {/* Left Side Dot on timeline */}
+            <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
+            {/* Right Side Dot on timeline */}
+            <div className="flex flex-col gap-6">
+              {/* Date */}
+              <div className="py-4 px-7 flex justify-center items-center gap-3 w-fit bg-grayblue-700 rounded-full text-white">
+                <img src={CalendarIconPath} alt="" className="h-6 w-6" />
+                <p className="font-semibold text-2xl">
+                  {ABOUT_UPDATES_DATA.updates[2].date}
+                </p>
+              </div>
+              <StatsHighLightCard
+                list={
+                  ABOUT_UPDATES_DATA.updates[2].highlights! as HightLightItem[]
+                }
+                title="Hightlights"
               />
             </div>
           </li>
@@ -120,6 +169,46 @@ const ListCard = ({ title, iconPath, list }: ListCardProps) => {
             {index < list.length - 1 && (
               <div className="border border-black border-opacity-10" />
             )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+interface HightLightItem {
+  iconPath: string
+  title: string
+  number: string
+  progressRate: string
+}
+interface StatsHighLightCardProps {
+  title: string
+  list: HightLightItem[]
+}
+
+const StatsHighLightCard = ({ title, list }: StatsHighLightCardProps) => {
+  return (
+    <div className="flex flex-col gap-6 p-6 bg-white rounded-xl">
+      <h2 className="font-semibold text-3xl">{title}</h2>
+      <div className="flex flex-col gap-6 w-full">
+        {list.map((highlight, index) => (
+          <div key={index}>
+            <div className="flex p-5 rounded-2xl bg-[#F5F5FA] gap-8">
+              <img src={highlight.iconPath} alt="" className="w-20 h-20" />
+              <div className="flex flex-col gap-2">
+                <h4 className="font-medium text-lg">{highlight.title}</h4>
+                <div className="flex justify-start items-baseline gap-4">
+                  <span className="font-bold text-5xl">{highlight.number}</span>
+                  <div className="flex justify-start items-baseline text-[#12B76A]">
+                    <span className="font-bold text-xl">
+                      {highlight.progressRate}%
+                    </span>
+                    <img src={ProgressIconPath} alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
