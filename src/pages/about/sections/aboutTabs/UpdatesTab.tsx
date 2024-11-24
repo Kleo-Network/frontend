@@ -47,11 +47,20 @@ const ABOUT_UPDATES_DATA = {
           progressRate: '10'
         },
         {
-          iconPath: DownloadsIconPath,
+          iconPath: GrantIconPath,
           title: 'Grant Received',
           number: '$24,000',
           progressRate: '25'
         }
+      ]
+    },
+    {
+      date: 'October 15th, 2024',
+      highlights: [
+        '5,000 extension installs milestone reached',
+        'Developed proprietary activity classification algorithm on TEE',
+        'Built strong community: 30k+ Twitter followers, 900 Discord members',
+        'Completed 5 bounties with 1,200 USDC distributed'
       ]
     }
   ]
@@ -60,10 +69,10 @@ const ABOUT_UPDATES_DATA = {
 export const UpdatesTab = () => {
   return (
     <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6 flex justify-center">
-      <div className="flex w-full justify-center px-6">
+      <div className="flex w-full justify-center px-6 mb-[560px]">
         <ol className="relative border-s-4 border-primary-600 pl-8 w-full max-w-[980px]">
           {/* First Item on TimeLine */}
-          <li className="mb-12 ms-6 w-full">
+          <li className="mb-16 ms-6 w-full">
             {/* Left Side Dot on timeline */}
             <span className="absolute flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full -start-8 border-[12px] border-primary-300" />
             {/* Right Side Dot on timeline */}
@@ -93,11 +102,11 @@ export const UpdatesTab = () => {
           </li>
 
           {/* Second Item on TimeLine */}
-          <li className="mb-12 ms-6 w-full">
+          <li className="mb-16 ms-6 w-full">
             {/* Left Side Dot on timeline */}
             <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
             {/* Right Side Dot on timeline */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 relative -top-4">
               {/* Date */}
               <div className="py-4 px-7 flex justify-center items-center gap-3 w-fit bg-grayblue-700 rounded-full text-white">
                 <img src={CalendarIconPath} alt="" className="h-6 w-6" />
@@ -122,11 +131,11 @@ export const UpdatesTab = () => {
           </li>
 
           {/* Third Item on TimeLine */}
-          <li className="mb-12 ms-6 w-full">
+          <li className="mb-16 ms-6 w-full">
             {/* Left Side Dot on timeline */}
             <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
             {/* Right Side Dot on timeline */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 relative -top-4">
               {/* Date */}
               <div className="py-4 px-7 flex justify-center items-center gap-3 w-fit bg-grayblue-700 rounded-full text-white">
                 <img src={CalendarIconPath} alt="" className="h-6 w-6" />
@@ -139,6 +148,28 @@ export const UpdatesTab = () => {
                   ABOUT_UPDATES_DATA.updates[2].highlights! as HightLightItem[]
                 }
                 title="Hightlights"
+              />
+            </div>
+          </li>
+
+          {/* Last Dot on timeline */}
+          <li className="ms-6 w-full">
+            {/* Left Side Dot on timeline */}
+            <span className="absolute flex items-center justify-center w-8 h-8 bg-primary-600 rounded-full -start-4" />
+            {/* Right Side Dot on timeline */}
+            <div className="flex flex-col gap-6 h-0 relative -top-4">
+              {/* Date */}
+              <div className="py-4 px-7 flex justify-center items-center gap-3 w-fit bg-grayblue-700 rounded-full text-white">
+                <img src={CalendarIconPath} alt="" className="h-6 w-6" />
+                <p className="font-semibold text-2xl">
+                  {ABOUT_UPDATES_DATA.updates[3].date}
+                </p>
+              </div>
+              {/* Highlights */}
+              <ListCard
+                title="Hightlights"
+                iconPath={HightLightIconPath}
+                list={ABOUT_UPDATES_DATA.updates[3].highlights as string[]}
               />
             </div>
           </li>
