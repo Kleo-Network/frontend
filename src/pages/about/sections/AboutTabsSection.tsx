@@ -33,7 +33,7 @@ export const AboutTabsSection = () => {
   }
 
   return (
-    <div className="w-full h-fit flex justify-center">
+    <div className="w-full h-fit flex flex-col justify-start items-center">
       <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full">
         <section className="w-full px-6 font-inter flex flex-col justify-start items-center">
           {/* TabBar */}
@@ -54,21 +54,17 @@ export const AboutTabsSection = () => {
               ))}
             </div>
           </div>
-
-          {/* Tab Content */}
-          <div
-            className={`w-full py-20 transition-all duration-300 ease-in-out transform ${
-              isTransitioning
-                ? 'opacity-0 translate-x-4'
-                : 'opacity-100 translate-x-0'
-            }`}
-          >
-            {
-              ABOUT_TABS_DATA.tabList.find((tab) => tab.id === activeTab)
-                ?.component
-            }
-          </div>
         </section>
+      </div>
+      {/* Tab Content */}
+      <div
+        className={`w-full py-20 transition-all duration-300 ease-in-out transform flex justify-center ${
+          isTransitioning
+            ? 'opacity-0 translate-x-4'
+            : 'opacity-100 translate-x-0'
+        }`}
+      >
+        {ABOUT_TABS_DATA.tabList.find((tab) => tab.id === activeTab)?.component}
       </div>
     </div>
   )

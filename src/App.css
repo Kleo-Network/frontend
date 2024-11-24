@@ -111,3 +111,13 @@ html {
     font-size: 10px; /* Very small screens */
   }
 }
+
+body::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+html,
+body {
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: none; /* For Firefox */
+}
