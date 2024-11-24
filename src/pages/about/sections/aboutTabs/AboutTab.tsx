@@ -3,7 +3,6 @@ import GetRewardedIconPath from '../../../../assets/images/about/tabs/about/getR
 import DeveloperSdkIconPath from '../../../../assets/images/about/tabs/about/developerSDK.svg'
 import ForKleoUsersImagePath from '../../../../assets/images/about/tabs/about/forKleoUsers.svg'
 import ForDevelopersImagePath from '../../../../assets/images/about/tabs/about/forDevelopers.svg'
-import { title } from 'process'
 
 const ABOUT_ABOUT_DATA = {
   centralIdeaText: 'Democratizing Data Ownership',
@@ -59,11 +58,6 @@ const ABOUT_ABOUT_DATA = {
       'Simple SDK integration'
     ],
     posterImagePath: ForDevelopersImagePath
-  },
-  powerOfDAO: {
-    title: 'The Power of Data DAO',
-    description:
-      'Kleo Network is revolutionizing how users own their data and how organizations access it. A decentralized data marketplace that rewards users while enabling AI innovation.'
   }
 }
 
@@ -175,19 +169,6 @@ export const AboutTab = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      {/* The Power of Data DAO */}
-      <div className="mt-24 max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6">
-        <div className="flex flex-col justify-start items-center w-full">
-          <div className="flex flex-col justify-start items-center text-center gap-4">
-            <h1 className="font-semibold text-6xl">
-              {ABOUT_ABOUT_DATA.powerOfDAO.title}
-            </h1>
-            <h4 className="font-normal text-lg max-w-[770px]">
-              {ABOUT_ABOUT_DATA.powerOfDAO.description}
-            </h4>
           </div>
         </div>
       </div>
