@@ -86,7 +86,7 @@ export const RoadmapTab = () => {
           {/* Event-4 */}
           <div className="flex md:contents flex-row-reverse">
             {/* Content For Item1 */}
-            <div className="relative py-4 px-7 -top-5 sm:-top-4 mb-48 flex flex-col gap-4 rounded-full bg-grayblue-700 col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
+            <div className="relative py-4 px-7 -top-5 md:-top-4 mb-48 flex flex-col gap-4 rounded-full bg-grayblue-700 col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
               <h2 className="font-semibold text-2xl text-white">We Are Here</h2>
             </div>
             {/* Line and Dot for Item1 */}
@@ -94,7 +94,7 @@ export const RoadmapTab = () => {
               <div className="flex items-center justify-center w-6 h-full">
                 <div className="w-2 h-full bg-white rounded-t-full"></div>
               </div>
-              <div className="absolute w-[50px] h-[50px] sm:w-[68px] sm:h-[68px] -mt-5 -ml-6 sm:-ml-5 bg-primary-600 rounded-full top-0 flex justify-center items-center border-[10px] sm:border-[14px] border-primary-300" />
+              <div className="absolute w-[50px] h-[50px] md:w-[68px] md:h-[68px] -mt-5 -ml-6 md:-ml-5 bg-primary-600 rounded-full top-0 flex justify-center items-center border-[10px] md:border-[14px] border-primary-300" />
             </div>
           </div>
 
@@ -149,12 +149,12 @@ export const RoadmapTab = () => {
           <div className="flex md:contents">
             {/* Line and Dot for Item1 */}
             <div className="relative col-start-5 col-end-6 mr-7 md:mx-auto">
-              <div className="absolute w-10 h-10 -mt-5 -ml-2 sm:-ml-5 bg-white rounded-full top-0 flex justify-center items-center">
+              <div className="absolute w-10 h-10 -mt-5 -ml-2 md:-ml-5 bg-white rounded-full top-0 flex justify-center items-center">
                 <img src={WhiteTickIconPath} alt="" />
               </div>
             </div>
             {/* Content For Item1 */}
-            <div className="relative p-6 -top-5 ml-6 sm:ml-0 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
+            <div className="relative p-6 -top-5 ml-6 md:ml-0 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
               <h3 className="text-base font-normal text-primary-700">
                 March 2024
               </h3>
