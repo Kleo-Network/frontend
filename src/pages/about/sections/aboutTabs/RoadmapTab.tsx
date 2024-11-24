@@ -94,7 +94,7 @@ export const RoadmapTab = () => {
               <div className="flex items-center justify-center w-6 h-full">
                 <div className="w-2 h-full bg-white rounded-t-full"></div>
               </div>
-              <div className="absolute w-[50px] h-[50px] md:w-[68px] md:h-[68px] -mt-5 -ml-6 md:-ml-5 bg-primary-600 rounded-full top-0 flex justify-center items-center border-[10px] md:border-[14px] border-primary-300" />
+              <div className="absolute w-[44px] h-[44px] sm:w-[50px] sm:h-[50px] md:w-[68px] md:h-[68px] -mt-5 -ml-4 sm:-ml-5 md:-ml-6 bg-primary-600 rounded-full top-0 flex justify-center items-center border-[8px] sm:border-[10px] md:border-[14px] border-primary-300" />
             </div>
           </div>
 
