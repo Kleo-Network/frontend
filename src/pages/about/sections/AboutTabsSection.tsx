@@ -3,9 +3,7 @@ import { TeamTab } from './aboutTabs/TeamTab'
 import { AboutTab } from './aboutTabs/AboutTab'
 import { TreasuryTab } from './aboutTabs/TreasuryTab'
 import { UpdatesTab } from './aboutTabs/UpdatesTab'
-
-// Placeholder components for tab content
-const RoadmapTab = () => <div>Roadmap Tab Content</div>
+import { RoadmapTab } from './aboutTabs/RoadmapTab'
 
 const ABOUT_TABS_DATA = {
   tabList: [
