@@ -1,5 +1,6 @@
 import WhiteTickIconPath from '../../../../assets/images/about/tabs/roadmap/whiteTick.svg'
 
+// TODO: @vaibhav Please update all the dates for the events right now all are March 2024.
 export const RoadmapTab = () => {
   return (
     <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6 flex justify-center">

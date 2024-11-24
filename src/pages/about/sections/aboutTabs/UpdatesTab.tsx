@@ -6,6 +6,7 @@ import GrantIconPath from '../../../../assets/images/about/tabs/updates/grant.sv
 import ProgressIconPath from '../../../../assets/images/about/tabs/updates/progress.svg'
 import XIconPath from '../../../../assets/images/about/tabs/updates/x.svg'
 
+// TODO: @vaibhav Please update the Numbers here in Highlights
 const ABOUT_UPDATES_DATA = {
   updates: [
     {
