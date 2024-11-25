@@ -18,7 +18,7 @@ function App(): ReactElement {
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="selection:bg-primary-600 selection:text-white flex flex-col font-inter h-full w-full items-center">
-        <header className="flex w-full justify-center h-[44px] lg:h-[62px] xl:h-[62px] mac:h-[66px] 2xl:h-[88px] bg-gray-900 bg-opacity-[0.4] backdrop-blur-lg z-50 fixed pointer-events-none border-b border-b-white border-opacity-80">
+        <header className="flex w-full justify-center h-[44px] lg:h-[62px] xl:h-[62px] mac:h-[66px] 2xl:h-[88px] bg-white bg-opacity-[0.15] backdrop-blur-lg z-50 fixed pointer-events-none">
           <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center">
             <Navbar />
           </div>
@@ -27,7 +27,6 @@ function App(): ReactElement {
         <Routes>
           <Route path="/" element={<HomeComponent />} />
           <Route path="/about" element={<About />} />
-          <Route path="/memo" element={<Memo />} />
           {/* <Route path="/privacy" element={<PrivacyPolicy />} /> */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

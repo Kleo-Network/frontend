@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="flex justify-between items-center w-full px-4 sm:py-2 sm:px-0 lg:px-9 lg:py-[10px] xl:py-[12.5px] 2xl:py-4">
+    <nav className="flex justify-between items-center w-full px-6 sm:py-2 -sm:px-0 lg:py-[10px] xl:py-[12.5px] 2xl:py-4">
       {/* LEFT : Logo + Name */}
       <a
         className="flex w-max justify-start items-center gap-4 pointer-events-auto"
@@ -48,11 +48,11 @@ const Navbar = () => {
         </a>
         <a
           className={`hover:underline hover:underline-offset-4 pointer-events-auto ${
-            pathname === '/memo' ? 'font-bold' : ''
+            pathname === '/about' ? 'font-bold' : ''
           }`}
-          href="/memo"
+          href="/about"
         >
-          Memo
+          About
         </a>
         <a
           className="hover:underline hover:underline-offset-4 pointer-events-auto"
@@ -76,7 +76,7 @@ const Navbar = () => {
           Discord ↗
         </a>
         <a
-          className="h-11 px-[14px] py-[10px] lg:px-[18px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-sm mac:text-base 2xl:text-lg text-primary-800 pointer-events-auto"
+          className="h-fit px-[14px] py-2 lg:px-[18px] rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-sm mac:text-base 2xl:text-lg text-primary-800 pointer-events-auto"
           href="https://www.app.kleo.network"
           target="_blank"
         >
@@ -99,6 +99,14 @@ const Navbar = () => {
           Home
         </a>
         <a
+          className={`block hover:underline pointer-events-auto ${
+            pathname === '/about' ? 'font-bold' : ''
+          }`}
+          href="/about"
+        >
+          About
+        </a>
+        <a
           className="block hover:underline pointer-events-auto"
           href="/memo"
           target="_blank"
@@ -127,7 +135,7 @@ const Navbar = () => {
           Discord ↗
         </a>
         <a
-          className="block h-[48px] px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800 pointer-events-auto"
+          className="block h-12 px-5 py-3 rounded-lg bg-white cursor-pointer hover:bg-white/50 font-semibold text-base text-primary-800 pointer-events-auto"
           href="https://www.app.kleo.network"
           target="_blank"
         >

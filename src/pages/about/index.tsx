@@ -1,17 +1,18 @@
-import { Footer } from '../../components/_old_home/sections/Footer'
-import { Feature1 } from './sections/Feature1'
-import { Feature2 } from './sections/Feature2'
-import { HeroSection } from './sections/HeroSection'
-// import StackedCards from './sections/StackedCards'
+import { AboutFooterSection } from './sections/AboutFooterSection'
+import { AboutHeroSection } from './sections/AboutHeroSection'
+import { AboutTabsSection } from './sections/AboutTabsSection'
 
 export function About() {
   return (
-    <div className="flex flex-col items-start justify-center self-stretch font-inter z-40">
-      {/* <StackedCards /> */}
-      <Feature1 />
-      <Feature2 />
+    <main className="h-fit bg-[#F5F5FA] w-screen">
+      {/* Section just bellow Navbar with same width as Navbar in all screen sizes. */}
+      <AboutHeroSection />
 
-      <Footer />
-    </div>
+      {/* About Tabs Section */}
+      <AboutTabsSection />
+
+      {/* About Footer Section */}
+      <AboutFooterSection />
+    </main>
   )
 }
