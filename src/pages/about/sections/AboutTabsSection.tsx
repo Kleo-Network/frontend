@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TeamTab } from './aboutTabs/TeamTab'
-import { AboutTab } from './aboutTabs/AboutTab'
+import AboutTab from './aboutTabs/AboutTab'
 import { TreasuryTab } from './aboutTabs/TreasuryTab'
 import { UpdatesTab } from './aboutTabs/UpdatesTab'
 import { RoadmapTab } from './aboutTabs/RoadmapTab'

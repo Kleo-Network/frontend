@@ -11,19 +11,19 @@ const ABOUT_HERO_DATA = {
     {
       icon: Download,
       title: 'Downloads',
-      count: '20,000+',
+      count: '30,000+',
       type: 'LIGHT'
     },
     {
       icon: ActiveUsers,
       title: 'Active Users',
-      count: '18,000+',
+      count: '28,000+',
       type: 'DARK'
     },
     {
       icon: OnChainTransactions,
       title: 'On Chain Transactions',
-      count: '1500+',
+      count: '2500+',
       type: 'DARK'
     }
   ]
@@ -37,14 +37,16 @@ export const AboutHeroSection = () => {
           <div className="flex justify-center xl:justify-start items-center h-fit">
             <div className="flex flex-col justify-start items-center xl:items-start gap-14 xl:gap-[70px] z-20">
               <div className="text-wrapper max-w-[750px] text-balance gap-6 flex flex-col text-center xl:text-left">
-                <h1 className="text-8xl font-medium text-white">
+                {/* Reduced the font size from text-8xl to text-6xl */}
+                <h1 className="text-6xl font-medium text-white">
                   {ABOUT_HERO_DATA.aboutTitle}
                 </h1>
                 <p className="text-white font-nokora font-normal text-lg">
                   {ABOUT_HERO_DATA.aboutDescription}
                 </p>
               </div>
-              <div className="stats-wrapper flex justify-center xl:justify-start gap-[30px] flex-wrap">
+              {/* Added flex-nowrap and overflow-x-auto to prevent wrapping */}
+              <div className="stats-wrapper flex justify-center xl:justify-start gap-[30px] flex-nowrap overflow-x-auto">
                 {ABOUT_HERO_DATA.statsCards.map((card, index) => (
                   <StatCard
                     key={index}
@@ -75,10 +77,11 @@ interface StatCardProps {
   type: string
   iconPath: string
 }
+
 const StatCard = ({ title, count, type, iconPath }: StatCardProps) => {
   return (
     <div
-      className={`p-5 flex justify-start items-center gap-8 rounded-[14px] ${
+      className={`p-5 min-w-[250px] flex-shrink-0 flex justify-start items-center gap-8 rounded-[14px] ${
         type === 'DARK'
           ? 'bg-gray-800 border border-white border-opacity-40'
           : 'bg-white'

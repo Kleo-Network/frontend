@@ -61,11 +61,11 @@ const ABOUT_ABOUT_DATA = {
   }
 }
 
-export const AboutTab = () => {
+const AboutTab = () => {
   return (
     <div className="flex flex-col justify-start items-center">
       {/* About Central Idea */}
-      <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6">
+      <div className="max-w-[1140px] w-full px-6">
         <div className="flex flex-col justify-start items-center text-center font-inter w-full gap-12">
           {/* Text */}
           <div className="flex flex-col justify-start items-center gap-4">
@@ -78,11 +78,11 @@ export const AboutTab = () => {
           </div>
 
           {/* Cards */}
-          <div className="flex flex-wrap justify-center items-center gap-8 w-full">
+          <div className="flex justify-center items-stretch gap-8 w-full">
             {ABOUT_ABOUT_DATA.aboutCards.map((card) => (
               <div
                 key={card.id}
-                className={`flex flex-col justify-start items-start gap-8 p-6 rounded-3xl max-w-[440px] h-full ${
+                className={`flex flex-col justify-start items-start gap-8 p-6 rounded-3xl flex-1 ${
                   card.theme === 'PURPLE'
                     ? 'bg-primary-600 text-white'
                     : 'bg-white text-black'
@@ -108,8 +108,8 @@ export const AboutTab = () => {
       </div>
       {/* Transforming Data into Value */}
       <div className="w-screen bg-gray-900 mt-24 md:rounded-[30px] xl:rounded-[50px] py-24 flex flex-col justify-start items-center">
-        <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[664px] lg:max-w-[980px] xl:max-w-[1140px] mac:max-w-[1140px] 2xl:max-w-[1520px] w-full px-6">
-          <div className="flex flex-col gap-12 w-full text-white">
+        <div className="max-w-[1140px] w-full px-6">
+          <div className="flex flex-col gap-4 w-full text-white">
             {/* Heading */}
             <div className="flex flex-col w-full gap-4 text-center items-center">
               <h1 className="font-semibold text-6xl">
@@ -121,8 +121,8 @@ export const AboutTab = () => {
             </div>
 
             {/* For Kleo Users */}
-            <div className="flex flex-col-reverse 2xl:flex-row gap-12 2xl:gap-0 justify-between items-center h-full w-full">
-              <div className="flex flex-col gap-6 flex-1 text-center 2xl:text-left">
+            <div className="flex flex-col-reverse xl:flex-row gap-6 xl:gap-6 justify-between items-start h-full w-full mt-12">
+              <div className="flex flex-col gap-6 flex-1 text-center xl:text-left">
                 <h3 className="font-semibold text-3xl">
                   {ABOUT_ABOUT_DATA.forKleoUsers.title}
                 </h3>
@@ -130,7 +130,7 @@ export const AboutTab = () => {
                   {ABOUT_ABOUT_DATA.forKleoUsers.points.map((point, index) => (
                     <div
                       key={index}
-                      className="flex gap-4 items-center p-6 bg-white bg-opacity-10 rounded-2xl"
+                      className="flex gap-4 items-center p-4 bg-white bg-opacity-10 rounded-2xl w-full"
                     >
                       <div className="w-4 h-4 bg-primary-500 rounded-full" />
                       <p className="font-nokora font-normal text-xl">{point}</p>
@@ -141,18 +141,18 @@ export const AboutTab = () => {
               <img
                 src={ABOUT_ABOUT_DATA.forKleoUsers.posterImagePath}
                 alt=""
-                className="h-full 2xl:ml-40"
+                className="h-full xl:ml-10"
               />
             </div>
 
             {/* For Developers */}
-            <div className="flex flex-col 2xl:flex-row gap-12 2xl:gap-0 justify-between items-center h-full w-full">
+            <div className="flex flex-col xl:flex-row gap-6 xl:gap-6 justify-between items-start h-full w-full mt-12">
               <img
                 src={ABOUT_ABOUT_DATA.forDevelopers.posterImagePath}
                 alt=""
-                className="h-full 2xl:mr-40"
+                className="h-full xl:mr-10"
               />
-              <div className="flex flex-col gap-6 flex-1 text-center 2xl:text-left">
+              <div className="flex flex-col gap-6 flex-1 text-center xl:text-left">
                 <h3 className="font-semibold text-3xl">
                   {ABOUT_ABOUT_DATA.forDevelopers.title}
                 </h3>
@@ -160,7 +160,7 @@ export const AboutTab = () => {
                   {ABOUT_ABOUT_DATA.forDevelopers.points.map((point, index) => (
                     <div
                       key={index}
-                      className="flex gap-4 items-center p-6 bg-white bg-opacity-10 rounded-2xl"
+                      className="flex gap-4 items-center p-4 bg-white bg-opacity-10 rounded-2xl w-full"
                     >
                       <div className="w-4 h-4 bg-primary-500 rounded-full" />
                       <p className="font-nokora font-normal text-xl">{point}</p>
@@ -175,3 +175,4 @@ export const AboutTab = () => {
     </div>
   )
 }
+export default AboutTab

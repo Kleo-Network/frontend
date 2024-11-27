@@ -26,7 +26,7 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 mb-10 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                September 2024
               </h3>
               <h1 className="font-semibold text-4xl">Launch Extension</h1>
               <p className="text-lg font-normal">
@@ -41,7 +41,7 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 mb-10 flex flex-col gap-4 bg-white rounded-2xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                August 2024
               </h3>
               <h1 className="font-semibold text-4xl">Dashboard Launch</h1>
               <p className="text-lg font-normal">
@@ -74,12 +74,12 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 mb-10 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                November 2024
               </h3>
-              <h1 className="font-semibold text-4xl">10,000 users</h1>
+              <h1 className="font-semibold text-4xl">20,000 users</h1>
               <p className="text-lg font-normal">
                 Tapping into web3 native communities, partnering up with chains
-                and gain 10,000 users
+                and gain 20,000 users
               </p>
             </div>
           </div>
@@ -113,12 +113,12 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 mb-10 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                December 2024
               </h3>
-              <h1 className="font-semibold text-4xl">My Data Page</h1>
+              <h1 className="font-semibold text-4xl">VANA Integration</h1>
               <p className="text-lg font-normal">
-                Launch My Data Page for user to view, control and set
-                permissions for their data
+                Integrate VANA, along with DLP token to reward users for their
+                data.
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 mb-10 flex flex-col gap-4 bg-white rounded-2xl col-start-1 col-end-5 mr-auto md:mr-0 md:ml-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                January 2025
               </h3>
               <h1 className="font-semibold text-4xl">SDK Launch</h1>
               <p className="text-lg font-normal">
@@ -157,7 +157,7 @@ export const RoadmapTab = () => {
             {/* Content For Item1 */}
             <div className="relative p-6 -top-5 ml-6 md:ml-0 flex flex-col gap-4 bg-white rounded-2xl col-start-6 col-end-10 mr-auto">
               <h3 className="text-base font-normal text-primary-700">
-                March 2024
+                March 2025
               </h3>
               <h1 className="font-semibold text-4xl">Airdrop 1</h1>
               <p className="text-lg font-normal">
