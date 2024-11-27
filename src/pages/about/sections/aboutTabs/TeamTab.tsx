@@ -22,7 +22,7 @@ const ABOUT_TEAM_TAB_DATA = {
         },
         {
           iconPath: PortfolioIconPath,
-          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+          link: 'https://vaibhavgeek.blogspot.com'
         }
       ]
     },
@@ -34,11 +34,11 @@ const ABOUT_TEAM_TAB_DATA = {
       socials: [
         {
           iconPath: LinkedinIconPath,
-          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+          link: 'https://www.linkedin.com/in/pratikostwal/'
         },
         {
           iconPath: PortfolioIconPath,
-          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+          link: 'https://pratikostwal.wixsite.com/productsuccess'
         }
       ]
     },
@@ -50,11 +50,11 @@ const ABOUT_TEAM_TAB_DATA = {
       socials: [
         {
           iconPath: LinkedinIconPath,
-          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+          link: 'https://www.linkedin.com/in/ruchi-tripathi-525820158/'
         },
         {
           iconPath: PortfolioIconPath,
-          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+          link: 'https://www.behance.net/ruchii'
         }
       ]
     },
