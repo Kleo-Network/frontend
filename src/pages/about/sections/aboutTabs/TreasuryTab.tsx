@@ -85,7 +85,7 @@ const ABOUT_TREASURY_DATA = {
     title: 'Treasury Tracking',
     walletAddress: '0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',
     zapperLink:
-      'https://zapper.fi/dashboard?address=0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',
+      'https://zapper.xyz/account/0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',
     redirectIconPath: RedirectIconPath
   }
 }
