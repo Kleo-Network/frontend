@@ -1,4 +1,4 @@
-import { ReactComponent as HeroBackground } from '../../assets/images/home/hero_background.svg';
+import { ReactComponent as HeroBackground } from '../../assets/images/home/hero_background.svg'
 
 export const HeroSection = () => {
   return (
