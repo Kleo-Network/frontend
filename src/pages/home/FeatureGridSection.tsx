@@ -65,8 +65,8 @@ export const FeatureGridSection = () => {
                   transparent about the activity that helps you get the maximum
                   kleo points but the exact algorithm will be closed source to
                   ensure there is no farming.
-                  <br/>
-                  <br/>
+                  <br />
+                  <br />
                   Just do what you do and earn rewards on the basis of the
                   activity.
                 </p>

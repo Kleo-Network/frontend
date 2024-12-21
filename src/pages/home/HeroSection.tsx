@@ -14,7 +14,9 @@ export const HeroSection = () => {
           <h2 className="ml-[40px] leading-[110%] sm:ml-0 sm:text-right">
             For Your
           </h2>
-          <h2 className="leading-[90%] sm:ml-[40px] lg:ml-[72px] mac:ml-[80px]">Browser</h2>
+          <h2 className="leading-[90%] sm:ml-[40px] lg:ml-[72px] mac:ml-[80px]">
+            Browser
+          </h2>
           <a
             href="https://app.kleo.network"
             className="bg-primary-500 hover:bg-primary-700 text-[14px] w-fit rounded-[4px] py-[8px] px-[28px] mt-[8px] sm:px-[14px] xl:text-[20px] xl:py-[18px] xl:px-[32px] mac:text-[22.5px] mac:py-[20px] mac:px-[35px] sm:self-end sm:-mr-[80px] mac:-mr-[120px]"
