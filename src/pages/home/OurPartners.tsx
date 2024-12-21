@@ -7,13 +7,13 @@ export const OurPartnersSection = () => {
       <div className="max-w-[440px] sm:max-w-[488px] md:max-w-[488px] lg:max-w-[980px] xl:max-w-[980px] mac:max-w-[1140px] 2xl:max-w-[1520px] flex w-full h-full items-center px-4">
         <div className="flex flex-col gap-6 lg:gap-[40px] w-full items-center xl:flex-row-reverse xl:justify-between">
           {/* Text Of Partners */}
-          <div className="flex flex-col w-full gap-1 lg:gap-2 xl:gap-3 2xl:gap-4 sm:max-w-[288px] md:max-w-[318px] lg:max-w-[464px] text-center xl:max-w-[310px] xl:text-left mac:max-w-[365px] 2xl:max-w-[487px]">
+          <div className="flex flex-col w-full gap-1 lg:gap-2 xl:gap-3 mac:gap-4 sm:max-w-[288px] md:max-w-[318px] lg:max-w-[464px] text-center xl:max-w-[310px] xl:text-left mac:max-w-[365px] 2xl:max-w-[487px]">
             <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[38px] mac:text-[46px] 2xl:text-[58px]">
               Our Partners
             </div>
-            <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base 2xl:text-lg">
-              We've collaborated with industry leaders to build and scale our
-              solution. Notable partners include.
+            <div className="font-nokora font-normal text-[11px] md:text-sm xl:text-base xl:leading-[30.6px] 2xl:text-lg text-gray-800">
+              We have partnered with industry leaders to help us build and scale
+              this solution. Notable partners are mentioned here.
             </div>
           </div>
 
