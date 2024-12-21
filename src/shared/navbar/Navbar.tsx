@@ -108,13 +108,6 @@ const Navbar = () => {
         </a>
         <a
           className="block hover:underline pointer-events-auto"
-          href="/memo"
-          target="_blank"
-        >
-          Memo
-        </a>
-        <a
-          className="block hover:underline pointer-events-auto"
           href="https://docs.kleo.network/"
           target="_blank"
         >

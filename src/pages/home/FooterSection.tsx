@@ -1,17 +1,32 @@
 import { ReactComponent as FooterKleoLogo } from '../../assets/images/home/footer/logo_footer.svg'
-import { ReactComponent as PhoneIcon } from '../../assets/images/home/footer/phone.svg'
 import { ReactComponent as EmailIcon } from '../../assets/images/home/footer/email.svg'
 import { ReactComponent as LinkedIn } from '../../assets/images/home/footer/linkedIn.svg'
-import { ReactComponent as FaceBook } from '../../assets/images/home/footer/facebook.svg'
-import { ReactComponent as Instagram } from '../../assets/images/home/footer/instagram.svg'
 import { ReactComponent as Discord } from '../../assets/images/home/footer/discord.svg'
 import { ReactComponent as Grid } from '../../assets/images/home/footer/grid.svg'
+import { useLocation } from 'react-router-dom'
+
+interface ContactChipProps {
+  iconPath: string
+  text: string
+}
+
+const ContactChip = ({ iconPath, text }: ContactChipProps) => {
+  return (
+    <div className="flex justify-center items-center px-6 py-4 gap-4 bg-grayblue-200 rounded-full">
+      <img src={iconPath} alt="Phone" className="h-4 w-4" />
+      <div className="font-roboto font-normal text-lg">{text}</div>
+    </div>
+  )
+}
 
 export const FooterSection = () => {
+  const location = useLocation()
+    const { pathname } = location
+    
   return (
     <div className="mt-[150px] md:mt-[185px] lg:mt-[212px] xl:mt-[170px] mac:mt-[250px] 2xl:mt-[435px]">
       {/* Footer section */}
-      <section className="w-full flex justify-center items-end h-[680px] md:h-[743px] xl:h-[444px] mac:h-[484px] 2xl:h-[624px] bg-gray-blue-100 rounded-t-3xl sm:rounded-t-[32px] md:rounded-t-[40px] 2xl:rounded-t-[50px] p-4 pt-[130px] md:pt-[160px] lg:pt-[163px] xl:p-0 xl:pt-[190px] mac:pt-[197px] 2xl:pt-[243px] relative">
+      <section className="w-full flex justify-center items-start bg-gray-blue-100 rounded-t-3xl sm:rounded-t-[32px] md:rounded-t-[40px] 2xl:rounded-t-[50px] p-4 pt-[64px] md:pt-[80px] lg:pt-[120px] xl:pt-[160px] relative bg-[#EAECF5]">
         <div className="w-[328px] sm:w-[440px] md:w-[488px] lg:w-[704px] xl:w-[980px] mac:w-[1140px] 2xl:w-[1520px] relative">
           <div className="flex flex-col gap-6 xl:gap-3 2xl:gap-4 items-start w-full xl:items-center">
             {/* Company Logo and Text */}
@@ -43,10 +58,14 @@ export const FooterSection = () => {
 
             {/* Navigation Links */}
             <div className="flex flex-col xl:flex-row items-start xl:justify-between w-full gap-2 font-roboto font-normal text-sm md:text-base 2xl:text-[18px] leading-[1.3] xl:mt-[28px] xl:pb-[16px] mac:mt-[33px] mac:pb-[18px] 2xl:mt-[44px] 2xl:pb-[24px]">
-              <a href="/" className="hover:font-semibold">
+              <a
+                href="/"
+                className={`${
+                  pathname === '/' ? 'font-semibold font-inter' : ''
+                } hover:font-semibold`}
+              >
                 Home
               </a>
-
               <a
                 href="https://docsend.com/view/7rrstxhqid62n66v"
                 className="hover:font-semibold"
@@ -68,7 +87,6 @@ export const FooterSection = () => {
               >
                 Documentation
               </a>
-
               <a
                 href="mailto:contact@kleo.network"
                 className="hover:font-semibold"
@@ -79,6 +97,7 @@ export const FooterSection = () => {
             </div>
 
             {/* Social Media Links */}
+            {/* TODO: @Vaibhav please update the social media links */}
             <div className="flex items-center justify-between gap-6 w-132 xl:absolute xl:bottom-3 mac:bottom-[14px] 2xl:bottom-[18px] xl:right-0">
               <a
                 href="https://www.linkedin.com/company/kleonetwork/"
@@ -86,13 +105,13 @@ export const FooterSection = () => {
               >
                 <LinkedIn className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
-              <a href="https://discord.gg/Qn6ZmecTEw" target="_blank">
+              <a href="https://discord.gg/duvjD6yvzf" target="_blank">
                 <Discord className="size-[28px] hover:text-primary-700 cursor-pointer" />
               </a>
             </div>
 
             {/* All rights reserved */}
-            <div className="flex items-start w-full border-t border-gray-blue-200 pt-2 font-roboto font-normal text-sm leading-[1.7] xl:py-[12px] mac:py-[14px] 2xl:py-[18px]">
+            <div className="flex items-start w-full border-t border-[#D5D9EB] pt-2 font-roboto font-normal text-sm leading-[1.7] xl:py-[12px] mac:py-[14px] 2xl:py-[18px]">
               All rights reserved. www.kleo.network
             </div>
           </div>
@@ -101,12 +120,12 @@ export const FooterSection = () => {
         <div className="max-w-[328px] sm:max-w-[440px] md:max-w-[488px] lg:max-w-[704px] xl:max-w-[980px] mac:max-w-[1140px] 2xl:max-w-[1520px] absolute -top-[90px] sm:-top-[70px] md:-top-[105px] xl:-top-[120px] mac:-top-[130px] w-full text-white bg-primary-600 rounded-lg md:rounded-[32px] xl:rounded-[16px] mac:rounded-[18px] 2xl:rounded-[24px] overflow-hidden">
           <div className="selection:bg-white selection:text-purple-600 flex flex-col items-center xl:items-start xl:text-left xl:max-w-[500px] mac:max-w-[560px] 2xl:max-w-[745px] text-center gap-4 2xl:gap-6 py-6 px-4 md:p-8 xl:py-[40px] xl:px-[56px] mac:p-[60px] 2xl:p-[80px] relative">
             {/* Text */}
-            <div className="flex flex-col gap-1 lg:gap-4 xl:gap-[12px] 2xl:gap-4 w-full leading-[1.3]">
+            <div className="flex flex-col gap-1 md:gap-4 xl:gap-[12px] mac:gap-4 w-full leading-[1.3]">
               <div className="font-semibold text-2xl md:text-[32px] lg:text-[40px] xl:text-[38px] mac:text-[44px]">
                 Still have questions?
               </div>
               <div className="font-roboto font-normal text-[11px] md:text-sm lg:text-base mac:text-sm">
-                Can't find the answer you're looking for? Please chat to our
+                Can’t find the answer you’re looking for? Please chat to our
                 friendly team. We will do our best to assist you with the
                 questions.
               </div>
@@ -122,7 +141,7 @@ export const FooterSection = () => {
               <p className="font-normal text-sm">Join Our Discord</p>
             </a>
           </div>
-          <Grid className="absolute z-10 top-0 right-0 2xl:top-0 2xl:w-[700px] 2xl:h-auto" />
+          <Grid className="absolute z-10 top-0 right-0 2xl:top-0 2xl:w-[700px] h-full hidden xl:block" />
         </div>
       </section>
     </div>
