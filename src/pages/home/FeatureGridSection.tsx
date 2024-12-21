@@ -64,7 +64,7 @@ export const FeatureGridSection = () => {
                   the browser, kleo will reward kleo XP points. Kleo will be
                   transparent about the activity that helps you get the maximum
                   kleo points but the exact algorithm will be closed source to
-                  ensure there is no farming. 
+                  ensure there is no farming.
                   <br/>
                   <br/>
                   Just do what you do and earn rewards on the basis of the
