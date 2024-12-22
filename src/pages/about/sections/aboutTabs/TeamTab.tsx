@@ -2,6 +2,7 @@ import VaibhavProfileImage from '../../../../assets/images/about/tabs/team/vaibh
 import PratikProfileImage from '../../../../assets/images/about/tabs/team/pratik.svg'
 import RuchiProfileImage from '../../../../assets/images/about/tabs/team/ruchi.svg'
 import PrinceProfileImage from '../../../../assets/images/about/tabs/team/prince.svg'
+import JainamProfileImage from '../../../../assets/images/about/tabs/team/jainam.svg'
 
 import LinkedinIconPath from '../../../../assets/images/about/tabs/team/linkedinIcon.svg'
 import PortfolioIconPath from '../../../../assets/images/about/tabs/team/portfolioIcon.svg'
@@ -71,6 +72,18 @@ const ABOUT_TEAM_TAB_DATA = {
         {
           iconPath: PortfolioIconPath,
           link: 'https://princedalsaniya.vercel.app/'
+        }
+      ]
+    },
+    {
+      name: 'Jainam Shah',
+      profilePath: JainamProfileImage,
+      role: 'FRONTEND DEVELOPER',
+      bio: 'Recent Ahmedabad University graduate with 1 year of experience as a full stack developer, passionate about full stack development and UI/UX design. Part time on Kleo for last 2 months.',
+      socials: [
+        {
+          iconPath: LinkedinIconPath,
+          link: 'https://www.linkedin.com/in/jainam-shah-61250020b/'
         }
       ]
     }
