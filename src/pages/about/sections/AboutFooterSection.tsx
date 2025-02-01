@@ -1,5 +1,4 @@
 import KleoLogoWithName from '../../../assets/images/footer/kleoLogoWithName.svg'
-import PhoneIcon from '../../../assets/images/footer/phoneIcon.svg'
 import EmailIcon from '../../../assets/images/footer/emailIcon.svg'
 import LinkedinIcon from '../../../assets/images/footer/linkedinIcon.svg'
 import InstagramIcon from '../../../assets/images/footer/instagramIcon.svg'
@@ -10,10 +9,6 @@ const ABOUT_FOOTER_DATA = {
   kleoLogoWithNamePath: KleoLogoWithName,
   kleoIntroText: 'Kleo Network is a user owned data DAO.',
   contactChips: [
-    {
-      iconPath: PhoneIcon,
-      text: '+91 8369683781'
-    },
     {
       iconPath: EmailIcon,
       text: 'contact@kleo.network'

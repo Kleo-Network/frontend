@@ -20,24 +20,24 @@ const ABOUT_TREASURY_DATA = {
       id: '2',
       iconPath: TotalSpentIconPath,
       title: 'Total Spent',
-      amount: '$24,000',
+      amount: '$33,000',
       theme: 'WHITE'
     },
     {
       id: '3',
       iconPath: RemainingBalanceIconPath,
       title: 'Remaining Balance',
-      amount: '$40,000',
+      amount: '$31,000',
       theme: 'PURPLE'
     }
   ],
   spendBreakdown: {
     graphConfig: [
-      { percentage: 46.82, color: '#8C65E0', label: 'Building Tech' },
-      { percentage: 18.16, color: '#B692F6', label: 'Marketing' },
-      { percentage: 32.38, color: '#E9D7FE', label: 'Team' }
+      { percentage: 60.61, color: '#8C65E0', label: 'Building Tech' },
+      { percentage: 15.15, color: '#B692F6', label: 'Marketing' },
+      { percentage: 24.24, color: '#E9D7FE', label: 'Team' }
     ],
-    totalAmount: '$24,000',
+    totalAmount: '$33,000',
     title: 'Spend Breakdown',
     description:
       "Here's how we allocate your contributions to make a meaningful impact:"
@@ -48,19 +48,19 @@ const ABOUT_TREASURY_DATA = {
       {
         iconPath: BuildingTechIconPath,
         title: 'Building Tech',
-        percentage: 45.8,
-        amount: '$11,000'
+        percentage: 60.61,
+        amount: '$20,000'
       },
       {
         iconPath: MarketingIconPath,
         title: 'Marketing',
-        percentage: 20.8,
+        percentage: 15.15,
         amount: '$5,000'
       },
       {
         iconPath: TeamIconPath,
         title: 'Team',
-        percentage: 33.3,
+        percentage: 24.24,
         amount: '$8,000'
       }
     ]
@@ -77,10 +77,14 @@ const ABOUT_TREASURY_DATA = {
         name: 'Vaibhav Maheshwari',
         amount: '$40,000',
         description: 'Investment'
+      },
+      {
+        name: 'POL Token',
+        amount: '58,000 POL',
+        description: 'Token Grant'
       }
     ]
   },
-  // TODO: @vaibhav Update this Zapper Link and wallet address both
   treasuryTracking: {
     title: 'Treasury Tracking',
     walletAddress: '0x86b06319b906e61631f7edbe5a3fe2edb95a3fae',

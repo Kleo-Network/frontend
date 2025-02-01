@@ -2,10 +2,10 @@ import VaibhavProfileImage from '../../../../assets/images/about/tabs/team/vaibh
 import PratikProfileImage from '../../../../assets/images/about/tabs/team/pratik.svg'
 import RuchiProfileImage from '../../../../assets/images/about/tabs/team/ruchi.svg'
 import PrinceProfileImage from '../../../../assets/images/about/tabs/team/prince.svg'
+import UjjwalProfileImage from '../../../../assets/images/about/tabs/team/ujj.svg'
 
 import LinkedinIconPath from '../../../../assets/images/about/tabs/team/linkedinIcon.svg'
 import PortfolioIconPath from '../../../../assets/images/about/tabs/team/portfolioIcon.svg'
-import { profile } from 'console'
 
 // TODO: Update Bellow Social Links and add any social by adding an icon and the config if you want
 const ABOUT_TEAM_TAB_DATA = {
@@ -13,8 +13,24 @@ const ABOUT_TEAM_TAB_DATA = {
     {
       name: 'Vaibhav Maheshwari',
       profilePath: VaibhavProfileImage,
-      role: 'FOUNDER',
+      role: 'CHIEF EXECUTIVE OFFICER',
       bio: "NIT Surat alumnus with a Master's in Mathematics. 4 years of full-stack dev experience, and active in web3 space for last 3 years. Full time on Kleo Network for last 2 years.",
+      socials: [
+        {
+          iconPath: LinkedinIconPath,
+          link: 'https://www.linkedin.com/in/vaibhavgeek/'
+        },
+        {
+          iconPath: PortfolioIconPath,
+          link: 'https://vaibhavgeek.blogspot.com'
+        }
+      ]
+    },
+    {
+      name: 'Ujjwal Kumar',
+      profilePath: UjjwalProfileImage,
+      role: 'CHIEF TECHNOLOGY OFFICER',
+      bio: 'NIT Surat alumnus with a degree in Computer Science. 4 years of full-stack web3 development experience, and active in web3 space for last 3 years.',
       socials: [
         {
           iconPath: LinkedinIconPath,

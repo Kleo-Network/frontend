@@ -11,13 +11,13 @@ const ABOUT_HERO_DATA = {
     {
       icon: Download,
       title: 'Downloads',
-      count: '30,000+',
+      count: '85,000+',
       type: 'LIGHT'
     },
     {
       icon: ActiveUsers,
-      title: 'Active Users',
-      count: '28,000+',
+      title: 'Token Holders',
+      count: '3000+',
       type: 'DARK'
     },
     {

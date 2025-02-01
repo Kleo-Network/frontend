@@ -23,6 +23,27 @@ interface Update {
 const ABOUT_UPDATES_DATA = {
   updates: [
     {
+      date: 'January 22nd, 2025',
+      highlights: [
+        'Reached 85,000+ extension users with enhanced server infrastructure',
+        'Created AI Agents with browswer automation capabilities',
+        'Onboarded a new member for technical head in the Kleo Team',
+        'Launched KDAT token on VANA MAINNET'
+      ]
+    },
+
+    {
+      date: 'January 15th, 2025',
+      highlights: [
+        {
+          iconPath: DownloadsIconPath,
+          title: 'Extension Downloads',
+          number: '80,000',
+          progressRate: '166.67%'
+        }
+      ]
+    },
+    {
       date: 'November 24th, 2024',
       highlights: [
         'Reached 30,000+ extension users with enhanced server infrastructure',
