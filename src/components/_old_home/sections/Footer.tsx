@@ -70,7 +70,7 @@ export const Footer = () => {
             © 2023 KLEO. All rights reserved.
           </div>
           <div className="justify-start items-center gap-6 flex">
-            <a href="https://twitter.com/kleo_network" target="_blank">
+            <a href="https://x.com/kleo_network" target="_blank">
               <XIcon className="w-6 h-6 relative" />
             </a>
             <a

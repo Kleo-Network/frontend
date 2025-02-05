@@ -41,7 +41,7 @@ const SocialShare: React.FC<SocialShareProps> = ({ profileUrl }) => {
 
   const shareToTwitter = () => {
     window.open(
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      `https://x.com/intent/tweet?text=${encodeURIComponent(
         shareMessage
       )}`
     )
