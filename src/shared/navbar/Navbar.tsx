@@ -63,7 +63,7 @@ const Navbar = () => {
         </a>
         <a
           className="hover:underline hover:underline-offset-4 pointer-events-auto"
-          href="https://twitter.com/kleo_network"
+          href="https://x.com/kleo_network"
           target="_blank"
         >
           Twitter ↗
@@ -122,7 +122,7 @@ const Navbar = () => {
         </a>
         <a
           className="block hover:underline pointer-events-auto"
-          href="https://twitter.com/kleo_network"
+          href="https://x.com/kleo_network"
           target="_blank"
         >
           Twitter ↗
