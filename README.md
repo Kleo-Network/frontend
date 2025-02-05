@@ -2,7 +2,7 @@
 This is a repository for home page for [Kleo Network](https://www.kleo.network/)
 
 ## Tasks
-- [ ] Remove unecessary components and files in the repository.
+- [ ] Remove unnecessary components and files in the repository.
 - [ ] Improve Call to Action on homepage - Add video! 
 - [ ] Add a section - "Some things can be public"
 - [ ] Add a section - "Other things need to be private"
