@@ -62,7 +62,7 @@ const ABOUT_TEAM_TAB_DATA = {
       name: 'Ruchi Tripathi',
       profilePath: RuchiProfileImage,
       role: 'UX DESIGNER',
-      bio: 'Product Manager and competency in UX and UI interfaces. 2+ years of Design Experience working with startups. Part Time on Kleo for last 2 months.',
+      bio: 'Product Manager and competency in UX and UI interfaces. 2+ years of Design Experience working with startups. Part Time on Kleo for last year.',
       socials: [
         {
           iconPath: LinkedinIconPath,
